@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-gray-light'></div>
+    <section>
+      {/* <div className='min-h-screen bg-blue'></div>
+      <div className='min-h-screen bg-green'></div> */}
+    </section>
   )
 }
