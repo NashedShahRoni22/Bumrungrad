@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
+import Services from "./Services";
 
 export default function Home() {
   return (
-    <section>
-      {/* <div className='min-h-screen bg-blue'></div>
-      <div className='min-h-screen bg-green'></div> */}
+    <section className="">
+      <div className="mx-5 lg:container lg:mx-auto">
+        <Services/>
+      </div>
     </section>
-  )
+  );
 }

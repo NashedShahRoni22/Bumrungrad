@@ -5,8 +5,8 @@ import whatsapp from "../../assets/whatsapp.png";
 export default function SideBar() {
   return (
     <div>
-      <img src={line} alt="line_logo" className="h-[50px] rounded-full" />
-      <img src={whatsapp} alt="line_logo" className="h-[50px] mt-1 rounded-full" />
+      <img src={line} alt="line_logo" className="h-[50px]" />
+      <img src={whatsapp} alt="line_logo" className="h-[50px] mt-1" />
     </div>
   );
 }

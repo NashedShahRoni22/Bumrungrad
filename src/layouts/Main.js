@@ -13,7 +13,7 @@ export default function Main() {
         <MiddleBar />
       </div>
       <div className="fixed right-2 top-1/2">
-        <SideBar/>
+        <SideBar />
       </div>
     </main>
   );

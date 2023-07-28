@@ -3,7 +3,7 @@ import { MenuItems } from "./MenuItems";
 import logo from "../../assets/nav_logo.png";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -24,7 +24,7 @@ export default function AppBar() {
   };
   return (
     <nav className="bg-[#DFE2F4]">
-      <section className="mx-10 py-5 lg:container lg:mx-auto flex items-center justify-between">
+      <section className="mx-5 py-5 lg:container lg:mx-auto flex items-center justify-between">
         <div>
           <img src={logo} alt="nav_logo" className="w-[200px]" />
         </div>
@@ -35,7 +35,7 @@ export default function AppBar() {
               <li key={i} className="group relative">
                 <Link>{mi.header}</Link>
                 {mi.childs && (
-                  <ul className="ml-2 p-2 bg-white shadow-md hidden group-hover:block absolute top-7 min-w-[400px]">
+                  <ul className="ml-3 p-3 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[400px]">
                     {mi.childs?.map((mc, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <div className="h-0.5 bg-blue w-5"></div>
@@ -58,7 +58,7 @@ export default function AppBar() {
                 <>
                   <li key={i} className="relative">
                     <Link
-                      className="flex justify-between items-center rounded-md"
+                      className="flex justify-between items-center rounded-xl"
                       onClick={() => handleDropdown(i)}
                     >
                       {mi.header}
@@ -95,7 +95,7 @@ export default function AppBar() {
           )}
         </div>
         <div className="flex gap-4">
-          <Link className="md:px-4 md:py-2 hover:shadow-xl duration-300 ease-linear md:bg-blue rounded-md text-white flex gap-2 items-center">
+          <Link className="md:px-4 md:py-2 md:hover:shadow-xl duration-300 ease-linear md:bg-blue rounded-xl text-white flex gap-2 items-center">
             <PersonIcon
               sx={{ fontSize: "24px" }}
               className="cursor-pointer text-blue md:text-white"
@@ -124,6 +124,7 @@ export default function AppBar() {
           </div>
         </div>
       </section>
+      <Divider />
     </nav>
   );
 }
