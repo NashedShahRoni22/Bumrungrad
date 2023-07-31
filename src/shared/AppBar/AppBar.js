@@ -8,7 +8,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import { Divider } from "@mui/material";
+import { Button, Divider } from "@mui/material";
 
 export default function AppBar() {
   const [open, setOpen] = useState(false);
@@ -23,23 +23,23 @@ export default function AppBar() {
     });
   };
   return (
-    <nav className="bg-[#DFE2F4]">
+    <nav className="bg-cream">
       <section className="mx-5 py-5 lg:container lg:mx-auto flex items-center justify-between">
         <div>
           <img src={logo} alt="nav_logo" className="w-[200px]" />
         </div>
         {/* Desktop View  */}
         <div className="hidden lg:block">
-          <ul className="flex justify-center gap-8 text-[16px] text-blue font-semibold">
+          <ul className="flex justify-center gap-8 text-[16px] text-blue">
             {MenuItems.map((mi, i) => (
               <li key={i} className="group relative">
-                <Link>{mi.header}</Link>
+                <Link className="font-semibold">{mi.header}</Link>
                 {mi.childs && (
-                  <ul className="ml-3 p-3 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[400px]">
+                  <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[400px] z-30">
                     {mi.childs?.map((mc, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <div className="h-0.5 bg-blue w-5"></div>
-                        <Link className="hover:ml-5 my-1 duration-300 ease-linear">
+                        <div className="h-2 bg-blue w-2 rounded-full"></div>
+                        <Link className="hover:ml-3 my-1 duration-300 ease-linear">
                           {mc.name}
                         </Link>
                       </li>
@@ -51,14 +51,14 @@ export default function AppBar() {
           </ul>
         </div>
         {/* Mobile View  */}
-        <div className="min-w-full absolute top-20 left-0 lg:hidden">
+        <div className="min-w-full absolute top-20 left-0 lg:hidden z-30">
           {open && (
-            <ul className="min-h-screen bg-white p-10 flex flex-col gap-4 md:gap-8 text-[16px] text-blue font-semibold border-t-2 md:border-t-4 border-blue">
+            <ul className="min-h-[80vh] bg-white p-10 flex flex-col gap-4 md:gap-8 text-[16px] text-blue border-t-2 md:border-t-4 border-blue">
               {MenuItems.map((mi, i) => (
                 <>
                   <li key={i} className="relative">
                     <Link
-                      className="flex justify-between items-center rounded-xl"
+                      className="flex font-semibold justify-between items-center rounded-xl"
                       onClick={() => handleDropdown(i)}
                     >
                       {mi.header}
@@ -79,8 +79,8 @@ export default function AppBar() {
                         <ul className="p-1 md:p-2">
                           {mi.childs?.map((mc, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <div className="h-0.5 bg-blue w-5"></div>
-                              <Link className="hover:ml-5 my-1.5 duration-300 ease-linear">
+                              <div className="h-2 w-2 rounded-full bg-blue"></div>
+                              <Link className="hover:ml-3 my-1 duration-300 ease-linear">
                                 {mc.name}
                               </Link>
                             </li>
@@ -95,13 +95,7 @@ export default function AppBar() {
           )}
         </div>
         <div className="flex gap-4">
-          <Link className="md:px-4 md:py-2 md:hover:shadow-xl duration-300 ease-linear md:bg-blue rounded-xl text-white flex gap-2 items-center">
-            <PersonIcon
-              sx={{ fontSize: "24px" }}
-              className="cursor-pointer text-blue md:text-white"
-            />
-            <span className="hidden md:block">Account</span>
-          </Link>
+          <Button variant="contained" color="primary" size="small" startIcon={<PersonIcon/>}>Account</Button>
           <div className="flex gap-4 items-center">
             <WhatsAppIcon
               sx={{ fontSize: "28px" }}

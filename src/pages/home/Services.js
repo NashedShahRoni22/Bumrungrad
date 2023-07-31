@@ -12,49 +12,56 @@ import { Divider } from "@mui/material";
 
 const services = [
   {
-    name: "air ambulance",
-    img: airimg,
-  },
-  {
-    name: "air pickup",
-    img: airpickup,
-  },
-  {
-    name: "air ticket",
-    img: airticket,
-  },
-  {
-    name: "doctor appointment",
+    name: "Doctor Appointment",
     img: appointment,
   },
   {
-    name: "hotel reservation",
-    img: hotelReservation,
+    name: "Air Ambulance",
+    img: airimg,
   },
   {
-    name: "order medicine",
+    name: "Order Medicine",
     img: orderMedicine,
   },
   {
-    name: "tele medicine",
+    name: "Visa Processing",
+    img: visaProcessing,
+  },
+  {
+    name: "Tele Medicine",
     img: teleMedicine,
   },
   {
-    name: "visa processing",
-    img: visaProcessing,
+    name: "Hotel Reservation",
+    img: hotelReservation,
+  },
+  {
+    name: "Air Ticket",
+    img: airticket,
+  },
+  {
+    name: "Air Pickup",
+    img: airpickup,
   },
 ];
 
 export default function Services() {
   return (
-    <div className="p-10 shadow-xl rounded-xl">
-      <h1 className="text-[32px] font-bold text-center text-blue mb-5">Our Services</h1>
-      <Divider/>
+    <div className="p-10 my-20 shadow-xl rounded-xl mx-5 lg:container lg:mx-auto">
+      <h1 className="text-[32px] font-bold text-center text-blue mb-5">
+        Our Services
+      </h1>
+      <Divider />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-5 my-5">
-        {services.map((s,i) => (
-          <Link key={i} className="cursor-pointer flex flex-col lg:flex-row gap-4 items-center hover:shadow-xl duration-300 ease-linear p-4 rounded-xl">
-            <img src={s.img} alt={s.name} className="h-[100px] w-[100px]"/>
-            <h5 className="uppercase text-center font-semibold text-blue">{s.name}</h5>
+        {services.map((s, i) => (
+          <Link
+            key={i}
+            className="cursor-pointer flex flex-col lg:flex-row gap-4 items-center hover:shadow-xl duration-300 ease-linear p-4 rounded-xl"
+          >
+            <img src={s.img} alt={s.name} className="h-[100px] w-[100px]" />
+            <h5 className="text-center font-semibold text-blue">
+              {s.name}
+            </h5>
           </Link>
         ))}
       </div>

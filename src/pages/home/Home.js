@@ -1,10 +1,12 @@
 import React from "react";
 import Services from "./Services";
+import LandingBanner from "./LandingBanner";
 
 export default function Home() {
   return (
-    <section className="">
-      <div className="mx-5 lg:container lg:mx-auto">
+    <section>
+      <div>
+        <LandingBanner/>
         <Services/>
       </div>
     </section>
