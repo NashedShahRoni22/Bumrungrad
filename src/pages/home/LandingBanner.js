@@ -7,7 +7,7 @@ export default function LandingBanner() {
     <section className="bg-cream relative">
       <div className="flex flex-col-reverse md:flex-row min-h-[80vh] justify-center items-center mx-5 lg:container lg:mx-auto relative">
         <div className="md:w-1/2">
-          <h1 className="text-5xl text-center md:text-left md:text-7xl lg:text-9xl font-bold text-blue">
+          <h1 className="text-4xl text-center md:text-left md:text-6xl lg:text-8xl font-bold text-blue">
             Asia's Favourite Medical <br />
             <span>
               <Typewriter

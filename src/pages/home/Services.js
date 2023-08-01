@@ -47,21 +47,21 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="p-10 my-20 shadow-xl rounded-xl mx-5 lg:container lg:mx-auto">
-      <h1 className="text-[32px] font-bold text-center text-blue mb-5">
+    <div className="py-10 my-10 shadow-xl rounded-xl mx-5 lg:container lg:mx-auto">
+      <h1 className="text-[32px] font-bold text-center text-blue">
         Our Services
       </h1>
-      <Divider />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-5 my-5">
+      <div className="my-5">
+        <Divider />
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {services.map((s, i) => (
           <Link
             key={i}
             className="cursor-pointer flex flex-col lg:flex-row gap-4 items-center hover:shadow-xl duration-300 ease-linear p-4 rounded-xl"
           >
             <img src={s.img} alt={s.name} className="h-[100px] w-[100px]" />
-            <h5 className="text-center font-semibold text-blue">
-              {s.name}
-            </h5>
+            <h5 className="text-center font-semibold text-blue">{s.name}</h5>
           </Link>
         ))}
       </div>

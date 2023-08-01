@@ -8,7 +8,9 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import { Button, Divider } from "@mui/material";
+import { Divider } from "@mui/material";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function AppBar() {
   const [open, setOpen] = useState(false);
@@ -35,7 +37,7 @@ export default function AppBar() {
               <li key={i} className="group relative">
                 <Link className="font-semibold">{mi.header}</Link>
                 {mi.childs && (
-                  <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[400px] z-30">
+                  <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
                     {mi.childs?.map((mc, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <div className="h-2 bg-blue w-2 rounded-full"></div>
@@ -95,7 +97,26 @@ export default function AppBar() {
           )}
         </div>
         <div className="flex gap-4">
-          <Button variant="contained" color="primary" size="small" startIcon={<PersonIcon/>}>Account</Button>
+          <div className="relative group">
+            <Link className="md:px-4 md:py-2 md:bg-blue flex items-center gap-2 duration-300 ease-linear rounded-xl">
+              <PersonIcon
+                sx={{ fontSize: "28px" }}
+                className="text-blue md:text-white"
+              />{" "}
+              <span className="hidden md:block text-white">Account</span>
+            </Link>
+            <div className="hidden group-hover:block duration-300 ease-linear bg-white absolute z-50 min-w-[120px] md:min-w-[150px] rounded-xl shadow-xl">
+              <div className="flex flex-col p-2 rounded-xl gap-2">
+                <Link className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
+                  <LoginIcon /> <span>Sign In</span>
+                </Link>
+                <Divider />
+                <Link className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
+                  <LogoutIcon /> <span>Sign Out</span>
+                </Link>
+              </div>
+            </div>
+          </div>
           <div className="flex gap-4 items-center">
             <WhatsAppIcon
               sx={{ fontSize: "28px" }}
