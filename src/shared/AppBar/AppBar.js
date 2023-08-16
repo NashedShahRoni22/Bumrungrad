@@ -8,7 +8,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import { Divider } from "@mui/material";
+import { Button, Divider } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 
@@ -98,7 +98,7 @@ export default function AppBar() {
         </div>
         <div className="flex gap-4">
           <div className="relative group">
-            <Link className="lg:px-4 lg:py-2 lg:bg-blue flex items-center gap-2 duration-300 ease-linear rounded-xl">
+            <Link className="lg:px-4 lg:py-2 lg:bg-blue flex items-center gap-2 duration-300 ease-linear">
               <PersonIcon
                 sx={{ fontSize: "28px" }}
                 className="text-blue lg:text-white"
@@ -106,7 +106,7 @@ export default function AppBar() {
               <span className="hidden lg:block text-white">Account</span>
             </Link>
             <div className="hidden group-hover:block duration-300 ease-linear bg-white absolute z-50 min-w-[120px] md:min-w-[150px] rounded-xl shadow-xl">
-              <div className="flex flex-col p-2 rounded-xl gap-2">
+              <div className="flex flex-col p-2 rounded-xl gap-2 text-sm">
                 <Link className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
                   <LoginIcon /> <span>Sign In</span>
                 </Link>
@@ -127,12 +127,12 @@ export default function AppBar() {
               {open ? (
                 <CloseIcon
                   sx={{ fontSize: "28px" }}
-                  className="cursor-pointer text-blue hover:rotate-45 duration-300 ease-linear"
+                  className="cursor-pointer text-blue"
                 />
               ) : (
                 <MenuIcon
                   sx={{ fontSize: "28px" }}
-                  className="cursor-pointer text-blue hover:rotate-90 duration-300 ease-linear"
+                  className="cursor-pointer text-blue"
                 />
               )}
             </button>

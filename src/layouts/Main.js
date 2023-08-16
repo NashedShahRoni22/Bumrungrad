@@ -10,13 +10,13 @@ export default function Main() {
     <main>
       <AppBar />
       <Outlet />
+      <BottomBar />
       <div className="fixed bottom-2 min-w-full z-50">
         <MiddleBar />
       </div>
       <div className="fixed right-2 top-1/2 z-50">
         <SideBar />
       </div>
-      <BottomBar/>
     </main>
   );
 }

@@ -39,7 +39,7 @@ const GoogleMapsEmbed = () => {
 
 export default function BottomBar() {
   return (
-    <footer className="bg-cream p-8 text-blue">
+    <footer className="bg-cream py-20 text-blue">
       <div className="md:container md:mx-auto grid md:grid-cols-4 gap-6">
         <div>
           <p className="font-semibold">Services</p>
@@ -89,7 +89,7 @@ export default function BottomBar() {
         </p>
         <p>
           Bumrungrad Hospital Dhaka Office. <br />
-          Rupayan Prime,House-02,Road-07,Lift-09, Green Rd, Dhaka 1205
+          Rupayan Prime, House-02, Road-07, Lift-09, Green Rd, Dhaka 1205.
         </p>
       </div>
     </footer>
