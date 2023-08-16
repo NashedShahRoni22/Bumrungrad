@@ -5,10 +5,8 @@ import LandingBanner from "./LandingBanner";
 export default function Home() {
   return (
     <section>
-      <div>
         <LandingBanner/>
         <Services/>
-      </div>
     </section>
   );
 }

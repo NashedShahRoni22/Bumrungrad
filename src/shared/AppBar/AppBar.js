@@ -26,34 +26,12 @@ export default function AppBar() {
   };
   return (
     <nav className="bg-cream">
-      <section className="mx-5 py-5 lg:container lg:mx-auto flex items-center justify-between">
+      <section className="mx-5 py-3 relative md:container md:mx-auto flex items-center justify-between">
         <div>
           <img src={logo} alt="nav_logo" className="w-[200px]" />
         </div>
-        {/* Desktop View  */}
-        <div className="hidden lg:block">
-          <ul className="flex justify-center gap-8 text-[16px] text-blue">
-            {MenuItems.map((mi, i) => (
-              <li key={i} className="group relative">
-                <Link className="font-semibold">{mi.header}</Link>
-                {mi.childs && (
-                  <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
-                    {mi.childs?.map((mc, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <div className="h-2 bg-blue w-2 rounded-full"></div>
-                        <Link className="hover:ml-3 my-1 duration-300 ease-linear">
-                          {mc.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
         {/* Mobile View  */}
-        <div className="min-w-full absolute top-20 left-0 lg:hidden z-30">
+        <div className="min-w-full absolute top-16 left-0 md:hidden z-30">
           {open && (
             <ul className="min-h-[80vh] bg-white p-10 flex flex-col gap-4 md:gap-8 text-[16px] text-blue border-t-2 md:border-t-4 border-blue">
               {MenuItems.map((mi, i) => (
@@ -96,14 +74,36 @@ export default function AppBar() {
             </ul>
           )}
         </div>
+        {/* Desktop View  */}
+        <div className="hidden py-3 lg:block">
+          <ul className="flex justify-center gap-8 text-[16px] text-blue">
+            {MenuItems.map((mi, i) => (
+              <li key={i} className="group relative">
+                <Link className="font-semibold">{mi.header}</Link>
+                {mi.childs && (
+                  <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
+                    {mi.childs?.map((mc, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <div className="h-2 bg-blue w-2 rounded-full"></div>
+                        <Link className="hover:ml-3 my-1 duration-300 ease-linear">
+                          {mc.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="flex gap-4">
           <div className="relative group">
-            <Link className="md:px-4 md:py-2 md:bg-blue flex items-center gap-2 duration-300 ease-linear rounded-xl">
+            <Link className="lg:px-4 lg:py-2 lg:bg-blue flex items-center gap-2 duration-300 ease-linear rounded-xl">
               <PersonIcon
                 sx={{ fontSize: "28px" }}
-                className="text-blue md:text-white"
+                className="text-blue lg:text-white"
               />{" "}
-              <span className="hidden md:block text-white">Account</span>
+              <span className="hidden lg:block text-white">Account</span>
             </Link>
             <div className="hidden group-hover:block duration-300 ease-linear bg-white absolute z-50 min-w-[120px] md:min-w-[150px] rounded-xl shadow-xl">
               <div className="flex flex-col p-2 rounded-xl gap-2">
@@ -123,7 +123,7 @@ export default function AppBar() {
               className="cursor-pointer text-blue"
             />
             {/* Navbar Button  */}
-            <button className="lg:hidden z-50" onClick={() => setOpen(!open)}>
+            <button className="md:hidden z-50" onClick={() => setOpen(!open)}>
               {open ? (
                 <CloseIcon
                   sx={{ fontSize: "28px" }}
@@ -140,6 +140,28 @@ export default function AppBar() {
         </div>
       </section>
       <Divider />
+      {/* Tablet View  */}
+      <div className="hidden py-3 md:block lg:hidden">
+        <ul className="flex justify-center gap-8 text-[16px] text-blue">
+          {MenuItems.map((mi, i) => (
+            <li key={i} className="group relative">
+              <Link className="font-semibold">{mi.header}</Link>
+              {mi.childs && (
+                <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
+                  {mi.childs?.map((mc, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <div className="h-2 bg-blue w-2 rounded-full"></div>
+                      <Link className="hover:ml-3 my-1 duration-300 ease-linear">
+                        {mc.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }

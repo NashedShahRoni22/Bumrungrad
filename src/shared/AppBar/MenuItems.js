@@ -32,9 +32,6 @@ export const MenuItems = [
       ],
     },
     {
-      header: "Packages",
-    },
-    {
       header: "Insurance",
       childs: [
         {
@@ -50,12 +47,6 @@ export const MenuItems = [
           link: "/",
         },
       ],
-    },
-    {
-      header: "Clinic & Centers",
-    },
-    {
-      header: "Conditions & Treatments",
     },
     {
       header: "Contact",
@@ -77,5 +68,14 @@ export const MenuItems = [
           link: "/",
         },
       ],
+    },
+    {
+      header: "Clinic & Centers",
+    },
+    {
+      header: "Conditions & Treatments",
+    },
+    {
+      header: "Packages",
     },
   ];
