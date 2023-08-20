@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function LandingBanner() {
   return (
     <section className="bg-cream relative">
-      <div className="flex flex-col-reverse md:flex-row min-h-[80vh] justify-center items-center mx-5 md:container md:mx-auto relative">
+      <div className="flex flex-col-reverse md:flex-row py-20 justify-center items-center md:container md:mx-auto relative">
         <div className="md:w-1/2">
           <h1 className="text-4xl text-center md:text-left md:text-6xl lg:text-8xl font-bold text-blue">
             Asia's Favourite Medical <br />

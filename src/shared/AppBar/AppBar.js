@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuItems } from "./MenuItems";
 import logo from "../../assets/nav_logo.png";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import { Button, Divider } from "@mui/material";
+import { Divider } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 
@@ -24,16 +24,28 @@ export default function AppBar() {
       index: id,
     });
   };
+  // Function to handle scroll event
+  const handleScroll = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-cream">
+    <nav className="bg-cream sticky top-0 z-10">
       <section className="mx-5 py-3 relative md:container md:mx-auto flex items-center justify-between">
         <div>
           <img src={logo} alt="nav_logo" className="w-[200px]" />
         </div>
         {/* Mobile View  */}
-        <div className="min-w-full absolute top-16 left-0 md:hidden z-30">
+        <div className="min-w-full fixed top-16 left-0 md:hidden z-30">
           {open && (
-            <ul className="min-h-[80vh] bg-white p-10 flex flex-col gap-4 md:gap-8 text-[16px] text-blue border-t-2 md:border-t-4 border-blue">
+            <ul className="min-h-screen bg-white p-10 flex flex-col gap-4 md:gap-8 text-[16px] text-blue border-t-2 md:border-t-4 border-blue">
               {MenuItems.map((mi, i) => (
                 <>
                   <li key={i} className="relative">
@@ -96,6 +108,7 @@ export default function AppBar() {
             ))}
           </ul>
         </div>
+        {/* link and button  */}
         <div className="flex gap-4">
           <div className="relative group">
             <Link className="lg:px-4 lg:py-2 lg:bg-blue flex items-center gap-2 duration-300 ease-linear">
@@ -141,8 +154,8 @@ export default function AppBar() {
       </section>
       <Divider />
       {/* Tablet View  */}
-      <div className="hidden py-3 md:block lg:hidden">
-        <ul className="flex justify-center gap-8 text-[16px] text-blue">
+      <div className="hidden py-3 md:block lg:hidden md:container md:mx-auto">
+        <ul className="flex flex-wrap gap-8 text-[16px] text-blue">
           {MenuItems.map((mi, i) => (
             <li key={i} className="group relative">
               <Link className="font-semibold">{mi.header}</Link>

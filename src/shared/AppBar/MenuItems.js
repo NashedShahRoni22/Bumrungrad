@@ -49,6 +49,15 @@ export const MenuItems = [
       ],
     },
     {
+      header: "Clinic & Centers",
+    },
+    {
+      header: "Conditions & Treatments",
+    },
+    {
+      header: "Packages",
+    },
+    {
       header: "Contact",
       childs: [
         {
@@ -68,14 +77,5 @@ export const MenuItems = [
           link: "/",
         },
       ],
-    },
-    {
-      header: "Clinic & Centers",
-    },
-    {
-      header: "Conditions & Treatments",
-    },
-    {
-      header: "Packages",
     },
   ];
