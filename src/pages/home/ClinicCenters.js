@@ -13,45 +13,50 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 // import required modules
 import { EffectCoverflow } from "swiper/modules";
+import { Divider } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const swiperslides = [
   {
     img: eyeimg,
     name: "Eye Center",
-    desc: "Examination, treatment and surgical options by experienced ophthalmologists, using advanced technology.",
+    desc: "Building A, 18th Floor",
   },
   {
     img: prideimg,
     name: "Pride Clinic",
-    desc: "The services available from the Pride Clinic at Bumrungrad International Hospital cover every dimension of patient care called ‘Holistic Integrated and Personalized Care’.     ",
+    desc: "Building A (Clinical Building), 16th Floor, Counter A (16A)",
   },
   {
     img: digestdiseaseimg,
     name: "Digest Disease Center",
-    desc: "Screening, diagnosis and treatment of GI problems, including stomach, liver, and bowel diseases, by specialists in Gastroenterology and Hepatology",
+    desc: "Building B, 2nd floor, North Wing, Main Lobby escalators to the 2 floor, turn left",
   },
   {
     img: breastimg,
     name: "Breast Center",
-    desc: "Our breast specialists help women with breast cancer, non-cancerous tumors, lumps, breast pain, fibrocystic disease and other conditions.",
+    desc: "Building A, 16th floor",
   },
   {
     img: neuroscienceimg,
     name: "Neuro Science",
-    desc: "Diagnostic, therapeutic, surgical, rehabilitation services for epilepsy, migraine, dementia, Parkinson's and movement disorders. JCI-accredited stroke program.",
+    desc: "Building A, 19th floor",
   },
   {
     img: womens,
     name: "Womens Center",
-    desc: " Over 60 Ob/Gyn’s, including experts in fetal assessment, pre-natal genetics, high-risk pregnancy, menopause, gynecological and breast cancer. Fertility Clinic.",
+    desc: "Building B, 2nd floor, North Wing of Main Building",
   },
 ];
 
 export default function ClinicCenters() {
   return (
     <div className="py-10 px-10 my-10 md:container md:mx-auto rounded-xl shadow-xl">
-      <h1 className="text-[32px] font-bold text-blue">Clinic & Centers</h1>
-      <div className="my-10">
+      <h1 className="text-[32px] font-bold text-blue text-center">Clinic & Centers</h1>
+      <div className="my-5">
+        <Divider />
+      </div>
+      <div>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -83,17 +88,25 @@ export default function ClinicCenters() {
         >
           {swiperslides.map((sc, i) => (
             <SwiperSlide key={i}>
-              <div className="relative group">
-                <img
-                  src={sc.img}
-                  alt=""
-                  className="min-w-full min-h-[400px] max-h-[600px]"
-                />
-                <div className="absolute top-0 h-full w-full bg-black/60 flex items-end">
-                  <div className="flex flex-col text-white justify-end gap-1 p-5">
-                    <h5 className="text-xl font-semibold">{sc.name}</h5>
-                    <p className="">{sc.desc.slice(0, 60)}...</p>
-                  </div>
+              <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+                <div class="h-96 w-72">
+                  <img
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                    src={sc.img}
+                    alt=""
+                  />
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70"></div>
+                <div class="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0">
+                  <h1 class="font-dmserif text-xl font-bold text-white">
+                    {sc.name}
+                  </h1>
+                  <p class="mb-3 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {sc.desc.slice(0,100)}
+                  </p>
+                  <Link class="bg-white shadow-xl rounded-xl py-2 px-3.5 font-com text-sm capitalize text-blue font-semibold">
+                    See More
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
