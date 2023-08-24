@@ -38,7 +38,7 @@ export default function AppBar() {
 
   return (
     <nav className="bg-cream sticky top-0 z-10">
-      <section className="mx-5 py-3 relative md:container md:mx-auto flex items-center justify-between">
+      <section className="px-5 py-3 relative md:container md:mx-auto flex items-center justify-between">
         <div>
           <img src={logo} alt="nav_logo" className="w-[200px]" />
         </div>
@@ -154,7 +154,7 @@ export default function AppBar() {
       </section>
       <Divider />
       {/* Tablet View  */}
-      <div className="hidden py-3 md:block lg:hidden md:container md:mx-auto">
+      <section className="hidden px-5 py-3 md:block lg:hidden md:container md:mx-auto">
         <ul className="flex flex-wrap gap-8 text-[16px] text-blue">
           {MenuItems.map((mi, i) => (
             <li key={i} className="group relative">
@@ -174,7 +174,7 @@ export default function AppBar() {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </nav>
   );
 }

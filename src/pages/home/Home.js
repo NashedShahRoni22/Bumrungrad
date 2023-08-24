@@ -2,12 +2,14 @@ import React from "react";
 import Services from "./Services";
 import LandingBanner from "./LandingBanner";
 import ContactUs from "./ContactUs";
+import ClinicCenters from "./ClinicCenters";
 
 export default function Home() {
   return (
     <section>
         <LandingBanner/>
         <Services/>
+        <ClinicCenters/>
         <ContactUs/>
     </section>
   );

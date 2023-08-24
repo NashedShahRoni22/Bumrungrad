@@ -12,7 +12,7 @@ import { Divider } from "@mui/material";
 
 const services = [
   {
-    name: "Doctor Appointment",
+    name: "Book Appointment",
     img: appointment,
   },
   {
@@ -47,7 +47,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="py-10 px-5 my-10 shadow-xl rounded-xl md:container md:mx-auto">
+    <div className="py-10 px-10 my-10 shadow-xl rounded-xl md:container md:mx-auto">
       <h1 className="text-[32px] font-bold text-center text-blue">
         Our Services
       </h1>
