@@ -54,7 +54,7 @@ export default function ClinicCenters() {
   return (
     <div className="py-10 px-10 my-10 md:container md:mx-auto rounded-xl shadow-xl">
       <div className="flex justify-between items-center">
-        <h1 className="text-[32px] font-bold text-blue">Clinic & Centers</h1>
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue">Clinic & Centers</h1>
         <Link className="px-4 py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear font-semibold">
           View All
         </Link>
@@ -87,7 +87,10 @@ export default function ClinicCenters() {
             modifier: 1,
             slideShadows: true,
           }}
-          pagination={true}
+          pagination={{
+            clickable: true,
+            el: ".custom-pagination",
+          }}
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
@@ -117,6 +120,7 @@ export default function ClinicCenters() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="custom-pagination mt-5 flex gap-2 justify-center"></div>
       </div>
     </div>
   );
