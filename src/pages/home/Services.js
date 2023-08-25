@@ -47,7 +47,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="py-10 px-10 my-10 shadow-xl rounded-xl md:container md:mx-auto">
+    <div className="py-10 px-10 my-10 md:container md:mx-auto">
       <h1 className="text-[32px] font-bold text-center text-blue">
         Our Services
       </h1>
@@ -58,7 +58,7 @@ export default function Services() {
         {services.map((s, i) => (
           <Link
             key={i}
-            className="cursor-pointer flex flex-col lg:flex-row gap-4 items-center hover:shadow-xl duration-300 ease-linear p-4 rounded-xl"
+            className="cursor-pointer flex flex-col lg:flex-row gap-4 items-center shadow-xl hover:translate-y-5 duration-300 ease-linear p-4 rounded-xl"
           >
             <img src={s.img} alt={s.name} className="h-[100px] w-[100px]" />
             <h5 className="text-center font-semibold text-blue">{s.name}</h5>
