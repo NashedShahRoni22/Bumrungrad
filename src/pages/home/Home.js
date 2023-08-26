@@ -3,6 +3,7 @@ import Services from "./Services";
 import LandingBanner from "./LandingBanner";
 import ContactUs from "./ContactUs";
 import ClinicCenters from "./ClinicCenters";
+import WhyUs from "./WhyUs";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <LandingBanner/>
         <Services/>
         <ClinicCenters/>
+        <WhyUs/>
         <ContactUs/>
     </section>
   );

@@ -20,7 +20,7 @@ const blognews = ["Bumrungrad Health Blog", "News"];
 
 export default function BottomBar() {
   return (
-    <footer className="bg-cream pt-10 pb-28 md:pb-20 text-blue px-10">
+    <footer className="bg-cream pt-10 pb-28 md:pb-20 text-blue px-5">
       <div className="md:container md:mx-auto mx-5 grid grid-cols-2 md:grid-cols-4 gap-6">
         <div>
           <p className="font-semibold">Services</p>

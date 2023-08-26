@@ -47,7 +47,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="py-10 px-10 my-10 md:container md:mx-auto">
+    <div className="py-10 px-5 my-10 md:container md:mx-auto">
       <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-blue">
         Our Services
       </h1>
