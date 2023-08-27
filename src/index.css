@@ -14,18 +14,4 @@ code {
     monospace;
 }
 
-/* Custom pagination styles */
-.custom-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #DFE2F4; /* Change this to your desired color */
-  opacity: 0.7;
-  transition: background-color 0.3s, opacity 0.3s;
-  cursor: pointer;
-}
-
-.custom-pagination .swiper-pagination-bullet-active {
-  background-color: #28266F; /* Change this to your desired active color */
-  opacity: 1;
-}
 
