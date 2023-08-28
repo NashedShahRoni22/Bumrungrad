@@ -52,3 +52,9 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+
+@media (max-width: 768px) {
+  .autoplay-progress {
+    display: none;
+  }
+}

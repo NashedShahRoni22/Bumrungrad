@@ -31,8 +31,8 @@ const swiperslides = [
   },
   {
     img: digestdiseaseimg,
-    name: "Digest Disease Center",
-    desc: "Building B, 2nd floor, North Wing, Main Lobby escalators to the 2 floor, turn left",
+    name: "Digest Center",
+    desc: "Building B, 2nd floor, North Wing",
   },
   {
     img: breastimg,
@@ -66,11 +66,11 @@ export default function ClinicCenters() {
       <div>
         <Swiper
           effect={"coverflow"}
-          centeredSlides={true}
+          centeredSlides={false}
           breakpoints={{
             // Small screens (up to 640px)
-            640: {
-              slidesPerView: 1,
+            0: {
+              slidesPerView: 2,
             },
             // Medium screens (from 641px to 768px)
             768: {
@@ -78,7 +78,7 @@ export default function ClinicCenters() {
             },
             // Large screens (from 769px and above)
             1024: {
-              slidesPerView: 5,
+              slidesPerView: 4,
             },
           }}
           coverflowEffect={{
@@ -107,13 +107,13 @@ export default function ClinicCenters() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70"></div>
                 <div className="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0">
-                  <h1 className="font-dmserif text-xl font-bold text-white">
+                  <h1 className="mb-3 font-dmserif text-xl font-bold text-white">
                     {sc.name}
                   </h1>
-                  <p className="mb-3 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     {sc.desc.slice(0, 100)}
                   </p>
-                  <Link className="bg-white shadow-xl rounded-xl py-2 px-3.5 font-com text-sm capitalize text-blue font-semibold">
+                  <Link className="mt-3 bg-white shadow-xl rounded-xl py-2 px-3.5 font-com text-sm capitalize text-blue font-semibold">
                     See More
                   </Link>
                 </div>
