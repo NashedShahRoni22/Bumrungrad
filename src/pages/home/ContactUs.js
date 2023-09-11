@@ -46,8 +46,8 @@ export default function ContactUs() {
   ];
   return (
     <div className="md:container mx-auto p-5 md:p-10 my-5 md:my-10">
-      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue">
-        Contact Us
+      <h1 className="uppercase text-xl md:text-2xl lg:text-3xl font-bold text-blue">
+        Locate us
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-10">
         {ContactCards.map((cc, i) => (

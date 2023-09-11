@@ -35,14 +35,14 @@ export default function WhyUs() {
   ];
   return (
     <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto">
-      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue">
-        Why Choose us?
+      <h1 className="uppercase text-xl md:text-2xl lg:text-3xl font-bold text-blue">
+        Our achivements
       </h1>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{

@@ -111,7 +111,7 @@ export default function AppBar() {
         {/* link and button  */}
         <div className="flex gap-4">
           <div className="relative group">
-            <Link className="lg:px-4 lg:py-2 lg:bg-blue flex items-center gap-2 duration-300 ease-linear">
+            <Link className="lg:px-4 lg:py-2 rounded-md lg:bg-blue flex items-center gap-2 duration-300 ease-linear">
               <PersonIcon
                 sx={{ fontSize: "28px" }}
                 className="text-blue lg:text-white"
@@ -152,7 +152,6 @@ export default function AppBar() {
           </div>
         </div>
       </section>
-      <Divider />
       {/* Tablet View  */}
       <section className="hidden px-5 py-3 md:block lg:hidden md:container md:mx-auto">
         <ul className="flex flex-wrap gap-8 text-[16px] text-blue">
@@ -175,6 +174,7 @@ export default function AppBar() {
           ))}
         </ul>
       </section>
+      <Divider />
     </nav>
   );
 }

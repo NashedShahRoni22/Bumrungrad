@@ -55,7 +55,7 @@ export default function ClinicCenters() {
   return (
     <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto rounded-xl shadow-xl">
       <div className="flex justify-between items-center">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue">Clinic & Centers</h1>
+        <h1 className="uppercase text-xl md:text-2xl lg:text-3xl font-bold text-blue">Clinic & Centers</h1>
         <Link className="px-4 py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear font-semibold">
           View All
         </Link>
@@ -66,7 +66,7 @@ export default function ClinicCenters() {
       <div>
         <Swiper
           effect={"coverflow"}
-          centeredSlides={false}
+          centeredSlides={true}
           breakpoints={{
             // Small screens (up to 640px)
             0: {
@@ -78,7 +78,7 @@ export default function ClinicCenters() {
             },
             // Large screens (from 769px and above)
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 5,
             },
           }}
           coverflowEffect={{

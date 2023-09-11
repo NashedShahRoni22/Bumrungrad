@@ -1,5 +1,5 @@
 import React from "react";
-import BannerImage from "../../assets/banner_img.png";
+import BannerImage from "../../assets/Hero-Section-Images.png";
 import { Typewriter } from "react-simple-typewriter";
 
 export default function LandingBanner() {

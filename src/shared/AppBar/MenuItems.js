@@ -52,7 +52,7 @@ export const MenuItems = [
       header: "Clinic & Centers",
     },
     {
-      header: "Conditions & Treatments",
+      header: "Treatments",
     },
     {
       header: "Packages",
