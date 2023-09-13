@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import slider1 from "../../assets/bumrungrad_slider_images/Slider 01.jpg";
-import slider2 from "../../assets/bumrungrad_slider_images/Slider 02.jpg";
-import slider3 from "../../assets/bumrungrad_slider_images/Slider 03.jpg";
+import slider1 from "../../assets/bumrungrad_slider_images/new (1).png";
+import slider2 from "../../assets/bumrungrad_slider_images/new (2).png";
+import slider3 from "../../assets/bumrungrad_slider_images/new (3).png";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 

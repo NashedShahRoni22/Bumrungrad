@@ -14,4 +14,12 @@ code {
     monospace;
 }
 
+#finddoctor{
+  background: url("../src/assets/find_doctor.jpg") rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  background-blend-mode: multiply;
+}
+
 
