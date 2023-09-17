@@ -51,10 +51,10 @@ export default function WhyUs() {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper mt-5"
+        className="mySwiper mt-5 max-h-[80vh]"
       >
-        {sliderImgs.map((s) => (
-          <SwiperSlide>
+        {sliderImgs.map((s,i) => (
+          <SwiperSlide key={i}>
             <img src={s.src} alt="" />
           </SwiperSlide>
         ))}
