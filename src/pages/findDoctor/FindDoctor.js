@@ -8,9 +8,12 @@ import CachedIcon from "@mui/icons-material/Cached";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Loader from "../../shared/Loader/Loader";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 export default function FindDoctor() {
   const [advanceBox, setAdvanceBox] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const [name, setName] = React.useState("");
   const [speacility, setSpeacility] = React.useState("");
@@ -20,7 +23,6 @@ export default function FindDoctor() {
   const [time, setTime] = React.useState("");
   const [gender, setGender] = React.useState("");
   const [doctors, setDoctors] = useState([]);
-  // console.log(day);
 
   const [specialties, setSpecialities] = useState([]);
   const [subSpecialties, setSubSpecialities] = useState([]);
@@ -54,18 +56,22 @@ export default function FindDoctor() {
 
   //get doctors
   useEffect(() => {
+    setLoader(true);
     // Create a function to fetch data based on the URL
     const fetchData = () => {
       // Create a query string based on your query states
-      const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&schedule=${time}`;
+      const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&time=${time}`;
       // Create the base URL
-      const baseUrl = "https://api.bumrungraddiscover.com/api/doctor/search";
+      const baseUrl = "https://api.bumrungraddiscover.com/api/search/doctor";
       // Create the final URL by appending the query string if it's not empty
       const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl;
       // Fetch data from the API
       fetch(finalUrl)
         .then((res) => res.json())
-        .then((data) => setDoctors(data?.response?.data))
+        .then((data) => {
+          setDoctors(data?.response.data);
+          setLoader(false);
+        })
         .catch((error) => console.error(error));
     };
     // Call the fetchData function whenever any state changes
@@ -75,11 +81,11 @@ export default function FindDoctor() {
   return (
     <section className="min-h-screen">
       <div id="finddoctor" className="flex items-center">
-        <div className="container mx-10 md:mx-auto p-10 rounded-tl-3xl rounded-br-3xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
-          <h1 className="text-3xl font-semibold text-blue text-center">
+        <div className="container mx-5 md:mx-auto p-5 md:p-10 rounded-tl-3xl rounded-br-3xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
+          <h1 className="text-xl md:text-3xl font-semibold text-blue text-center">
             Find A Doctor
           </h1>
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4 mt-5 md:mt-10">
             <TextField
               id="outlined-basic"
               label="Enter Doctor Name"
@@ -98,7 +104,7 @@ export default function FindDoctor() {
                 label="Select Speacility"
                 onChange={(e) => setSpeacility(e.target.value)}
               >
-                {specialties.map((s, i) => (
+                {specialties?.map((s, i) => (
                   <MenuItem value={s?.id} key={i}>
                     {s?.name}
                   </MenuItem>
@@ -116,9 +122,9 @@ export default function FindDoctor() {
                 value={subSpeacility}
                 label="Select Sub Speacility"
                 onChange={(e) => setSubSpeacility(e.target.value)}
-                disabled={subSpecialties.length === 0}
+                disabled={subSpecialties?.length === 0}
               >
-                {subSpecialties.map((s, i) => (
+                {subSpecialties?.map((s, i) => (
                   <MenuItem value={s?.specialty_id} key={i}>
                     {s?.sub_specialty}
                   </MenuItem>
@@ -136,7 +142,7 @@ export default function FindDoctor() {
         </div>
       </div>
       {advanceBox && (
-        <form className="relative my-5 lg:w-1/2 mx-10 md:container md:mx-auto pt-20 px-10 pb-10 bg-white/90 rounded-tl-3xl shadow-md shadow-blue">
+        <form className="relative my-5 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-tl-3xl shadow-md shadow-blue">
           <button
             onClick={() => setAdvanceBox(!advanceBox)}
             className="absolute top-2 right-2 bg-red text-white rounded"
@@ -208,15 +214,44 @@ export default function FindDoctor() {
           </button>
         </form>
       )}
-
-      <div className="my-5 p-10 mx-5 md:container md:mx-auto shadow-xl rounded-xl">
-        {
-          doctors?.length > 0 ?
-          <p className="text-xl font-semibold">Total Doctors: {doctors?.length}</p>
-          :
-          <p className="text-xl font-semibold text-red text-center">No Doctors Found</p>
-        }
-      </div>
+      {loader ? (
+        <Loader />
+      ) : (
+        <div className="m-5 p-5 md:container md:mx-auto">
+          {doctors?.length > 0 ? (
+            <div>
+              <p className="text-xl md:text-3xl font-semibold">
+                Found  <span className="text-blue">{doctors?.length}</span> Doctor 
+              </p>
+              <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 my-5 md:my-10">
+                {doctors?.map((d, i) => (
+                  <div key={i} className="relative rounded">
+                    <img
+                      src={d.image}
+                      alt=""
+                      className="min-h-[400px] min-w-[250px] rounded"
+                    />
+                    <div className="absolute top-0 h-full w-full bg-black/40 overflow-hidden group rounded">
+                      <div className="text-white flex flex-col gap-2 justify-end h-full translate-y-12 group-hover:-translate-y-0 duration-300 ease-linear">
+                        <p className="md:text-3xl ml-2">{d.name}</p>
+                        <p className="text-xl ml-2">{d.specialty}</p>
+                        <button className="bg-blue text-white py-2.5 w-full">
+                          <EventAvailableIcon />
+                          <span className="uppercase ml-2.5">Appointment</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <p className="text-xl font-semibold text-red text-center">
+              No Doctor Found
+            </p>
+          )}
+        </div>
+      )}
     </section>
   );
 }
