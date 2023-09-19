@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import loaderAnim from '../../assets/anim/bumrungradLoader.json';
+import Lottie from 'lottie-react';
 
 export default function Loader() {
+  const style = {
+    height : 100
+  }
   return (
     <div className='min-h-[40vh] flex justify-center items-center gap-4'>
-        <div className='h-8 w-8 bg-blue shadow-xl rounded-full animate-bounce duration-300 ease-linear'></div>
-        <div className='h-8 w-8 bg-blue shadow-xl rounded-full'></div>
-        <div className='h-8 w-8 bg-blue shadow-xl rounded-full animate-bounce duration-300 ease-linear'></div>
+        <Lottie style={style} animationData={loaderAnim} loop={true} />
     </div>
   )
 }
