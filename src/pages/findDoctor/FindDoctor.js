@@ -12,11 +12,12 @@ import Loader from "../../shared/Loader/Loader";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import notFoundAnim from "../../assets/anim/notfound.json";
 import Lottie from "lottie-react";
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import { Link } from "react-router-dom";
 
 export default function FindDoctor() {
   const [advanceBox, setAdvanceBox] = useState(false);
@@ -42,6 +43,7 @@ export default function FindDoctor() {
   const [gender, setGender] = React.useState("");
   const [doctors, setDoctors] = useState([]);
 
+  // console.log(doctors);
   const [specialties, setSpecialities] = useState([]);
   const [subSpecialties, setSubSpecialities] = useState([]);
   const weekdays = [
@@ -91,6 +93,7 @@ export default function FindDoctor() {
       fetch(finalUrl)
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           setDoctors(data?.response?.data);
           setLoader(false);
         })
@@ -160,7 +163,10 @@ export default function FindDoctor() {
               Advance Search
               {advanceBox ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
             </button>
-            <button onClick={handleClickOpen} className="md:hidden bg-blue rounded px-4 py-3 text-white flex justify-between">
+            <button
+              onClick={handleClickOpen}
+              className="md:hidden bg-blue rounded px-4 py-3 text-white flex justify-between"
+            >
               More Serach
               {open ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
             </button>
@@ -240,7 +246,9 @@ export default function FindDoctor() {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} variant="contained" color="error">Close</Button>
+          <Button onClick={handleClose} variant="contained" color="error">
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
       {advanceBox && (
@@ -330,7 +338,7 @@ export default function FindDoctor() {
                 Doctor
               </p>
               {/* filters  */}
-              {/* <div className="flex gap-1 my-5">
+              <div className="flex gap-1 my-5">
                 {name && (
                   <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
                     {name} <CloseIcon />{" "}
@@ -366,11 +374,15 @@ export default function FindDoctor() {
                     {gender} <CloseIcon />{" "}
                   </button>
                 )}
-              </div> */}
+              </div>
 
               <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 my-5">
                 {doctors?.map((d, i) => (
-                  <div key={i} className="relative rounded">
+                  <Link
+                    to={`/doctor_details/${d.id}`}
+                    key={i}
+                    className="relative rounded"
+                  >
                     <img
                       src={d.image}
                       alt=""
@@ -386,7 +398,7 @@ export default function FindDoctor() {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

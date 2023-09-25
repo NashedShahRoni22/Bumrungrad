@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from '@mui/icons-material/Email';
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
@@ -114,13 +115,13 @@ export default function AppBar() {
         {/* link and button  */}
         <div className='flex gap-4'>
           <div className='relative group'>
-            <Link className='lg:px-4 lg:py-2 rounded-md lg:bg-blue flex items-center gap-2 duration-300 ease-linear'>
+            {/* <Link className='lg:px-4 lg:py-2 rounded-md lg:bg-blue flex items-center gap-2 duration-300 ease-linear'> */}
               <PersonIcon
                 sx={{ fontSize: '28px' }}
-                className='text-blue lg:text-white'
+                className='text-blue cursor-pointer'
               />{' '}
-              <span className='hidden lg:block text-white'>Account</span>
-            </Link>
+              {/* <span className='hidden lg:block text-white'>Account</span> */}
+            {/* </Link> */}
             <div className='hidden group-hover:block duration-300 ease-linear bg-white absolute z-50 min-w-[120px] md:min-w-[150px] rounded-xl shadow-xl'>
               <div className='flex flex-col p-2 rounded-xl gap-2 text-sm'>
                 <Link className='hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear'>
@@ -135,6 +136,10 @@ export default function AppBar() {
           </div>
           <div className='flex gap-4 items-center'>
             <WhatsAppIcon
+              sx={{ fontSize: '28px' }}
+              className='cursor-pointer text-blue'
+            />
+            <EmailIcon
               sx={{ fontSize: '28px' }}
               className='cursor-pointer text-blue'
             />
