@@ -7,7 +7,8 @@ import VissionMisson from '../pages/about/vissionMission/VissionMisson'
 import FactSheet from './../pages/about/factsheet/FactSheet';
 import Accreditation from '../pages/about/accreditation/Accreditation'
 import Foundation from '../pages/about/Foundation/Foundation'
-
+import Bumrungrad from '../pages/bumrungrad/Bumrungrad'
+import DoctorInfo from '../pages/findDoctor/DoctorInfo'
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: '/about_foundation',
         element:<Foundation/> ,
+      },
+      {
+        path: '/doctor_details/:id',
+        element: <DoctorInfo />,
       },
     ],
   },
