@@ -11,19 +11,19 @@ export const MenuItems = [
       },
       {
         name: 'Vision & Mision',
-        link: '/',
+        link: '/about_vissionMisson',
       },
       {
         name: 'Factsheet',
-        link: '/',
+        link: '/about_factsheet',
       },
       {
         name: 'Accreditation & Awards',
-        link: '/',
+        link: '/about_accreditation',
       },
       {
         name: 'Bumrungrad & Foundation',
-        link: '/',
+        link: '/about_foundation',
       },
       {
         name: 'Investor & Relation',
