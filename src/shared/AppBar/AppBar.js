@@ -37,7 +37,7 @@ export default function AppBar() {
   }, []);
 
   return (
-    <nav className='bg-cream sticky top-0 z-10'>
+    <nav className='bg-cream sticky top-0 z-20'>
       <section className='px-5 py-3 relative md:container md:mx-auto flex items-center justify-between'>
         <div>
           <img src={logo} alt='nav_logo' className='w-[200px]' />
