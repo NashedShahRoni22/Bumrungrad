@@ -42,6 +42,7 @@ export default function FindDoctor() {
   const [time, setTime] = React.useState("");
   const [gender, setGender] = React.useState("");
   const [doctors, setDoctors] = useState([]);
+  const [query, setQuery] = useState({});
 
   // console.log(doctors);
   const [specialties, setSpecialities] = useState([]);
@@ -93,8 +94,8 @@ export default function FindDoctor() {
       fetch(finalUrl)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-          setDoctors(data?.response?.data);
+          setDoctors(data.response.data);
+          setQuery(data.response.query);
           setLoader(false);
         })
         .catch((error) => console.error(error));
@@ -105,8 +106,9 @@ export default function FindDoctor() {
 
   return (
     <section className="min-h-screen">
+      {/* search field  */}
       <div id="finddoctor" className="flex items-center">
-        <div className="container mx-5 md:mx-auto p-5 md:p-10 rounded-tl-3xl rounded-br-3xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
+        <div className="container mx-5 md:mx-auto p-10 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
           <h1 className="text-xl md:text-3xl font-semibold text-blue text-center">
             Find A Doctor
           </h1>
@@ -176,11 +178,17 @@ export default function FindDoctor() {
       <Dialog
         open={open}
         onClose={handleClose}
+        fullWidth={true}
+        maxWidth={"lg"}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        className="md:hidden"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Serach your preference options"}
+        <DialogTitle
+          id="alert-dialog-title"
+          className="text-center text-blue !font-semibold"
+        >
+          {"Your Preferences"}
         </DialogTitle>
         <DialogContent>
           <form className="py-1.5">
@@ -245,15 +253,15 @@ export default function FindDoctor() {
             </div>
           </form>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} variant="contained" color="error">
-            Close
-          </Button>
+        <DialogActions className="!flex !justify-center mb-5">
+            <Button onClick={handleClose} variant="contained" className="!bg-blue !shadow-none">
+              Close
+            </Button>
         </DialogActions>
       </Dialog>
       {advanceBox && (
         <>
-          <form className="hidden md:block relative my-5 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-tl-3xl shadow-md shadow-blue">
+          <form className="hidden md:block relative my-5 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-xl shadow-md shadow-blue">
             <button
               onClick={() => setAdvanceBox(!advanceBox)}
               className="absolute top-2 right-2 bg-red text-white rounded"
@@ -326,55 +334,67 @@ export default function FindDoctor() {
           </form>
         </>
       )}
+      {/* filters  */}
+      <div className="mx-5 p-5 md:container md:mx-auto">
+        {name !== "" ||
+        query?.specialty ||
+        query?.sub_specialty ||
+        query?.lang ||
+        query?.day ||
+        query?.schedule ||
+        query?.gender ? (
+          <p className="text-xl md:text-3xl font-semibold">Filters</p>
+        ) : null}
 
+        <div className="flex gap-1 mt-5">
+          {name && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {name} <CloseIcon />{" "}
+            </button>
+          )}
+          {query?.specialty && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {query?.specialty} <CloseIcon />{" "}
+            </button>
+          )}
+          {query?.sub_specialty && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {query?.sub_specialty} <CloseIcon />{" "}
+            </button>
+          )}
+          {query?.lang && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {query?.lang} <CloseIcon />{" "}
+            </button>
+          )}
+          {query?.day && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {query?.day} <CloseIcon />{" "}
+            </button>
+          )}
+          {query?.schedule && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {query?.schedule} <CloseIcon />{" "}
+            </button>
+          )}
+          {query?.gender && (
+            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
+              {query?.gender} <CloseIcon />{" "}
+            </button>
+          )}
+        </div>
+      </div>
+      {/* doctors data  */}
       {loader ? (
         <Loader />
       ) : (
-        <div className="m-5 p-5 md:container md:mx-auto">
+        <div className="mx-5 p-5 md:container md:mx-auto">
           {doctors?.length > 0 ? (
             <div>
               <p className="text-xl md:text-3xl font-semibold">
                 Found <span className="text-blue">{doctors?.length}</span>{" "}
                 Doctor
               </p>
-              {/* filters  */}
-              <div className="flex gap-1 my-5">
-                {name && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {name} <CloseIcon />{" "}
-                  </button>
-                )}
-                {speacility && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {speacility} <CloseIcon />{" "}
-                  </button>
-                )}
-                {subSpeacility && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {subSpeacility} <CloseIcon />{" "}
-                  </button>
-                )}
-                {lang && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {lang} <CloseIcon />{" "}
-                  </button>
-                )}
-                {day && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {day} <CloseIcon />{" "}
-                  </button>
-                )}
-                {time && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {time} <CloseIcon />{" "}
-                  </button>
-                )}
-                {gender && (
-                  <button className="border-blue hover:shadow-xl duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded text-xl">
-                    {gender} <CloseIcon />{" "}
-                  </button>
-                )}
-              </div>
 
               <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 my-5">
                 {doctors?.map((d, i) => (
@@ -394,7 +414,7 @@ export default function FindDoctor() {
                         <p className="text-xl ml-2">{d.specialty}</p>
                         <button className="bg-blue text-white py-2.5 w-full">
                           <EventAvailableIcon />
-                          <span className="uppercase ml-2.5">Appointment</span>
+                          <span className="capitalize ml-2.5">Appointment</span>
                         </button>
                       </div>
                     </div>
