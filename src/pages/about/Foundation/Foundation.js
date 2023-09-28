@@ -237,8 +237,8 @@ const Foundation = () => {
             call: Ms. Orathai - 02 011 5006 or Ms. Porranee - 02 2011 5049
           </li>
           <li className='list-disc mt-2'>
-            To inquire about how to support foundation projects, please call:
-            Ms. Chulaluck 084 751 2483 / Email chulaluck@bumrungrad.com
+            To the inquire about how to support foundation projects, please
+            call: Ms. Chulaluck 084 751 2483 / Email chulaluck@bumrungrad.com
           </li>
         </ol>
         <h1 className='text-[16px] py-6 text-blue font-semibold'>Address</h1>
