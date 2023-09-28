@@ -40,3 +40,9 @@ code {
   backdrop-filter: blur(15px);
 }
 
+.doctor-bg{
+  background: url("./assets//Single_Doc\ \(1\).png");
+  background-position: center;
+  background-size: cover;
+}
+
