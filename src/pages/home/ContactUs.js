@@ -1,5 +1,8 @@
 import React from "react";
 import ContactCardImg from "../../assets/contact_card.png";
+import contactAnim from "../../assets/anim/contact.json"
+import Lottie from "lottie-react";
+import { TextField } from "@mui/material";
 
 export default function ContactUs() {
   const ContactCards = [
@@ -12,13 +15,13 @@ export default function ContactUs() {
       phone1: "+8801847284860",
       phone2: "+8801324-418100",
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.05224193445!2d90.3824876761062!3d23.745516388962468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b91b29851709%3A0xc3d50a2ecf8fad9a!2sBumrungrad%20Hospital%20Dhaka%20Office!5e0!3m2!1sen!2sbd!4v1692206329747!5m2!1sen!2sbd",
-    },
+    }, 
     {
-      office: "Gulshan Office",
-      building: "Mahanaz Monsur Tower-1",
-      floor: "8th Floor (Lift-8)",
-      house: "House:11/A, Road: 130",
-      city: "Gulshan-1, Dhaka-1212",
+      office: "Banani Office",
+      building: "Alamin Park Panorama (Beside Banani Post Office),",
+      floor: "8th Floor (Lift-5)",
+      house: "Road 13/A, Block - C, House 105,",
+      city: "Banani, Dhaka - 1213,",
       phone1: "+8801977284860",
       phone2: "+8801847284862",
       map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29212.303573866055!2d90.3837837!3d23.7638509!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c72e25bd9c23%3A0x3d32da1eea1d8b1c!2sBumrungrad%20Hospital%20Bangladesh%20%7C%20Patient%20Support%20Center%20In%20Gulshan%20Dhaka%20%7C%20Book%20Your%20Doctor%20Appointment%20at%20Bumrungrad!5e0!3m2!1sen!2ssg!4v1692561871626!5m2!1sen!2ssg",
@@ -44,9 +47,25 @@ export default function ContactUs() {
       map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d939716.4091297725!2d90.5450213!3d23.0689941!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd9b23e4a2043%3A0x4d00aafa2c904ae3!2zQnVtcnVuZ3JhZCBJbnRlcm5hdGlvbmFsIEhvc3BpdGFsIFJlZmVycmFsIE9mZmljZS1DaGF0dGFncmFtIC4vLyDgpqzgpr7gpq7gprDgp4Hgpqjgppfgp43gprDgpqYg4KaH4Kao4KeN4Kaf4Ka-4Kaw4Kao4KeN4Kav4Ka-4Ka24Kao4Ka-4KayIOCmueCmvuCmuOCmquCmvuCmpOCmvuCmsiDgprDgp4fgpqvgpr7gprDgp4fgprIg4KaF4Kar4Ka_4Ka4IOCmmuCmn-CnjeCmn-Cml-CnjeCmsOCmvuCmrg!5e0!3m2!1sen!2ssg!4v1692561993428!5m2!1sen!2ssg",
     },
   ];
+  const style = {
+    height: 400
+  }
   return (
     <div className="md:container mx-auto p-5 md:p-10 my-5 md:my-10">
-      <h1 className="uppercase text-xl md:text-2xl lg:text-3xl font-bold text-blue">
+      <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
+        Contact us
+      </h1>
+      <div className="my-10">
+        <div>
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />        
+        </div>
+        <div>
+          <Lottie animationData={contactAnim} loop={true} style={style} />
+        </div>
+      </div>
+      <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
         Locate us
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-10">

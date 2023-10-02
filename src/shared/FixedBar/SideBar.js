@@ -1,12 +1,12 @@
 import React from "react";
-import line from "../../assets/line.png";
+// import line from "../../assets/line.png";
 import whatsapp from "../../assets/whatsapp.png";
-import viber from "../../assets/viber.png";
+// import viber from "../../assets/viber.png";
 import telegram from "../../assets/telegram.png";
 
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 export default function SideBar() {

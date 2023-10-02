@@ -25,10 +25,10 @@ export const MenuItems = [
         name: 'Bumrungrad & Foundation',
         link: '/about_foundation',
       },
-      {
-        name: 'Investor & Relation',
-        link: '/',
-      },
+      // {
+      //   name: 'Investor & Relation',
+      //   link: '/',
+      // },
     ],
   },
   {
@@ -60,6 +60,10 @@ export const MenuItems = [
   {
     header: 'Contact',
     childs: [
+      {
+        name: 'Locate Us',
+        link: '/locate_us',
+      },
       {
         name: 'Hospital Information',
         link: '/',

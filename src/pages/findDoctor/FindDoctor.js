@@ -56,6 +56,19 @@ export default function FindDoctor() {
     "Thursday",
     "Friday",
   ];
+  const languages = [
+    "Thai",
+    "English",
+    "Arabic",
+    "Chinese",
+    "Dutch",
+    "French",
+    "German",
+    "Hindi",
+    "Japanese",
+    "Spanish",
+    "Urdo",
+  ];
 
   const style = {
     height: 300,
@@ -202,9 +215,9 @@ export default function FindDoctor() {
                   label="Language"
                   onChange={(e) => setLang(e.target.value)}
                 >
-                  <MenuItem value={1}>English</MenuItem>
-                  <MenuItem value={2}>Thai</MenuItem>
-                  <MenuItem value={3}>Indian</MenuItem>
+                  {languages.map((l, i) => (
+                    <MenuItem value={i}>{l}</MenuItem>
+                  ))}
                 </Select>
               </FormControl>
               <FormControl fullWidth>
@@ -254,9 +267,13 @@ export default function FindDoctor() {
           </form>
         </DialogContent>
         <DialogActions className="!flex !justify-center mb-5">
-            <Button onClick={handleClose} variant="contained" className="!bg-blue !shadow-none">
-              Close
-            </Button>
+          <Button
+            onClick={handleClose}
+            variant="contained"
+            className="!bg-blue !shadow-none"
+          >
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
       {advanceBox && (
@@ -278,9 +295,9 @@ export default function FindDoctor() {
                   label="Language"
                   onChange={(e) => setLang(e.target.value)}
                 >
-                  <MenuItem value={1}>English</MenuItem>
-                  <MenuItem value={2}>Thai</MenuItem>
-                  <MenuItem value={3}>Indian</MenuItem>
+                  {languages.map((l,i) => (
+                    <MenuItem value={i}>{l}</MenuItem>
+                  ))}
                 </Select>
               </FormControl>
               <FormControl fullWidth>

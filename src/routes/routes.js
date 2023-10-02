@@ -8,6 +8,7 @@ import VissionMisson from '../pages/about/vissionMission/VissionMisson'
 import FactSheet from '../pages/about/factsheet/FactSheet'
 import Accreditation from '../pages/about/accreditation/Accreditation'
 import Foundation from '../pages/about/Foundation/Foundation'
+import ContactUs from '../pages/home/ContactUs'
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: '/doctor_details/:id',
         element: <DoctorInfo />,
+      },
+      {
+        path: '/locate_us',
+        element: <ContactUs />,
       },
     ],
   },
