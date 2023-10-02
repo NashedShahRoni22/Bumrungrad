@@ -1,8 +1,8 @@
 import React from "react";
 import ContactCardImg from "../../assets/contact_card.png";
-import contactAnim from "../../assets/anim/contact.json"
+import contactAnim from "../../assets/anim/contact.json";
 import Lottie from "lottie-react";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 export default function ContactUs() {
   const ContactCards = [
@@ -15,7 +15,7 @@ export default function ContactUs() {
       phone1: "+8801847284860",
       phone2: "+8801324-418100",
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.05224193445!2d90.3824876761062!3d23.745516388962468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b91b29851709%3A0xc3d50a2ecf8fad9a!2sBumrungrad%20Hospital%20Dhaka%20Office!5e0!3m2!1sen!2sbd!4v1692206329747!5m2!1sen!2sbd",
-    }, 
+    },
     {
       office: "Banani Office",
       building: "Alamin Park Panorama (Beside Banani Post Office),",
@@ -48,20 +48,28 @@ export default function ContactUs() {
     },
   ];
   const style = {
-    height: 400
-  }
+    height: 400,
+  };
   return (
     <div className="md:container mx-auto p-5 md:p-10 my-5 md:my-10">
       <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
         Contact us
       </h1>
-      <div className="my-10">
-        <div>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />        
-        </div>
-        <div>
+      <div className="my-10 md:flex gap-8 items-center">
+        <form className="flex flex-col gap-4 md:w-1/2 shadow p-5 rounded">
+          <TextField label="Enter Name" variant="outlined" />
+          <TextField label="Enter Email" variant="outlined" />
+          <TextField
+            label="Enter Message"
+            variant="outlined"
+            multiline
+            rows={5}
+          />
+          <Button variant="contained" className="bg-blue">
+            Submit
+          </Button>
+        </form>
+        <div className=" md:w-1/2">
           <Lottie animationData={contactAnim} loop={true} style={style} />
         </div>
       </div>
