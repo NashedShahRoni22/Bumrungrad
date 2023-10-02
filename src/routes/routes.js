@@ -8,7 +8,13 @@ import VissionMisson from '../pages/about/vissionMission/VissionMisson'
 import FactSheet from '../pages/about/factsheet/FactSheet'
 import Accreditation from '../pages/about/accreditation/Accreditation'
 import Foundation from '../pages/about/Foundation/Foundation'
+<<<<<<< HEAD
 import ContactUs from '../pages/home/ContactUs'
+=======
+import WeAccept from '../pages/insurance/WeAccept'
+import GoodVibes from '../pages/insurance/GoodVibes'
+import PackagePromotion from '../pages/insurance/PackagePromotion'
+>>>>>>> fa452fab57c066800fe06f8ddeb33c85d53eccd2
 
 export const router = createBrowserRouter([
   {
@@ -48,8 +54,21 @@ export const router = createBrowserRouter([
         element: <DoctorInfo />,
       },
       {
+<<<<<<< HEAD
         path: '/locate_us',
         element: <ContactUs />,
+=======
+        path: '/insurance_weaccept',
+        element: <WeAccept />,
+      },
+      {
+        path: '/insurance_goodVibes',
+        element: <GoodVibes />,
+      },
+      {
+        path: '/insurance_packagePromotion',
+        element: <PackagePromotion />,
+>>>>>>> fa452fab57c066800fe06f8ddeb33c85d53eccd2
       },
     ],
   },

@@ -36,15 +36,15 @@ export const MenuItems = [
     childs: [
       {
         name: 'We Accept',
-        link: '/',
+        link: '/insurance_weaccept',
       },
       {
         name: 'Good Vibes',
-        link: '/',
+        link: '/insurance_goodVibes',
       },
       {
         name: 'Packages & Promotion',
-        link: '/',
+        link: '/insurance_packagePromotion',
       },
     ],
   },
