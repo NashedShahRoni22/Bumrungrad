@@ -44,7 +44,7 @@ export const MenuItems = [
       },
       {
         name: 'Packages & Promotion',
-        link: '/insurance_packagePromotion',
+        link: '/insurance_package_promotion',
       },
     ],
   },

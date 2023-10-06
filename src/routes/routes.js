@@ -12,6 +12,7 @@ import ContactUs from '../pages/home/ContactUs'
 import WeAccept from '../pages/insurance/WeAccept'
 import GoodVibes from '../pages/insurance/GoodVibes'
 import PackagePromotion from '../pages/insurance/PackagePromotion'
+import Appointment from '../pages/appointment/Appointment'
 
 export const router = createBrowserRouter([
   {
@@ -63,8 +64,12 @@ export const router = createBrowserRouter([
         element: <GoodVibes />,
       },
       {
-        path: '/insurance_packagePromotion',
+        path: '/insurance_package_promotion',
         element: <PackagePromotion />,
+      },
+      {
+        path: '/appointment',
+        element: <Appointment />,
       },
     ],
   },

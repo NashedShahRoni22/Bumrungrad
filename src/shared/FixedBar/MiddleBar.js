@@ -12,10 +12,10 @@ export default function MiddleBar() {
           <SearchIcon sx={{ fontSize: "24px" }} />
           <p className="text-[16px] text-center">Find Doctor</p>
         </Link>
-        <div className="flex flex-col md:flex-row gap-2.5 px-3 py-2 md:px-6 md:py-4 hover:bg-green items-center duration-300 ease-linear cursor-pointer text-white">
+        <Link to="/appointment" className="flex flex-col md:flex-row gap-2.5 px-3 py-2 md:px-6 md:py-4 hover:bg-green items-center duration-300 ease-linear cursor-pointer text-white">
           <EventAvailableIcon sx={{ fontSize: "24px" }} />
           <p className="text-[16px] text-center"> Book Appointment</p>
-        </div>
+        </Link>
         <div className="rounded-r-xl flex flex-col md:flex-row gap-2.5 px-3 py-2 md:px-6 md:py-4 hover:bg-green items-center duration-300 ease-linear cursor-pointer text-white">
           <HelpOutlineIcon sx={{ fontSize: "24px" }} />
           <p className="text-[16px] text-center">Send Query</p>
