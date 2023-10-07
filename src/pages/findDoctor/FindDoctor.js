@@ -41,34 +41,46 @@ export default function FindDoctor() {
   const [day, setDay] = React.useState("");
   const [time, setTime] = React.useState("");
   const [gender, setGender] = React.useState("");
+
   const [doctors, setDoctors] = useState([]);
   const [query, setQuery] = useState({});
-
-  // console.log(doctors);
+  const postData = {
+    name,
+    speacility,
+    subSpeacility,
+    lang,
+    day,
+    time,
+    gender,
+  };
+  // console.log(postData);
   const [specialties, setSpecialities] = useState([]);
   const [subSpecialties, setSubSpecialities] = useState([]);
   const weekdays = [
-    "Saturday",
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
+    { name: "Saturday" },
+    { name: "Sunday" },
+    { name: "Monday" },
+    { name: "Tuesday" },
+    { name: "Wednesday" },
+    { name: "Thursday" },
+    { name: "Friday" },
   ];
   const languages = [
-    "Thai",
-    "English",
-    "Arabic",
-    "Chinese",
-    "Dutch",
-    "French",
-    "German",
-    "Hindi",
-    "Japanese",
-    "Spanish",
-    "Urdo",
+    { name: "Thai" },
+    { name: "English" },
+    { name: "Arabic" },
+    { name: "Chinese" },
+    { name: "Dutch" },
+    { name: "French" },
+    { name: "German" },
+    { name: "Hindi" },
+    { name: "Japanese" },
+    { name: "Spanish" },
+    { name: "Urdo" },
   ];
+
+  const times = [{ name: "Morning" }, { name: "Evening" }, { name: "Night" }];
+  const genders = [{ name: "Male" }, { name: "Female" }];
 
   const style = {
     height: 300,
@@ -98,7 +110,7 @@ export default function FindDoctor() {
     // Create a function to fetch data based on the URL
     const fetchData = () => {
       // Create a query string based on your query states
-      const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&schedule=${time}&day=${day}`;
+      const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&shift=${time}&day=${day}`;
       // Create the base URL
       const baseUrl = "https://api.bumrungraddiscover.com/api/search/doctor";
       // Create the final URL by appending the query string if it's not empty
@@ -107,9 +119,10 @@ export default function FindDoctor() {
       fetch(finalUrl)
         .then((res) => res.json())
         .then((data) => {
-          setDoctors(data.response.data);
-          setQuery(data.response.query);
+          setDoctors(data.data);
+          setQuery(data.query);
           setLoader(false);
+          console.log(data);
         })
         .catch((error) => console.error(error));
     };
@@ -165,7 +178,7 @@ export default function FindDoctor() {
                 disabled={subSpecialties?.length === 0}
               >
                 {subSpecialties?.map((s, i) => (
-                  <MenuItem value={s?.id} key={i}>
+                  <MenuItem value={s?.sub_specialty} key={i}>
                     {s?.sub_specialty}
                   </MenuItem>
                 ))}
@@ -188,6 +201,7 @@ export default function FindDoctor() {
           </div>
         </div>
       </div>
+      {/* Mobile View Search Fields */}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -216,7 +230,9 @@ export default function FindDoctor() {
                   onChange={(e) => setLang(e.target.value)}
                 >
                   {languages.map((l, i) => (
-                    <MenuItem value={i}>{l}</MenuItem>
+                    <MenuItem value={l.name} key={i}>
+                      {l.name}
+                    </MenuItem>
                   ))}
                 </Select>
               </FormControl>
@@ -230,8 +246,8 @@ export default function FindDoctor() {
                   onChange={(e) => setDay(e.target.value)}
                 >
                   {weekdays.map((w, i) => (
-                    <MenuItem value={i + 1} key={i}>
-                      {w}
+                    <MenuItem value={w.name} key={i}>
+                      {w.name}
                     </MenuItem>
                   ))}
                 </Select>
@@ -245,9 +261,11 @@ export default function FindDoctor() {
                   label="Time"
                   onChange={(e) => setTime(e.target.value)}
                 >
-                  <MenuItem value={1}>Morning</MenuItem>
-                  <MenuItem value={2}>Evening</MenuItem>
-                  <MenuItem value={3}>Night</MenuItem>
+                  {times.map((t, i) => (
+                    <MenuItem key={i} value={t.name}>
+                      {t.name}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
               <FormControl fullWidth>
@@ -259,8 +277,11 @@ export default function FindDoctor() {
                   label="Gender"
                   onChange={(e) => setGender(e.target.value)}
                 >
-                  <MenuItem value={1}>Female</MenuItem>
-                  <MenuItem value={2}>Male</MenuItem>
+                  {genders.map((g, i) => (
+                    <MenuItem value={g.name} key={i}>
+                      {g.name}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             </div>
@@ -276,6 +297,7 @@ export default function FindDoctor() {
           </Button>
         </DialogActions>
       </Dialog>
+      {/* Tab View Search Fields */}
       {advanceBox && (
         <>
           <form className="hidden md:block relative my-5 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-xl shadow-md shadow-blue">
@@ -295,8 +317,10 @@ export default function FindDoctor() {
                   label="Language"
                   onChange={(e) => setLang(e.target.value)}
                 >
-                  {languages.map((l,i) => (
-                    <MenuItem value={i}>{l}</MenuItem>
+                  {languages.map((l, i) => (
+                    <MenuItem value={l.name} key={i}>
+                      {l.name}
+                    </MenuItem>
                   ))}
                 </Select>
               </FormControl>
@@ -310,8 +334,8 @@ export default function FindDoctor() {
                   onChange={(e) => setDay(e.target.value)}
                 >
                   {weekdays.map((w, i) => (
-                    <MenuItem value={i + 1} key={i}>
-                      {w}
+                    <MenuItem value={w.name} key={i}>
+                      {w.name}
                     </MenuItem>
                   ))}
                 </Select>
@@ -325,9 +349,11 @@ export default function FindDoctor() {
                   label="Time"
                   onChange={(e) => setTime(e.target.value)}
                 >
-                  <MenuItem value={1}>Morning</MenuItem>
-                  <MenuItem value={2}>Evening</MenuItem>
-                  <MenuItem value={3}>Night</MenuItem>
+                  {times.map((t, i) => (
+                    <MenuItem key={i} value={t.name}>
+                      {t.name}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
               <FormControl fullWidth>
@@ -339,8 +365,11 @@ export default function FindDoctor() {
                   label="Gender"
                   onChange={(e) => setGender(e.target.value)}
                 >
-                  <MenuItem value={1}>Female</MenuItem>
-                  <MenuItem value={2}>Male</MenuItem>
+                  {genders.map((g, i) => (
+                    <MenuItem value={g.name} key={i}>
+                      {g.name}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             </div>
@@ -423,7 +452,7 @@ export default function FindDoctor() {
                     <img
                       src={d.image}
                       alt=""
-                      className="min-h-[400px] min-w-[250px] rounded"
+                      className="rounded"
                     />
                     <div className="absolute top-0 h-full w-full bg-black/40 overflow-hidden group rounded">
                       <div className="text-white flex flex-col gap-2 justify-end h-full translate-y-12 group-hover:-translate-y-0 duration-300 ease-linear">
@@ -440,9 +469,9 @@ export default function FindDoctor() {
               </div>
             </div>
           ) : (
-            <div className="min-h-[40vh]">
-              <Lottie style={style} animationData={notFoundAnim} loop={true} />;
-              <p className="text-xl font-semibold text-red text-center">
+            <div className="min-h-[40vh] shadow-xl rounded">
+              <Lottie style={style} animationData={notFoundAnim} loop={true} />
+              <p className="text-xl font-semibold text-blue text-center">
                 No Doctor Found
               </p>
             </div>
