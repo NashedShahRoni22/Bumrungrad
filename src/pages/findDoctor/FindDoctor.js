@@ -122,7 +122,7 @@ export default function FindDoctor() {
           setDoctors(data.data);
           setQuery(data.query);
           setLoader(false);
-          console.log(data);
+          // console.log(data.query);
         })
         .catch((error) => console.error(error));
     };
@@ -158,7 +158,7 @@ export default function FindDoctor() {
                 onChange={(e) => setSpeacility(e.target.value)}
               >
                 {specialties?.map((s, i) => (
-                  <MenuItem value={s?.id} key={i}>
+                  <MenuItem value={s?.name} key={i}>
                     {s?.name}
                   </MenuItem>
                 ))}
@@ -300,7 +300,7 @@ export default function FindDoctor() {
       {/* Tab View Search Fields */}
       {advanceBox && (
         <>
-          <form className="hidden md:block relative my-5 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-xl shadow-md shadow-blue">
+          <form className="hidden md:block relative mt-5 mb-10 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-xl shadow-md shadow-blue">
             <button
               onClick={() => setAdvanceBox(!advanceBox)}
               className="absolute top-2 right-2 bg-red text-white rounded"
@@ -381,63 +381,92 @@ export default function FindDoctor() {
         </>
       )}
       {/* filters  */}
-      <div className="mx-5 p-5 md:container md:mx-auto">
-        {name !== "" ||
-        query?.specialty ||
-        query?.sub_specialty ||
-        query?.lang ||
-        query?.day ||
-        query?.schedule ||
-        query?.gender ? (
-          <p className="text-xl md:text-3xl font-semibold">Filters</p>
-        ) : null}
-
-        <div className="flex gap-1 mt-5">
-          {name && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {name} <CloseIcon />{" "}
-            </button>
-          )}
-          {query?.specialty && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {query?.specialty} <CloseIcon />{" "}
-            </button>
-          )}
-          {query?.sub_specialty && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {query?.sub_specialty} <CloseIcon />{" "}
-            </button>
-          )}
-          {query?.lang && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {query?.lang} <CloseIcon />{" "}
-            </button>
-          )}
-          {query?.day && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {query?.day} <CloseIcon />{" "}
-            </button>
-          )}
-          {query?.schedule && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {query?.schedule} <CloseIcon />{" "}
-            </button>
-          )}
-          {query?.gender && (
-            <button className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl">
-              {query?.gender} <CloseIcon />{" "}
-            </button>
-          )}
+      {query?.name ||
+      query?.specialty ||
+      query?.sub_specialty ||
+      query?.lang ||
+      query?.day ||
+      query?.schedule ||
+      query?.gender ? (
+        <div className="mx-5 mb-5 mt-10 md:container md:mx-auto md:flex gap-2">
+          <p className="text-lg md:text-xl font-semibold">Filters:</p>
+          <div className="flex flex-wrap gap-1">
+            {name && (
+              <button
+                onClick={() => setName("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {name} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.specialty && (
+              <button
+                onClick={() => setSpeacility("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.specialty} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.sub_specialty && (
+              <button
+                onClick={() => setSubSpeacility("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.sub_specialty} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.lang && (
+              <button
+                onClick={() => setLang("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.lang} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.day && (
+              <button
+                onClick={() => setDay("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.day} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.shift && (
+              <button
+                onClick={() => setTime("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.shift} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.schedule && (
+              <button
+                onClick={() => setDay("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.schedule} <CloseIcon />{" "}
+              </button>
+            )}
+            {query?.gender && (
+              <button
+                onClick={() => setGender("")}
+                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+              >
+                {query?.gender} <CloseIcon />{" "}
+              </button>
+            )}
+          </div>
         </div>
-      </div>
+      ) : null}
+
       {/* doctors data  */}
       {loader ? (
         <Loader />
       ) : (
-        <div className="mx-5 p-5 md:container md:mx-auto">
+        <div className="mx-5 md:container md:mx-auto mt-5">
           {doctors?.length > 0 ? (
             <div>
-              <p className="text-xl md:text-3xl font-semibold">
+              <p className="text-xl md:text-2xl font-semibold">
                 Found <span className="text-blue">{doctors?.length}</span>{" "}
                 Doctor
               </p>
@@ -449,11 +478,7 @@ export default function FindDoctor() {
                     key={i}
                     className="relative rounded"
                   >
-                    <img
-                      src={d.image}
-                      alt=""
-                      className="rounded"
-                    />
+                    <img src={d.image} alt="" className="rounded" />
                     <div className="absolute top-0 h-full w-full bg-black/40 overflow-hidden group rounded">
                       <div className="text-white flex flex-col gap-2 justify-end h-full translate-y-12 group-hover:-translate-y-0 duration-300 ease-linear">
                         <p className="md:text-3xl ml-2">{d.name}</p>
