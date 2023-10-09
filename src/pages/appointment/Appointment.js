@@ -1,4 +1,10 @@
-import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 export default function Appointment() {
@@ -27,20 +33,41 @@ export default function Appointment() {
   //manage data
   const [specialty, setSpeacility] = React.useState("");
   const [subSpecialty, setSubSpeacility] = React.useState("");
+  const [doctor, setDoctor] = React.useState("");
+
   const [doctors, setDoctors] = useState([]);
-  console.log(doctors);
   const [specialties, setSpecialities] = useState([]);
   const [subSpecialties, setSubSpecialities] = useState([]);
 
   const handleChange = (event) => {
     setSpeacility(event.target.value);
   };
-  const handleChange2 = (event) => {
-    setSubSpeacility(event.target.value);
-  };
 
   const [activeChoose, setActiveChoose] = useState(true);
   const [activeRecommend, setActiveRecommend] = useState(false);
+  //get speacilities
+  useEffect(() => {
+    fetch("https://api.bumrungraddiscover.com/api/get/specialty")
+      .then((res) => res.json())
+      .then((data) => setSpecialities(data?.response?.data));
+  }, []);
+  //get sub speacilities
+  useEffect(() => {
+    if (specialty) {
+      fetch(
+        `https://api.bumrungraddiscover.com/api/get/selected/sub/specialty/${specialty}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.response?.status === 200) {
+            setSubSpecialities(data?.response?.data);
+          } else {
+            console.log(data);
+            setSubSpecialities([]);
+          }
+        });
+    }
+  }, [specialty]);
   // get doctors name
   useEffect(() => {
     // setLoader(true);
@@ -56,30 +83,18 @@ export default function Appointment() {
       fetch(finalUrl)
         .then((res) => res.json())
         .then((data) => {
-          setDoctors(data.data);
-          // setLoader(false);
+          if (data.status === 200) {
+            setDoctors(data.data);
+          } else {
+            setDoctors([]);
+            console.log(data);
+          }
         })
         .catch((error) => console.error(error));
     };
     // Call the fetchData function whenever any state changes
     fetchData();
   }, [specialty, subSpecialty]);
-  //get speacilities
-  useEffect(() => {
-    fetch("https://api.bumrungraddiscover.com/api/get/specialty")
-      .then((res) => res.json())
-      .then((data) => setSpecialities(data?.response?.data));
-  }, []);
-  //get sub speacilities
-  // useEffect(() => {
-  //   if (specialty) {
-  //     fetch(
-  //       `https://api.bumrungraddiscover.com/api/get/selected/sub/specialty/${specialty}`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => setSubSpecialities(data?.response?.data));
-  //   }
-  // }, [specialty]);
 
   return (
     <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto">
@@ -87,21 +102,34 @@ export default function Appointment() {
         Appointment
       </h1>
       <div className="my-10">
-        <div className="flex justify-between">
+        {/* top buttons  */}
+        <div className="flex justify-between items-center">
           <button
             className={`px-4 py-2 shadow rounded-full border border-blue font-semibold text-xl ${
-              stepperOpen && "bg-blue text-white border-white"
+              (stepperOpen || stepperOpen2 || stepperOpen3) &&
+              "bg-blue text-white border-white"
             }`}
           >
             1
           </button>
+          <div
+            className={`h-1 rounded mx-5 w-full ${
+              stepperOpen2 || stepperOpen3 ? "bg-blue" : "bg-cream"
+            }`}
+          ></div>
           <button
             className={`px-4 py-2 shadow rounded-full border border-blue font-semibold text-xl ${
-              stepperOpen2 && "bg-blue text-white border-white"
+              (stepperOpen2 || stepperOpen3) &&
+              "bg-blue text-white border-white"
             }`}
           >
             2
           </button>
+          <div
+            className={`h-1 rounded mx-5 w-full ${
+              stepperOpen3 ? "bg-blue" : "bg-cream"
+            }`}
+          ></div>
           <button
             className={`px-4 py-2 shadow rounded-full border border-blue font-semibold text-xl ${
               stepperOpen3 && "bg-blue text-white border-white"
@@ -110,7 +138,8 @@ export default function Appointment() {
             3
           </button>
         </div>
-        <div className="my-5">
+        {/* Appointment form  */}
+        <div className="my-5 p-5 shadow rounded">
           {stepperOpen && (
             <div>
               <div className="flex flex-col gap-4 md:flex-row">
@@ -140,11 +169,12 @@ export default function Appointment() {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={subSpecialty}
-                    label="Select Sub Speciality"
-                    onChange={handleChange2}
+                    label="Select Sub Speacility"
+                    onChange={(e) => setSubSpeacility(e.target.value)}
+                    disabled={subSpecialties?.length === 0}
                   >
                     {subSpecialties?.map((s, i) => (
-                      <MenuItem key={i} value={s?.sub_specialty}>
+                      <MenuItem value={s?.sub_specialty} key={i}>
                         {s?.sub_specialty}
                       </MenuItem>
                     ))}
@@ -186,22 +216,27 @@ export default function Appointment() {
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={subSpecialty}
+                        value={doctor}
                         label="Choose Doctor"
-                        onChange={handleChange2}
+                        onChange={(e) => setDoctor(e.target.value)}
+                        disabled={doctors?.length === 0}
                       >
-                        {subSpecialties?.map((s, i) => (
-                          <MenuItem key={i} value={s?.sub_specialty}>
-                            {s?.sub_specialty}
+                        {doctors?.map((s, i) => (
+                          <MenuItem value={s?.name} key={i}>
+                            {s?.name}
                           </MenuItem>
                         ))}
                       </Select>
                     </FormControl>
                   )}
-                  {
-                    activeRecommend && 
-                    <TextField label="" />
-                  }
+                  {activeRecommend && (
+                    <TextField
+                      placeholder="PLEASE DESCRIBE YOUR MEDICAL CONCERN OR SYMPTOMS"
+                      fullWidth
+                      multiline
+                      rows={6}
+                    />
+                  )}
                 </div>
               </div>
               <button

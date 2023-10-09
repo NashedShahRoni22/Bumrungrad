@@ -44,15 +44,15 @@ export default function FindDoctor() {
 
   const [doctors, setDoctors] = useState([]);
   const [query, setQuery] = useState({});
-  const postData = {
-    name,
-    speacility,
-    subSpeacility,
-    lang,
-    day,
-    time,
-    gender,
-  };
+  // const postData = {
+  //   name,
+  //   speacility,
+  //   subSpeacility,
+  //   lang,
+  //   day,
+  //   time,
+  //   gender,
+  // };
   // console.log(postData);
   const [specialties, setSpecialities] = useState([]);
   const [subSpecialties, setSubSpecialities] = useState([]);
