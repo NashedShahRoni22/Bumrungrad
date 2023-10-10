@@ -5,7 +5,9 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
+import { DayPicker } from "react-day-picker";
 
 export default function Appointment() {
   // stepper functionality
@@ -34,6 +36,20 @@ export default function Appointment() {
   const [specialty, setSpeacility] = React.useState("");
   const [subSpecialty, setSubSpeacility] = React.useState("");
   const [doctor, setDoctor] = React.useState("");
+  const [medicalDesc, setMedicalDesc] = React.useState("");
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [shift, setShift] = React.useState("");
+
+  const postData = {
+    specialty,
+    subSpecialty,
+    doctor,
+    medicalDesc,
+    selectedDate:format(selectedDate, "PP"),
+    shift
+  };
+
+  // console.log(postData);
 
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialities] = useState([]);
@@ -97,11 +113,11 @@ export default function Appointment() {
   }, [specialty, subSpecialty]);
 
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto">
+    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto lg:flex lg:flex-col lg:items-center">
       <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
         Appointment
       </h1>
-      <div className="my-10">
+      <div className="my-10 lg:w-1/2">
         {/* top buttons  */}
         <div className="flex justify-between items-center">
           <button
@@ -142,7 +158,7 @@ export default function Appointment() {
         <div className="my-5 p-5 shadow rounded">
           {stepperOpen && (
             <div>
-              <div className="flex flex-col gap-4 md:flex-row">
+              <div className="flex flex-col gap-4">
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
                     Select Speciality
@@ -185,7 +201,7 @@ export default function Appointment() {
               <div>
                 <div className="my-4 flex gap-4">
                   <button
-                    className={`px-4 py-2 font-semibold  rounded-xl ${
+                    className={`px-4 py-2 font-semibold  rounded-full ${
                       activeChoose && "bg-blue text-white"
                     }`}
                     onClick={() => {
@@ -193,10 +209,10 @@ export default function Appointment() {
                       setActiveChoose(true);
                     }}
                   >
-                    Choose
+                    Choose a Doctor
                   </button>
                   <button
-                    className={`px-4 py-2 font-semibold  rounded-xl ${
+                    className={`px-4 py-2 font-semibold  rounded-full ${
                       activeRecommend && "bg-blue text-white"
                     }`}
                     onClick={() => {
@@ -204,7 +220,7 @@ export default function Appointment() {
                       setActiveChoose(false);
                     }}
                   >
-                    Recommend
+                    Recommend a Doctor
                   </button>
                 </div>
                 <div>
@@ -235,21 +251,60 @@ export default function Appointment() {
                       fullWidth
                       multiline
                       rows={6}
+                      onChange={(e) => setMedicalDesc(e.target.value)}
                     />
                   )}
                 </div>
               </div>
-              <button
-                className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                onClick={handleClick}
-              >
-                Next
-              </button>
+              <div className="flex justify-center">
+                <button
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  onClick={handleClick}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           )}
           {stepperOpen2 && (
             <div>
-              <p>India</p>
+              <div className="md:flex gap-5">
+                <div className="md:w-1/2 md:border-2 border-blue rounded">
+                  <DayPicker
+                    mode="single"
+                    selected={selectedDate}
+                    onSelect={setSelectedDate}
+                  />
+                </div>
+                <div className="my-10 md:mt-0 md:w-1/2 flex flex-col gap-5">
+                  <p>
+                    {" "}
+                    <span className="font-semibold">Selected Date:</span>{" "}
+                    {format(selectedDate, "PP")}
+                  </p>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Select Shift
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={shift}
+                      label="Select Shift"
+                      onChange={(e) => setShift(e.target.value)}
+                    >
+                      <MenuItem value="Morning">Morning</MenuItem>
+                      <MenuItem value="Evening">Evening</MenuItem>
+                      <MenuItem value="Night">Night</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </div>
+              <p className="text-center mt-5">
+                This is only a tentative booking. Your actual appointment will
+                be confirmed by email.
+              </p>
+              <div className="flex justify-center">
               <button
                 className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
                 onClick={handleClick2Prev}
@@ -262,6 +317,7 @@ export default function Appointment() {
               >
                 Next
               </button>
+              </div>
             </div>
           )}
           {stepperOpen3 && (
