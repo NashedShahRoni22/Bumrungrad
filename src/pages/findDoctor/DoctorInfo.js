@@ -4,10 +4,14 @@ import { useParams } from "react-router-dom";
 export default function DoctorInfo() {
   const { id } = useParams();
   const [doctor, setDoctor] = useState({});
+  console.log(doctor);
   useEffect(() => {
     fetch(`https://api.bumrungraddiscover.com/api/search/doctor/${id}`)
       .then((res) => res.json())
-      .then((data) => setDoctor(data.response.data));
+      .then((data) => {
+        // setDoctor(data.response.data)
+        console.log(data.response.data);
+      });
   });
   return (
     <section className="doctor-bg">
