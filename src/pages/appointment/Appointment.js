@@ -8,6 +8,8 @@ import {
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
+import { countries } from "./Countries";
+import { MuiTelInput } from 'mui-tel-input'
 
 export default function Appointment() {
   // stepper functionality
@@ -39,14 +41,23 @@ export default function Appointment() {
   const [medicalDesc, setMedicalDesc] = React.useState("");
   const [selectedDate, setSelectedDate] = React.useState(new Date());
   const [shift, setShift] = React.useState("");
+  const [country, setCountry] = React.useState("");
+
+  const [phone, setPhone] = React.useState('')
+
+  const handlePhone = (newPhone) => {
+    setPhone(newPhone)
+  }
 
   const postData = {
     specialty,
     subSpecialty,
     doctor,
     medicalDesc,
-    selectedDate:format(selectedDate, "PP"),
-    shift
+    selectedDate: format(selectedDate, "PP"),
+    shift,
+    country,
+    phone
   };
 
   // console.log(postData);
@@ -201,7 +212,7 @@ export default function Appointment() {
               <div>
                 <div className="my-4 flex gap-4">
                   <button
-                    className={`px-4 py-2 font-semibold  rounded-full ${
+                    className={`flex items-center gap-1 px-4 py-2 font-semibold  rounded-full ${
                       activeChoose && "bg-blue text-white"
                     }`}
                     onClick={() => {
@@ -209,10 +220,10 @@ export default function Appointment() {
                       setActiveChoose(true);
                     }}
                   >
-                    Choose a Doctor
+                    Choose <span className="hidden md:block">Doctor</span>
                   </button>
                   <button
-                    className={`px-4 py-2 font-semibold  rounded-full ${
+                    className={`flex items-center gap-1 px-4 py-2 font-semibold  rounded-full ${
                       activeRecommend && "bg-blue text-white"
                     }`}
                     onClick={() => {
@@ -220,7 +231,7 @@ export default function Appointment() {
                       setActiveChoose(false);
                     }}
                   >
-                    Recommend a Doctor
+                    Recommend <span className="hidden md:block">Doctor</span>
                   </button>
                 </div>
                 <div>
@@ -269,14 +280,14 @@ export default function Appointment() {
           {stepperOpen2 && (
             <div>
               <div className="md:flex gap-5">
-                <div className="md:w-1/2 md:border-2 border-blue rounded">
+                <div className="md:w-1/2 md:border-2 border-blue rounded flex justify-center">
                   <DayPicker
                     mode="single"
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                   />
                 </div>
-                <div className="my-10 md:mt-0 md:w-1/2 flex flex-col gap-5">
+                <div className="my-8 md:mt-0 md:w-1/2 flex flex-col gap-8">
                   <p>
                     {" "}
                     <span className="font-semibold">Selected Date:</span>{" "}
@@ -305,30 +316,60 @@ export default function Appointment() {
                 be confirmed by email.
               </p>
               <div className="flex justify-center">
-              <button
-                className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                onClick={handleClick2Prev}
-              >
-                Prev
-              </button>
-              <button
-                className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                onClick={handleClick2Next}
-              >
-                Next
-              </button>
+                <button
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  onClick={handleClick2Prev}
+                >
+                  Prev
+                </button>
+                <button
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  onClick={handleClick2Next}
+                >
+                  Next
+                </button>
               </div>
             </div>
           )}
           {stepperOpen3 && (
             <div>
-              <p>Australlia</p>
-              <button
-                className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                onClick={handleClick3Prev}
-              >
-                Prev
-              </button>
+              <div className="grid md:grid-cols-2 gap-4">
+                <TextField fullWidth label="Enter H.N. Number" />
+                <TextField fullWidth label="First Name" />
+                <TextField fullWidth label="Last Name" />
+                <TextField fullWidth type="date" />
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Select Citizenship
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={country}
+                    label="Select Citizenship"
+                    onChange={(e) => setCountry(e.target.value)}
+                  >
+                    {countries.map((c,i) => (
+                      <MenuItem key={i} value={c}>{c}</MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                <MuiTelInput defaultCountry="BD" value={phone} onChange={handlePhone} />
+              </div>
+              <div className="flex justify-center">
+                <button
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  onClick={handleClick3Prev}
+                >
+                  Prev
+                </button>
+                <button
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  // onClick={handleClick3Prev}
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           )}
         </div>
