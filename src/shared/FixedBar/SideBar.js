@@ -28,13 +28,6 @@ export default function SideBar() {
   };
   return (
     <div>
-      {/* <a
-        href={`viber://add?number=+8801847284860`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src={viber} alt="line_logo" className="h-[40px]" />
-      </a> */}
       <a
         href={`https://t.me/${encodeURIComponent("+8801847284860")}`}
         target="_blank"
@@ -42,13 +35,7 @@ export default function SideBar() {
       >
         <img src={telegram} alt="line_logo" className="h-[40px] mt-1" />
       </a>
-      {/* <a href="">
-        <img src={line} alt="line_logo" className="h-[40px] mt-1" />
-      </a> */}
       <button
-        // href="http://wa.me/+8801324418100"
-        // target="_blank"
-        // rel="noopener noreferrer"
         onClick={handleOpen}
       >
         <img src={whatsapp} alt="line_logo" className="h-[40px] mt-1" />
@@ -86,6 +73,15 @@ export default function SideBar() {
           >
             <img src={whatsapp} alt="line_logo" className="h-[40px]" />
             <span className="text-blue font-semibold">Medical Package Booking</span>
+          </a>
+          <a
+            href="http://wa.me/+8801847284864"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear"
+          >
+            <img src={whatsapp} alt="line_logo" className="h-[40px]" />
+            <span className="text-blue font-semibold">Talk with Visa Adviser</span>
           </a>
         </Box>
       </Modal>

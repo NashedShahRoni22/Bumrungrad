@@ -35,6 +35,8 @@ export default function Appointment() {
     setStepperOpen3(false);
   };
 
+  //old or new
+  const [old, setOld] = useState(true);
   //yes or no
   const [yes, setYes] = useState(true);
 
@@ -47,30 +49,54 @@ export default function Appointment() {
   const [shift2, setShift2] = React.useState("");
   const [hnNumber, setHnNumber] = React.useState("");
   const [firstname, setfirstname] = React.useState("");
-  const [lastname, setlastname] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [dob, setDob] = React.useState("");
+  const [email, setPataientEmail] = React.useState("");
+  const [desc, setDesc] = React.useState("");
   const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [selectedDate2, setSelectedDate2] = React.useState(new Date());
   const [country, setCountry] = React.useState("");
   const [phone, setPhone] = React.useState("");
+  const [gender, setGender] = React.useState("");
+
+  const [requestorFirstname, setRequestorFirstname] = React.useState("");
+  const [requestorLastName, setRequestorLastName] = React.useState("");
+  const [requestorEmail, setRequestorEmail] = React.useState("");
+  const [phone2, setPhone2] = React.useState("");
+  // const [requestorPhone, setRequestorPhone] = React.useState("");
 
   const handlePhone = (newPhone) => {
     setPhone(newPhone);
+  };
+  const handlePhone2 = (newPhone) => {
+    setPhone2(newPhone);
   };
 
   const postData = {
     specialty,
     subSpecialty,
     doctor,
+    hnNumber,
+    pataientfirstname: firstname,
+    pataientlastName: lastName,
+    country: country,
+    dob,
     medicalDesc,
     selectedDate: format(selectedDate, "PP"),
+    selectedDate2: format(selectedDate2, "PP"),
     shift,
-    country,
+    shift2,
     phone,
-    hnNumber,
-    firstname,
-    lastname,
+    gender,
+    RequestorFirstname: requestorFirstname,
+    RequestorLastName: requestorLastName,
+    RequestorEmail: requestorEmail,
+    RequestorPhone: phone2,
+    email,
+    desc,
   };
 
-  // console.log(postData);
+  console.log(postData);
 
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialities] = useState([]);
@@ -248,25 +274,34 @@ export default function Appointment() {
                 </div>
                 <div>
                   {activeChoose && (
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">
-                        Choose Doctor
-                      </InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={doctor}
-                        label="Choose Doctor"
-                        onChange={(e) => setDoctor(e.target.value)}
-                        disabled={doctors?.length === 0}
-                      >
-                        {doctors?.map((s, i) => (
-                          <MenuItem value={s?.name} key={i}>
-                            {s?.name}
-                          </MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
+                    <div className="flex flex-col gap-5">
+                      <FormControl fullWidth className="mb-5">
+                        <InputLabel id="demo-simple-select-label">
+                          Choose Doctor
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={doctor}
+                          label="Choose Doctor"
+                          onChange={(e) => setDoctor(e.target.value)}
+                          disabled={doctors?.length === 0}
+                        >
+                          {doctors?.map((s, i) => (
+                            <MenuItem value={s?.name} key={i}>
+                              {s?.name}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      <TextField
+                        placeholder="PLEASE DESCRIBE YOUR MEDICAL CONCERN OR SYMPTOMS"
+                        fullWidth
+                        multiline
+                        rows={6}
+                        onChange={(e) => setMedicalDesc(e.target.value)}
+                      />
+                    </div>
                   )}
                   {activeRecommend && (
                     <TextField
@@ -290,56 +325,74 @@ export default function Appointment() {
             </div>
           )}
           {stepperOpen2 && (
-            <div>
+            <div className="flex flex-col justify-center items-center gap-5">
+              <p className="my-2.5 font-semibold text-blue">
+                Select Desired Day
+              </p>
               <div className="md:flex gap-5">
-                <div className="md:w-1/2 md:border-2 border-blue rounded flex justify-center">
+                <div className="flex flex-col items-center shadow my-2.5">
                   <DayPicker
                     mode="single"
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                   />
-                </div>
-                <div className="my-8 md:mt-0 md:w-1/2 flex flex-col gap-8">
-                  <p>
+                  <p className="mb-2.5">
                     {" "}
                     <span className="font-semibold">Selected Date:</span>{" "}
                     {format(selectedDate, "PP")}
                   </p>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">
-                      Prority Shift
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={shift}
-                      label="Select Shift"
-                      onChange={(e) => setShift(e.target.value)}
-                    >
-                      <MenuItem value="Morning">Morning</MenuItem>
-                      <MenuItem value="Evening">Evening</MenuItem>
-                      <MenuItem value="Night">Night</MenuItem>
-                    </Select>
-                  </FormControl>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">
-                      Optinal Shift
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={shift2}
-                      label="Select Shift"
-                      onChange={(e) => setShift2(e.target.value)}
-                    >
-                      <MenuItem value="Morning">Morning</MenuItem>
-                      <MenuItem value="Evening">Evening</MenuItem>
-                      <MenuItem value="Night">Night</MenuItem>
-                    </Select>
-                  </FormControl>
+                </div>
+                <div className="flex flex-col items-center shadow my-2.5">
+                  <DayPicker
+                    mode="single"
+                    selected={selectedDate2}
+                    onSelect={setSelectedDate2}
+                  />
+                  <p className="mb-2.5">
+                    {" "}
+                    <span className="font-semibold">Selected Date:</span>{" "}
+                    {format(selectedDate2, "PP")}
+                  </p>
                 </div>
               </div>
-              <p className="text-center mt-5 text-xl text-blue">
+              <p className="my-2.5 font-semibold text-blue">
+                Select Desired Shift
+              </p>
+              <div className="w-full flex flex-col md:flex-row gap-5">
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Priority Shift
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={shift}
+                    label="Select Shift"
+                    onChange={(e) => setShift(e.target.value)}
+                  >
+                    <MenuItem value="Morning">Morning</MenuItem>
+                    <MenuItem value="Evening">Evening</MenuItem>
+                    <MenuItem value="Night">Night</MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Optional Shift
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={shift2}
+                    label="Select Shift"
+                    onChange={(e) => setShift2(e.target.value)}
+                  >
+                    <MenuItem value="Morning">Morning</MenuItem>
+                    <MenuItem value="Evening">Evening</MenuItem>
+                    <MenuItem value="Night">Night</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+              <p className="font-semibold text-center mt-5 text-xl text-blue">
                 This is only a tentative booking. Your actual appointment will
                 be confirmed by email.
               </p>
@@ -361,18 +414,101 @@ export default function Appointment() {
           )}
           {stepperOpen3 && (
             <div>
-              <h5 className="text-semibold my-5 font-semibold text-bue">
-                Pataint Infromation
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setActiveYourSelf(!activeYourSelf)}
+                  className={`font-semibold px-4 py-2 rounded-full ${
+                    activeYourSelf ? "bg-blue text-white" : "bg-white text-blue"
+                  }`}
+                >
+                  For Yourself
+                </button>
+                <button
+                  onClick={() => setActiveYourSelf(!activeYourSelf)}
+                  className={`font-semibold px-4 py-2 rounded-full ${
+                    activeYourSelf === false
+                      ? "bg-blue text-white"
+                      : "bg-white text-blue"
+                  }`}
+                >
+                  Someone else
+                </button>
+              </div>
+              {activeYourSelf === false && (
+                <div>
+                  <h5 className="my-5 text-lg text-blue font-semibold">
+                    Requestor Information
+                  </h5>
+                  <Divider />
+                  <div className="mt-5 grid md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="mb-2.5">Enter First Name</p>
+                      <TextField
+                        fullWidth
+                        onChange={(e) => setRequestorFirstname(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <p className="mb-2.5">Enter Last Name</p>
+                      <TextField
+                        fullWidth
+                        onChange={(e) => setRequestorLastName(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <p className="mb-2.5">Enter Email</p>
+                      <TextField
+                        fullWidth
+                        onChange={(e) => setRequestorEmail(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <p className="mb-2.5">Enter Phone number</p>
+                      <MuiTelInput
+                        defaultCountry="TH"
+                        value={phone2}
+                        onChange={handlePhone2}
+                        fullWidth
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+              <h5 className=" text-lg text-semibold my-5 font-semibold text-blue">
+                Patient Infromation
               </h5>
               <Divider />
-              <div className="grid md:grid-cols-2 gap-4 mt-5">
-                <div>
-                  <p className="mb-2.5">Enter HN Number</p>
+
+              <div className="mt-5 flex gap-4">
+                <button
+                  onClick={() => setOld(!old)}
+                  className={`px-4 py-2 font-semibold ${
+                    old ? "bg-blue text-white" : "text-blue"
+                  }  rounded-full`}
+                >
+                  New Patient
+                </button>
+                <button
+                  onClick={() => setOld(!old)}
+                  className={`px-4 py-2 font-semibold ${
+                    !old ? "bg-blue text-white" : "text-blue"
+                  } rounded-full`}
+                >
+                  Old Patient
+                </button>
+              </div>
+
+              {!old && (
+                <div className="mt-5">
+                  <p className="mb-2.5">Enter H.N. Number</p>
                   <TextField
                     fullWidth
+                    placeholder="Keep this field empty if you not remmember"
                     onChange={(e) => setHnNumber(e.target.value)}
                   />
                 </div>
+              )}
+              <div className="grid md:grid-cols-2 gap-4 mt-5">
                 <div>
                   <p className="mb-2.5">Enter First Name</p>
                   <TextField
@@ -384,19 +520,18 @@ export default function Appointment() {
                   <div>
                     <p className="mb-2.5">Enter Last Name</p>
                     <TextField
-                      onChange={(e) => setlastname((e) => e.target.value)}
+                      onChange={(e) => setLastName(e.target.value)}
                       fullWidth
                     />
                   </div>
                 </div>
 
                 <FormControl fullWidth>
-                  <p className="mb-2.5">Secect Citizinshipp</p>
+                  <p className="mb-2.5">Select Citizenship</p>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={country}
-                    // label="Select Citizenship"
                     onChange={(e) => setCountry(e.target.value)}
                   >
                     {countries.map((c, i) => (
@@ -404,6 +539,19 @@ export default function Appointment() {
                         {c}
                       </MenuItem>
                     ))}
+                  </Select>
+                </FormControl>
+                <FormControl fullWidth>
+                  <p className="mb-2.5">Select Gender</p>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value)}
+                  >
+                    <MenuItem value="Male">Male</MenuItem>
+                    <MenuItem value="Female">Female</MenuItem>
+                    <MenuItem value="Other">Other</MenuItem>
                   </Select>
                 </FormControl>
                 <div>
@@ -417,7 +565,11 @@ export default function Appointment() {
                 </div>
                 <div>
                   <p className="mb-2.5">Enter Date of Birth</p>
-                  <TextField fullWidth type="date" />
+                  <TextField
+                    fullWidth
+                    type="date"
+                    onChange={(e) => setDob(e.target.value)}
+                  />
                 </div>
               </div>
               <h5 className="mt-10">Are you in Thailand?</h5>
@@ -463,7 +615,10 @@ export default function Appointment() {
 
                 <div>
                   <p className="mb-2.5">Enter Email</p>
-                  <TextField fullWidth />
+                  <TextField
+                    fullWidth
+                    onChange={(e) => setPataientEmail(e.target.value)}
+                  />
                 </div>
                 <div>
                   <p className="mb-2.5">Medical Description</p>
@@ -473,63 +628,26 @@ export default function Appointment() {
                     fullWidth
                     multiline
                     rows={5}
+                    onChange={(e) => setDesc(e.target.value)}
                   />
                 </div>
                 <div>
-                  <p className="mb-2.5">Attach File</p>
+                  <p className="mb-2.5">Attach Passport</p>
                   <TextField type="file" fullWidth />
                 </div>
-                <div className="flex gap-2 mt-5">
-                  <button
-                    onClick={() => setActiveYourSelf(!activeYourSelf)}
-                    className={`px-4 py-2 rounded-full ${
-                      activeYourSelf
-                        ? "bg-blue text-white"
-                        : "bg-white text-blue"
-                    }`}
-                  >
-                    Appointment for Yourself
-                  </button>
-                  <button
-                    onClick={() => setActiveYourSelf(!activeYourSelf)}
-                    className={`px-4 py-2 rounded-full ${
-                      activeYourSelf === false
-                        ? "bg-blue text-white"
-                        : "bg-white text-blue"
-                    }`}
-                  >
-                    Appointment for Others
-                  </button>
+                <div>
+                  <p className="mb-2.5">Medical Report 1</p>
+                  <TextField type="file" fullWidth />
+                </div>
+                <div>
+                  <p className="mb-2.5">Medical Report 2</p>
+                  <TextField type="file" fullWidth />
+                </div>
+                <div>
+                  <p className="mb-2.5">Medical Report 3</p>
+                  <TextField type="file" fullWidth />
                 </div>
               </div>
-              {activeYourSelf === false && (
-                <div className="mt-5">
-                  <p className="text-xl font-semibold">Requestor information</p>
-                  <div className="mt-5 grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="mb-2.5">Enter First Name</p>
-                      <TextField fullWidth />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Enter Last Name</p>
-                      <TextField fullWidth />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Enter Email</p>
-                      <TextField fullWidth />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Enter Phone number</p>
-                      <MuiTelInput
-                        defaultCountry="TH"
-                        value={phone}
-                        onChange={handlePhone}
-                        fullWidth
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
               <div className="flex justify-center">
                 <button
                   className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
@@ -548,7 +666,6 @@ export default function Appointment() {
           )}
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
