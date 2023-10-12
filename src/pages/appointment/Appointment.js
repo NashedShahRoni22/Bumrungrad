@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { countries } from "./Countries";
 import { MuiTelInput } from "mui-tel-input";
+import { Button } from "@material-tailwind/react";
 
 export default function Appointment() {
   // stepper functionality
@@ -36,7 +37,7 @@ export default function Appointment() {
   };
 
   //old or new
-  const [old, setOld] = useState(true);
+  const [old, setOld] = useState(false);
   //yes or no
   const [yes, setYes] = useState(true);
 
@@ -51,10 +52,11 @@ export default function Appointment() {
   const [firstname, setfirstname] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [dob, setDob] = React.useState("");
-  const [email, setPataientEmail] = React.useState("");
+  const [pataientEmail, setPataientEmail] = React.useState("");
   const [desc, setDesc] = React.useState("");
   const [selectedDate, setSelectedDate] = React.useState(new Date());
   const [selectedDate2, setSelectedDate2] = React.useState(new Date());
+  const [citizenship, setCitizenship] = React.useState("");
   const [country, setCountry] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [gender, setGender] = React.useState("");
@@ -62,7 +64,12 @@ export default function Appointment() {
   const [requestorFirstname, setRequestorFirstname] = React.useState("");
   const [requestorLastName, setRequestorLastName] = React.useState("");
   const [requestorEmail, setRequestorEmail] = React.useState("");
+  const [relation, setRelation] = React.useState("");
   const [phone2, setPhone2] = React.useState("");
+  const [passport, setPassport] = React.useState("");
+  const [medicalReport1, setmedicalReport1] = React.useState("");
+  const [medicalReport2, setmedicalReport2] = React.useState("");
+  const [medicalReport3, setmedicalReport3] = React.useState("");
   // const [requestorPhone, setRequestorPhone] = React.useState("");
 
   const handlePhone = (newPhone) => {
@@ -76,24 +83,33 @@ export default function Appointment() {
     specialty,
     subSpecialty,
     doctor,
-    hnNumber,
-    pataientfirstname: firstname,
-    pataientlastName: lastName,
-    country: country,
-    dob,
     medicalDesc,
     selectedDate: format(selectedDate, "PP"),
     selectedDate2: format(selectedDate2, "PP"),
     shift,
     shift2,
-    phone,
-    gender,
+    oldPataint: old,
+    HnNumber: hnNumber,
+    PataientFirstName: firstname,
+    PataientLastName: lastName,
+    PataientCitizenship: citizenship,
+    PataientGender: gender,
+    PataientEmail: pataientEmail,
+    PataientPhone: phone,
+    PataientDob: dob,
+
     RequestorFirstname: requestorFirstname,
     RequestorLastName: requestorLastName,
     RequestorEmail: requestorEmail,
     RequestorPhone: phone2,
-    email,
-    desc,
+    RequestorEelation: relation,
+    mediicalCorncern: desc,
+
+    country,
+    passport,
+    medicalReport1,
+    medicalReport2,
+    medicalReport3,
   };
 
   console.log(postData);
@@ -314,23 +330,31 @@ export default function Appointment() {
                   )}
                 </div>
               </div>
+              <p className="text-blue font-semibold py-2.5 text-center">
+                Please Select a Speciality. <br />
+                Select a Doctor or Write Symtopms.
+              </p>
               <div className="flex justify-center">
-                <button
+                <Button
                   className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
                   onClick={handleClick}
+                  disabled={
+                    (doctor === "" && medicalDesc === "") || specialty === ""
+                  }
                 >
                   Next
-                </button>
+                </Button>
               </div>
             </div>
           )}
           {stepperOpen2 && (
             <div className="flex flex-col justify-center items-center gap-5">
-              <p className="my-2.5 font-semibold text-blue">
+              <p className="font-semibold text-blue text-xl">
                 Select Desired Day
               </p>
               <div className="md:flex gap-5">
                 <div className="flex flex-col items-center shadow my-2.5">
+                  <p className="font-semibold text-blue">First Choice</p>
                   <DayPicker
                     mode="single"
                     selected={selectedDate}
@@ -343,6 +367,7 @@ export default function Appointment() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center shadow my-2.5">
+                  <p className="font-semibold text-blue">Second Choice</p>
                   <DayPicker
                     mode="single"
                     selected={selectedDate2}
@@ -355,19 +380,19 @@ export default function Appointment() {
                   </p>
                 </div>
               </div>
-              <p className="my-2.5 font-semibold text-blue">
+              <p className="my-2.5 font-semibold text-blue text-xl">
                 Select Desired Shift
               </p>
               <div className="w-full flex flex-col md:flex-row gap-5">
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
-                    Priority Shift
+                    First Priority Shift
                   </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={shift}
-                    label="Select Shift"
+                    label="First Priority Shift"
                     onChange={(e) => setShift(e.target.value)}
                   >
                     <MenuItem value="Morning">Morning</MenuItem>
@@ -377,13 +402,13 @@ export default function Appointment() {
                 </FormControl>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
-                    Optional Shift
+                    Second Priority Shift
                   </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={shift2}
-                    label="Select Shift"
+                    label="Second Priority Shift"
                     onChange={(e) => setShift2(e.target.value)}
                   >
                     <MenuItem value="Morning">Morning</MenuItem>
@@ -445,6 +470,7 @@ export default function Appointment() {
                       <p className="mb-2.5">Enter First Name</p>
                       <TextField
                         fullWidth
+                        placeholder="Required"
                         onChange={(e) => setRequestorFirstname(e.target.value)}
                       />
                     </div>
@@ -452,6 +478,7 @@ export default function Appointment() {
                       <p className="mb-2.5">Enter Last Name</p>
                       <TextField
                         fullWidth
+                        placeholder="Required"
                         onChange={(e) => setRequestorLastName(e.target.value)}
                       />
                     </div>
@@ -459,17 +486,39 @@ export default function Appointment() {
                       <p className="mb-2.5">Enter Email</p>
                       <TextField
                         fullWidth
+                        placeholder="Required"
                         onChange={(e) => setRequestorEmail(e.target.value)}
                       />
                     </div>
                     <div>
-                      <p className="mb-2.5">Enter Phone number</p>
+                      <p className="mb-2.5">Enter Phone Number (Required)</p>
                       <MuiTelInput
                         defaultCountry="TH"
                         value={phone2}
                         onChange={handlePhone2}
                         fullWidth
                       />
+                    </div>
+                    <div>
+                      <p className="mb-2.5">Select Relation (Required)</p>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Select Relation
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={relation}
+                          label="Select Relation"
+                          onChange={(e) => setRelation(e.target.value)}
+                        >
+                          <MenuItem value="Son">Son</MenuItem>
+                          <MenuItem value="Daughter">Daughter</MenuItem>
+                          <MenuItem value="Father">Father</MenuItem>
+                          <MenuItem value="Mother">Mother</MenuItem>
+                          <MenuItem value="Other">Other</MenuItem>
+                        </Select>
+                      </FormControl>
                     </div>
                   </div>
                 </div>
@@ -503,7 +552,7 @@ export default function Appointment() {
                   <p className="mb-2.5">Enter H.N. Number</p>
                   <TextField
                     fullWidth
-                    placeholder="Keep this field empty if you not remmember"
+                    placeholder="Keep This Field Empty If You Don't Remember"
                     onChange={(e) => setHnNumber(e.target.value)}
                   />
                 </div>
@@ -514,6 +563,7 @@ export default function Appointment() {
                   <TextField
                     onChange={(e) => setfirstname(e.target.value)}
                     fullWidth
+                    placeholder="Required"
                   />
                 </div>
                 <div>
@@ -522,17 +572,18 @@ export default function Appointment() {
                     <TextField
                       onChange={(e) => setLastName(e.target.value)}
                       fullWidth
+                      placeholder="Required"
                     />
                   </div>
                 </div>
 
                 <FormControl fullWidth>
-                  <p className="mb-2.5">Select Citizenship</p>
+                  <p className="mb-2.5">Select Citizenship(Required)</p>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
+                    value={citizenship}
+                    onChange={(e) => setCitizenship(e.target.value)}
                   >
                     {countries.map((c, i) => (
                       <MenuItem key={i} value={c}>
@@ -542,7 +593,7 @@ export default function Appointment() {
                   </Select>
                 </FormControl>
                 <FormControl fullWidth>
-                  <p className="mb-2.5">Select Gender</p>
+                  <p className="mb-2.5">Select Gender(Required)</p>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -555,7 +606,15 @@ export default function Appointment() {
                   </Select>
                 </FormControl>
                 <div>
-                  <p className="mb-2.5">Enter Phone number</p>
+                  <p className="mb-2.5">Enter Email</p>
+                  <TextField
+                    fullWidth
+                    placeholder="Required"
+                    onChange={(e) => setPataientEmail(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2.5">Enter Phone Number(Required)</p>
                   <MuiTelInput
                     defaultCountry="TH"
                     value={phone}
@@ -564,7 +623,7 @@ export default function Appointment() {
                   />
                 </div>
                 <div>
-                  <p className="mb-2.5">Enter Date of Birth</p>
+                  <p className="mb-2.5">Enter Date of Birth(Required)</p>
                   <TextField
                     fullWidth
                     type="date"
@@ -596,7 +655,7 @@ export default function Appointment() {
               <div className="flex flex-col gap-5">
                 {yes === false && (
                   <FormControl fullWidth>
-                    <p className="mb-2.5">Select Country</p>
+                    <p className="mb-2.5">Select Country(Required)</p>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
@@ -612,14 +671,6 @@ export default function Appointment() {
                     </Select>
                   </FormControl>
                 )}
-
-                <div>
-                  <p className="mb-2.5">Enter Email</p>
-                  <TextField
-                    fullWidth
-                    onChange={(e) => setPataientEmail(e.target.value)}
-                  />
-                </div>
                 <div>
                   <p className="mb-2.5">Medical Description</p>
                   <TextField
@@ -632,20 +683,36 @@ export default function Appointment() {
                   />
                 </div>
                 <div>
-                  <p className="mb-2.5">Attach Passport</p>
-                  <TextField type="file" fullWidth />
+                  <p className="mb-2.5">Attach Passport(Required)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setPassport(e.target.files[0])}
+                  />
                 </div>
                 <div>
-                  <p className="mb-2.5">Medical Report 1</p>
-                  <TextField type="file" fullWidth />
+                  <p className="mb-2.5">Medical Report 1(Required)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setmedicalReport1(e.target.files[0])}
+                  />
                 </div>
                 <div>
-                  <p className="mb-2.5">Medical Report 2</p>
-                  <TextField type="file" fullWidth />
+                  <p className="mb-2.5">Medical Report 2(Optional)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setmedicalReport2(e.target.files[0])}
+                  />
                 </div>
                 <div>
-                  <p className="mb-2.5">Medical Report 3</p>
-                  <TextField type="file" fullWidth />
+                  <p className="mb-2.5">Medical Report 3(Optional)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setmedicalReport3(e.target.files[0])}
+                  />
                 </div>
               </div>
               <div className="flex justify-center">
@@ -657,7 +724,20 @@ export default function Appointment() {
                 </button>
                 <button
                   className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                  // onClick={handleClick3Prev}
+                  disabled={
+                    firstname === "" ||
+                    lastName === "" ||
+                    citizenship === "" ||
+                    gender === "" ||
+                    pataientEmail === "" ||
+                    phone === "" ||
+                    dob === "" ||
+                    country === "" ||
+                    (passport === "" &&
+                      medicalReport1 === "" &&
+                      medicalReport2 === "" &&
+                      medicalReport3 === "")
+                  }
                 >
                   Submit
                 </button>
