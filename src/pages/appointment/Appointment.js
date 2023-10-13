@@ -1,5 +1,4 @@
 import {
-  Divider,
   FormControl,
   InputLabel,
   MenuItem,
@@ -11,9 +10,32 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { countries } from "./Countries";
 import { MuiTelInput } from "mui-tel-input";
-import { Button } from "@material-tailwind/react";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import Divider from "@mui/material/Divider";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
+import Slide from "@mui/material/Slide";
+import logo from "../../assets/nav_logo.png";
 
 export default function Appointment() {
+  //preview form
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+  const [openPreview, setOpenPreview] = React.useState(false);
+
+  const handleClickOpenPreview = () => {
+    setOpenPreview(true);
+  };
+
+  const handleClosePreview = () => {
+    setOpenPreview(false);
+  };
   // stepper functionality
   const [stepperOpen, setStepperOpen] = useState(true);
   const [stepperOpen2, setStepperOpen2] = useState(false);
@@ -46,26 +68,28 @@ export default function Appointment() {
   const [subSpecialty, setSubSpeacility] = React.useState("");
   const [doctor, setDoctor] = React.useState("");
   const [medicalDesc, setMedicalDesc] = React.useState("");
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [selectedDate2, setSelectedDate2] = React.useState(new Date());
   const [shift, setShift] = React.useState("");
   const [shift2, setShift2] = React.useState("");
+
   const [hnNumber, setHnNumber] = React.useState("");
   const [firstname, setfirstname] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [dob, setDob] = React.useState("");
   const [pataientEmail, setPataientEmail] = React.useState("");
-  const [desc, setDesc] = React.useState("");
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
-  const [selectedDate2, setSelectedDate2] = React.useState(new Date());
-  const [citizenship, setCitizenship] = React.useState("");
-  const [country, setCountry] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [gender, setGender] = React.useState("");
+  const [citizenship, setCitizenship] = React.useState("");
+  const [country, setCountry] = React.useState("");
+  const [desc, setDesc] = React.useState("");
 
   const [requestorFirstname, setRequestorFirstname] = React.useState("");
   const [requestorLastName, setRequestorLastName] = React.useState("");
   const [requestorEmail, setRequestorEmail] = React.useState("");
-  const [relation, setRelation] = React.useState("");
   const [phone2, setPhone2] = React.useState("");
+  const [relation, setRelation] = React.useState("");
+
   const [passport, setPassport] = React.useState("");
   const [medicalReport1, setmedicalReport1] = React.useState("");
   const [medicalReport2, setmedicalReport2] = React.useState("");
@@ -222,7 +246,7 @@ export default function Appointment() {
         {/* Appointment form  */}
         <div className="my-5 p-5 shadow-xl round">
           {stepperOpen && (
-            <div>
+            <div className="md:px-5">
               <div className="flex flex-col gap-4">
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
@@ -335,15 +359,19 @@ export default function Appointment() {
                 Select a Doctor or Write Symtopms.
               </p>
               <div className="flex justify-center">
-                <Button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                <button
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+                    (doctor === "" && medicalDesc === "") || specialty === ""
+                      ? "bg-white text-blue"
+                      : "text-white"
+                  }`}
                   onClick={handleClick}
                   disabled={
                     (doctor === "" && medicalDesc === "") || specialty === ""
                   }
                 >
                   Next
-                </Button>
+                </button>
               </div>
             </div>
           )}
@@ -421,16 +449,29 @@ export default function Appointment() {
                 This is only a tentative booking. Your actual appointment will
                 be confirmed by email.
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-center gap-2">
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border border-blue hover:text-blue duration-300 ease-linear"
                   onClick={handleClick2Prev}
                 >
                   Prev
                 </button>
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+                    selectedDate === "" ||
+                    selectedDate2 === "" ||
+                    shift === "" ||
+                    shift2 === ""
+                      ? "bg-white text-blue"
+                      : "text-white"
+                  }`}
                   onClick={handleClick2Next}
+                  disabled={
+                    selectedDate === "" ||
+                    selectedDate2 === "" ||
+                    shift === "" ||
+                    shift2 === ""
+                  }
                 >
                   Next
                 </button>
@@ -438,221 +479,234 @@ export default function Appointment() {
             </div>
           )}
           {stepperOpen3 && (
-            <div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setActiveYourSelf(!activeYourSelf)}
-                  className={`font-semibold px-4 py-2 rounded-full ${
-                    activeYourSelf ? "bg-blue text-white" : "bg-white text-blue"
-                  }`}
-                >
-                  For Yourself
-                </button>
-                <button
-                  onClick={() => setActiveYourSelf(!activeYourSelf)}
-                  className={`font-semibold px-4 py-2 rounded-full ${
-                    activeYourSelf === false
-                      ? "bg-blue text-white"
-                      : "bg-white text-blue"
-                  }`}
-                >
-                  Someone else
-                </button>
-              </div>
-              {activeYourSelf === false && (
-                <div>
-                  <h5 className="my-5 text-lg text-blue font-semibold">
-                    Requestor Information
-                  </h5>
-                  <Divider />
-                  <div className="mt-5 grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="mb-2.5">Enter First Name</p>
-                      <TextField
-                        fullWidth
-                        placeholder="Required"
-                        onChange={(e) => setRequestorFirstname(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Enter Last Name</p>
-                      <TextField
-                        fullWidth
-                        placeholder="Required"
-                        onChange={(e) => setRequestorLastName(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Enter Email</p>
-                      <TextField
-                        fullWidth
-                        placeholder="Required"
-                        onChange={(e) => setRequestorEmail(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Enter Phone Number (Required)</p>
-                      <MuiTelInput
-                        defaultCountry="TH"
-                        value={phone2}
-                        onChange={handlePhone2}
-                        fullWidth
-                      />
-                    </div>
-                    <div>
-                      <p className="mb-2.5">Select Relation (Required)</p>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">
-                          Select Relation
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={relation}
-                          label="Select Relation"
-                          onChange={(e) => setRelation(e.target.value)}
-                        >
-                          <MenuItem value="Son">Son</MenuItem>
-                          <MenuItem value="Daughter">Daughter</MenuItem>
-                          <MenuItem value="Father">Father</MenuItem>
-                          <MenuItem value="Mother">Mother</MenuItem>
-                          <MenuItem value="Other">Other</MenuItem>
-                        </Select>
-                      </FormControl>
+            <section className="md:px-5">
+              {/* first-card */}
+              <section className="">
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setActiveYourSelf(!activeYourSelf)}
+                    className={`font-semibold px-4 py-2 rounded-full ${
+                      activeYourSelf
+                        ? "bg-blue text-white"
+                        : "bg-white text-blue"
+                    }`}
+                  >
+                    For Yourself
+                  </button>
+                  <button
+                    onClick={() => setActiveYourSelf(!activeYourSelf)}
+                    className={`font-semibold px-4 py-2 rounded-full ${
+                      activeYourSelf === false
+                        ? "bg-blue text-white"
+                        : "bg-white text-blue"
+                    }`}
+                  >
+                    Someone else
+                  </button>
+                </div>
+                {activeYourSelf === false && (
+                  <div>
+                    <h5 className="my-5 text-lg text-blue font-semibold">
+                      Requestor Information
+                    </h5>
+                    <Divider />
+                    <div className="mt-5 grid md:grid-cols-2 gap-4">
+                      <div>
+                        <p className="mb-2.5">Enter First Name</p>
+                        <TextField
+                          fullWidth
+                          placeholder="Required"
+                          onChange={(e) =>
+                            setRequestorFirstname(e.target.value)
+                          }
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Enter Last Name</p>
+                        <TextField
+                          fullWidth
+                          placeholder="Required"
+                          onChange={(e) => setRequestorLastName(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Enter Email</p>
+                        <TextField
+                          fullWidth
+                          placeholder="Required"
+                          onChange={(e) => setRequestorEmail(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Enter Phone Number (Required)</p>
+                        <MuiTelInput
+                          defaultCountry="TH"
+                          value={phone2}
+                          onChange={handlePhone2}
+                          fullWidth
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Select Relation (Required)</p>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">
+                            Select Relation
+                          </InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={relation}
+                            label="Select Relation"
+                            onChange={(e) => setRelation(e.target.value)}
+                          >
+                            <MenuItem value="Son">Son</MenuItem>
+                            <MenuItem value="Daughter">Daughter</MenuItem>
+                            <MenuItem value="Father">Father</MenuItem>
+                            <MenuItem value="Mother">Mother</MenuItem>
+                            <MenuItem value="Other">Other</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-              <h5 className=" text-lg text-semibold my-5 font-semibold text-blue">
-                Patient Infromation
-              </h5>
-              <Divider />
+                )}
+                <h5 className=" text-lg text-semibold my-5 font-semibold text-blue">
+                  Patient Infromation
+                </h5>
+                <Divider />
 
-              <div className="mt-5 flex gap-4">
-                <button
-                  onClick={() => setOld(!old)}
-                  className={`px-4 py-2 font-semibold ${
-                    old ? "bg-blue text-white" : "text-blue"
-                  }  rounded-full`}
-                >
-                  New Patient
-                </button>
-                <button
-                  onClick={() => setOld(!old)}
-                  className={`px-4 py-2 font-semibold ${
-                    !old ? "bg-blue text-white" : "text-blue"
-                  } rounded-full`}
-                >
-                  Old Patient
-                </button>
-              </div>
+                <div className="mt-5 flex gap-4">
+                  <button
+                    onClick={() => setOld(!old)}
+                    className={`px-4 py-2 font-semibold ${
+                      old ? "bg-blue text-white" : "text-blue"
+                    }  rounded-full`}
+                  >
+                    New Patient
+                  </button>
+                  <button
+                    onClick={() => setOld(!old)}
+                    className={`px-4 py-2 font-semibold ${
+                      !old ? "bg-blue text-white" : "text-blue"
+                    } rounded-full`}
+                  >
+                    Old Patient
+                  </button>
+                </div>
 
-              {!old && (
-                <div className="mt-5">
-                  <p className="mb-2.5">Enter H.N. Number</p>
-                  <TextField
-                    fullWidth
-                    placeholder="Keep This Field Empty If You Don't Remember"
-                    onChange={(e) => setHnNumber(e.target.value)}
-                  />
-                </div>
-              )}
-              <div className="grid md:grid-cols-2 gap-4 mt-5">
-                <div>
-                  <p className="mb-2.5">Enter First Name</p>
-                  <TextField
-                    onChange={(e) => setfirstname(e.target.value)}
-                    fullWidth
-                    placeholder="Required"
-                  />
-                </div>
-                <div>
-                  <div>
-                    <p className="mb-2.5">Enter Last Name</p>
+                {!old && (
+                  <div className="mt-5">
+                    <p className="mb-2.5">Enter H.N. Number</p>
                     <TextField
-                      onChange={(e) => setLastName(e.target.value)}
+                      fullWidth
+                      placeholder="Keep This Field Empty If You Don't Remember"
+                      onChange={(e) => setHnNumber(e.target.value)}
+                    />
+                  </div>
+                )}
+                <div className="grid md:grid-cols-2 gap-4 mt-5">
+                  <div>
+                    <p className="mb-2.5">Enter First Name</p>
+                    <TextField
+                      onChange={(e) => setfirstname(e.target.value)}
                       fullWidth
                       placeholder="Required"
                     />
                   </div>
-                </div>
+                  <div>
+                    <div>
+                      <p className="mb-2.5">Enter Last Name</p>
+                      <TextField
+                        onChange={(e) => setLastName(e.target.value)}
+                        fullWidth
+                        placeholder="Required"
+                      />
+                    </div>
+                  </div>
 
-                <FormControl fullWidth>
-                  <p className="mb-2.5">Select Citizenship(Required)</p>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={citizenship}
-                    onChange={(e) => setCitizenship(e.target.value)}
+                  <FormControl fullWidth>
+                    <p className="mb-2.5">Select Citizenship(Required)</p>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={citizenship}
+                      onChange={(e) => setCitizenship(e.target.value)}
+                    >
+                      {countries.map((c, i) => (
+                        <MenuItem key={i} value={c}>
+                          {c}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  <FormControl fullWidth>
+                    <p className="mb-2.5">Select Gender(Required)</p>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)}
+                    >
+                      <MenuItem value="Male">Male</MenuItem>
+                      <MenuItem value="Female">Female</MenuItem>
+                      <MenuItem value="Other">Other</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <div>
+                    <p className="mb-2.5">Enter Email</p>
+                    <TextField
+                      fullWidth
+                      placeholder="Required"
+                      onChange={(e) => setPataientEmail(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <p className="mb-2.5">Enter Phone Number(Required)</p>
+                    <MuiTelInput
+                      defaultCountry="TH"
+                      value={phone}
+                      onChange={handlePhone}
+                      fullWidth
+                    />
+                  </div>
+                  <div>
+                    <p className="mb-2.5">Enter Date of Birth(Required)</p>
+                    <TextField
+                      fullWidth
+                      type="date"
+                      onChange={(e) => setDob(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* second card  */}
+              <section className="">
+                <p className="my-5 text-xl text-blue font-semibold">
+                  Where are you from?
+                </p>
+                <Divider />
+                <h5 className="mt-5">Are you in Thailand?</h5>
+                <div className="flex gap-2 mt-2.5 mb-5">
+                  <button
+                    className={`px-5 py-2 rounded-xl ${
+                      yes === true && "bg-blue text-white"
+                    }`}
+                    onClick={() => setYes(true)}
                   >
-                    {countries.map((c, i) => (
-                      <MenuItem key={i} value={c}>
-                        {c}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-                <FormControl fullWidth>
-                  <p className="mb-2.5">Select Gender(Required)</p>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={gender}
-                    onChange={(e) => setGender(e.target.value)}
+                    Yes
+                  </button>
+                  <button
+                    className={`px-5 py-2 rounded-xl ${
+                      yes === false && "bg-blue text-white"
+                    }`}
+                    onClick={() => {
+                      setYes(false);
+                    }}
                   >
-                    <MenuItem value="Male">Male</MenuItem>
-                    <MenuItem value="Female">Female</MenuItem>
-                    <MenuItem value="Other">Other</MenuItem>
-                  </Select>
-                </FormControl>
-                <div>
-                  <p className="mb-2.5">Enter Email</p>
-                  <TextField
-                    fullWidth
-                    placeholder="Required"
-                    onChange={(e) => setPataientEmail(e.target.value)}
-                  />
+                    No
+                  </button>
                 </div>
-                <div>
-                  <p className="mb-2.5">Enter Phone Number(Required)</p>
-                  <MuiTelInput
-                    defaultCountry="TH"
-                    value={phone}
-                    onChange={handlePhone}
-                    fullWidth
-                  />
-                </div>
-                <div>
-                  <p className="mb-2.5">Enter Date of Birth(Required)</p>
-                  <TextField
-                    fullWidth
-                    type="date"
-                    onChange={(e) => setDob(e.target.value)}
-                  />
-                </div>
-              </div>
-              <h5 className="mt-10">Are you in Thailand?</h5>
-              <div className="flex gap-2 mt-2.5 mb-5">
-                <button
-                  className={`px-5 py-2 rounded-xl ${
-                    yes === true && "bg-blue text-white"
-                  }`}
-                  onClick={() => setYes(true)}
-                >
-                  Yes
-                </button>
-                <button
-                  className={`px-5 py-2 rounded-xl ${
-                    yes === false && "bg-blue text-white"
-                  }`}
-                  onClick={() => {
-                    setYes(false);
-                  }}
-                >
-                  No
-                </button>
-              </div>
-              <div className="flex flex-col gap-5">
                 {yes === false && (
                   <FormControl fullWidth>
                     <p className="mb-2.5">Select Country(Required)</p>
@@ -682,6 +736,12 @@ export default function Appointment() {
                     onChange={(e) => setDesc(e.target.value)}
                   />
                 </div>
+              </section>
+
+              {/* third card */}
+              <section className=" flex flex-col gap-4 mt-4">
+                <p className="text-xl font-semibold text-blue">Documents</p>
+                <Divider />
                 <div>
                   <p className="mb-2.5">Attach Passport(Required)</p>
                   <TextField
@@ -714,15 +774,15 @@ export default function Appointment() {
                     onChange={(e) => setmedicalReport3(e.target.files[0])}
                   />
                 </div>
-              </div>
-              <div className="flex justify-center">
+              </section>
+              <div className="flex justify-center gap-2">
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border border-blue hover:text-blue duration-300 ease-linear"
                   onClick={handleClick3Prev}
                 >
                   Prev
                 </button>
-                <button
+                {/* <button
                   className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
                   disabled={
                     firstname === "" ||
@@ -740,10 +800,185 @@ export default function Appointment() {
                   }
                 >
                   Submit
+                </button> */}
+                <button
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+                    firstname === "" ||
+                    lastName === "" ||
+                    citizenship === "" ||
+                    gender === "" ||
+                    pataientEmail === "" ||
+                    phone === "" ||
+                    dob === "" ||
+                    passport === "" ||
+                    medicalReport1 === ""
+                      ? "bg-white text-blue"
+                      : "text-white"
+                  }`}
+                  onClick={handleClickOpenPreview}
+                  disabled={
+                    firstname === "" ||
+                    lastName === "" ||
+                    citizenship === "" ||
+                    gender === "" ||
+                    pataientEmail === "" ||
+                    phone === "" ||
+                    dob === "" ||
+                    passport === "" ||
+                    medicalReport1 === ""
+                  }
+                >
+                  Preview
+                </button>
+              </div>
+            </section>
+          )}
+          {/* preview modal  */}
+          <Dialog
+            fullScreen
+            open={openPreview}
+            onClose={handleClosePreview}
+            TransitionComponent={Transition}
+          >
+            <AppBar sx={{ position: "relative", backgroundColor: "#28266F" }}>
+              <Toolbar>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  onClick={handleClosePreview}
+                  aria-label="close"
+                >
+                  <CloseIcon />
+                </IconButton>
+                <Typography
+                  sx={{ ml: 2, flex: 1 }}
+                  variant="h6"
+                  component="div"
+                >
+                  Appointment Preview
+                </Typography>
+                <Button autoFocus color="inherit" onClick={handleClosePreview}>
+                  Book Appointment
+                </Button>
+              </Toolbar>
+            </AppBar>
+            <div className="p-8 flex flex-col gap-5 lg:container lg:mx-auto">
+              <div className="flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between">
+                <img src={logo} className="w-[200px]" alt="" />
+                <div className="text-center md:text-left">
+                  <p>Bumrungrad International Hospital</p>
+                  <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
+                </div>
+              </div>
+              <div className="h-0.5 w-full bg-blue"></div>
+              <div className="shadow rounded-xl p-5 text-black">
+                <p className="mb-2.5 text-xl font-semibold text-blue">
+                  Appointment Regarding
+                </p>
+                <Divider />
+                <ul className="mt-2.5">
+                  <li>
+                    {specialty && <span>Doctor Specialty: {specialty}</span>}
+                  </li>
+                  <li>
+                    {subSpecialty && (
+                      <span>Doctor Sub Specialty: {subSpecialty}</span>
+                    )}
+                  </li>
+                  <li>{doctor && <span>Doctor: {doctor}</span>}</li>
+                  <li>
+                    {medicalDesc && (
+                      <span>Medical Description: {medicalDesc}</span>
+                    )}
+                  </li>
+                  <li>
+                    {requestorEmail && <span>Email: {requestorEmail}</span>}
+                  </li>
+                  <li>{phone2 && <span>Phone: {phone2}</span>}</li>
+                  <li>{relation && <span>Relation: {relation}</span>}</li>
+                </ul>
+              </div>
+              <div className="shadow rounded-xl p-5 text-black">
+                <p className="mb-2.5 text-xl font-semibold text-blue">
+                  Appointment Schedule
+                </p>
+                <Divider />
+                <ul className="mt-2.5 grid grid-cols-2">
+                  <div>
+                    <li>
+                      {selectedDate && (
+                        <span>First Date: {format(selectedDate, "PP")}</span>
+                      )}
+                    </li>
+                    <li>{shift && <span>First Shift: {shift}</span>}</li>
+                  </div>
+                  <div>
+                    <li>
+                      {selectedDate2 && (
+                        <span>First Date: {format(selectedDate2, "PP")}</span>
+                      )}
+                    </li>
+                    <li>{shift && <span>Second Shift: {shift2}</span>}</li>
+                  </div>
+                </ul>
+              </div>
+              {activeYourSelf === false && (
+                <div className="shadow rounded-xl p-5 text-black">
+                  <p className="mb-2.5 text-xl font-semibold text-blue">
+                    Requestor Information
+                  </p>
+                  <Divider />
+                  <ul className="mt-2.5">
+                    <li>
+                      {requestorFirstname && (
+                        <span>Firstname: {requestorFirstname}</span>
+                      )}
+                    </li>
+                    <li>
+                      {requestorLastName && (
+                        <span>Lastname: {requestorLastName}</span>
+                      )}
+                    </li>
+                    <li>
+                      {requestorEmail && <span>Email: {requestorEmail}</span>}
+                    </li>
+                    <li>{phone2 && <span>Phone: {phone2}</span>}</li>
+                    <li>{relation && <span>Relation: {relation}</span>}</li>
+                  </ul>
+                </div>
+              )}
+              <div className="shadow rounded-xl p-5 text-black">
+                <p className="mb-2.5 text-xl font-semibold text-blue">
+                  Pataient Information
+                </p>
+                <Divider />
+                <ul className="mt-2.5">
+                  <li>{firstname && <span>Firstname: {firstname}</span>}</li>
+                  <li>{lastName && <span>Lastname: {lastName}</span>}</li>
+                  <li>{dob && <span>Lastname: {dob}</span>}</li>
+                  <li>
+                    {pataientEmail && <span>Email: {pataientEmail}</span>}
+                  </li>
+                  <li>{phone && <span>Phone: {phone}</span>}</li>
+                  <li>{gender && <span>Gender: {gender}</span>}</li>
+                  <li>
+                    {citizenship && <span>Citizenship: {citizenship}</span>}
+                  </li>
+                  <li>{country && <span>Country: {country}</span>}</li>
+                  <li>{desc && <span>Medical Description: {desc}</span>}</li>
+                </ul>
+              </div>
+              <div>
+                <button
+                  autoFocus
+                  onClick={handleClosePreview}
+                  className="px-4 py-2 bg-blue border border-blue text-white rounded-xl hover:bg-white hover:text-blue font-semibold duration-300 ease-linear"
+                >
+                  Book Appointment
                 </button>
               </div>
             </div>
-          )}
+          </Dialog>
         </div>
       </div>
     </div>
