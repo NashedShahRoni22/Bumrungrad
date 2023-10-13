@@ -10,7 +10,6 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { countries } from "./Countries";
 import { MuiTelInput } from "mui-tel-input";
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import Divider from "@mui/material/Divider";
 import AppBar from "@mui/material/AppBar";
@@ -852,14 +851,10 @@ export default function Appointment() {
                 </IconButton>
                 <Typography
                   sx={{ ml: 2, flex: 1 }}
-                  variant="h6"
                   component="div"
                 >
                   Appointment Preview
                 </Typography>
-                <Button autoFocus color="inherit" onClick={handleClosePreview}>
-                  Book Appointment
-                </Button>
               </Toolbar>
             </AppBar>
             <div className="p-8 flex flex-col gap-5 lg:container lg:mx-auto">
