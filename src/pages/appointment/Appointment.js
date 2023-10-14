@@ -780,25 +780,6 @@ export default function Appointment() {
                 >
                   Prev
                 </button>
-                {/* <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                  disabled={
-                    firstname === "" ||
-                    lastName === "" ||
-                    citizenship === "" ||
-                    gender === "" ||
-                    pataientEmail === "" ||
-                    phone === "" ||
-                    dob === "" ||
-                    country === "" ||
-                    (passport === "" &&
-                      medicalReport1 === "" &&
-                      medicalReport2 === "" &&
-                      medicalReport3 === "")
-                  }
-                >
-                  Submit
-                </button> */}
                 <button
                   className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
                     firstname === "" ||
@@ -814,17 +795,17 @@ export default function Appointment() {
                       : "text-white"
                   }`}
                   onClick={handlePreviewClickOpen}
-                  // disabled={
-                  //   firstname === "" ||
-                  //   lastName === "" ||
-                  //   citizenship === "" ||
-                  //   gender === "" ||
-                  //   pataientEmail === "" ||
-                  //   phone === "" ||
-                  //   dob === "" ||
-                  //   passport === "" ||
-                  //   medicalReport1 === ""
-                  // }
+                  disabled={
+                    firstname === "" ||
+                    lastName === "" ||
+                    citizenship === "" ||
+                    gender === "" ||
+                    pataientEmail === "" ||
+                    phone === "" ||
+                    dob === "" ||
+                    passport === "" ||
+                    medicalReport1 === ""
+                  }
                 >
                   Preview
                 </button>
