@@ -9,9 +9,25 @@ import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { countries } from "./Countries";
-import { MuiTelInput } from 'mui-tel-input'
+import { MuiTelInput } from "mui-tel-input";
+import Divider from "@mui/material/Divider";
+import logo from "../../assets/nav_logo.png";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
 
 export default function Appointment() {
+  // previwer control
+  const [Previewopen, PreviewsetOpen] = React.useState(false);
+  // const [fullWidth, setFullWidth] = React.useState(true);
+  // const [maxWidth, setMaxWidth] = React.useState("md");
+
+  const handlePreviewClosePreview = () => {
+    PreviewsetOpen(false);
+  };
+  const handlePreviewClickOpen = () => {
+    PreviewsetOpen(true);
+  };
+
   // stepper functionality
   const [stepperOpen, setStepperOpen] = useState(true);
   const [stepperOpen2, setStepperOpen2] = useState(false);
@@ -34,20 +50,50 @@ export default function Appointment() {
     setStepperOpen3(false);
   };
 
+  //old or new
+  const [old, setOld] = useState(false);
+  //yes or no
+  const [yes, setYes] = useState(true);
+
   //manage data
   const [specialty, setSpeacility] = React.useState("");
   const [subSpecialty, setSubSpeacility] = React.useState("");
   const [doctor, setDoctor] = React.useState("");
   const [medicalDesc, setMedicalDesc] = React.useState("");
   const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [selectedDate2, setSelectedDate2] = React.useState(new Date());
   const [shift, setShift] = React.useState("");
-  const [country, setCountry] = React.useState("");
+  const [shift2, setShift2] = React.useState("");
 
-  const [phone, setPhone] = React.useState('')
+  const [hnNumber, setHnNumber] = React.useState("");
+  const [firstname, setfirstname] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [dob, setDob] = React.useState("");
+  const [pataientEmail, setPataientEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [gender, setGender] = React.useState("");
+  const [citizenship, setCitizenship] = React.useState("");
+  const [country, setCountry] = React.useState("");
+  const [desc, setDesc] = React.useState("");
+
+  const [requestorFirstname, setRequestorFirstname] = React.useState("");
+  const [requestorLastName, setRequestorLastName] = React.useState("");
+  const [requestorEmail, setRequestorEmail] = React.useState("");
+  const [phone2, setPhone2] = React.useState("");
+  const [relation, setRelation] = React.useState("");
+
+  const [passport, setPassport] = React.useState("");
+  const [medicalReport1, setmedicalReport1] = React.useState("");
+  const [medicalReport2, setmedicalReport2] = React.useState("");
+  const [medicalReport3, setmedicalReport3] = React.useState("");
+  // const [requestorPhone, setRequestorPhone] = React.useState("");
 
   const handlePhone = (newPhone) => {
-    setPhone(newPhone)
-  }
+    setPhone(newPhone);
+  };
+  const handlePhone2 = (newPhone) => {
+    setPhone2(newPhone);
+  };
 
   const postData = {
     specialty,
@@ -55,12 +101,34 @@ export default function Appointment() {
     doctor,
     medicalDesc,
     selectedDate: format(selectedDate, "PP"),
+    selectedDate2: format(selectedDate2, "PP"),
     shift,
+    shift2,
+    oldPataint: old,
+    HnNumber: hnNumber,
+    PataientFirstName: firstname,
+    PataientLastName: lastName,
+    PataientCitizenship: citizenship,
+    PataientGender: gender,
+    PataientEmail: pataientEmail,
+    PataientPhone: phone,
+    PataientDob: dob,
+
+    RequestorFirstname: requestorFirstname,
+    RequestorLastName: requestorLastName,
+    RequestorEmail: requestorEmail,
+    RequestorPhone: phone2,
+    RequestorEelation: relation,
+    mediicalCorncern: desc,
+
     country,
-    phone
+    passport,
+    medicalReport1,
+    medicalReport2,
+    medicalReport3,
   };
 
-  // console.log(postData);
+  console.log(postData);
 
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialities] = useState([]);
@@ -72,6 +140,8 @@ export default function Appointment() {
 
   const [activeChoose, setActiveChoose] = useState(true);
   const [activeRecommend, setActiveRecommend] = useState(false);
+  const [activeYourSelf, setActiveYourSelf] = useState(true);
+
   //get speacilities
   useEffect(() => {
     fetch("https://api.bumrungraddiscover.com/api/get/specialty")
@@ -124,13 +194,13 @@ export default function Appointment() {
   }, [specialty, subSpecialty]);
 
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto lg:flex lg:flex-col lg:items-center">
-      <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
-        Appointment
+    <div className="md:p-10 my-5 md:my-10 md:container md:mx-auto lg:flex lg:flex-col lg:items-center">
+      <h1 className="text-center capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
+        Book Appointment
       </h1>
       <div className="my-10 lg:w-1/2">
         {/* top buttons  */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between mx-10 items-center">
           <button
             className={`px-4 py-2 shadow rounded-full border border-blue font-semibold text-xl ${
               (stepperOpen || stepperOpen2 || stepperOpen3) &&
@@ -166,9 +236,9 @@ export default function Appointment() {
           </button>
         </div>
         {/* Appointment form  */}
-        <div className="my-5 p-5 shadow rounded">
+        <div className="my-5 p-5 shadow-xl round">
           {stepperOpen && (
-            <div>
+            <div className="md:px-5">
               <div className="flex flex-col gap-4">
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
@@ -236,25 +306,34 @@ export default function Appointment() {
                 </div>
                 <div>
                   {activeChoose && (
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">
-                        Choose Doctor
-                      </InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={doctor}
-                        label="Choose Doctor"
-                        onChange={(e) => setDoctor(e.target.value)}
-                        disabled={doctors?.length === 0}
-                      >
-                        {doctors?.map((s, i) => (
-                          <MenuItem value={s?.name} key={i}>
-                            {s?.name}
-                          </MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
+                    <div className="flex flex-col gap-5">
+                      <FormControl fullWidth className="mb-5">
+                        <InputLabel id="demo-simple-select-label">
+                          Choose Doctor
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={doctor}
+                          label="Choose Doctor"
+                          onChange={(e) => setDoctor(e.target.value)}
+                          disabled={doctors?.length === 0}
+                        >
+                          {doctors?.map((s, i) => (
+                            <MenuItem value={s?.name} key={i}>
+                              {s?.name}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      <TextField
+                        placeholder="PLEASE DESCRIBE YOUR MEDICAL CONCERN OR SYMPTOMS"
+                        fullWidth
+                        multiline
+                        rows={6}
+                        onChange={(e) => setMedicalDesc(e.target.value)}
+                      />
+                    </div>
                   )}
                   {activeRecommend && (
                     <TextField
@@ -267,10 +346,21 @@ export default function Appointment() {
                   )}
                 </div>
               </div>
+              <p className="text-blue font-semibold py-2.5 text-center">
+                *Select a Speciality. <br />
+                *Select a Doctor or Write Symtopms.
+              </p>
               <div className="flex justify-center">
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+                    (doctor === "" && medicalDesc === "") || specialty === ""
+                      ? "bg-white text-blue"
+                      : "text-white"
+                  }`}
                   onClick={handleClick}
+                  disabled={
+                    (doctor === "" && medicalDesc === "") || specialty === ""
+                  }
                 >
                   Next
                 </button>
@@ -278,30 +368,52 @@ export default function Appointment() {
             </div>
           )}
           {stepperOpen2 && (
-            <div>
-              <div className="md:flex gap-5">
-                <div className="md:w-1/2 md:border-2 border-blue rounded flex justify-center">
+            <div className="md:p-5 flex flex-col justify-center items-center gap-5">
+              <p className="font-semibold text-blue text-xl">
+                Select Desired Day
+              </p>
+              <div className="flex flex-col gap-2.5 md:flex-row md:gap-5">
+                <div className="flex flex-col items-center shadow my-2.5">
+                  <p className="font-semibold text-blue">First Choice</p>
                   <DayPicker
                     mode="single"
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                   />
-                </div>
-                <div className="my-8 md:mt-0 md:w-1/2 flex flex-col gap-8">
-                  <p>
+                  <p className="mb-2.5">
                     {" "}
-                    <span className="font-semibold">Selected Date:</span>{" "}
+                    <span className="font-semibold text-blue">*Update Date:</span>{" "}
                     {format(selectedDate, "PP")}
                   </p>
+                </div>
+                <div className="flex flex-col items-center shadow my-2.5">
+                  <p className="font-semibold text-blue">Second Choice</p>
+                  <DayPicker
+                    mode="single"
+                    selected={selectedDate2}
+                    onSelect={setSelectedDate2}
+                  />
+                  <p className="mb-2.5">
+                    {" "}
+                    <span className="font-semibold text-blue">*Update Date:</span>{" "}
+                    {format(selectedDate2, "PP")}
+                  </p>
+                </div>
+              </div>
+              <p className="my-2.5 font-semibold text-blue text-xl">
+                Select Desired Shift
+              </p>
+              <div className="w-full flex flex-col md:flex-row gap-5">
+                <div className="w-full">
                   <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">
-                      Select Shift
+                      First Priority Shift
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={shift}
-                      label="Select Shift"
+                      label="First Priority Shift"
                       onChange={(e) => setShift(e.target.value)}
                     >
                       <MenuItem value="Morning">Morning</MenuItem>
@@ -309,22 +421,55 @@ export default function Appointment() {
                       <MenuItem value="Night">Night</MenuItem>
                     </Select>
                   </FormControl>
+                  <p className="font-semibold mt-2.5 text-blue">*Required</p>
+                </div>
+                <div className="w-full">
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Second Priority Shift
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={shift2}
+                      label="Second Priority Shift"
+                      onChange={(e) => setShift2(e.target.value)}
+                    >
+                      <MenuItem value="Morning">Morning</MenuItem>
+                      <MenuItem value="Evening">Evening</MenuItem>
+                      <MenuItem value="Night">Night</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <p className="font-semibold mt-2.5 text-blue">*Required</p>
                 </div>
               </div>
-              <p className="text-center mt-5">
+              <p className="font-semibold text-center mt-5 md:text-xl text-blue">
                 This is only a tentative booking. Your actual appointment will
                 be confirmed by email.
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-center gap-2">
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border border-blue hover:text-blue duration-300 ease-linear"
                   onClick={handleClick2Prev}
                 >
                   Prev
                 </button>
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+                    selectedDate === "" ||
+                    selectedDate2 === "" ||
+                    shift === "" ||
+                    shift2 === ""
+                      ? "bg-white text-blue"
+                      : "text-white"
+                  }`}
                   onClick={handleClick2Next}
+                  disabled={
+                    selectedDate === "" ||
+                    selectedDate2 === "" ||
+                    shift === "" ||
+                    shift2 === ""
+                  }
                 >
                   Next
                 </button>
@@ -332,49 +477,488 @@ export default function Appointment() {
             </div>
           )}
           {stepperOpen3 && (
-            <div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <TextField fullWidth label="Enter H.N. Number" />
-                <TextField fullWidth label="First Name" />
-                <TextField fullWidth label="Last Name" />
-                <TextField fullWidth type="date" />
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
-                    Select Citizenship
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={country}
-                    label="Select Citizenship"
-                    onChange={(e) => setCountry(e.target.value)}
+            <section className="md:px-5">
+              {/* first-card */}
+              <section className="">
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setActiveYourSelf(!activeYourSelf)}
+                    className={`font-semibold px-4 py-2 rounded-full ${
+                      activeYourSelf
+                        ? "bg-blue text-white"
+                        : "bg-white text-blue"
+                    }`}
                   >
-                    {countries.map((c,i) => (
-                      <MenuItem key={i} value={c}>{c}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-                <MuiTelInput defaultCountry="BD" value={phone} onChange={handlePhone} />
-              </div>
-              <div className="flex justify-center">
+                    For Yourself
+                  </button>
+                  <button
+                    onClick={() => setActiveYourSelf(!activeYourSelf)}
+                    className={`font-semibold px-4 py-2 rounded-full ${
+                      activeYourSelf === false
+                        ? "bg-blue text-white"
+                        : "bg-white text-blue"
+                    }`}
+                  >
+                    Someone else
+                  </button>
+                </div>
+                {activeYourSelf === false && (
+                  <div>
+                    <h5 className="my-5 text-lg text-blue font-semibold">
+                      Requestor Information
+                    </h5>
+                    <Divider />
+                    <div className="mt-5 grid md:grid-cols-2 gap-4">
+                      <div>
+                        <p className="mb-2.5">Enter First Name</p>
+                        <TextField
+                          fullWidth
+                          placeholder="Required"
+                          onChange={(e) =>
+                            setRequestorFirstname(e.target.value)
+                          }
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Enter Last Name</p>
+                        <TextField
+                          fullWidth
+                          placeholder="Required"
+                          onChange={(e) => setRequestorLastName(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Enter Email</p>
+                        <TextField
+                          fullWidth
+                          placeholder="Required"
+                          onChange={(e) => setRequestorEmail(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Enter Phone Number (Required)</p>
+                        <MuiTelInput
+                          defaultCountry="TH"
+                          value={phone2}
+                          onChange={handlePhone2}
+                          fullWidth
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-2.5">Select Relation (Required)</p>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">
+                            Select Relation
+                          </InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={relation}
+                            label="Select Relation"
+                            onChange={(e) => setRelation(e.target.value)}
+                          >
+                            <MenuItem value="Son">Son</MenuItem>
+                            <MenuItem value="Daughter">Daughter</MenuItem>
+                            <MenuItem value="Father">Father</MenuItem>
+                            <MenuItem value="Mother">Mother</MenuItem>
+                            <MenuItem value="Other">Other</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <h5 className=" text-lg text-semibold my-5 font-semibold text-blue">
+                  Patient Infromation
+                </h5>
+                <Divider />
+
+                <div className="mt-5 flex gap-4">
+                  <button
+                    onClick={() => setOld(!old)}
+                    className={`px-4 py-2 font-semibold ${
+                      old ? "bg-blue text-white" : "text-blue"
+                    }  rounded-full`}
+                  >
+                    New Patient
+                  </button>
+                  <button
+                    onClick={() => setOld(!old)}
+                    className={`px-4 py-2 font-semibold ${
+                      !old ? "bg-blue text-white" : "text-blue"
+                    } rounded-full`}
+                  >
+                    Old Patient
+                  </button>
+                </div>
+
+                {!old && (
+                  <div className="mt-5">
+                    <p className="mb-2.5">Enter H.N. Number</p>
+                    <TextField
+                      fullWidth
+                      placeholder="Keep This Field Empty If You Don't Remember"
+                      onChange={(e) => setHnNumber(e.target.value)}
+                    />
+                  </div>
+                )}
+                <div className="grid md:grid-cols-2 gap-4 mt-5">
+                  <div>
+                    <p className="mb-2.5">Enter First Name</p>
+                    <TextField
+                      onChange={(e) => setfirstname(e.target.value)}
+                      fullWidth
+                      placeholder="Required"
+                    />
+                  </div>
+                  <div>
+                    <div>
+                      <p className="mb-2.5">Enter Last Name</p>
+                      <TextField
+                        onChange={(e) => setLastName(e.target.value)}
+                        fullWidth
+                        placeholder="Required"
+                      />
+                    </div>
+                  </div>
+
+                  <FormControl fullWidth>
+                    <p className="mb-2.5">Select Citizenship(Required)</p>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={citizenship}
+                      onChange={(e) => setCitizenship(e.target.value)}
+                    >
+                      {countries.map((c, i) => (
+                        <MenuItem key={i} value={c}>
+                          {c}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  <FormControl fullWidth>
+                    <p className="mb-2.5">Select Gender(Required)</p>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)}
+                    >
+                      <MenuItem value="Male">Male</MenuItem>
+                      <MenuItem value="Female">Female</MenuItem>
+                      <MenuItem value="Other">Other</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <div>
+                    <p className="mb-2.5">Enter Email</p>
+                    <TextField
+                      fullWidth
+                      placeholder="Required"
+                      onChange={(e) => setPataientEmail(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <p className="mb-2.5">Enter Phone Number(Required)</p>
+                    <MuiTelInput
+                      defaultCountry="TH"
+                      value={phone}
+                      onChange={handlePhone}
+                      fullWidth
+                    />
+                  </div>
+                  <div>
+                    <p className="mb-2.5">Enter Date of Birth(Required)</p>
+                    <TextField
+                      fullWidth
+                      type="date"
+                      onChange={(e) => setDob(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* second card  */}
+              <section className="">
+                <p className="my-5 text-xl text-blue font-semibold">
+                  Where are you from?
+                </p>
+                <Divider />
+                <h5 className="mt-5">Are you in Thailand?</h5>
+                <div className="flex gap-2 mt-2.5 mb-5">
+                  <button
+                    className={`px-5 py-2 rounded-xl ${
+                      yes === true && "bg-blue text-white"
+                    }`}
+                    onClick={() => setYes(true)}
+                  >
+                    Yes
+                  </button>
+                  <button
+                    className={`px-5 py-2 rounded-xl ${
+                      yes === false && "bg-blue text-white"
+                    }`}
+                    onClick={() => {
+                      setYes(false);
+                    }}
+                  >
+                    No
+                  </button>
+                </div>
+                {yes === false && (
+                  <FormControl fullWidth>
+                    <p className="mb-2.5">Select Country(Required)</p>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={country}
+                      // label="Select Citizenship"
+                      onChange={(e) => setCountry(e.target.value)}
+                    >
+                      {countries.map((c, i) => (
+                        <MenuItem key={i} value={c}>
+                          {c}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                )}
+                <div>
+                  <p className="mb-2.5">Medical Description</p>
+                  <TextField
+                    className="capitalize"
+                    placeholder="MEDICAl CORNCERN OR REQUEST(OPTIONAL)"
+                    fullWidth
+                    multiline
+                    rows={5}
+                    onChange={(e) => setDesc(e.target.value)}
+                  />
+                </div>
+              </section>
+
+              {/* third card */}
+              <section className=" flex flex-col gap-4 mt-4">
+                <p className="text-xl font-semibold text-blue">Documents</p>
+                <Divider />
+                <div>
+                  <p className="mb-2.5">Attach Passport(Required)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setPassport(e.target.files[0])}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2.5">Medical Report 1(Required)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setmedicalReport1(e.target.files[0])}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2.5">Medical Report 2(Optional)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setmedicalReport2(e.target.files[0])}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2.5">Medical Report 3(Optional)</p>
+                  <TextField
+                    type="file"
+                    fullWidth
+                    onChange={(e) => setmedicalReport3(e.target.files[0])}
+                  />
+                </div>
+              </section>
+              <div className="flex justify-center gap-2">
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
+                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border border-blue hover:text-blue duration-300 ease-linear"
                   onClick={handleClick3Prev}
                 >
                   Prev
                 </button>
                 <button
-                  className="mt-5 px-4 py-2 rounded font-semibold text-white bg-blue hover:bg-white border hover:border-blue hover:text-blue duration-300 ease-linear"
-                  // onClick={handleClick3Prev}
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+                    firstname === "" ||
+                    lastName === "" ||
+                    citizenship === "" ||
+                    gender === "" ||
+                    pataientEmail === "" ||
+                    phone === "" ||
+                    dob === "" ||
+                    passport === "" ||
+                    medicalReport1 === ""
+                      ? "bg-white text-blue"
+                      : "text-white"
+                  }`}
+                  onClick={handlePreviewClickOpen}
+                  disabled={
+                    firstname === "" ||
+                    lastName === "" ||
+                    citizenship === "" ||
+                    gender === "" ||
+                    pataientEmail === "" ||
+                    phone === "" ||
+                    dob === "" ||
+                    passport === "" ||
+                    medicalReport1 === ""
+                  }
                 >
-                  Submit
+                  Preview
                 </button>
               </div>
-            </div>
+            </section>
           )}
+          {/* preview modal  */}
+
+          <React.Fragment>
+            <Dialog
+              fullWidth={true}
+              maxWidth={"md"}
+              open={Previewopen}
+              onClose={handlePreviewClosePreview}
+            >
+              <DialogContent>
+                <div className="md:p-4 flex flex-col gap-5 lg:container lg:mx-auto">
+                  <div className="flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between">
+                    <img src={logo} className="w-[200px]" alt="" />
+                    <div className="text-center text-blue md:text-left">
+                      <p>Bumrungrad International Hospital</p>
+                      <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
+                    </div>
+                  </div>
+                  <div className="h-0.5 w-full bg-blue"></div>
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Appointment For
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5">
+                      <li>{doctor && <span>Doctor: {doctor}</span>}</li>
+                      <li>
+                        {specialty && <span>Specialty: {specialty}</span>}
+                      </li>
+                      <li>
+                        {subSpecialty && (
+                          <span>Sub Specialty: {subSpecialty}</span>
+                        )}
+                      </li>
+                      <li>
+                        {medicalDesc && (
+                          <span>Medical Description: {medicalDesc}</span>
+                        )}
+                      </li>
+                      <li>
+                        {requestorEmail && <span>Email: {requestorEmail}</span>}
+                      </li>
+                      <li>{phone2 && <span>Phone: {phone2}</span>}</li>
+                      <li>{relation && <span>Relation: {relation}</span>}</li>
+                    </ul>
+                  </div>
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Appointment Schedule
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5 grid md:grid-cols-2 gap-2">
+                      <div>
+                        <li>
+                          {selectedDate && (
+                            <span>
+                              First Date: {format(selectedDate, "PP")}
+                            </span>
+                          )}
+                        </li>
+                        <li>{shift && <span>First Shift: {shift}</span>}</li>
+                      </div>
+                      <div>
+                        <li>
+                          {selectedDate2 && (
+                            <span>
+                              First Date: {format(selectedDate2, "PP")}
+                            </span>
+                          )}
+                        </li>
+                        <li>{shift && <span>Second Shift: {shift2}</span>}</li>
+                      </div>
+                    </ul>
+                  </div>
+                  {activeYourSelf === false && (
+                    <div className="shadow rounded-xl p-5 text-black">
+                      <p className="mb-2.5 text-xl font-semibold text-blue">
+                        Requestor Information
+                      </p>
+                      <Divider />
+                      <ul className="mt-2.5">
+                        <li>
+                          {requestorFirstname && (
+                            <span>Firstname: {requestorFirstname}</span>
+                          )}
+                        </li>
+                        <li>
+                          {requestorLastName && (
+                            <span>Lastname: {requestorLastName}</span>
+                          )}
+                        </li>
+                        <li>
+                          {requestorEmail && (
+                            <span>Email: {requestorEmail}</span>
+                          )}
+                        </li>
+                        <li>{phone2 && <span>Phone: {phone2}</span>}</li>
+                        <li>{relation && <span>Relation: {relation}</span>}</li>
+                      </ul>
+                    </div>
+                  )}
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Pataient Information
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5">
+                      <li>
+                        {firstname && <span>Firstname: {firstname}</span>}
+                      </li>
+                      <li>{lastName && <span>Lastname: {lastName}</span>}</li>
+                      <li>{dob && <span>Lastname: {dob}</span>}</li>
+                      <li>
+                        {pataientEmail && <span>Email: {pataientEmail}</span>}
+                      </li>
+                      <li>{phone && <span>Phone: {phone}</span>}</li>
+                      <li>{gender && <span>Gender: {gender}</span>}</li>
+                      <li>
+                        {citizenship && <span>Citizenship: {citizenship}</span>}
+                      </li>
+                      <li>{country && <span>Country: {country}</span>}</li>
+                      <li>
+                        {desc && <span>Medical Description: {desc}</span>}
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <button
+                      autoFocus
+                      className="px-2 py-2 md:px-4 md:py-2 bg-blue border border-blue text-white rounded-full hover:bg-white hover:text-blue font-semibold duration-300 ease-linear"
+                    >
+                      Book Appointment
+                    </button>
+                    <button
+                      autoFocus
+                      onClick={handlePreviewClosePreview}
+                      className="ml-2 md:ml-4  px-2 py-2 md:px-4 md:py-2 bg-red border border-red text-white rounded-full hover:bg-white hover:text-red font-semibold duration-300 ease-linear"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </React.Fragment>
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
