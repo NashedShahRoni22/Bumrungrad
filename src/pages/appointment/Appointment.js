@@ -14,18 +14,20 @@ import Divider from "@mui/material/Divider";
 import logo from "../../assets/nav_logo.png";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function Appointment() {
+  const [loader, setLoader] = useState(false);
   // previwer control
   const [Previewopen, PreviewsetOpen] = React.useState(false);
-  // const [fullWidth, setFullWidth] = React.useState(true);
-  // const [maxWidth, setMaxWidth] = React.useState("md");
+
+  const handlePreviewClickOpen = () => {
+    PreviewsetOpen(true);
+  };
 
   const handlePreviewClosePreview = () => {
     PreviewsetOpen(false);
-  };
-  const handlePreviewClickOpen = () => {
-    PreviewsetOpen(true);
   };
 
   // stepper functionality
@@ -118,17 +120,17 @@ export default function Appointment() {
     RequestorLastName: requestorLastName,
     RequestorEmail: requestorEmail,
     RequestorPhone: phone2,
-    RequestorEelation: relation,
+    RequestoerRelation: relation,
     mediicalCorncern: desc,
-
     country,
+
     passport,
     medicalReport1,
     medicalReport2,
     medicalReport3,
   };
 
-  console.log(postData);
+  // console.log(postData);
 
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialities] = useState([]);
@@ -192,6 +194,62 @@ export default function Appointment() {
     // Call the fetchData function whenever any state changes
     fetchData();
   }, [specialty, subSpecialty]);
+
+  const navigate = useNavigate();
+
+  //book apppointment
+  const handleBookAppointment = () => {
+    setLoader(true);
+    // console.log("Clicked");
+    const formData = new FormData();
+    formData.append("specialty", specialty);
+    formData.append("subSpecialty", subSpecialty);
+    formData.append("doctor", doctor);
+    formData.append("medicalDesc", medicalDesc);
+    formData.append("selectedDate", format(selectedDate, "PP"));
+    formData.append("selectedDate2", format(selectedDate2, "PP"));
+    formData.append("shift", shift);
+    formData.append("shift2", shift2);
+    formData.append("oldPataint", old);
+    formData.append("HnNumber", hnNumber);
+    formData.append("PataientFirstName", firstname);
+    formData.append("PataientLastName", lastName);
+    formData.append("PataientCitizenship", citizenship);
+    formData.append("PataientGender", gender);
+    formData.append("PataientEmail", pataientEmail);
+    formData.append("PataientPhone", phone);
+    formData.append("PataientDob", dob);
+    formData.append("RequestorFirstname", requestorFirstname);
+    formData.append("RequestorLastName", requestorLastName);
+    formData.append("RequestorEmail", requestorEmail);
+    formData.append("RequestorPhone", phone2);
+    formData.append("RequestoerRelation", relation);
+    formData.append("mediicalCorncern", desc);
+    formData.append("country", country);
+    formData.append("passport", passport);
+    formData.append("medicalReport1", medicalReport1);
+    formData.append("medicalReport2", medicalReport2);
+    formData.append("medicalReport3", medicalReport3);
+
+    fetch("https://api.bumrungraddiscover.com/api/add/doctor/appointment", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200) {
+          console.log(data);
+          setLoader(false);
+          PreviewsetOpen(false);
+          toast.success("Successfully Requested For Appointment!");
+          navigate("/");
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+        setLoader(false);
+      });
+  };
 
   return (
     <div className="md:p-10 my-5 md:my-10 md:container md:mx-auto lg:flex lg:flex-col lg:items-center">
@@ -382,7 +440,9 @@ export default function Appointment() {
                   />
                   <p className="mb-2.5">
                     {" "}
-                    <span className="font-semibold text-blue">*Update Date:</span>{" "}
+                    <span className="font-semibold text-blue">
+                      *Update Date:
+                    </span>{" "}
                     {format(selectedDate, "PP")}
                   </p>
                 </div>
@@ -395,7 +455,9 @@ export default function Appointment() {
                   />
                   <p className="mb-2.5">
                     {" "}
-                    <span className="font-semibold text-blue">*Update Date:</span>{" "}
+                    <span className="font-semibold text-blue">
+                      *Update Date:
+                    </span>{" "}
                     {format(selectedDate2, "PP")}
                   </p>
                 </div>
@@ -597,7 +659,7 @@ export default function Appointment() {
                     <p className="mb-2.5">Enter H.N. Number</p>
                     <TextField
                       fullWidth
-                      placeholder="Keep This Field Empty If You Don't Remember"
+                      defaultValue="Don't Remember"
                       onChange={(e) => setHnNumber(e.target.value)}
                     />
                   </div>
@@ -825,7 +887,7 @@ export default function Appointment() {
                 <div className="md:p-4 flex flex-col gap-5 lg:container lg:mx-auto">
                   <div className="flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between">
                     <img src={logo} className="w-[200px]" alt="" />
-                    <div className="text-center text-blue md:text-left">
+                    <div className="text-center font-semibold text-blue">
                       <p>Bumrungrad International Hospital</p>
                       <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
                     </div>
@@ -833,7 +895,7 @@ export default function Appointment() {
                   <div className="h-0.5 w-full bg-blue"></div>
                   <div className="shadow rounded-xl p-5 text-black">
                     <p className="mb-2.5 text-xl font-semibold text-blue">
-                      Appointment For
+                      Appointment For:
                     </p>
                     <Divider />
                     <ul className="mt-2.5">
@@ -860,7 +922,7 @@ export default function Appointment() {
                   </div>
                   <div className="shadow rounded-xl p-5 text-black">
                     <p className="mb-2.5 text-xl font-semibold text-blue">
-                      Appointment Schedule
+                      Appointment Schedule:
                     </p>
                     <Divider />
                     <ul className="mt-2.5 grid md:grid-cols-2 gap-2">
@@ -889,7 +951,7 @@ export default function Appointment() {
                   {activeYourSelf === false && (
                     <div className="shadow rounded-xl p-5 text-black">
                       <p className="mb-2.5 text-xl font-semibold text-blue">
-                        Requestor Information
+                        Requestor Information:
                       </p>
                       <Divider />
                       <ul className="mt-2.5">
@@ -940,13 +1002,12 @@ export default function Appointment() {
                   </div>
                   <div>
                     <button
-                      autoFocus
+                      onClick={handleBookAppointment}
                       className="px-2 py-2 md:px-4 md:py-2 bg-blue border border-blue text-white rounded-full hover:bg-white hover:text-blue font-semibold duration-300 ease-linear"
                     >
-                      Book Appointment
+                      {loader ? "Loading" : "Book Appointment"}
                     </button>
                     <button
-                      autoFocus
                       onClick={handlePreviewClosePreview}
                       className="ml-2 md:ml-4  px-2 py-2 md:px-4 md:py-2 bg-red border border-red text-white rounded-full hover:bg-white hover:text-red font-semibold duration-300 ease-linear"
                     >
