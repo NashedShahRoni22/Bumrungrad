@@ -10,31 +10,24 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { countries } from "./Countries";
 import { MuiTelInput } from "mui-tel-input";
-import Dialog from "@mui/material/Dialog";
 import Divider from "@mui/material/Divider";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
-import Slide from "@mui/material/Slide";
 import logo from "../../assets/nav_logo.png";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
 
 export default function Appointment() {
-  //preview form
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
+  // previwer control
+  const [Previewopen, PreviewsetOpen] = React.useState(false);
+  // const [fullWidth, setFullWidth] = React.useState(true);
+  // const [maxWidth, setMaxWidth] = React.useState("md");
 
-  const [openPreview, setOpenPreview] = React.useState(false);
-
-  const handleClickOpenPreview = () => {
-    setOpenPreview(true);
+  const handlePreviewClosePreview = () => {
+    PreviewsetOpen(false);
+  };
+  const handlePreviewClickOpen = () => {
+    PreviewsetOpen(true);
   };
 
-  const handleClosePreview = () => {
-    setOpenPreview(false);
-  };
   // stepper functionality
   const [stepperOpen, setStepperOpen] = useState(true);
   const [stepperOpen2, setStepperOpen2] = useState(false);
@@ -201,7 +194,7 @@ export default function Appointment() {
   }, [specialty, subSpecialty]);
 
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto lg:flex lg:flex-col lg:items-center">
+    <div className="md:p-10 my-5 md:my-10 md:container md:mx-auto lg:flex lg:flex-col lg:items-center">
       <h1 className="text-center capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
         Book Appointment
       </h1>
@@ -354,8 +347,8 @@ export default function Appointment() {
                 </div>
               </div>
               <p className="text-blue font-semibold py-2.5 text-center">
-                Please Select a Speciality. <br />
-                Select a Doctor or Write Symtopms.
+                *Select a Speciality. <br />
+                *Select a Doctor or Write Symtopms.
               </p>
               <div className="flex justify-center">
                 <button
@@ -375,11 +368,11 @@ export default function Appointment() {
             </div>
           )}
           {stepperOpen2 && (
-            <div className="flex flex-col justify-center items-center gap-5">
+            <div className="md:p-5 flex flex-col justify-center items-center gap-5">
               <p className="font-semibold text-blue text-xl">
                 Select Desired Day
               </p>
-              <div className="md:flex gap-5">
+              <div className="flex flex-col gap-2.5 md:flex-row md:gap-5">
                 <div className="flex flex-col items-center shadow my-2.5">
                   <p className="font-semibold text-blue">First Choice</p>
                   <DayPicker
@@ -389,7 +382,7 @@ export default function Appointment() {
                   />
                   <p className="mb-2.5">
                     {" "}
-                    <span className="font-semibold">Selected Date:</span>{" "}
+                    <span className="font-semibold text-blue">*Update Date:</span>{" "}
                     {format(selectedDate, "PP")}
                   </p>
                 </div>
@@ -402,7 +395,7 @@ export default function Appointment() {
                   />
                   <p className="mb-2.5">
                     {" "}
-                    <span className="font-semibold">Selected Date:</span>{" "}
+                    <span className="font-semibold text-blue">*Update Date:</span>{" "}
                     {format(selectedDate2, "PP")}
                   </p>
                 </div>
@@ -411,40 +404,46 @@ export default function Appointment() {
                 Select Desired Shift
               </p>
               <div className="w-full flex flex-col md:flex-row gap-5">
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
-                    First Priority Shift
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={shift}
-                    label="First Priority Shift"
-                    onChange={(e) => setShift(e.target.value)}
-                  >
-                    <MenuItem value="Morning">Morning</MenuItem>
-                    <MenuItem value="Evening">Evening</MenuItem>
-                    <MenuItem value="Night">Night</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
-                    Second Priority Shift
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={shift2}
-                    label="Second Priority Shift"
-                    onChange={(e) => setShift2(e.target.value)}
-                  >
-                    <MenuItem value="Morning">Morning</MenuItem>
-                    <MenuItem value="Evening">Evening</MenuItem>
-                    <MenuItem value="Night">Night</MenuItem>
-                  </Select>
-                </FormControl>
+                <div className="w-full">
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      First Priority Shift
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={shift}
+                      label="First Priority Shift"
+                      onChange={(e) => setShift(e.target.value)}
+                    >
+                      <MenuItem value="Morning">Morning</MenuItem>
+                      <MenuItem value="Evening">Evening</MenuItem>
+                      <MenuItem value="Night">Night</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <p className="font-semibold mt-2.5 text-blue">*Required</p>
+                </div>
+                <div className="w-full">
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Second Priority Shift
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={shift2}
+                      label="Second Priority Shift"
+                      onChange={(e) => setShift2(e.target.value)}
+                    >
+                      <MenuItem value="Morning">Morning</MenuItem>
+                      <MenuItem value="Evening">Evening</MenuItem>
+                      <MenuItem value="Night">Night</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <p className="font-semibold mt-2.5 text-blue">*Required</p>
+                </div>
               </div>
-              <p className="font-semibold text-center mt-5 text-xl text-blue">
+              <p className="font-semibold text-center mt-5 md:text-xl text-blue">
                 This is only a tentative booking. Your actual appointment will
                 be confirmed by email.
               </p>
@@ -814,18 +813,18 @@ export default function Appointment() {
                       ? "bg-white text-blue"
                       : "text-white"
                   }`}
-                  onClick={handleClickOpenPreview}
-                  disabled={
-                    firstname === "" ||
-                    lastName === "" ||
-                    citizenship === "" ||
-                    gender === "" ||
-                    pataientEmail === "" ||
-                    phone === "" ||
-                    dob === "" ||
-                    passport === "" ||
-                    medicalReport1 === ""
-                  }
+                  onClick={handlePreviewClickOpen}
+                  // disabled={
+                  //   firstname === "" ||
+                  //   lastName === "" ||
+                  //   citizenship === "" ||
+                  //   gender === "" ||
+                  //   pataientEmail === "" ||
+                  //   phone === "" ||
+                  //   dob === "" ||
+                  //   passport === "" ||
+                  //   medicalReport1 === ""
+                  // }
                 >
                   Preview
                 </button>
@@ -833,147 +832,150 @@ export default function Appointment() {
             </section>
           )}
           {/* preview modal  */}
-          <Dialog
-            fullScreen
-            open={openPreview}
-            onClose={handleClosePreview}
-            TransitionComponent={Transition}
-          >
-            <AppBar sx={{ position: "relative", backgroundColor: "#28266F" }}>
-              <Toolbar>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  onClick={handleClosePreview}
-                  aria-label="close"
-                >
-                  <CloseIcon />
-                </IconButton>
-                <Typography
-                  sx={{ ml: 2, flex: 1 }}
-                  component="div"
-                >
-                  Appointment Preview
-                </Typography>
-              </Toolbar>
-            </AppBar>
-            <div className="p-8 flex flex-col gap-5 lg:container lg:mx-auto">
-              <div className="flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between">
-                <img src={logo} className="w-[200px]" alt="" />
-                <div className="text-center md:text-left">
-                  <p>Bumrungrad International Hospital</p>
-                  <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
-                </div>
-              </div>
-              <div className="h-0.5 w-full bg-blue"></div>
-              <div className="shadow rounded-xl p-5 text-black">
-                <p className="mb-2.5 text-xl font-semibold text-blue">
-                  Appointment Regarding
-                </p>
-                <Divider />
-                <ul className="mt-2.5">
-                  <li>
-                    {specialty && <span>Doctor Specialty: {specialty}</span>}
-                  </li>
-                  <li>
-                    {subSpecialty && (
-                      <span>Doctor Sub Specialty: {subSpecialty}</span>
-                    )}
-                  </li>
-                  <li>{doctor && <span>Doctor: {doctor}</span>}</li>
-                  <li>
-                    {medicalDesc && (
-                      <span>Medical Description: {medicalDesc}</span>
-                    )}
-                  </li>
-                  <li>
-                    {requestorEmail && <span>Email: {requestorEmail}</span>}
-                  </li>
-                  <li>{phone2 && <span>Phone: {phone2}</span>}</li>
-                  <li>{relation && <span>Relation: {relation}</span>}</li>
-                </ul>
-              </div>
-              <div className="shadow rounded-xl p-5 text-black">
-                <p className="mb-2.5 text-xl font-semibold text-blue">
-                  Appointment Schedule
-                </p>
-                <Divider />
-                <ul className="mt-2.5 grid grid-cols-2">
-                  <div>
-                    <li>
-                      {selectedDate && (
-                        <span>First Date: {format(selectedDate, "PP")}</span>
-                      )}
-                    </li>
-                    <li>{shift && <span>First Shift: {shift}</span>}</li>
+
+          <React.Fragment>
+            <Dialog
+              fullWidth={true}
+              maxWidth={"md"}
+              open={Previewopen}
+              onClose={handlePreviewClosePreview}
+            >
+              <DialogContent>
+                <div className="md:p-4 flex flex-col gap-5 lg:container lg:mx-auto">
+                  <div className="flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between">
+                    <img src={logo} className="w-[200px]" alt="" />
+                    <div className="text-center text-blue md:text-left">
+                      <p>Bumrungrad International Hospital</p>
+                      <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
+                    </div>
+                  </div>
+                  <div className="h-0.5 w-full bg-blue"></div>
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Appointment For
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5">
+                      <li>{doctor && <span>Doctor: {doctor}</span>}</li>
+                      <li>
+                        {specialty && <span>Specialty: {specialty}</span>}
+                      </li>
+                      <li>
+                        {subSpecialty && (
+                          <span>Sub Specialty: {subSpecialty}</span>
+                        )}
+                      </li>
+                      <li>
+                        {medicalDesc && (
+                          <span>Medical Description: {medicalDesc}</span>
+                        )}
+                      </li>
+                      <li>
+                        {requestorEmail && <span>Email: {requestorEmail}</span>}
+                      </li>
+                      <li>{phone2 && <span>Phone: {phone2}</span>}</li>
+                      <li>{relation && <span>Relation: {relation}</span>}</li>
+                    </ul>
+                  </div>
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Appointment Schedule
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5 grid md:grid-cols-2 gap-2">
+                      <div>
+                        <li>
+                          {selectedDate && (
+                            <span>
+                              First Date: {format(selectedDate, "PP")}
+                            </span>
+                          )}
+                        </li>
+                        <li>{shift && <span>First Shift: {shift}</span>}</li>
+                      </div>
+                      <div>
+                        <li>
+                          {selectedDate2 && (
+                            <span>
+                              First Date: {format(selectedDate2, "PP")}
+                            </span>
+                          )}
+                        </li>
+                        <li>{shift && <span>Second Shift: {shift2}</span>}</li>
+                      </div>
+                    </ul>
+                  </div>
+                  {activeYourSelf === false && (
+                    <div className="shadow rounded-xl p-5 text-black">
+                      <p className="mb-2.5 text-xl font-semibold text-blue">
+                        Requestor Information
+                      </p>
+                      <Divider />
+                      <ul className="mt-2.5">
+                        <li>
+                          {requestorFirstname && (
+                            <span>Firstname: {requestorFirstname}</span>
+                          )}
+                        </li>
+                        <li>
+                          {requestorLastName && (
+                            <span>Lastname: {requestorLastName}</span>
+                          )}
+                        </li>
+                        <li>
+                          {requestorEmail && (
+                            <span>Email: {requestorEmail}</span>
+                          )}
+                        </li>
+                        <li>{phone2 && <span>Phone: {phone2}</span>}</li>
+                        <li>{relation && <span>Relation: {relation}</span>}</li>
+                      </ul>
+                    </div>
+                  )}
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Pataient Information
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5">
+                      <li>
+                        {firstname && <span>Firstname: {firstname}</span>}
+                      </li>
+                      <li>{lastName && <span>Lastname: {lastName}</span>}</li>
+                      <li>{dob && <span>Lastname: {dob}</span>}</li>
+                      <li>
+                        {pataientEmail && <span>Email: {pataientEmail}</span>}
+                      </li>
+                      <li>{phone && <span>Phone: {phone}</span>}</li>
+                      <li>{gender && <span>Gender: {gender}</span>}</li>
+                      <li>
+                        {citizenship && <span>Citizenship: {citizenship}</span>}
+                      </li>
+                      <li>{country && <span>Country: {country}</span>}</li>
+                      <li>
+                        {desc && <span>Medical Description: {desc}</span>}
+                      </li>
+                    </ul>
                   </div>
                   <div>
-                    <li>
-                      {selectedDate2 && (
-                        <span>First Date: {format(selectedDate2, "PP")}</span>
-                      )}
-                    </li>
-                    <li>{shift && <span>Second Shift: {shift2}</span>}</li>
+                    <button
+                      autoFocus
+                      className="px-2 py-2 md:px-4 md:py-2 bg-blue border border-blue text-white rounded-full hover:bg-white hover:text-blue font-semibold duration-300 ease-linear"
+                    >
+                      Book Appointment
+                    </button>
+                    <button
+                      autoFocus
+                      onClick={handlePreviewClosePreview}
+                      className="ml-2 md:ml-4  px-2 py-2 md:px-4 md:py-2 bg-red border border-red text-white rounded-full hover:bg-white hover:text-red font-semibold duration-300 ease-linear"
+                    >
+                      Close
+                    </button>
                   </div>
-                </ul>
-              </div>
-              {activeYourSelf === false && (
-                <div className="shadow rounded-xl p-5 text-black">
-                  <p className="mb-2.5 text-xl font-semibold text-blue">
-                    Requestor Information
-                  </p>
-                  <Divider />
-                  <ul className="mt-2.5">
-                    <li>
-                      {requestorFirstname && (
-                        <span>Firstname: {requestorFirstname}</span>
-                      )}
-                    </li>
-                    <li>
-                      {requestorLastName && (
-                        <span>Lastname: {requestorLastName}</span>
-                      )}
-                    </li>
-                    <li>
-                      {requestorEmail && <span>Email: {requestorEmail}</span>}
-                    </li>
-                    <li>{phone2 && <span>Phone: {phone2}</span>}</li>
-                    <li>{relation && <span>Relation: {relation}</span>}</li>
-                  </ul>
                 </div>
-              )}
-              <div className="shadow rounded-xl p-5 text-black">
-                <p className="mb-2.5 text-xl font-semibold text-blue">
-                  Pataient Information
-                </p>
-                <Divider />
-                <ul className="mt-2.5">
-                  <li>{firstname && <span>Firstname: {firstname}</span>}</li>
-                  <li>{lastName && <span>Lastname: {lastName}</span>}</li>
-                  <li>{dob && <span>Lastname: {dob}</span>}</li>
-                  <li>
-                    {pataientEmail && <span>Email: {pataientEmail}</span>}
-                  </li>
-                  <li>{phone && <span>Phone: {phone}</span>}</li>
-                  <li>{gender && <span>Gender: {gender}</span>}</li>
-                  <li>
-                    {citizenship && <span>Citizenship: {citizenship}</span>}
-                  </li>
-                  <li>{country && <span>Country: {country}</span>}</li>
-                  <li>{desc && <span>Medical Description: {desc}</span>}</li>
-                </ul>
-              </div>
-              <div>
-                <button
-                  autoFocus
-                  onClick={handleClosePreview}
-                  className="px-4 py-2 bg-blue border border-blue text-white rounded-xl hover:bg-white hover:text-blue font-semibold duration-300 ease-linear"
-                >
-                  Book Appointment
-                </button>
-              </div>
-            </div>
-          </Dialog>
+              </DialogContent>
+            </Dialog>
+          </React.Fragment>
         </div>
       </div>
     </div>
