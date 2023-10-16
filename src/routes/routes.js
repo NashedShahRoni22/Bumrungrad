@@ -8,12 +8,14 @@ import VissionMisson from '../pages/about/vissionMission/VissionMisson'
 import FactSheet from '../pages/about/factsheet/FactSheet'
 import Accreditation from '../pages/about/accreditation/Accreditation'
 import Foundation from '../pages/about/Foundation/Foundation'
-import ContactUs from '../pages/home/ContactUs'
 import WeAccept from '../pages/insurance/WeAccept'
 import GoodVibes from '../pages/insurance/GoodVibes'
 import PackagePromotion from '../pages/insurance/PackagePromotion'
 import Appointment from '../pages/appointment/Appointment'
+
 import SendQuery from '../pages/SendQuery/SendQuery'
+
+import ContactUs from '../pages/contactUs/ContactUs'
 
 export const router = createBrowserRouter([
   {

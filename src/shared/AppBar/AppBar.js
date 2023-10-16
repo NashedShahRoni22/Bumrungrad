@@ -4,7 +4,7 @@ import logo from "../../assets/nav_logo.png";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -38,8 +38,8 @@ export default function AppBar() {
   }, []);
 
   return (
-    <nav className='bg-cream sticky top-0 z-20'>
-      <section className='px-5 py-3 relative md:container md:mx-auto flex items-center justify-between'>
+    <nav className="bg-cream sticky top-0 z-20">
+      <section className="px-5 py-3 relative md:container md:mx-auto flex items-center justify-between">
         <div>
           <img src={logo} alt="nav_logo" className="w-[200px]" />
         </div>
@@ -100,7 +100,11 @@ export default function AppBar() {
                 {mi.childs && (
                   <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
                     {mi.childs?.map((mc, i) => (
-                      <Link key={i} to={mc.link} className="flex items-center gap-2">
+                      <Link
+                        key={i}
+                        to={mc.link}
+                        className="flex items-center gap-2"
+                      >
                         <div className="h-2 bg-blue w-2 rounded-full"></div>
                         <p className="hover:ml-3 my-1 duration-300 ease-linear">
                           {mc.name}
@@ -136,10 +140,10 @@ export default function AppBar() {
             </div>
           </div>
           <div className="flex gap-4 items-center">
-            <WhatsAppIcon
+            {/* <WhatsAppIcon
               sx={{ fontSize: "28px" }}
               className="cursor-pointer text-blue"
-            />
+            /> */}
             <EmailIcon
               sx={{ fontSize: "28px" }}
               className="cursor-pointer text-blue"
@@ -170,7 +174,11 @@ export default function AppBar() {
               {mi.childs && (
                 <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
                   {mi.childs?.map((mc, i) => (
-                    <Link key={i} to={mc.link} className="flex items-center gap-2">
+                    <Link
+                      key={i}
+                      to={mc.link}
+                      className="flex items-center gap-2"
+                    >
                       <div className="h-2 bg-blue w-2 rounded-full"></div>
                       <p className="hover:ml-3 my-1 duration-300 ease-linear">
                         {mc.name}
