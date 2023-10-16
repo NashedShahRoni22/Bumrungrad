@@ -10,7 +10,8 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '2px solid #fff',
+  borderRadius: '16px',
   boxShadow: 24,
   p: 4,
 }
@@ -23,7 +24,7 @@ const BookingModal = () => {
   const getData = (data) => {
     setServiceName(data)
   }
-  const { name, form} = serviceName
+  const { name, form, height } = serviceName
 
   return (
     <div>
@@ -32,11 +33,11 @@ const BookingModal = () => {
         aria-labelledby='modal-modal-title'
         aria-describedby='modal-modal-description'
       >
-        <Box sx={style} className='w-[350px] md:w-[750px]'>
+        <Box sx={style} className={`${height} w-[350px]`}>
           <button
             onClick={handleClose}
             size='small'
-            className='bg-black text-white px-3 py-1 rounded float-right'
+            className='bg-black text-white px-3 py-1 mb-2 rounded float-right'
           >
             Close
           </button>
@@ -45,11 +46,15 @@ const BookingModal = () => {
           </Typography>
 
           <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-            {form}
+            <div>{form}</div>
           </Typography>
         </Box>
       </Modal>
-      <Services handaleOpen={handleOpen} getData={getData} />
+      <Services
+        handaleOpen={handleOpen}
+        getData={getData}
+        handleClose={handleClose}
+      />
     </div>
   )
 }

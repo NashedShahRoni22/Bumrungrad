@@ -1,5 +1,4 @@
 import React from 'react'
-import Services from './Services'
 import LandingBanner from './LandingBanner'
 import ClinicCenters from './ClinicCenters'
 import WhyUs from './WhyUs'
@@ -13,7 +12,6 @@ export default function Home() {
       <BookingModal />
       <ClinicCenters />
       <WhyUs />
-
       <div className='fixed bottom-2 min-w-full z-50'>
         <MiddleBar />
       </div>

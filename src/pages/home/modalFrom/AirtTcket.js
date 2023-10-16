@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 import { TextField } from '@mui/material'
 import { useEffect } from 'react'
 const AirtTcket = () => {
+  //loader
+  const [loader, setLoader] = useState()
+  //Input field state..
+  const [flydate, setFlydate] = useState('')
+  const [passport, setPassport] = useState('')
+  const [country, setCountry] = useState('')
+
+  //data state
   const [countries, setCountries] = useState([])
   useEffect(() => {
     fetch('countries.json')
@@ -9,48 +17,71 @@ const AirtTcket = () => {
       .then((data) => setCountries(data))
   }, [])
 
-  const airTicket = (event) => {
+  const handaleAirTicket = (event) => {
+    setLoader(true)
     event.preventDefault()
     const form = event.target
-    const flyDate = form.date.value
-    const countryName = form.country.value
+
     const getAirTicket = {
-      flyDate,
-      countryName,
+      booking_date: flydate,
+      doc: passport,
+      country: country,
     }
-    //console.log(getAirTicket)
-    /*  fetch('http://localhost:5000/bookings', {
+    console.log(getAirTicket)
+    const formData = new FormData()
+    formData.append('booking_date', flydate)
+    formData.append('doc', passport)
+    formData.append('country', country)
+
+    fetch('https://api.bumrungraddiscover.com/api/add/air/ticket', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(booking),
+      body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged) {
-          refetch()
+        if (data.status === 200) {
+          console.log(data)
+          setLoader(false)
         }
       })
- */
+      .catch((error) => console.error(error))
+
     form.reset()
   }
   return (
     <div>
       <form
-        onSubmit={airTicket}
+        onSubmit={handaleAirTicket}
         className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96'
       >
         <div className='mb-2 flex flex-col gap-6'>
-          <div className='mt-4'>
-            <p className='mb-2.5 font-semibold text-sm'>Enter Your Fly date</p>
-            <TextField type='date' name='date' fullWidth required />
+          <div className='mt-2'>
+            <p className='mb-2.5 font-semibold text-sm'>Enter Your Fly Date</p>
+            <TextField
+              type='date'
+              onChange={(e) => setFlydate(e.target.value)}
+              fullWidth
+              required
+            />
           </div>
-          <div>
+          <div className='mt-2'>
+            <p className='mb-2.5 font-semibold text-sm'>
+              Attach Your Passport Copy
+            </p>
+            <TextField
+              type='file'
+              onChange={(e) => setPassport(e.target.files[0])}
+              fullWidth
+              required
+            />
+          </div>
+          <div className='mt-2'>
             <p className='mb-2.5 font-semibold text-sm'>From Country</p>
             <TextField
               id='filled-select-currency-native'
               select
               fullWidth
-              name='country'
+              onChange={(e) => setCountry(e.target.value)}
               required
               SelectProps={{
                 native: true,
@@ -69,7 +100,7 @@ const AirtTcket = () => {
           type='submit'
           className='bg-blue text-white px-3 py-1 rounded float-left mt-3'
         >
-          Submit
+          {loader ? 'Loading...' : 'Submit'}
         </button>
       </form>
     </div>

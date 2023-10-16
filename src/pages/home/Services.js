@@ -12,6 +12,9 @@ import AirAmbulanceForm from './modalFrom/AirAmbulanceForm'
 import OrderMedicine from './modalFrom/OrderMedicine'
 import AirtTcket from './modalFrom/AirtTcket'
 import AirPickup from './modalFrom/AirPickup'
+import VisaProcessing from './modalFrom/VisaProcessing'
+import TeleMedicine from './modalFrom/TeleMedicine'
+import MedicalRecords from './modalFrom/MedicalRecords'
 
 const services = [
   {
@@ -21,42 +24,53 @@ const services = [
   },
   {
     id: 2,
+
     name: 'Air Ambulance',
     img: airimg,
     form: <AirAmbulanceForm />,
+    height: 'md:w-[750px]',
   },
   {
     id: 3,
     name: 'Order Medicine',
     img: orderMedicine,
     form: <OrderMedicine />,
+    height: 'h-[470px] overflow-auto md:w-[750px]',
   },
   {
     id: 4,
-    name: 'Visa Processing',
+    name: 'Medical Records',
+    form: <MedicalRecords />,
     img: visaProcessing,
+    height: 'md:w-[750px]',
   },
   {
     id: 5,
     name: 'Tele Medicine',
+    form: <TeleMedicine />,
     img: teleMedicine,
+    height: 'h-[600px] overflow-auto md:w-[750px]',
   },
   {
     id: 6,
     name: 'Hotel Reservation',
     img: hotelReservation,
+    form: <VisaProcessing />,
+    height: 'md:w-[400px]',
   },
   {
     id: 7,
     name: 'Air Ticket',
     img: airticket,
     form: <AirtTcket />,
+    height: 'md:w-[750px]',
   },
   {
     id: 8,
     name: 'Air Pickup',
     img: airpickup,
     form: <AirPickup />,
+    height: 'md:w-[750px]',
   },
 ]
 
@@ -74,7 +88,7 @@ export default function Services(props) {
       </div>
       <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
         {services.map((s, i, id) => (
-          <>
+          <div key={i}>
             {' '}
             <Link
               to={s.pageTo}
@@ -88,7 +102,7 @@ export default function Services(props) {
               <img src={s.img} alt={s.name} className='h-[100px] w-[100px]' />
               <h5 className='text-center font-semibold text-blue'>{s.name}</h5>
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </div>

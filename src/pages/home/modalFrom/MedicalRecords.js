@@ -1,34 +1,32 @@
 import React, { useState } from 'react'
-
 import { TextField } from '@mui/material'
-const AirAmbulanceForm = () => {
+
+const MedicalRecords = () => {
   //loader
   const [loader, setLoader] = useState()
 
-  const [date, setDate] = useState('')
   const [passport, setPassport] = useState('')
+  const [hnNum, setHnNum] = useState('')
   const [caseSummary, setCaseSummary] = useState('')
-  const [briflyDiscusion, setbriflyDiscusion] = useState('')
 
   const addPatient = (event) => {
     setLoader(true)
     event.preventDefault()
     const form = event.target
     const getAirAmbulance = {
-      flydate: date,
-      passport: passport,
-      caseSummary: caseSummary,
-      briflySummary: briflyDiscusion,
+      passport,
+      hnNum,
+      caseSummary,
     }
     console.log(getAirAmbulance)
 
     const formData = new FormData()
-    formData.append('entry_date', date)
-    formData.append('passport_copy', passport)
-    formData.append('summary', caseSummary)
-    formData.append('description', briflyDiscusion)
 
-    fetch('https://api.bumrungraddiscover.com/api/add/air/ambulance', {
+    formData.append('passport', passport)
+    formData.append('caseSummary', caseSummary)
+    formData.append('hnNum', hnNum)
+
+    fetch('https://api.bumrungraddiscover.com/api/add/medical/report', {
       method: 'POST',
       body: formData,
     })
@@ -50,17 +48,8 @@ const AirAmbulanceForm = () => {
         className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96'
       >
         <div className='mb-2 flex flex-col gap-6'>
-          <div className=''>
-            <p className='mb-2 font-semibold text-sm'>Enter Date</p>
-            <TextField
-              type='date'
-              onChange={(e) => setDate(e.target.value)}
-              fullWidth
-              required
-            />
-          </div>
-          <div className='mt-1'>
-            <p className='mb-1 font-semibold text-sm'>
+          <div className='mt-2'>
+            <p className='mb-2 font-semibold text-sm'>
               Attach Your Passport Copy
             </p>
             <TextField
@@ -70,21 +59,16 @@ const AirAmbulanceForm = () => {
               required
             />
           </div>
-          <div className='mt-1'>
-            <p className='mb-2 font-semibold text-sm'>Upload Case Summary</p>
+          <div className='mt-2'>
+            <p className='mb-2 font-semibold text-sm'>HN Number</p>
+            <TextField onChange={(e) => setHnNum(e.target.value)} fullWidth />
+          </div>
+          <div className='mt-2'>
+            <p className='mb-2 font-semibold text-sm'>Report Details</p>
             <TextField
               multiline
               onChange={(e) => setCaseSummary(e.target.value)}
-              rows={2}
-              fullWidth
-            />
-          </div>
-          <div className='mt-1'>
-            <p className='mb-2 font-semibold text-sm'>Write In Brifley</p>
-            <TextField
-              multiline
-              onChange={(e) => setbriflyDiscusion(e.target.value)}
-              rows={2}
+              rows={4}
               fullWidth
             />
           </div>
@@ -100,4 +84,4 @@ const AirAmbulanceForm = () => {
   )
 }
 
-export default AirAmbulanceForm
+export default MedicalRecords

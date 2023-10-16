@@ -13,6 +13,7 @@ import WeAccept from '../pages/insurance/WeAccept'
 import GoodVibes from '../pages/insurance/GoodVibes'
 import PackagePromotion from '../pages/insurance/PackagePromotion'
 import Appointment from '../pages/appointment/Appointment'
+import SendQuery from '../pages/SendQuery/SendQuery'
 
 export const router = createBrowserRouter([
   {
@@ -29,23 +30,23 @@ export const router = createBrowserRouter([
       },
       {
         path: '/about_bumrungrad',
-        element:<Bumrungrad/>,
+        element: <Bumrungrad />,
       },
       {
         path: '/about_vissionMisson',
-        element:<VissionMisson/> ,
+        element: <VissionMisson />,
       },
       {
         path: '/about_factsheet',
-        element:<FactSheet/> ,
+        element: <FactSheet />,
       },
       {
         path: '/about_accreditation',
-        element:<Accreditation/> ,
+        element: <Accreditation />,
       },
       {
         path: '/about_foundation',
-        element:<Foundation/> ,
+        element: <Foundation />,
       },
       {
         path: '/doctor_details/:id',
@@ -71,7 +72,10 @@ export const router = createBrowserRouter([
         path: '/appointment',
         element: <Appointment />,
       },
-     
+      {
+        path: '/send_query',
+        element: <SendQuery />,
+      },
     ],
   },
 ])
