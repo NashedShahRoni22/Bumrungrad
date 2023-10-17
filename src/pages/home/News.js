@@ -27,8 +27,8 @@ export default function News() {
         Bumrungrad News
       </h1>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 my-10">
-        {data.map((d) => (
-          <div className="shadow rounded hover:shadow-xl duration-300 ease-linear">
+        {data.map((d,i) => (
+          <div key={i} className="shadow rounded hover:shadow-xl duration-300 ease-linear">
             <img src={d.img} alt="" className="" />
             <div className="p-4">
               <h5 className="font-semibold text-blue text-lg">{d.title}</h5>

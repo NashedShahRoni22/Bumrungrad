@@ -97,38 +97,38 @@ export default function Appointment() {
     setPhone2(newPhone);
   };
 
-  const postData = {
-    specialty,
-    subSpecialty,
-    doctor,
-    medicalDesc,
-    selectedDate: format(selectedDate, "PP"),
-    selectedDate2: format(selectedDate2, "PP"),
-    shift,
-    shift2,
-    oldPataint: old,
-    HnNumber: hnNumber,
-    PataientFirstName: firstname,
-    PataientLastName: lastName,
-    PataientCitizenship: citizenship,
-    PataientGender: gender,
-    PataientEmail: pataientEmail,
-    PataientPhone: phone,
-    PataientDob: dob,
+  // const postData = {
+  //   specialty,
+  //   subSpecialty,
+  //   doctor,
+  //   medicalDesc,
+  //   selectedDate: format(selectedDate, "PP"),
+  //   selectedDate2: format(selectedDate2, "PP"),
+  //   shift,
+  //   shift2,
+  //   oldPataint: old,
+  //   HnNumber: hnNumber,
+  //   PataientFirstName: firstname,
+  //   PataientLastName: lastName,
+  //   PataientCitizenship: citizenship,
+  //   PataientGender: gender,
+  //   PataientEmail: pataientEmail,
+  //   PataientPhone: phone,
+  //   PataientDob: dob,
 
-    RequestorFirstname: requestorFirstname,
-    RequestorLastName: requestorLastName,
-    RequestorEmail: requestorEmail,
-    RequestorPhone: phone2,
-    RequestoerRelation: relation,
-    mediicalCorncern: desc,
-    country,
+  //   RequestorFirstname: requestorFirstname,
+  //   RequestorLastName: requestorLastName,
+  //   RequestorEmail: requestorEmail,
+  //   RequestorPhone: phone2,
+  //   RequestoerRelation: relation,
+  //   mediicalCorncern: desc,
+  //   country,
 
-    passport,
-    medicalReport1,
-    medicalReport2,
-    medicalReport3,
-  };
+  //   passport,
+  //   medicalReport1,
+  //   medicalReport2,
+  //   medicalReport3,
+  // };
 
   // console.log(postData);
 

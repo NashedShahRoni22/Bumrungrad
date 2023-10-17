@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../../assets/contact.svg";
 import { TextField } from "@mui/material";
+import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 
 export default function HomeContact() {
   return (
@@ -8,7 +9,8 @@ export default function HomeContact() {
       <div className="lg:w-1/2">
         <img src={img} alt="" />
       </div>
-      <form className="w-full flex flex-col gap-4 shadow-md shadow-blue p-10 rounded lg:w-1/2">
+      <form className="w-full flex flex-col gap-4 shadow-md hover:shadow-blue p-10 rounded lg:w-1/2 duration-300 ease-linear">
+        <MedicalInformationIcon className="!text-5xl text-blue"/>
         <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
           Say hello!
         </h1>

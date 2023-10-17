@@ -9,7 +9,7 @@ export default function DoctorInfo() {
     fetch(`https://api.bumrungraddiscover.com/api/search/doctor/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        // setDoctor(data.response.data)
+        setDoctor(data.response.data)
         console.log(data.response.data);
       });
   });

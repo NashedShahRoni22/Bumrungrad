@@ -5,7 +5,7 @@ import appointment from '../../assets/service_logo/appointment.png'
 import hotelReservation from '../../assets/service_logo/hotel_reservation.png'
 import orderMedicine from '../../assets/service_logo/order_medicine.png'
 import teleMedicine from '../../assets/service_logo/telemedicine.png'
-import visaProcessing from '../../assets/service_logo/visa_processing.png'
+import medicalRecords from '../../assets/service_logo/medical_records.png'
 import { Link } from 'react-router-dom'
 import { Divider } from '@mui/material'
 import AirAmbulanceForm from './modalFrom/AirAmbulanceForm'
@@ -41,7 +41,7 @@ const services = [
     id: 4,
     name: 'Medical Records',
     form: <MedicalRecords />,
-    img: visaProcessing,
+    img: medicalRecords,
     height: 'md:w-[750px]',
   },
   {
