@@ -8,6 +8,7 @@ const AirtTcket = () => {
   const [flydate, setFlydate] = useState('')
   const [passport, setPassport] = useState('')
   const [country, setCountry] = useState('')
+  const [destination, setDestination] = useState('')
 
   //data state
   const [countries, setCountries] = useState([])
@@ -26,12 +27,14 @@ const AirtTcket = () => {
       booking_date: flydate,
       doc: passport,
       country: country,
+      destination: destination
     }
     console.log(getAirTicket)
     const formData = new FormData()
     formData.append('booking_date', flydate)
     formData.append('doc', passport)
     formData.append('country', country)
+    formData.append('destination', destination)
 
     fetch('https://api.bumrungraddiscover.com/api/add/air/ticket', {
       method: 'POST',
@@ -82,6 +85,27 @@ const AirtTcket = () => {
               select
               fullWidth
               onChange={(e) => setCountry(e.target.value)}
+              required
+              SelectProps={{
+                native: true,
+              }}
+              helperText='Please select your country'
+            >
+              {countries.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </TextField>
+          </div>
+
+          <div className='mt-2'>
+            <p className='mb-2.5 font-semibold text-sm'>To Country</p>
+            <TextField
+              id='filled-select-currency-native'
+              select
+              fullWidth
+              onChange={(e) => setDestination(e.target.value)}
               required
               SelectProps={{
                 native: true,

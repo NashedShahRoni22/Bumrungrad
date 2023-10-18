@@ -1,5 +1,5 @@
 import React from 'react'
-import personImg from '../../../assets/clinic_center/Women-Center.jpg'
+import personImg from '../../../assets/Abdus Samad.jpg'
 import PersonIcon from '@mui/icons-material/Person'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 const VisaProcessing = () => {

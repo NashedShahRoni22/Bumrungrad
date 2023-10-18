@@ -32,8 +32,8 @@ export default function ContactUs() {
       floor: "Janapadd Road",
       house: "Opposite of Bata Showroom",
       city: "Uttara, Dhaka-1230",
-      phone1: "+8801847284863",
-      phone2: "+8801847284862",
+      phone1: "+8801977284861",
+      phone2: "+8801601284300",
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.434392452508!2d90.3928183!3d23.874210400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c52a06df3939%3A0x5865aa1fbf242113!2sBumrungrad%20International%20Hospital%20Uttara%20Office!5e0!3m2!1sen!2ssg!4v1692561953360!5m2!1sen!2ssg",
     },
     {

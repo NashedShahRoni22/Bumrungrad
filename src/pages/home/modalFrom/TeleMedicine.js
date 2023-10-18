@@ -83,7 +83,7 @@ const TeleMedicine = () => {
           <p className='mb-2 font-semibold text-sm'>Enter Full Name</p>
           <TextField
             type='text'
-            label='Same As In Passport'
+            placeholder='Same As In Passport'
             onChange={(e) => setFullName(e.target.value)}
             fullWidth
           />
@@ -91,7 +91,7 @@ const TeleMedicine = () => {
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm'>Hospital No.(HN)</p>
           <TextField
-            label='Existing / New Patient'
+            placeholder='Old Patient'
             onChange={(e) => setHnNum(e.target.value)}
             fullWidth
           />
@@ -108,7 +108,7 @@ const TeleMedicine = () => {
           <p className='mb-2 font-semibold text-sm'>Passport / Id No</p>
           <TextField
             type=''
-            label='Enter Num'
+            placeholder='Enter Number'
             onChange={(e) => setPassportId(e.target.value)}
             fullWidth
           />
@@ -116,7 +116,7 @@ const TeleMedicine = () => {
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm'>Nationality</p>
           <TextField
-            label='Enter Your Nationality'
+            placeholder='Enter Your Nationality'
             onChange={(e) => setNationality(e.target.value)}
             fullWidth
           />
@@ -124,7 +124,7 @@ const TeleMedicine = () => {
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm'>Country of Residence</p>
           <TextField
-            label='Enter Your Residence'
+            placeholder='Enter Your Residence'
             onChange={(e) => setResidence(e.target.value)}
             fullWidth
           />
@@ -134,7 +134,7 @@ const TeleMedicine = () => {
             Contact Details of Patient
           </p>
           <TextField
-            label='Mobile Num / Email Address'
+            placeholder='Mobile Number / Email Address'
             onChange={(e) => setContactDetails(e.target.value)}
             fullWidth
           />
@@ -155,7 +155,7 @@ const TeleMedicine = () => {
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm mt-3'>Preferred Doctor</p>
           <TextField
-            label='Doctor Name'
+            placeholder='Doctor Name'
             onChange={(e) => setPreferredDoctor(e.target.value)}
             fullWidth
           />
@@ -165,7 +165,7 @@ const TeleMedicine = () => {
             Purpose of Appoinment
           </p>
           <TextField
-            label='Chief Complaint'
+            placeholder='Chief Complaint'
             onChange={(e) => setPurposeAppoinment(e.target.value)}
             fullWidth
           />
@@ -186,7 +186,7 @@ const TeleMedicine = () => {
             Request for Interpreter
           </p>
           <TextField
-            label='Specify The Language'
+            placeholder='Specify The Language'
             onChange={(e) => setInterpreter(e.target.value)}
             fullWidth
           />
@@ -194,7 +194,7 @@ const TeleMedicine = () => {
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm mt-3'>Payment Type</p>
           <TextField
-            label='E-Payment / Credit card / Bank transfer'
+            placeholder='E-Payment / Credit card / Bank transfer'
             onChange={(e) => setPaymentType(e.target.value)}
             fullWidth
           />
@@ -205,7 +205,7 @@ const TeleMedicine = () => {
           </p>
           <TextField
             type='email'
-            label='Enter Email'
+            placeholder='Enter Email'
             onChange={(e) => setEpaymentlink(e.target.value)}
             fullWidth
           />
@@ -213,7 +213,7 @@ const TeleMedicine = () => {
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm mt-3'>Specific Concern</p>
           <TextField
-            label='Interest'
+            placeholder='Interest'
             onChange={(e) => setSpecificConcern(e.target.value)}
             fullWidth
           />

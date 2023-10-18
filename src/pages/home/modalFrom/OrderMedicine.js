@@ -75,7 +75,7 @@ const OrderMedicine = () => {
           <div className="flex flex-col gap-y-4 md:flex-row md:justify-between md:items-center mt-5">
             <div>
               <TextField
-                label="Enter Your Medicine Name"
+                label="Medicine Name"
                 fullWidth
                 onChange={(e) => setMedicin(e.target.value)}
               />
@@ -83,7 +83,7 @@ const OrderMedicine = () => {
             <div>
               <TextField
                 type="number"
-                label="Enter Your Medicine Quantity"
+                label="Enter Quantity"
                 fullWidth
                 onChange={(e) => setQuantity(e.target.value)}
               />
