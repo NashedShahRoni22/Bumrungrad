@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 const AirtTcket = () => {
   //loader
   const [loader, setLoader] = useState()
-  //Input field state..
+  //Input field states
   const [flydate, setFlydate] = useState('')
   const [passport, setPassport] = useState('')
   const [country, setCountry] = useState('')

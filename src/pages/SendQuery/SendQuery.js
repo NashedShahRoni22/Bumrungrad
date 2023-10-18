@@ -54,7 +54,7 @@ const SendQuery = () => {
             <span className="hidden md:block">To Reach the</span> Contact Office
           </button>
         </div>
-        <div className="shadow-xl rounded-xl md:py-5 px-10">
+        <div className="shadow-xl rounded-xl md:p-5">
           <div className="p-4">
             <form className="">
               {showFirstForm && (
