@@ -294,9 +294,9 @@ export default function Appointment() {
           </button>
         </div>
         {/* Appointment form  */}
-        <div className="my-5 p-5 shadow-xl round">
+        <div className="my-5 p-5 shadow-xl rounded">
           {stepperOpen && (
-            <div className="md:px-5">
+            <div className="md:px-5 ">
               <div className="flex flex-col gap-4">
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">
@@ -385,7 +385,7 @@ export default function Appointment() {
                         </Select>
                       </FormControl>
                       <TextField
-                        placeholder="PLEASE DESCRIBE YOUR MEDICAL CONCERN OR SYMPTOMS"
+                        placeholder="Please Describe Your Medical Corcern or Symptoms!"
                         fullWidth
                         multiline
                         rows={6}
@@ -395,7 +395,7 @@ export default function Appointment() {
                   )}
                   {activeRecommend && (
                     <TextField
-                      placeholder="PLEASE DESCRIBE YOUR MEDICAL CONCERN OR SYMPTOMS"
+                      placeholder="Please Describe Your Medical Corcern or Symptoms!"
                       fullWidth
                       multiline
                       rows={6}

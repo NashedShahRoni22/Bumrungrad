@@ -1,51 +1,210 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "../../shared/Loader/Loader";
+import { Divider } from "@mui/material";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 export default function DoctorInfo() {
+  const [loader, setLoader] = useState(false);
   const { id } = useParams();
   const [doctor, setDoctor] = useState({});
-  console.log(doctor);
+  // console.log(doctor);
   useEffect(() => {
+    setLoader(true);
     fetch(`https://api.bumrungraddiscover.com/api/search/doctor/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setDoctor(data.response.data)
-        console.log(data.response.data);
+        if (data.response.status === 200) {
+          setDoctor(data.response.data);
+          console.log(data.response.data);
+          setLoader(false);
+        } else {
+          console.log(data);
+          setLoader(false);
+        }
       });
-  });
+  }, [id]);
   return (
-    <section className="doctor-bg">
-      <div className="p-5 md:p-10 md:container md:mx-auto">
-        <div className="md:flex gap-16 items-center">
-          <div className="md:w-1/2">
-            <img src={doctor.image} alt="" className="border-2 border-blue" />
+    <>
+      {loader ? (
+        <Loader />
+      ) : (
+        <section>
+          <div className="doctor-bg">
+            <div className="md:flex items-center p-5 md:p-10 md:container md:mx-auto">
+              <div className="flex justify-center">
+                <img
+                  src={doctor?.image}
+                  alt=""
+                  className="h-[350px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[350px]"
+                />
+              </div>
+              {/* right side  */}
+              <div className="flex-1 text-blue text-center md:text-left lg:text-center p-8 rounded">
+                <p className="text-3xl md:text-5xl font-bold">{doctor?.name}</p>
+                <div>
+                  <p className="font-semibold mt-5 text-xl md:text-2xl lg:text-3xl capitalize">
+                    Expertise
+                  </p>
+                  <Divider className="!my-2.5" />
+                  <p className="text-lg">{doctor?.specialty}</p>
+                </div>
+                <div>
+                  <p className="font-semibold mt-5 text-xl md:text-2xl lg:text-3xl capitalize">
+                    Specialty
+                  </p>
+                  <Divider className="!my-2.5" />
+                  <ul className="">
+                    {doctor?.sub_specialty?.map((ss, i) => (
+                      <li key={i} className="text-lg">
+                        {ss}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mt-5 text-xl md:text-2xl lg:text-3xl capitalize">
+                    Language
+                  </p>
+                  <Divider className="!my-2.5" />
+                  <ul className="">
+                    {doctor?.lang?.map((ss, i) => (
+                      <li key={i} className="text-lg">
+                        {ss}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="mt-5 md:mt-0 md:w-1/2 text-blue text-center">
-            <p className="text-3xl md:text-[48px] font-semibold">
-              {/* {doctor.name} */}
-              Nashed Shah Roni
-            </p>
-            <p className="mt-4 text-xl md:text-2xl lg:text-3
-            
-            xl capitalize">
-              <span className="font-semibold">Expertises</span> <br />
-              {doctor.specialty}
-            </p>
-            <p className="mt-4 text-xl md:text-2xl lg:text-3
-            
-            xl capitalize">
-              <span className="font-semibold">Specialties</span> <br />
-              {doctor.sub_specialty}
-            </p>
-            <p className="mt-4 text-xl md:text-2xl lg:text-3
-            
-            xl capitalize">
-              <span className="font-semibold">Language</span> <br />{" "}
-              {doctor.lang}
-            </p>
+
+          {/* qualifications  */}
+          <div className="p-5 md:p-10 md:container md:mx-auto lg:flex">
+            <div className="lg:w-1/2 flex flex-col gap-5 md:gap-10">
+              <div className="">
+                <p className="text-xl md:text-2xl text-blue font-semibold">
+                  Medical School:
+                </p>
+                <p className="mt-2.5 text-xl md:mt-5">- {doctor?.school}</p>
+              </div>
+              {doctor?.certificates?.length !== 0 && (
+                <div className="">
+                  <p className="text-xl md:text-2xl text-blue font-semibold">
+                    Certifications:
+                  </p>
+                  <ul className="mt-2.5 md:mt-5">
+                    {doctor?.certificates?.map((dc, i) => (
+                      <li key={i} className="text-xl">
+                        - {dc?.certificate}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {doctor?.interests?.length !== 0 && (
+                <div className="">
+                  <p className="text-xl md:text-2xl text-blue font-semibold">
+                    Article:
+                  </p>
+                  <ul className="mt-2.5 md:mt-5">
+                    {doctor?.interests?.map((dc, i) => (
+                      <li key={i} className="text-xl">
+                        - {dc?.Interest}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {doctor?.experiences?.length !== 0 && (
+                <div className="">
+                  <p className="text-xl md:text-2xl text-blue font-semibold">
+                    Experiences:
+                  </p>
+                  <ul className="mt-2.5 md:mt-5">
+                    {doctor?.experiences?.map((dc, i) => (
+                      <li key={i} className="text-xl">
+                        - {dc?.experience}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {doctor?.researches?.length !== 0 && (
+                <div className="">
+                  <p className="text-xl md:text-2xl text-blue font-semibold">
+                    Researches:
+                  </p>
+                  <ul className="mt-2.5 md:mt-5">
+                    {doctor?.researches?.map((dc, i) => (
+                      <li key={i} className="text-xl">
+                        - {dc?.research}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {doctor?.article?.length !== 0 && (
+                <div className="">
+                  <p className="text-xl md:text-2xl text-blue font-semibold">
+                    Articles:
+                  </p>
+                  <ul className="mt-2.5 md:mt-5">
+                    {doctor?.article?.map((dc, i) => (
+                      <li key={i} className="text-xl">
+                        - {dc?.article}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div className="mt-5 md:mt-10 lg:mt-0 lg:w-1/2">
+              <p className="mb-5 text-xl md:text-2xl text-blue font-semibold">
+                Schedules:
+              </p>
+              <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead className="bg-blue">
+                    <TableRow>
+                      <TableCell className="!text-white">Day</TableCell>
+                      <TableCell className="!text-white" align="center">Arrival</TableCell>
+                      <TableCell className="!text-white" align="center">Leave</TableCell>
+                      <TableCell className="!text-white" align="center">Shift</TableCell>
+                      <TableCell className="!text-white" align="center">Location</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {doctor?.day?.map((day, i) => (
+                      <TableRow key={i}>
+                        <TableCell>{day}</TableCell>
+                        <TableCell align="center">
+                          {doctor?.arrival?.[i]}
+                        </TableCell>
+                        <TableCell align="center">
+                          {doctor?.leave?.[i]}
+                        </TableCell>
+                        <TableCell align="center">
+                          {doctor?.shift?.[i]}
+                        </TableCell>
+                        <TableCell align="center">
+                          {doctor?.location?.[i]}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+    </>
   );
 }

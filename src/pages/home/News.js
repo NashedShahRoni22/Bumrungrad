@@ -13,7 +13,7 @@ export default function News() {
     {
       img: image1,
       title: "Let our obstetrician team take care of you and your baby!",
-      desc: "Baby delivery packages at exclusive prices",
+      desc: "Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices",
     },
     {
       img: image2,
@@ -32,7 +32,7 @@ export default function News() {
             <img src={d.img} alt="" className="" />
             <div className="p-4">
               <h5 className="font-semibold text-blue text-lg">{d.title}</h5>
-              <h5 className="my-3">{d.desc}</h5>
+              <h5 className="my-3 text-justify">{d.desc.slice(0,160)} ...</h5>
               <button className="border border-blue bg-blue hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear">Read More</button>
             </div>
           </div>

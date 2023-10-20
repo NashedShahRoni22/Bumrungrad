@@ -12,9 +12,7 @@ import WeAccept from '../pages/insurance/WeAccept'
 import GoodVibes from '../pages/insurance/GoodVibes'
 import PackagePromotion from '../pages/insurance/PackagePromotion'
 import Appointment from '../pages/appointment/Appointment'
-
 import SendQuery from '../pages/SendQuery/SendQuery'
-
 import ContactUs from '../pages/contactUs/ContactUs'
 
 export const router = createBrowserRouter([
