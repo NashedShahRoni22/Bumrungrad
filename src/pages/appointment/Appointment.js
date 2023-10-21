@@ -14,7 +14,6 @@ import Divider from "@mui/material/Divider";
 import logo from "../../assets/nav_logo.png";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export default function Appointment() {
@@ -240,7 +239,7 @@ export default function Appointment() {
           console.log(data);
           setLoader(false);
           PreviewsetOpen(false);
-          // toast.success("Appointment on process!");
+          window.alert("Please check patient email!");
           navigate("/");
         }
       })
@@ -622,6 +621,7 @@ export default function Appointment() {
                             <MenuItem value="Daughter">Daughter</MenuItem>
                             <MenuItem value="Father">Father</MenuItem>
                             <MenuItem value="Mother">Mother</MenuItem>
+                            <MenuItem value="Spouse">Spouse</MenuItem>
                             <MenuItem value="Other">Other</MenuItem>
                           </Select>
                         </FormControl>
@@ -1004,13 +1004,28 @@ export default function Appointment() {
                       Attached Documents
                     </p>
                     <Divider />
-                    <ul className="mt-2.5 flex gap-2">
+                    <ul className="mt-2.5 flex gap-2 w-full">
                       <li className="px-4 py-2 bg-blue text-white rounded w-fit">
                         {passport && <span>Passport</span>}
                       </li>
-                      <li className="px-4 py-2 bg-blue text-white rounded w-fit">
-                        {medicalReport1 && <span>Firist Medical Report</span>}
-                      </li>
+
+                      {medicalReport1 !== "" && (
+                        <li className="px-4 py-2 bg-blue text-white rounded w-fit">
+                          <span>Second Medical Report</span>
+                        </li>
+                      )}
+
+                      {medicalReport2 !== "" && (
+                        <li className="px-4 py-2 bg-blue text-white rounded w-fit">
+                          <span>Third Medical Report</span>
+                        </li>
+                      )}
+
+                      {medicalReport3 !== "" && (
+                        <li className="px-4 py-2 bg-blue text-white rounded w-fit">
+                          <span>Third Medical Report</span>
+                        </li>
+                      )}
                     </ul>
                   </div>
                   <div>
