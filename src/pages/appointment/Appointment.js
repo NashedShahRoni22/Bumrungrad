@@ -200,7 +200,6 @@ export default function Appointment() {
   //book apppointment
   const handleBookAppointment = () => {
     setLoader(true);
-    // console.log("Clicked");
     const formData = new FormData();
     formData.append("specialty", specialty);
     formData.append("subSpecialty", subSpecialty);
@@ -241,7 +240,7 @@ export default function Appointment() {
           console.log(data);
           setLoader(false);
           PreviewsetOpen(false);
-          toast.success("Successfully Requested For Appointment!");
+          // toast.success("Appointment on process!");
           navigate("/");
         }
       })
@@ -997,6 +996,20 @@ export default function Appointment() {
                       <li>{country && <span>Country: {country}</span>}</li>
                       <li>
                         {desc && <span>Medical Description: {desc}</span>}
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="shadow rounded-xl p-5 text-black">
+                    <p className="mb-2.5 text-xl font-semibold text-blue">
+                      Attached Documents
+                    </p>
+                    <Divider />
+                    <ul className="mt-2.5 flex gap-2">
+                      <li className="px-4 py-2 bg-blue text-white rounded w-fit">
+                        {passport && <span>Passport</span>}
+                      </li>
+                      <li className="px-4 py-2 bg-blue text-white rounded w-fit">
+                        {medicalReport1 && <span>Firist Medical Report</span>}
                       </li>
                     </ul>
                   </div>
