@@ -51,6 +51,7 @@ export default function AppBar() {
                 <>
                   <li key={i} className="relative">
                     <Link
+                      to={mi?.link}
                       className="flex font-semibold justify-between items-center rounded-xl"
                       onClick={() => handleDropdown(i)}
                     >
@@ -75,7 +76,7 @@ export default function AppBar() {
                               key={i}
                               to={mc.link}
                               className="flex items-center gap-2"
-                              onClick={()=> setOpen(false)}
+                              onClick={() => setOpen(false)}
                             >
                               <div className="h-2 w-2 rounded-full bg-blue"></div>
                               <p className="hover:ml-3 my-1 duration-300 ease-linear">
@@ -97,7 +98,7 @@ export default function AppBar() {
           <ul className="flex justify-center gap-8 text-[16px] text-blue">
             {MenuItems.map((mi, i) => (
               <li key={i} className="group relative">
-                <Link className="font-semibold">{mi.header}</Link>
+                <Link className="font-semibold" to={mi?.link}>{mi.header}</Link>
                 {mi.childs && (
                   <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
                     {mi.childs?.map((mc, i) => (
@@ -171,7 +172,7 @@ export default function AppBar() {
         <ul className="flex flex-wrap gap-8 text-[16px] text-blue">
           {MenuItems.map((mi, i) => (
             <li key={i} className="group relative">
-              <Link className="font-semibold">{mi.header}</Link>
+              <Link to={mi?.link} className="font-semibold">{mi.header}</Link>
               {mi.childs && (
                 <ul className="ml-2 p-2 rounded-xl bg-white shadow-xl hidden group-hover:block absolute top-6 min-w-[300px] z-30">
                   {mi.childs?.map((mc, i) => (

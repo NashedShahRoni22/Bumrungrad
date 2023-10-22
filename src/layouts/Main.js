@@ -1,11 +1,15 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import AppBar from "../shared/AppBar/AppBar";
 // import MiddleBar from "../shared/FixedBar/MiddleBar";
 import SideBar from "../shared/FixedBar/SideBar";
 import BottomBar from "../shared/AppBar/BottomBar";
 
 export default function Main() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <main>
       <AppBar />

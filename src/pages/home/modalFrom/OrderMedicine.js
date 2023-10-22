@@ -6,17 +6,26 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { MuiTelInput } from "mui-tel-input";
 
 const OrderMedicine = () => {
   const [prescriptionState, setPrescriptionState] = useState(1);
   //loader
   const [loader, setLoader] = useState();
 
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const handleChange = (newValue) => {
+    setNumber(newValue);
+  };
+  const [address, setAddress] = useState("");
   const [medicine, setMedicin] = useState("");
   const [quantity, setQuantity] = useState("");
   const [medicArr, setMedicArr] = useState([]);
   const [prescriptionImg, setprescriptionImg] = useState("");
+  
 
+  console.log(name, number, address);
   //add Medicine
   const handleAddMedic = () => {
     const medicineQuantityData = [medicine, quantity];
@@ -57,9 +66,46 @@ const OrderMedicine = () => {
   };
   return (
     <div>
-      <div className="flex gap-4">
-        <button onClick={()=> setPrescriptionState(1)} className={`px-4 py-2 rounded-full border border-blue ${prescriptionState === 1 && 'bg-blue text-white'}`}>Upload Prescription</button>
-        <button onClick={()=> setPrescriptionState(2)} className={`px-4 py-2 rounded-full border border-blue ${prescriptionState === 2 && 'bg-blue text-white'}`}>No Prescription</button>
+      <div className="flex flex-col gap-4">
+        <TextField
+          label="Your Name"
+          fullWidth
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <MuiTelInput
+          label="Your Phone Number"
+          value={number}
+          onChange={handleChange}
+          defaultCountry="TH"
+          className="w-[100%]"
+        />
+        <TextField
+          label="Your Address"
+          fullWidth
+          onChange={(e) => setAddress(e.target.value)}
+          required
+          multiline
+          rows={3}
+        />
+      </div>
+      <div className="flex gap-4 mt-4">
+        <button
+          onClick={() => setPrescriptionState(1)}
+          className={`flex gap-1 px-4 py-2 rounded-full border border-blue ${
+            prescriptionState === 1 && "bg-blue text-white"
+          }`}
+        >
+          Upload<span className="hidden md:block">Prescription</span>{" "}
+        </button>
+        <button
+          onClick={() => setPrescriptionState(2)}
+          className={`flex gap-1 px-4 py-2 rounded-full border border-blue ${
+            prescriptionState === 2 && "bg-blue text-white"
+          }`}
+        >
+          Write<span className="hidden md:block">Prescription</span>{" "}
+        </button>
       </div>
       {prescriptionState === 1 ? (
         <div className="mt-4">

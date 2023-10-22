@@ -52,7 +52,8 @@ export const MenuItems = [
     header: 'Clinic & Centers',
   },
   {
-    header: 'Treatments',
+    header: 'Check Up',
+    link:"/check_up"
   },
   {
     header: 'Packages',

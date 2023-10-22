@@ -14,6 +14,7 @@ import PackagePromotion from '../pages/insurance/PackagePromotion'
 import Appointment from '../pages/appointment/Appointment'
 import SendQuery from '../pages/SendQuery/SendQuery'
 import ContactUs from '../pages/contactUs/ContactUs'
+import CheckUp from '../pages/checkup/CheckUp'
 
 export const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
       {
         path: '/send_query',
         element: <SendQuery />,
+      },
+      {
+        path: '/check_up',
+        element: <CheckUp />,
       },
     ],
   },
