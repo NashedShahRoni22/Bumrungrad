@@ -15,6 +15,7 @@ import Appointment from '../pages/appointment/Appointment'
 import SendQuery from '../pages/SendQuery/SendQuery'
 import ContactUs from '../pages/contactUs/ContactUs'
 import CheckUp from '../pages/checkup/CheckUp'
+import ViewAllCenters from '../pages/ViewAllCenters/ViewAllCenters'
 
 export const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ export const router = createBrowserRouter([
       {
         path: '/check_up',
         element: <CheckUp />,
+      },
+      {
+        path: '/clinic_centers',
+        element: <ViewAllCenters />,
       },
     ],
   },
