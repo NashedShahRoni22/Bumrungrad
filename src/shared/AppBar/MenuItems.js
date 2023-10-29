@@ -1,6 +1,7 @@
 export const MenuItems = [
   {
     header: 'Home',
+    link:"/",
   },
   {
     header: 'About',
@@ -25,10 +26,6 @@ export const MenuItems = [
         name: 'Bumrungrad & Foundation',
         link: '/about_foundation',
       },
-      // {
-      //   name: 'Investor & Relation',
-      //   link: '/',
-      // },
     ],
   },
   {
@@ -50,6 +47,7 @@ export const MenuItems = [
   },
   {
     header: 'Clinic & Centers',
+    link:'/clinic_centers'
   },
   {
     header: 'Check Up',
