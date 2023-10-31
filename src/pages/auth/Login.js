@@ -6,7 +6,7 @@ export default function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   return (
-    <section className="p-5 md:p-10 my-5 md:my-10 mx-5 md:container md:mx-auto lg:flex lg:flex-col lg:items-center shadow">
+    <section className="p-5 md:p-10 lg:w-1/2 my-5 md:my-10 mx-5 md:container md:mx-auto shadow">
       <h5 className="text-xl md:text-3xl font-semibold text-blue mb-4">Login</h5>
       <Divider/>
       <div className="mt-4">

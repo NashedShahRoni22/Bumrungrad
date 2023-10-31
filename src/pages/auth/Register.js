@@ -87,7 +87,7 @@ export default function Register() {
               </Select>
             </FormControl>
             <div>
-              <p className="mb-2.5">Enter Email</p>
+              <p className="mb-2.5">Enter Email(Required)</p>
               <TextField
                 fullWidth
                 placeholder="Required"

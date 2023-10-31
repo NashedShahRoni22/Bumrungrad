@@ -37,17 +37,17 @@ export default function DoctorInfo() {
       ) : (
         <section>
           <div className="doctor-bg">
-            <div className="md:flex items-center p-5 md:p-10 md:container md:mx-auto">
+            <div className="flex md:items-center p-5 md:p-10 md:container md:mx-auto">
               <div className="flex justify-center">
                 <img
-                  src={doctor?.image}
+                  src={doctor?.cover_photo}
                   alt=""
-                  className="h-[350px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[350px]"
+                  className="h-[250px] md:h-[400px] lg:h-[450px] w-[150px] md:w-[300px] lg:w-[350px]"
                 />
               </div>
               {/* right side  */}
-              <div className="flex-1 text-blue text-center md:text-left lg:text-center p-8 rounded">
-                <p className="text-3xl md:text-5xl font-bold">{doctor?.name}</p>
+              <div className="flex-1 text-blue lg:text-center p-5">
+                <p className="text-xl md:text-3xl lg:text-5xl font-bold">{doctor?.name}</p>
                 <div>
                   <p className="font-semibold mt-5 text-xl md:text-2xl lg:text-3xl capitalize">
                     Expertise

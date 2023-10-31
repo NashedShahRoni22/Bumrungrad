@@ -29,22 +29,22 @@ export default function SingleCenter() {
             />
           </div>
           <div className="md:flex-1 flex flex-col gap-5">
-            <h5 className="text-xl font-semibold">{center?.name}</h5>
+            <h5 className="text-xl font-semibold text-blue">{center?.name}</h5>
             <p>
               {" "}
-              <span className="font-semibold text-xl">
+              <span className="font-semibold text-xl text-blue">
                 Location:
               </span> <br /> {center?.location}
             </p>
             <p>
               {" "}
-              <span className="font-semibold text-xl">
+              <span className="font-semibold text-xl text-blue">
                 Description:
               </span> <br /> {center?.description}
             </p>
             {center?.informations?.length > 0 && (
               <div>
-                <h5 className="text-xl font-semibold">Informations</h5>
+                <h5 className="text-xl font-semibold text-blue">Informations</h5>
                 <ul className="list-disc">
                   {center?.informations?.map((c, i) => (
                     <li key={i}>{c?.information}</li>
@@ -54,7 +54,7 @@ export default function SingleCenter() {
             )}
             {center?.conditions?.length > 0 && (
               <div>
-                <h5 className="text-xl font-semibold">Conditions</h5>
+                <h5 className="text-xl font-semibold text-blue">Conditions</h5>
                 <ul className="list-disc">
                   {center?.conditions?.map((c, i) => (
                     <li key={i}>{c?.condition}</li>
@@ -64,7 +64,7 @@ export default function SingleCenter() {
             )}
             {center?.treatments?.length > 0 && (
               <div>
-                <h5 className="text-xl font-semibold">Treatments</h5>
+                <h5 className="text-xl font-semibold text-blue">Treatments</h5>
                 <ul className="list-disc">
                   {center?.treatments?.map((c, i) => (
                     <li key={i}>{c?.treatment}</li>

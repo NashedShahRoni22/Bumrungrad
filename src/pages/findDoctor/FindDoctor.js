@@ -43,6 +43,7 @@ export default function FindDoctor() {
   const [gender, setGender] = React.useState("");
 
   const [doctors, setDoctors] = useState([]);
+  console.log(doctors);
   const [query, setQuery] = useState({});
   // const postData = {
   //   name,
@@ -473,23 +474,32 @@ export default function FindDoctor() {
 
               <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 my-5">
                 {doctors?.map((d, i) => (
-                  <Link
-                    to={`/doctor_details/${d.id}`}
-                    key={i}
-                    className="relative rounded"
-                  >
-                    <img src={d.image} alt="" className="rounded" />
-                    <div className="absolute top-0 h-full w-full bg-black/40 overflow-hidden group rounded">
-                      <div className="text-white flex flex-col gap-2 justify-end h-full translate-y-12 group-hover:-translate-y-0 duration-300 ease-linear">
-                        <p className="md:text-3xl ml-2">{d.name}</p>
-                        <p className="text-xl ml-2">{d.specialty}</p>
-                        <button className="bg-blue text-white py-2.5 w-full">
-                          <EventAvailableIcon />
-                          <span className="capitalize ml-2.5">Appointment</span>
-                        </button>
-                      </div>
-                    </div>
+                  <Link to={`/doctor_details/${d.id}`}>
+                    <img src={d.cover_photo} alt="Doctor Image" className="h-[350px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[350px]" />
+                    <p className="md:text-3xl ml-2">{d?.name}</p>
+                    <p className="text-xl ml-2">{d?.specialty}</p>
+                    <button className="bg-blue text-white py-2.5 w-full">
+                      <EventAvailableIcon />
+                      <span className="capitalize ml-2.5">Appointment</span>
+                    </button>
                   </Link>
+                  // <Link
+                  //   to={`/doctor_details/${d?.id}`}
+                  //   key={i}
+                  //   className="relative rounded"
+                  // >
+                  //   <img src={d?.cover_photo} alt="Doctor Image" className="h-[350px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[350px]" />
+                  //   <div className="bg-white absolute top-0 h-full w-full bg-black/40 overflow-hidden group rounded">
+                  //     <div className="text-white flex flex-col gap-2 justify-end h-full translate-y-12 group-hover:-translate-y-0 duration-300 ease-linear">
+                  //       <p className="md:text-3xl ml-2">{d?.name}</p>
+                  //       <p className="text-xl ml-2">{d?.specialty}</p>
+                  //       <button className="bg-blue text-white py-2.5 w-full">
+                  //         <EventAvailableIcon />
+                  //         <span className="capitalize ml-2.5">Appointment</span>
+                  //       </button>
+                  //     </div>
+                  //   </div>
+                  // </Link>
                 ))}
               </div>
             </div>

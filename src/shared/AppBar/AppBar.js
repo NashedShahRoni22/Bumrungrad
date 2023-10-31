@@ -46,10 +46,10 @@ export default function AppBar() {
         {/* Mobile View  */}
         <div className="min-w-full fixed top-16 left-0 md:hidden z-30">
           {open && (
-            <ul className="min-h-fit backdrop-blur-xl bg-white/30 p-8 flex flex-col gap-4 md:gap-8 text-[16px] text-blue border-t-2 md:border-t-4 border-blue">
+            <ul className="min-h-fit backdrop-blur-xl bg-white/30 px-8 py-2.5 flex flex-col gap-4 md:gap-8 text-[16px] text-blue border-t-2 md:border-t-4 border-blue">
               {MenuItems.map((mi, i) => (
                 <>
-                  <li key={i} className="relative">
+                  <li key={i} className="relative ">
                     <Link
                       to={mi?.link}
                       className="flex font-semibold justify-between items-center rounded-xl"

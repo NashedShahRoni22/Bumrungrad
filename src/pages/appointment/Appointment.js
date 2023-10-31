@@ -569,7 +569,7 @@ export default function Appointment() {
                     <Divider />
                     <div className="mt-5 grid md:grid-cols-2 gap-4">
                       <div>
-                        <p className="mb-2.5">Enter First Name</p>
+                        <p className="mb-2.5">Enter First Name(Required)</p>
                         <TextField
                           fullWidth
                           placeholder="Required"
@@ -579,7 +579,7 @@ export default function Appointment() {
                         />
                       </div>
                       <div>
-                        <p className="mb-2.5">Enter Last Name</p>
+                        <p className="mb-2.5">Enter Last Name(Required)</p>
                         <TextField
                           fullWidth
                           placeholder="Required"
@@ -587,7 +587,7 @@ export default function Appointment() {
                         />
                       </div>
                       <div>
-                        <p className="mb-2.5">Enter Email</p>
+                        <p className="mb-2.5">Enter Email(Required)</p>
                         <TextField
                           fullWidth
                           placeholder="Required"
@@ -664,7 +664,7 @@ export default function Appointment() {
                 )}
                 <div className="grid md:grid-cols-2 gap-4 mt-5">
                   <div>
-                    <p className="mb-2.5">Enter First Name</p>
+                    <p className="mb-2.5">Enter First Name(Required)</p>
                     <TextField
                       onChange={(e) => setfirstname(e.target.value)}
                       fullWidth
@@ -673,7 +673,7 @@ export default function Appointment() {
                   </div>
                   <div>
                     <div>
-                      <p className="mb-2.5">Enter Last Name</p>
+                      <p className="mb-2.5">Enter Last Name(Required)</p>
                       <TextField
                         onChange={(e) => setLastName(e.target.value)}
                         fullWidth
@@ -711,7 +711,7 @@ export default function Appointment() {
                     </Select>
                   </FormControl>
                   <div>
-                    <p className="mb-2.5">Enter Email</p>
+                    <p className="mb-2.5">Enter Email(Required)</p>
                     <TextField
                       fullWidth
                       placeholder="Required"
