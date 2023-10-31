@@ -34,7 +34,7 @@ export default function WhyUs() {
     },
   ];
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto">
+    <div className="p-5 md:p-10 md:container md:mx-auto">
       <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
         Our achivements
       </h1>
@@ -51,7 +51,7 @@ export default function WhyUs() {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper mt-5 max-h-[80vh]"
+        className="mySwiper my-5 max-h-[80vh]"
       >
         {sliderImgs.map((s,i) => (
           <SwiperSlide key={i}>
