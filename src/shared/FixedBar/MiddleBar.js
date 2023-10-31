@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export default function MiddleBar() {
   return (
     <section className='flex justify-center mx-5'>
-      <div className='flex gap-1 justify-center bg-blue/80 backdrop-blur-xl rounded-xl'>
+      <div className='flex gap-1 justify-center bg-blue backdrop-blur-xl rounded-xl'>
         <Link
           to='/find'
           className='rounded-l-xl flex  gap-2.5 px-3 py-2 md:px-6 md:py-4 hover:bg-green items-center duration-300 ease-linear cursor-pointer text-white'

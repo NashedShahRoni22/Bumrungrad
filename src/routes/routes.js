@@ -19,6 +19,7 @@ import ViewAllCenters from '../pages/ViewAllCenters/ViewAllCenters'
 import SingleCenter from '../pages/ViewAllCenters/SingleCenter'
 import Register from '../pages/auth/Register'
 import Login from '../pages/auth/Login'
+import ParentPackages from '../pages/packages/ParentPackages'
 
 export const router = createBrowserRouter([
   {
@@ -100,6 +101,10 @@ export const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/packages',
+        element: <ParentPackages />,
       },
     ],
   },

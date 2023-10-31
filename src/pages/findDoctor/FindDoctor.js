@@ -9,7 +9,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Loader from "../../shared/Loader/Loader";
-import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import CallMadeIcon from "@mui/icons-material/CallMade";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import notFoundAnim from "../../assets/anim/notfound.json";
 import Lottie from "lottie-react";
 import Button from "@mui/material/Button";
@@ -472,34 +473,32 @@ export default function FindDoctor() {
                 Doctor
               </p>
 
-              <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 my-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-5">
                 {doctors?.map((d, i) => (
-                  <Link to={`/doctor_details/${d.id}`}>
-                    <img src={d.cover_photo} alt="Doctor Image" className="h-[350px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[350px]" />
-                    <p className="md:text-3xl ml-2">{d?.name}</p>
-                    <p className="text-xl ml-2">{d?.specialty}</p>
-                    <button className="bg-blue text-white py-2.5 w-full">
-                      <EventAvailableIcon />
-                      <span className="capitalize ml-2.5">Appointment</span>
+                  <Link
+                    to={`/doctor_details/${d.id}`}
+                    className="shadow rounded-xl hover:shadow-xl duration-300 ease-linear flex flex-col justify-between"
+                    key={i}
+                  >
+                    <img
+                      src={d.cover_photo}
+                      alt="Doctor Image"
+                      className="h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl-xl rounded-tr-xl"
+                    />
+                    <div className="p-2.5">
+                      <p className="md:text-xl font-semibold">{d?.name}</p>
+                      <p className="">{d?.specialty}</p>
+                    </div>
+                    <button className="group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl-xl rounded-br-xl">
+                      <span className="capitalize">View Profile</span>
+                      <span className="group-hover:hidden">
+                        <ArrowForwardIcon />
+                      </span>
+                      <span className="hidden group-hover:block">
+                        <CallMadeIcon />
+                      </span>
                     </button>
                   </Link>
-                  // <Link
-                  //   to={`/doctor_details/${d?.id}`}
-                  //   key={i}
-                  //   className="relative rounded"
-                  // >
-                  //   <img src={d?.cover_photo} alt="Doctor Image" className="h-[350px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[350px]" />
-                  //   <div className="bg-white absolute top-0 h-full w-full bg-black/40 overflow-hidden group rounded">
-                  //     <div className="text-white flex flex-col gap-2 justify-end h-full translate-y-12 group-hover:-translate-y-0 duration-300 ease-linear">
-                  //       <p className="md:text-3xl ml-2">{d?.name}</p>
-                  //       <p className="text-xl ml-2">{d?.specialty}</p>
-                  //       <button className="bg-blue text-white py-2.5 w-full">
-                  //         <EventAvailableIcon />
-                  //         <span className="capitalize ml-2.5">Appointment</span>
-                  //       </button>
-                  //     </div>
-                  //   </div>
-                  // </Link>
                 ))}
               </div>
             </div>

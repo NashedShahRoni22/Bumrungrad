@@ -55,6 +55,7 @@ export const MenuItems = [
   },
   {
     header: 'Packages',
+    link:"/packages"
   },
   {
     header: 'Contact',

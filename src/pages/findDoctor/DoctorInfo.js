@@ -9,6 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 export default function DoctorInfo() {
   const [loader, setLoader] = useState(false);
@@ -38,16 +39,22 @@ export default function DoctorInfo() {
         <section>
           <div className="doctor-bg">
             <div className="flex md:items-center p-5 md:p-10 md:container md:mx-auto">
-              <div className="flex justify-center">
+              <div className="flex flex-col justify-center">
                 <img
                   src={doctor?.cover_photo}
                   alt=""
-                  className="h-[250px] md:h-[400px] lg:h-[450px] w-[150px] md:w-[300px] lg:w-[350px]"
+                  className="h-[250px] md:h-[400px] lg:h-[450px] w-[150px] md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl"
                 />
+                <button className="bg-blue text-white py-2.5 w-full rounded-bl-xl rounded-br-xl">
+                  <EventAvailableIcon />
+                  <span className="capitalize ml-2.5">Appointment</span>
+                </button>
               </div>
               {/* right side  */}
               <div className="flex-1 text-blue lg:text-center p-5">
-                <p className="text-xl md:text-3xl lg:text-5xl font-bold">{doctor?.name}</p>
+                <p className="text-xl md:text-3xl lg:text-5xl font-bold">
+                  {doctor?.name}
+                </p>
                 <div>
                   <p className="font-semibold mt-5 text-xl md:text-2xl lg:text-3xl capitalize">
                     Expertise
@@ -174,10 +181,18 @@ export default function DoctorInfo() {
                   <TableHead className="bg-blue">
                     <TableRow>
                       <TableCell className="!text-white">Day</TableCell>
-                      <TableCell className="!text-white" align="center">Arrival</TableCell>
-                      <TableCell className="!text-white" align="center">Leave</TableCell>
-                      <TableCell className="!text-white" align="center">Shift</TableCell>
-                      <TableCell className="!text-white" align="center">Location</TableCell>
+                      <TableCell className="!text-white" align="center">
+                        Arrival
+                      </TableCell>
+                      <TableCell className="!text-white" align="center">
+                        Leave
+                      </TableCell>
+                      <TableCell className="!text-white" align="center">
+                        Shift
+                      </TableCell>
+                      <TableCell className="!text-white" align="center">
+                        Location
+                      </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
