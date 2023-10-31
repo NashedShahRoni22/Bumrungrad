@@ -38,8 +38,11 @@ export default function HomePackages() {
         <Loader />
       ) : (
         <div className="my-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {packages.slice(0, 4).map((p) => (
-            <div className="flex flex-col justify-between gap-2 shadow hover:shadow-xl duration-300 ease-linear">
+          {packages.slice(0, 4).map((p, i) => (
+            <div
+              key={i}
+              className="flex flex-col justify-between gap-2 shadow hover:shadow-xl duration-300 ease-linear"
+            >
               <img src={p?.cover_photo} alt="" />
               <div className="p-2.5">
                 <p className="font-semibold text-blue md:text-xl">{p?.title}</p>

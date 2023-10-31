@@ -29,8 +29,8 @@ export default function ParentPackages() {
         <Loader />
       ) : (
         <div className="my-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {packages.map((p) => (
-            <div className="flex flex-col justify-between gap-2 shadow">
+          {packages.map((p,i) => (
+            <div key={i} className="flex flex-col justify-between gap-2 shadow">
               <img src={p?.cover_photo} alt="" />
               <div className="p-2.5">
                 <p className="font-semibold text-blue md:text-xl">{p?.title}</p>
