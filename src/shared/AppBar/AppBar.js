@@ -131,13 +131,12 @@ export default function AppBar() {
             {/* </Link> */}
             <div className="hidden group-hover:block duration-300 ease-linear bg-white absolute z-50 min-w-[120px] md:min-w-[150px] rounded-xl shadow-xl">
               <div className="flex flex-col p-2 rounded-xl gap-2 text-sm">
-                <Link className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
+                <Link to={"/login"} className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
                   <LoginIcon /> <span>Sign In</span>
                 </Link>
-                <Divider />
-                <Link className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
+                {/* <Link className="hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear">
                   <LogoutIcon /> <span>Sign Out</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

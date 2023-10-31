@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -105,11 +104,8 @@ export default function ClinicCenters() {
                           {sc?.description.slice(0, 200)} ...
                         </span>
                       </p>
-                      <Link className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold">
+                      <Link to={`/clinic_centers/${sc?.id}`} className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold">
                         See More
-                      </Link>
-                      <Link className="mt-1 hidden text-white px-1 py-1 rounded-full bg-blue">
-                        <ArrowOutwardIcon />
                       </Link>
                     </div>
                   </div>

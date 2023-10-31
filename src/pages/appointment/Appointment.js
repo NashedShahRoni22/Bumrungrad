@@ -87,7 +87,6 @@ export default function Appointment() {
   const [medicalReport1, setmedicalReport1] = React.useState("");
   const [medicalReport2, setmedicalReport2] = React.useState("");
   const [medicalReport3, setmedicalReport3] = React.useState("");
-  // const [requestorPhone, setRequestorPhone] = React.useState("");
 
   const handlePhone = (newPhone) => {
     setPhone(newPhone);

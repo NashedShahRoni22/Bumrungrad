@@ -17,6 +17,8 @@ import ContactUs from '../pages/contactUs/ContactUs'
 import CheckUp from '../pages/checkup/CheckUp'
 import ViewAllCenters from '../pages/ViewAllCenters/ViewAllCenters'
 import SingleCenter from '../pages/ViewAllCenters/SingleCenter'
+import Register from '../pages/auth/Register'
+import Login from '../pages/auth/Login'
 
 export const router = createBrowserRouter([
   {
@@ -90,6 +92,14 @@ export const router = createBrowserRouter([
       {
         path: '/clinic_centers/:id',
         element: <SingleCenter />,
+      },
+      {
+        path: '/register',
+        element: <Register />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ],
   },
