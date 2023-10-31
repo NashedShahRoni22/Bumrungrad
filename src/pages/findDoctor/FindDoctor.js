@@ -494,7 +494,7 @@ export default function FindDoctor() {
               </div>
             </div>
           ) : (
-            <div className="min-h-[40vh] shadow-xl rounded">
+            <div className="min-h-[40vh] shadow-xl rounded p-5 mb-2.5">
               <Lottie style={style} animationData={notFoundAnim} loop={true} />
               <p className="text-xl font-semibold text-blue text-center">
                 No Doctor Found

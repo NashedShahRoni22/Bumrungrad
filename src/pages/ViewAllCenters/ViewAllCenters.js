@@ -18,7 +18,7 @@ export default function ViewAllCenters() {
       });
   }, []);
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto rounded-xl">
+    <div className="p-5 my-5 md:container md:mx-auto">
       <div className="flex justify-between items-center">
         <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
           Clinic & Centers
@@ -39,7 +39,7 @@ export default function ViewAllCenters() {
             >
               <div>
                 <img
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                  className="min-h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
                   src={sc?.cover_photo}
                   alt=""
                 />
@@ -54,7 +54,7 @@ export default function ViewAllCenters() {
                    <span className="hidden md:block lg:hidden">{sc?.description.slice(0, 100)} ...</span>
                    <span className="hidden lg:block">{sc?.description.slice(0, 200)} ...</span>
                 </p>
-                <Link className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold">
+                <Link to={`/clinic_centers/${sc?.id}`} className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold">
                   See More
                 </Link>
                 <Link className="mt-1 hidden text-white px-1 py-1 rounded-full bg-blue">
