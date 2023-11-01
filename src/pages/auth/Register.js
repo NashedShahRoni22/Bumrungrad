@@ -150,6 +150,7 @@ export default function Register() {
               <TextField
                 fullWidth
                 placeholder='Required'
+                type="email"
                 onChange={(e) => setPataientEmail(e.target.value)}
               />
             </div>

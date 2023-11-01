@@ -21,7 +21,6 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
-          // console.log(data)
           setLoader(false)
           localStorage.setItem('Access_Token', data?.msg?.token)
           localStorage.setItem(
@@ -29,6 +28,11 @@ export default function Login() {
             JSON.stringify(data?.msg?.user_details)
           )
           navigate('/')
+        }
+        else{
+          console.log(data);
+          alert("Credential didn't match with our record!")
+          setLoader(false)
         }
       })
       .catch((error) => console.error(error))
