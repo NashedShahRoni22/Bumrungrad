@@ -8,10 +8,10 @@ import {
 import React, { useState } from 'react'
 import { countries } from '../appointment/Countries'
 import { MuiTelInput } from 'mui-tel-input'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Register() {
-  //const navigate = useNavigate()
+  const navigate = useNavigate()
   //yes or no
   const [yes, setYes] = useState(true)
   const [loader, setLoader] = useState(false)
@@ -37,7 +37,7 @@ export default function Register() {
     setLoader(true)
     if (password !== confirmPassword) {
       SetError("Your Confirm Password Didn't Match")
-       setLoader(false)
+      setLoader(false)
     } else {
       const registerData = {
         firstname,
@@ -54,10 +54,10 @@ export default function Register() {
       console.log(registerData)
 
       const formData = new FormData()
-      formData.append('firstname', firstname)
+      formData.append('firstName', firstname)
       formData.append('lastName', lastName)
       formData.append('dob', dob)
-      formData.append('pataientEmail', pataientEmail)
+      formData.append('email', pataientEmail)
       formData.append('phone', phone)
       formData.append('gender', gender)
       formData.append('citizenship', citizenship)
@@ -69,22 +69,22 @@ export default function Register() {
       formData.append('password', password)
       formData.append('confirmPassword', confirmPassword)
 
-      // fetch('', {
-      //   method: 'POST',
-      //   body: formData,
-      // })
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     if (data.status === 200) {
-      //       console.log(data)
-      //       setLoader(false)
-      //       window.alert('Your Registration is Successfull')
-      //       navigate('/login')
-      //     }
-      //   })
-      //   .catch((error) => console.error(error)) }
-      setLoader(false)
-      SetError('')
+      fetch('https://api.bumrungraddiscover.com/api/register', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === 200) {
+            console.log(data);
+            SetError('')
+            setLoader(false)
+            window.alert('Your Registration is Successfull')
+
+            navigate('/login')
+          }
+        })
+        .catch((error) => console.error(error))
     }
   }
 
