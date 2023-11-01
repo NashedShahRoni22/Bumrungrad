@@ -39,9 +39,9 @@ const ChildPackageDetails = () => {
                 {childDetailsPackage?.title}
               </h5>
               <div className="mt-5 grid md:grid-cols-2 lg:grid-cols-1 gap-2.5">
-                <h5 className="text-[18px] md:text-[24px]">
+                <h5 className="text-[18px] md:text-[24px] font-semibold">
                   {" "}
-                  <span className="text-blue font-semibold">Price:</span>{" "}
+                  <span className="text-blue">Price:</span>{" "}
                   {childDetailsPackage?.price} THB
                 </h5>
                 <ul className="text-[18px] md:text-[24px] list-disc">
@@ -53,7 +53,7 @@ const ChildPackageDetails = () => {
                   <span className="text-blue font-semibold">
                     Location: <br />{" "}
                   </span>
-                  {childDetailsPackage?.location}
+                  {childDetailsPackage?.location}.
                 </h5>
               </div>
             </div>
@@ -79,7 +79,7 @@ const ChildPackageDetails = () => {
           {childDetailsPackage?.inclusions?.length > 0 && (
             <div className="mt-5">
               <h5 className="font-semibold text-blue text-xl">Package Inclusions:</h5>
-              <ul className="list-disc ml-5 mt-2.5 grid gap-2 grid-cols-2 lg:grid-cols-3">
+              <ul className="list-disc ml-5 mt-2.5 grid gap-4 grid-cols-2 lg:grid-cols-3">
                 {childDetailsPackage?.inclusions?.map((c, i) => (
                   <li key={i} className="">{c?.condition}</li>
                 ))}
@@ -89,7 +89,7 @@ const ChildPackageDetails = () => {
           {childDetailsPackage?.exclusions?.length > 0 && (
             <div className="mt-5">
               <h5 className="font-semibold text-blue text-xl">Package Exclusions:</h5>
-              <ul className="list-disc ml-5 mt-2.5 grid gap-2 grid-cols-2 lg:grid-cols-3">
+              <ul className="list-disc ml-5 mt-2.5 grid gap-4 grid-cols-2 lg:grid-cols-3">
                 {childDetailsPackage?.exclusions?.map((c, i) => (
                   <li key={i} className="">{c?.treatment}</li>
                 ))}

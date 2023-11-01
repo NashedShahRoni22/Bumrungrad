@@ -49,7 +49,7 @@ const ChildPackage = () => {
                       className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br'
                     >
                       <RemoveRedEyeIcon />
-                      <span className='capitalize'>View Packages</span>
+                      <span className='capitalize'>View Package</span>
                     </Link>
                   </div>
                 ))}
