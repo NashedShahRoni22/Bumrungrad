@@ -1,48 +1,81 @@
-import { Divider, TextField } from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Divider, TextField } from '@mui/material'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Login() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const navigate = useNavigate()
+  const [loader, setLoader] = useState()
+  //const [error, SetError] = useState('')
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+  const handaleLogin = () => {
+    setLoader(true)
+    const formData = new FormData()
+    formData.append('email', email)
+    formData.append('password', password)
+
+    fetch('https://api.bumrungraddiscover.com/api/login', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200) {
+          // console.log(data)
+          setLoader(false)
+          localStorage.setItem('Access_Token', data?.msg?.token)
+          localStorage.setItem(
+            'User_Details',
+            JSON.stringify(data?.msg?.user_details)
+          )
+          navigate('/')
+        }
+      })
+      .catch((error) => console.error(error))
+  }
   return (
-    <section className="p-5 md:p-10 lg:w-1/2 my-5 md:my-10 mx-5 md:container md:mx-auto shadow">
-      <h5 className="text-xl md:text-3xl font-semibold text-blue mb-4">Login</h5>
-      <Divider/>
-      <div className="mt-4">
-        <p className="mb-2.5">Enter Email</p>
+    <section className='p-5 md:p-10 lg:w-1/2 my-5 md:my-10 mx-5 md:container md:mx-auto shadow'>
+      <h5 className='text-xl md:text-3xl font-semibold text-blue mb-4'>
+        Login
+      </h5>
+      <Divider />
+      <div className='mt-4'>
+        <p className='mb-2.5'>Enter Email</p>
         <TextField
           fullWidth
-          placeholder="Required"
+          placeholder='Required'
           onChange={(e) => setEmail(e.target.value)}
+          type='email'
         />
       </div>
-      <div className="mt-5">
-        <p className="mb-2.5">Enter Password</p>
+      <div className='mt-5'>
+        <p className='mb-2.5'>Enter Password</p>
         <TextField
           fullWidth
-          placeholder="Required"
+          placeholder='Required'
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
         />
       </div>
-      <div className="flex justify-center mt-4">
+      <div className='flex justify-center mt-4'>
         <button
           className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
-            email === "" || password === ""
-              ? "bg-white text-blue"
-              : "text-white"
+            email === '' || password === ''
+              ? 'bg-white text-blue'
+              : 'text-white'
           }`}
-          disabled={email === "" || password === ""}
+          disabled={email === '' || password === ''}
+          onClick={handaleLogin}
         >
-          Login
+          {loader ? 'Loading..' : 'Login'}
         </button>
       </div>
-      <p className="mt-4 text-center">
-        New here?{" "}
-        <Link to={"/register"} className="underline text-blue">
+      <p className='mt-4 text-center'>
+        New here?{' '}
+        <Link to={'/register'} className='underline text-blue'>
           Please create an account
-        </Link>{" "}
+        </Link>{' '}
       </p>
     </section>
-  );
+  )
 }
