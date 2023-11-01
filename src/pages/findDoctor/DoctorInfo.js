@@ -38,12 +38,12 @@ export default function DoctorInfo() {
       ) : (
         <section>
           <div className="doctor-bg">
-            <div className="flex md:items-center p-5 md:p-10 md:container md:mx-auto">
+            <div className="md:flex p-5 md:p-10 md:container md:mx-auto">
               <div className="flex flex-col justify-center">
                 <img
                   src={doctor?.cover_photo}
                   alt=""
-                  className="h-[250px] md:h-[400px] lg:h-[450px] w-[150px] md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl"
+                  className="h-[250px] md:h-[400px] lg:h-[450px] w-full md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl"
                 />
                 <button className="bg-blue text-white py-2.5 w-full rounded-bl-xl rounded-br-xl">
                   <EventAvailableIcon />
