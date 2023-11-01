@@ -20,6 +20,8 @@ import SingleCenter from '../pages/ViewAllCenters/SingleCenter'
 import Register from '../pages/auth/Register'
 import Login from '../pages/auth/Login'
 import ParentPackages from '../pages/packages/ParentPackages'
+import ChildPackage from '../pages/packages/ChildPackage'
+import ChildPackageDetails from '../pages/packages/ChildPackageDetails'
 
 export const router = createBrowserRouter([
   {
@@ -105,6 +107,14 @@ export const router = createBrowserRouter([
       {
         path: '/packages',
         element: <ParentPackages />,
+      },
+      {
+        path: '/package_details/:id',
+        element: <ChildPackage />,
+      },
+      {
+        path: '/childPackage_details/:id',
+        element: <ChildPackageDetails/>,
       },
     ],
   },
