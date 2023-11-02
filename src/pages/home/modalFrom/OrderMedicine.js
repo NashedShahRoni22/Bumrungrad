@@ -62,15 +62,15 @@ const OrderMedicine = () => {
       .then((data) => {
         if (data.status === 200) {
           console.log(data)
-          setMedicArr([])
-          setprescriptionImg('')
+          window.location.reload();
+          alert("Medicine Order Placed! Our support team will contact you soon.")
           setLoader(false)
         }
       })
       .catch((error) => console.error(error))
   }
   return (
-    <div>
+    <div className='py-5'>
       <div className='flex flex-col gap-4'>
         <TextField
           label='Your Name'
@@ -181,13 +181,13 @@ const OrderMedicine = () => {
       )}
       <div className='mb-2 flex flex-col gap-6'></div>
       <div className='mt-4'>
-        <Button
-          variant='contained'
+        <button
+          className={`border border-blue px-3 py-1 rounded float-left mt-3 ${medicArr.length === 0 && prescriptionImg === '' ? "bg-white text-black" : "bg-blue text-white"}`}
           onClick={orderMedicine}
           disabled={medicArr.length === 0 && prescriptionImg === ''}
         >
           {loader ? 'Loading...' : 'Submit'}
-        </Button>
+        </button>
       </div>
     </div>
   )

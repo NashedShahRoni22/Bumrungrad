@@ -145,7 +145,7 @@ export default function AppBar() {
                   <>
                     <button
                       onClick={handleSingnOut}
-                      className='hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear'
+                      className='hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear flex items-center gap-2.5'
                     >
                       <LogoutIcon /> <span>Sign Out</span>
                     </button>
@@ -154,7 +154,7 @@ export default function AppBar() {
                 ) : (
                   <Link
                     to={'/login'}
-                    className='hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear'
+                    className='hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear flex items-center gap-2.5'
                   >
                     <LoginIcon /> <span>Sign In</span>
                   </Link>

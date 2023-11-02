@@ -68,6 +68,8 @@ const TeleMedicine = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
+          window.location.reload();
+          alert("Tele Medicine request sent! Our support team will contact you soon.")
         }
       })
       .catch((error) => console.error(error))
@@ -86,6 +88,7 @@ const TeleMedicine = () => {
             placeholder='Same As In Passport'
             onChange={(e) => setFullName(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
@@ -102,15 +105,17 @@ const TeleMedicine = () => {
             type='date'
             onChange={(e) => setBirthDate(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm'>Passport / Id No</p>
           <TextField
             type=''
-            placeholder='Enter Number'
+            placeholder='Enter Passport Number'
             onChange={(e) => setPassportId(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
@@ -119,6 +124,7 @@ const TeleMedicine = () => {
             placeholder='Enter Your Nationality'
             onChange={(e) => setNationality(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
@@ -127,6 +133,7 @@ const TeleMedicine = () => {
             placeholder='Enter Your Residence'
             onChange={(e) => setResidence(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
@@ -137,6 +144,7 @@ const TeleMedicine = () => {
             placeholder='Mobile Number / Email Address'
             onChange={(e) => setContactDetails(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <h1 className='uppercase text-center text-xl mt-5 mb-5 md:mt-10'>
@@ -150,6 +158,7 @@ const TeleMedicine = () => {
             type='date'
             onChange={(e) => setPreferredDate(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
@@ -158,6 +167,7 @@ const TeleMedicine = () => {
             placeholder='Doctor Name'
             onChange={(e) => setPreferredDoctor(e.target.value)}
             fullWidth
+
           />
         </div>
         <div className='mt-3'>
@@ -168,6 +178,7 @@ const TeleMedicine = () => {
             placeholder='Chief Complaint'
             onChange={(e) => setPurposeAppoinment(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>
@@ -197,6 +208,7 @@ const TeleMedicine = () => {
             placeholder='E-Payment / Credit card / Bank transfer'
             onChange={(e) => setPaymentType(e.target.value)}
             fullWidth
+            required
           />
         </div>
         <div className='mt-3'>

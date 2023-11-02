@@ -37,6 +37,8 @@ const AirAmbulanceForm = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
+          window.location.reload();
+          alert("Air Ambulance request sent! Our support team will contact you soon.")
         }
       })
       .catch((error) => console.error(error))
