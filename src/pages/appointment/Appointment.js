@@ -799,7 +799,7 @@ export default function Appointment() {
                     />
                   </div>
                   <div>
-                    <p className='mb-2.5'>Enter Phone Number(Required)</p>
+                    <p className='mb-2.5'>Whatsapp Number(Required)</p>
                     <MuiTelInput
                       defaultCountry='TH'
                       value={phone ? phone : phone}

@@ -6,6 +6,7 @@ const AirtTcket = () => {
   const [loader, setLoader] = useState()
   //Input field states
   const [flydate, setFlydate] = useState('')
+  const [returndate, setReturndate] = useState('')
   const [passport, setPassport] = useState('')
   const [country, setCountry] = useState('')
   const [destination, setDestination] = useState('')
@@ -27,11 +28,13 @@ const AirtTcket = () => {
       booking_date: flydate,
       doc: passport,
       country: country,
-      destination: destination
+      destination: destination,
+      returndate,
     }
     console.log(getAirTicket)
     const formData = new FormData()
     formData.append('booking_date', flydate)
+    formData.append('return_date', returndate)
     formData.append('doc', passport)
     formData.append('country', country)
     formData.append('destination', destination)
@@ -45,8 +48,10 @@ const AirtTcket = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
-          window.location.reload();
-          alert("Air Ticket request sent! Our support team will contact you soon.")
+          window.location.reload()
+          alert(
+            'Air Ticket request sent! Our support team will contact you soon.'
+          )
         }
       })
       .catch((error) => console.error(error))
@@ -57,10 +62,10 @@ const AirtTcket = () => {
     <div>
       <form
         onSubmit={handaleAirTicket}
-        className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96'
+        className='mb-2 md:w-full max-w-screen-lg sm:w-96'
       >
-        <div className='mb-2 flex flex-col gap-6'>
-          <div className='mt-2'>
+        <div className='mb-2 flex flex-col gap-3'>
+          <div>
             <p className='mb-2.5 font-semibold text-sm'>Enter Your Fly Date</p>
             <TextField
               type='date'
@@ -69,8 +74,19 @@ const AirtTcket = () => {
               required
             />
           </div>
-          <div className='mt-2'>
+          <div>
             <p className='mb-2.5 font-semibold text-sm'>
+              Enter Your Return Date
+            </p>
+            <TextField
+              type='date'
+              onChange={(e) => setReturndate(e.target.value)}
+              fullWidth
+              required
+            />
+          </div>
+          <div>
+            <p className='mb-1.5 font-semibold text-sm'>
               Attach Your Passport Copy
             </p>
             <TextField
@@ -80,8 +96,8 @@ const AirtTcket = () => {
               required
             />
           </div>
-          <div className='mt-2'>
-            <p className='mb-2.5 font-semibold text-sm'>From Country</p>
+          <div>
+            <p className='mb-1.5 font-semibold text-sm'>From Country</p>
             <TextField
               id='filled-select-currency-native'
               select
@@ -101,8 +117,8 @@ const AirtTcket = () => {
             </TextField>
           </div>
 
-          <div className='mt-2'>
-            <p className='mb-2.5 font-semibold text-sm'>To Country</p>
+          <div>
+            <p className='mb-1.5 font-semibold text-sm'>To Country</p>
             <TextField
               id='filled-select-currency-native'
               select

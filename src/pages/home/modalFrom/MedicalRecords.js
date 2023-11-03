@@ -6,6 +6,7 @@ const MedicalRecords = () => {
   const [loader, setLoader] = useState()
 
   const [passport, setPassport] = useState('')
+  const [name, setName] = useState('')
   const [hnNum, setHnNum] = useState('')
   const [caseSummary, setCaseSummary] = useState('')
 
@@ -17,12 +18,14 @@ const MedicalRecords = () => {
       passport,
       hnNum,
       caseSummary,
+      name,
     }
     console.log(getAirAmbulance)
 
     const formData = new FormData()
 
     formData.append('passport', passport)
+    formData.append('name', name)
     formData.append('caseSummary', caseSummary)
     formData.append('hnNum', hnNum)
 
@@ -49,10 +52,18 @@ const MedicalRecords = () => {
         onSubmit={addPatient}
         className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96 py-5'
       >
-        <div className='mb-2 flex flex-col gap-6'>
-          <div className='mt-2'>
+        <div className='mb-2 flex flex-col'>
+          <div>
             <p className='mb-2 font-semibold text-sm'>
-               <span className='text-red text-lg'>*</span> Attach Your Passport Copy
+              {' '}
+              <span className='text-red text-lg'>*</span>Enter Your Name
+            </p>
+            <TextField onChange={(e) => setName(e.target.value)} fullWidth />
+          </div>
+          <div className='mt-2'>
+            <p className='mt-2 font-semibold text-sm'>
+              <span className='text-red text-lg'>*</span> Attach Your Passport
+              Copy
             </p>
             <TextField
               type='file'
@@ -61,12 +72,18 @@ const MedicalRecords = () => {
               required
             />
           </div>
-          <div className='mt-2'>
-            <p className='mb-2 font-semibold text-sm'> <span className='text-red text-lg'>*</span> HN Number</p>
+          <div>
+            <p className='mt-2 font-semibold text-sm'>
+              {' '}
+              <span className='text-red text-lg'>*</span> HN Number
+            </p>
             <TextField onChange={(e) => setHnNum(e.target.value)} fullWidth />
           </div>
-          <div className='mt-2'>
-            <p className='mb-2 font-semibold text-sm'> <span className='text-red text-lg'>*</span> Report Details</p>
+          <div >
+            <p className='mt-2 font-semibold text-sm'>
+              {' '}
+              <span className='text-red text-lg'>*</span> Report Details
+            </p>
             <TextField
               multiline
               onChange={(e) => setCaseSummary(e.target.value)}

@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { MuiTelInput } from 'mui-tel-input'
+import whatsapp from '../../../assets/whatsapp.png'
 
 const OrderMedicine = () => {
   const [prescriptionState, setPrescriptionState] = useState(1)
@@ -18,6 +19,7 @@ const OrderMedicine = () => {
   const handleChange = (newValue) => {
     setNumber(newValue)
   }
+  const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const [medicine, setMedicin] = useState('')
   const [quantity, setQuantity] = useState('')
@@ -45,6 +47,7 @@ const OrderMedicine = () => {
       name,
       address,
       number,
+      email,
     }
     console.log(orderMedicine)
 
@@ -52,6 +55,7 @@ const OrderMedicine = () => {
     formData.append('name', name)
     formData.append('address', address)
     formData.append('phoneNumber', number)
+    formData.append('email', email)
     formData.append('prescription', prescriptionImg)
     formData.append('medicines', JSON.stringify(medicArr))
     fetch('https://api.bumrungraddiscover.com/api/add/order/medicine', {
@@ -62,8 +66,10 @@ const OrderMedicine = () => {
       .then((data) => {
         if (data.status === 200) {
           console.log(data)
-          window.location.reload();
-          alert("Medicine Order Placed! Our support team will contact you soon.")
+          window.location.reload()
+          alert(
+            'Medicine Order Placed! Our support team will contact you soon.'
+          )
           setLoader(false)
         }
       })
@@ -78,12 +84,21 @@ const OrderMedicine = () => {
           onChange={(e) => setName(e.target.value)}
           required
         />
+
         <MuiTelInput
           label='Your Phone Number'
           value={number}
           onChange={handleChange}
           defaultCountry='TH'
           className='w-[100%]'
+        />
+        <p className='text-blue text-sm'>*Please Add Your Whatsapp Number</p>
+        <TextField
+          label='Your Email'
+          type='email'
+          fullWidth
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <TextField
           label='Your Address'
@@ -179,10 +194,29 @@ const OrderMedicine = () => {
           </TableContainer>
         </div>
       )}
-      <div className='mb-2 flex flex-col gap-6'></div>
+      <div className='mt-6'>
+        <p className='text-blue font-semibold'>
+          Or, If You Want to Send Medicine Image*{' '}
+        </p>
+        <a
+          href='http://wa.me/+8801324418100'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
+        >
+          <img src={whatsapp} alt='line_logo' className='h-[40px]' />
+          <span className='text-blue font-semibold'>
+            Send Image in Whatsapp
+          </span>
+        </a>
+      </div>
       <div className='mt-4'>
         <button
-          className={`border border-blue px-3 py-1 rounded float-left mt-3 ${medicArr.length === 0 && prescriptionImg === '' ? "bg-white text-black" : "bg-blue text-white"}`}
+          className={`border border-blue px-3 py-1 rounded float-left mt-3 ${
+            medicArr.length === 0 && prescriptionImg === ''
+              ? 'bg-white text-black'
+              : 'bg-blue text-white'
+          }`}
           onClick={orderMedicine}
           disabled={medicArr.length === 0 && prescriptionImg === ''}
         >
