@@ -912,7 +912,7 @@ export default function Appointment() {
                   <div className='flex flex-col gap-2.5'>
                     <TextField
                       fullWidth
-                      placeholder='Add Drive Link 1'
+                      placeholder='Add Drive Link 1 (Required)'
                       value={driveLink1}
                       onChange={(e) => setDriveLink1(e.target.value)}
                     />
@@ -977,7 +977,8 @@ export default function Appointment() {
                     gender === '' ||
                     pataientEmail === '' ||
                     phone === '' ||
-                    dob === ''
+                    dob === '' ||
+                    (passport === '' && driveLink1 === '')
                       ? 'bg-white text-blue'
                       : 'text-white'
                   }`}
@@ -989,7 +990,8 @@ export default function Appointment() {
                     gender === '' ||
                     pataientEmail === '' ||
                     phone === '' ||
-                    dob === ''
+                    dob === '' ||
+                    (passport === '' && driveLink1 === '')
                   }
                 >
                   Preview
