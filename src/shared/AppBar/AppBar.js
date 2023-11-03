@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { MenuItems } from './MenuItems'
 import logo from '../../assets/nav_logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
 import PersonIcon from '@mui/icons-material/Person'
 // import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -38,11 +38,14 @@ export default function AppBar() {
     }
   }, [])
 
+  const navigate = useNavigate();
+
   //sign out user
   const handleSingnOut = () => {
     localStorage.clear()
     alert('Signed Out Successfully!')
-    window.location.reload()
+    window.location.reload();
+    navigate("/")
   }
 
   return (

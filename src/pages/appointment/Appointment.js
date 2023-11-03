@@ -18,16 +18,14 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Appointment() {
   const userDetails = JSON.parse(localStorage.getItem('User_Details'))
-  console.log(userDetails)
   const doctor1 = JSON.parse(localStorage.getItem('doctor_name'))
-  console.log(doctor1)
   const speacility1 = JSON.parse(localStorage.getItem('Doctor_specialty'))
-  console.log(speacility1)
+  // console.log(userDetails);
   const [loader, setLoader] = useState(false)
   // previwer control
   const [Previewopen, PreviewsetOpen] = React.useState(false)
 
-  //Documen and Link Show
+  //Document and Link Show
   const [document, SetDocument] = useState(true)
   const [link, SetLink] = useState(false)
 
@@ -39,7 +37,6 @@ export default function Appointment() {
     SetDocument(false)
     SetLink(true)
   }
-  //......//..................////
 
   const handlePreviewClickOpen = () => {
     PreviewsetOpen(true)
@@ -244,6 +241,8 @@ export default function Appointment() {
   const handleBookAppointment = () => {
     setLoader(true)
     const formData = new FormData()
+
+    formData.append('user_id', userDetails?.id)
     formData.append('specialty', specialty)
     formData.append('doctor', doctor)
     formData.append('subSpecialty', subSpecialty)

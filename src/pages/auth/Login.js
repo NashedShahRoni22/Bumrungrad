@@ -21,7 +21,8 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
-          setLoader(false)
+          setLoader(false);
+          console.log(data);
           localStorage.setItem('Access_Token', data?.msg?.token)
           localStorage.setItem(
             'User_Details',
