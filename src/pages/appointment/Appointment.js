@@ -19,6 +19,10 @@ import { useNavigate } from 'react-router-dom'
 export default function Appointment() {
   const userDetails = JSON.parse(localStorage.getItem('User_Details'))
   console.log(userDetails)
+  const doctor1 = JSON.parse(localStorage.getItem('doctor_name'))
+  console.log(doctor1)
+  const speacility1 = JSON.parse(localStorage.getItem('Doctor_specialty'))
+  console.log(speacility1)
   const [loader, setLoader] = useState(false)
   // previwer control
   const [Previewopen, PreviewsetOpen] = React.useState(false)
@@ -73,9 +77,11 @@ export default function Appointment() {
   const [yes, setYes] = useState(true)
 
   //manage data
-  const [specialty, setSpeacility] = React.useState('')
+  const [specialty, setSpeacility] = React.useState(
+    speacility1 ? speacility1 : ''
+  )
   const [subSpecialty, setSubSpeacility] = React.useState('')
-  const [doctor, setDoctor] = React.useState('')
+  const [doctor, setDoctor] = React.useState(doctor1 ? doctor1 : '')
   const [medicalDesc, setMedicalDesc] = React.useState('')
   const [selectedDate, setSelectedDate] = React.useState(new Date())
   const [selectedDate2, setSelectedDate2] = React.useState(new Date())
@@ -122,6 +128,8 @@ export default function Appointment() {
 
   const [driveLink1, setDriveLink1] = React.useState('')
   const [driveLink2, setDriveLink2] = React.useState('')
+
+  //if route come in doctor side
 
   const handlePhone = (newPhone) => {
     setPhone(newPhone)
@@ -237,8 +245,8 @@ export default function Appointment() {
     setLoader(true)
     const formData = new FormData()
     formData.append('specialty', specialty)
-    formData.append('subSpecialty', subSpecialty)
     formData.append('doctor', doctor)
+    formData.append('subSpecialty', subSpecialty)
     formData.append('medicalDesc', medicalDesc)
     formData.append('selectedDate', format(selectedDate, 'PP'))
     formData.append('selectedDate2', format(selectedDate2, 'PP'))

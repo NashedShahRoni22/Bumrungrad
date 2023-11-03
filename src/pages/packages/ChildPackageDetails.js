@@ -1,24 +1,70 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../../shared/Loader/Loader'
-import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 
 const ChildPackageDetails = () => {
   const [loader, setLoader] = useState()
   const { id } = useParams()
   const [childDetailsPackage, setChildDetailsPackage] = useState({})
+
+  const [packageName, setPackageName] = useState('')
+  const [packagePrice, setPackagePrice] = useState('')
+  const [patientName, setPatientName] = useState('')
+  const [hnNumber, setHnNumber] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [email, setPhoneEmail] = useState('')
   ///modal function
   const [open, setOpen] = React.useState(false)
-  const handleClickOpen = () => {
+  const handleClickOpen = (data) => {
     setOpen(true)
+    setPackagePrice(data.price)
+    setPackageName(data.title)
   }
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const handalepackageSubmit = () => {
+    setLoader(true)
+
+    const getPackage = {
+      packageName,
+      packagePrice,
+      patientName,
+      hnNumber,
+      phoneNumber,
+      email,
+    }
+    console.log(getPackage)
+    const formData = new FormData()
+    formData.append('packageName', packageName)
+    formData.append('packagePrice', packagePrice)
+    formData.append('patientName', patientName)
+    formData.append('hnNumber', hnNumber)
+    formData.append('phone', phoneNumber)
+    formData.append('email', email)
+
+    fetch('https://api.bumrungraddiscover.com/api/add/package/booking', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200) {
+          console.log(data)
+          setLoader(false)
+          window.location.reload()
+          alert(
+            'Package booking placed! Our support team will contact you soon.'
+          )
+        }
+      })
+      .catch((error) => console.error(error))
   }
 
   //get details data
@@ -61,7 +107,7 @@ const ChildPackageDetails = () => {
                     {childDetailsPackage?.price} THB
                   </h5>
                   <button
-                    onClick={handleClickOpen}
+                    onClick={() => handleClickOpen(childDetailsPackage)}
                     className='px-4 py-2 bg-blue w-fit text-white'
                   >
                     Book Package
@@ -137,22 +183,104 @@ const ChildPackageDetails = () => {
           onClose={handleClose}
           aria-labelledby='alert-dialog-title'
           aria-describedby='alert-dialog-description'
+          fullWidth='true'
         >
           <DialogTitle id='alert-dialog-title'>
-            {"Use Google's location service?"}
+            <div className='flex justify-between'>
+              {' '}
+              <h1 className='font-semibold'>Package Booking</h1>
+              <button
+                onClick={handleClose}
+                className=' px-4 py-1  bg-black text-white'
+              >
+                Close
+              </button>
+            </div>
           </DialogTitle>
           <DialogContent>
-            <DialogContentText id='alert-dialog-description'>
-              Let Google help apps determine location. This means sending
-              anonymous location data to Google, even when no apps are running.
-            </DialogContentText>
+            <div className='p-4'>
+              <div>
+                {' '}
+                <p className='mb-1.5 font-semibold text-blue'>Package Name</p>
+                <TextField
+                  id='outlined-basic'
+                  placeholder='Enter Package Name'
+                  variant='outlined'
+                  value={packageName}
+                  fullWidth
+                  disabled
+                />
+              </div>
+              <div>
+                {' '}
+                <p className='mb-1.5 font-semibold text-blue'>Package Price</p>
+                <TextField
+                  id='outlined-basic'
+                  type='number'
+                  placeholder='Enter Package Price'
+                  variant='outlined'
+                  value={packagePrice}
+                  fullWidth
+                  disabled
+                />
+              </div>
+              <div>
+                {' '}
+                <p className='my-2.5 font-semibold text-blue'>Patient Name</p>
+                <TextField
+                  id='outlined-basic'
+                  placeholder=' Enter Patient Name'
+                  variant='outlined'
+                  fullWidth
+                  onChange={(e) => setPatientName(e.target.value)}
+                />
+              </div>
+              <div>
+                {' '}
+                <p className='my-2.5 font-semibold text-blue'>HN Number</p>
+                <TextField
+                  id='outlined-basic'
+                  placeholder=' Enter HN Number'
+                  variant='outlined'
+                  fullWidth
+                  onChange={(e) => setHnNumber(e.target.value)}
+                />
+              </div>
+              <div>
+                {' '}
+                <p className='my-2.5 font-semibold text-blue'>
+                  Whatsapp Number
+                </p>
+                <TextField
+                  type='number'
+                  id='outlined-basic'
+                  placeholder='Enter Whatsapp Number'
+                  variant='outlined'
+                  fullWidth
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+              </div>
+              <div>
+                {' '}
+                <p className='my-2.5 font-semibold text-blue'>Email</p>
+                <TextField
+                  type='email'
+                  id='outlined-basic'
+                  placeholder='Enter Email'
+                  variant='outlined'
+                  fullWidth
+                  onChange={(e) => setPhoneEmail(e.target.value)}
+                />
+              </div>
+              <button
+                onClick={handalepackageSubmit}
+                className='mt-4 px-4 py-2 bg-blue text-white font-semibold'
+              >
+                {loader ? 'Loading...' : 'Submit'}
+              </button>
+            </div>
           </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose} autoFocus>
-              Agree
-            </Button>
-          </DialogActions>
+          <DialogActions></DialogActions>
         </Dialog>
       </React.Fragment>
     </div>
