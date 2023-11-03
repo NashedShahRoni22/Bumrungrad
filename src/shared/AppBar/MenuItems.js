@@ -50,7 +50,7 @@ export const MenuItems = [
     link:'/clinic_centers'
   },
   {
-    header: 'Check Up',
+    header: 'Health Screening',
     link:"/check_up"
   },
   {

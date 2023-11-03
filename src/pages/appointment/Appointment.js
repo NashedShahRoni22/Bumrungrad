@@ -23,6 +23,20 @@ export default function Appointment() {
   // previwer control
   const [Previewopen, PreviewsetOpen] = React.useState(false)
 
+  //Documen and Link Show
+  const [document, SetDocument] = useState(true)
+  const [link, SetLink] = useState(false)
+
+  const showDocument = () => {
+    SetDocument(true)
+    SetLink(false)
+  }
+  const showLink = () => {
+    SetDocument(false)
+    SetLink(true)
+  }
+  //......//..................////
+
   const handlePreviewClickOpen = () => {
     PreviewsetOpen(true)
   }
@@ -67,6 +81,8 @@ export default function Appointment() {
   const [selectedDate2, setSelectedDate2] = React.useState(new Date())
   const [shift, setShift] = React.useState('')
   const [shift2, setShift2] = React.useState('')
+  const [firstSiftTime, setFirstShiftTime] = React.useState('')
+  const [SecondSiftTime, setSecondSiftTime] = React.useState('')
 
   const [hnNumber, setHnNumber] = React.useState('')
   const [firstname, setfirstname] = React.useState(
@@ -104,6 +120,9 @@ export default function Appointment() {
   const [medicalReport2, setmedicalReport2] = React.useState('')
   const [medicalReport3, setmedicalReport3] = React.useState('')
 
+  const [driveLink1, setDriveLink1] = React.useState('')
+  const [driveLink2, setDriveLink2] = React.useState('')
+
   const handlePhone = (newPhone) => {
     setPhone(newPhone)
   }
@@ -116,10 +135,12 @@ export default function Appointment() {
   //   subSpecialty,
   //   doctor,
   //   medicalDesc,
-  //   selectedDate: format(selectedDate, "PP"),
-  //   selectedDate2: format(selectedDate2, "PP"),
+  //   selectedDate: format(selectedDate, 'PP'),
+  //   selectedDate2: format(selectedDate2, 'PP'),
   //   shift,
   //   shift2,
+  //   firstSiftTime,
+  //   SecondSiftTime,
   //   oldPataint: old,
   //   HnNumber: hnNumber,
   //   PataientFirstName: firstname,
@@ -142,9 +163,9 @@ export default function Appointment() {
   //   medicalReport1,
   //   medicalReport2,
   //   medicalReport3,
-  // };
+  // }
 
-  // console.log(postData);
+  // console.log(postData)
 
   const [doctors, setDoctors] = useState([])
   const [specialties, setSpecialities] = useState([])
@@ -223,6 +244,8 @@ export default function Appointment() {
     formData.append('selectedDate2', format(selectedDate2, 'PP'))
     formData.append('shift', shift)
     formData.append('shift2', shift2)
+    formData.append('firstSiftTime', firstSiftTime)
+    formData.append('SecondSiftTime', SecondSiftTime)
     formData.append('oldPataint', old)
     formData.append('HnNumber', hnNumber)
     formData.append('PataientFirstName', firstname)
@@ -243,6 +266,8 @@ export default function Appointment() {
     formData.append('medicalReport1', medicalReport1)
     formData.append('medicalReport2', medicalReport2)
     formData.append('medicalReport3', medicalReport3)
+    formData.append('driveLink1', driveLink1)
+    formData.append('driveLink2', driveLink2)
 
     fetch('https://api.bumrungraddiscover.com/api/add/doctor/appointment', {
       method: 'POST',
@@ -445,7 +470,7 @@ export default function Appointment() {
               </p>
               <div className='flex flex-col gap-2.5 md:flex-row md:gap-5'>
                 <div className='flex flex-col items-center shadow my-2.5'>
-                  <p className='font-semibold text-blue'>First Choice</p>
+                  <p className='font-semibold text-blue'>First Date Choice</p>
                   <DayPicker
                     mode='single'
                     selected={selectedDate}
@@ -460,7 +485,7 @@ export default function Appointment() {
                   </p>
                 </div>
                 <div className='flex flex-col items-center shadow my-2.5'>
-                  <p className='font-semibold text-blue'>Second Choice</p>
+                  <p className='font-semibold text-blue'>Second Date Choice</p>
                   <DayPicker
                     mode='single'
                     selected={selectedDate2}
@@ -491,12 +516,32 @@ export default function Appointment() {
                       label='First Priority Shift'
                       onChange={(e) => setShift(e.target.value)}
                     >
-                      <MenuItem value='Morning'>Morning</MenuItem>
-                      <MenuItem value='Evening'>Evening</MenuItem>
-                      <MenuItem value='Night'>Night</MenuItem>
+                      <MenuItem value='Morning'>
+                        {' '}
+                        Morning (06:00 am - 12:00 pm)
+                      </MenuItem>
+                      <MenuItem value='Evening'>
+                        {' '}
+                        Afternoon (12:00 pm - 06:00 pm)
+                      </MenuItem>
+                      <MenuItem value='Night'>
+                        {' '}
+                        Night (06:00 pm - 12:00 am)
+                      </MenuItem>
                     </Select>
                   </FormControl>
-                  <p className='font-semibold mt-2.5 text-blue'>*Required</p>
+                  <p className='text-sm mt-1.5 text-blue text-right'>
+                    *Required
+                  </p>
+                  <p className='font-semibold my-2.5 text-blue'>
+                    First Priority Shift Time
+                  </p>
+                  <TextField
+                    type='time'
+                    placeholder='First Priority Shift Time'
+                    fullWidth
+                    onChange={(e) => setFirstShiftTime(e.target.value)}
+                  />
                 </div>
                 <div className='w-full'>
                   <FormControl fullWidth>
@@ -510,12 +555,28 @@ export default function Appointment() {
                       label='Second Priority Shift'
                       onChange={(e) => setShift2(e.target.value)}
                     >
-                      <MenuItem value='Morning'>Morning</MenuItem>
-                      <MenuItem value='Evening'>Evening</MenuItem>
-                      <MenuItem value='Night'>Night</MenuItem>
+                      <MenuItem value='Morning'>
+                        Morning (06:00 am - 12:00 pm)
+                      </MenuItem>
+                      <MenuItem value='Evening'>
+                        Afternoon (12:00 pm - 06:00 pm)
+                      </MenuItem>
+                      <MenuItem value='Night'>
+                        Night (06:00 pm - 12:00 am)
+                      </MenuItem>
                     </Select>
                   </FormControl>
-                  <p className='font-semibold mt-2.5 text-blue'>*Required</p>
+                  <p className='text-sm mt-1.5 text-blue text-right'>
+                    *Required
+                  </p>
+                  <p className='font-semibold my-2.5 text-blue'>
+                    Second Priority Shift Time
+                  </p>
+                  <TextField
+                    type='time'
+                    fullWidth
+                    onChange={(e) => setSecondSiftTime(e.target.value)}
+                  />
                 </div>
               </div>
               <p className='font-semibold text-center mt-5 md:text-xl text-blue'>
@@ -738,7 +799,7 @@ export default function Appointment() {
                     />
                   </div>
                   <div>
-                    <p className='mb-2.5'>Enter Phone Number(Required)</p>
+                    <p className='mb-2.5'>Whatsapp Number(Required)</p>
                     <MuiTelInput
                       defaultCountry='TH'
                       value={phone ? phone : phone}
@@ -820,38 +881,79 @@ export default function Appointment() {
               <section className=' flex flex-col gap-4 mt-4'>
                 <p className='text-xl font-semibold text-blue'>Documents</p>
                 <Divider />
-                <div>
-                  <p className='mb-2.5'>Attach Passport(Required)</p>
-                  <TextField
-                    type='file'
-                    fullWidth
-                    onChange={(e) => setPassport(e.target.files[0])}
-                  />
+                <p className='font-semibold'>*Choose file or Add drive link</p>
+                <div className=''>
+                  {' '}
+                  <button
+                    onClick={showDocument}
+                    className={` px-4 py-2 rounded font-semibold ${
+                      document && ' text-white bg-blue'
+                    }`}
+                  >
+                    Add Document
+                  </button>
+                  <button
+                    onClick={showLink}
+                    className={` px-4 py-2 rounded font-semibold ${
+                      link && ' text-white bg-blue'
+                    }`}
+                  >
+                    Add Link
+                  </button>
                 </div>
-                <div>
-                  <p className='mb-2.5'>Medical Report 1(Required)</p>
-                  <TextField
-                    type='file'
-                    fullWidth
-                    onChange={(e) => setmedicalReport1(e.target.files[0])}
-                  />
-                </div>
-                <div>
-                  <p className='mb-2.5'>Medical Report 2(Optional)</p>
-                  <TextField
-                    type='file'
-                    fullWidth
-                    onChange={(e) => setmedicalReport2(e.target.files[0])}
-                  />
-                </div>
-                <div>
-                  <p className='mb-2.5'>Medical Report 3(Optional)</p>
-                  <TextField
-                    type='file'
-                    fullWidth
-                    onChange={(e) => setmedicalReport3(e.target.files[0])}
-                  />
-                </div>
+                {link && (
+                  <div className='flex flex-col gap-2.5'>
+                    <TextField
+                      fullWidth
+                      placeholder='Add Drive Link 1'
+                      value={driveLink1}
+                      onChange={(e) => setDriveLink1(e.target.value)}
+                    />
+                    <TextField
+                      fullWidth
+                      placeholder='Add Drive Link 2'
+                      value={driveLink2}
+                      onChange={(e) => setDriveLink2(e.target.value)}
+                    />
+                  </div>
+                )}
+                {document && (
+                  <div>
+                    {' '}
+                    <div>
+                      <p className='mb-2.5'>Attach Passport(Required)</p>
+                      <TextField
+                        type='file'
+                        fullWidth
+                        onChange={(e) => setPassport(e.target.files[0])}
+                      />
+                    </div>
+                    <div>
+                      <p className='my-2.5'>Medical Report 1(Optional)</p>
+                      <TextField
+                        type='file'
+                        fullWidth
+                        onChange={(e) => setmedicalReport1(e.target.files[0])}
+                      />
+                    </div>
+                    <div>
+                      <p className='my-2.5'>Medical Report 2(Optional)</p>
+                      <TextField
+                        type='file'
+                        fullWidth
+                        onChange={(e) => setmedicalReport2(e.target.files[0])}
+                      />
+                    </div>
+                    <div>
+                      <p className='my-2.5'>Medical Report 3(Optional)</p>
+                      <TextField
+                        type='file'
+                        fullWidth
+                        onChange={(e) => setmedicalReport3(e.target.files[0])}
+                      />
+                    </div>
+                  </div>
+                )}
               </section>
               <div className='flex justify-center gap-2'>
                 <button
@@ -868,9 +970,7 @@ export default function Appointment() {
                     gender === '' ||
                     pataientEmail === '' ||
                     phone === '' ||
-                    dob === '' ||
-                    passport === '' ||
-                    medicalReport1 === ''
+                    dob === ''
                       ? 'bg-white text-blue'
                       : 'text-white'
                   }`}
@@ -882,9 +982,7 @@ export default function Appointment() {
                     gender === '' ||
                     pataientEmail === '' ||
                     phone === '' ||
-                    dob === '' ||
-                    passport === '' ||
-                    medicalReport1 === ''
+                    dob === ''
                   }
                 >
                   Preview
@@ -953,16 +1051,26 @@ export default function Appointment() {
                           )}
                         </li>
                         <li>{shift && <span>First Shift: {shift}</span>}</li>
+                        <li>
+                          {firstSiftTime && (
+                            <span>First Shift Time: {firstSiftTime}</span>
+                          )}
+                        </li>
                       </div>
                       <div>
                         <li>
                           {selectedDate2 && (
                             <span>
-                              First Date: {format(selectedDate2, 'PP')}
+                              Second Date: {format(selectedDate2, 'PP')}
                             </span>
                           )}
                         </li>
                         <li>{shift && <span>Second Shift: {shift2}</span>}</li>
+                        <li>
+                          {SecondSiftTime && (
+                            <span>Second Shift Time: {SecondSiftTime}</span>
+                          )}
+                        </li>
                       </div>
                     </ul>
                   </div>
@@ -1000,10 +1108,17 @@ export default function Appointment() {
                     <Divider />
                     <ul className='mt-2.5'>
                       <li>
-                        {firstname && <span>Firstname: {firstname}</span>}
+                        {firstname && lastName ? (
+                          <span>
+                            Name: {firstname} {lastName}
+                          </span>
+                        ) : (
+                          ''
+                        )}
                       </li>
-                      <li>{lastName && <span>Lastname: {lastName}</span>}</li>
-                      <li>{dob && <span>Lastname: {dob}</span>}</li>
+
+                      <li>{dob && <span>DOB: {dob}</span>}</li>
+                      <li>{hnNumber && <span>HN Number: {hnNumber}</span>}</li>
                       <li>
                         {pataientEmail && <span>Email: {pataientEmail}</span>}
                       </li>
@@ -1023,26 +1138,48 @@ export default function Appointment() {
                       Attached Documents
                     </p>
                     <Divider />
-                    <ul className='mt-2.5 flex gap-2 w-full'>
-                      <li className='px-4 py-2 bg-blue text-white rounded w-fit'>
-                        {passport && <span>Passport</span>}
+                    <ul className='mt-2.5 flex flex-col gap-2 w-full list-decimal ml-5'>
+                      <li className=''>
+                        {passport && <span>{passport.name}</span>}
                       </li>
 
                       {medicalReport1 !== '' && (
-                        <li className='px-4 py-2 bg-blue text-white rounded w-fit'>
-                          <span>Second Medical Report</span>
+                        <li className=''>
+                          <span>{medicalReport1.name}</span>
                         </li>
                       )}
 
                       {medicalReport2 !== '' && (
-                        <li className='px-4 py-2 bg-blue text-white rounded w-fit'>
-                          <span>Third Medical Report</span>
+                        <li className=''>
+                          <span>{medicalReport2.name}</span>
                         </li>
                       )}
 
                       {medicalReport3 !== '' && (
-                        <li className='px-4 py-2 bg-blue text-white rounded w-fit'>
-                          <span>Third Medical Report</span>
+                        <li className=''>
+                          <span>{medicalReport3.name}</span>
+                        </li>
+                      )}
+                      {driveLink1 !== '' && (
+                        <li className=''>
+                          <a
+                            href={driveLink1}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            {driveLink1}
+                          </a>
+                        </li>
+                      )}
+                      {driveLink2 !== '' && (
+                        <li className=''>
+                          <a
+                            href={driveLink2}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            {driveLink2}
+                          </a>
                         </li>
                       )}
                     </ul>
