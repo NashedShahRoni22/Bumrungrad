@@ -34,6 +34,8 @@ const MedicalRecords = () => {
       .then((data) => {
         if (data.status === 200) {
           console.log(data)
+          window.location.reload();
+          alert("Medical record request sent! Our support team will contact you soon.")
           setLoader(false)
         }
       })
@@ -45,12 +47,12 @@ const MedicalRecords = () => {
     <div>
       <form
         onSubmit={addPatient}
-        className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96'
+        className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96 py-5'
       >
         <div className='mb-2 flex flex-col gap-6'>
           <div className='mt-2'>
             <p className='mb-2 font-semibold text-sm'>
-              Attach Your Passport Copy
+               <span className='text-red text-lg'>*</span> Attach Your Passport Copy
             </p>
             <TextField
               type='file'
@@ -60,11 +62,11 @@ const MedicalRecords = () => {
             />
           </div>
           <div className='mt-2'>
-            <p className='mb-2 font-semibold text-sm'>HN Number</p>
+            <p className='mb-2 font-semibold text-sm'> <span className='text-red text-lg'>*</span> HN Number</p>
             <TextField onChange={(e) => setHnNum(e.target.value)} fullWidth />
           </div>
           <div className='mt-2'>
-            <p className='mb-2 font-semibold text-sm'>Report Details</p>
+            <p className='mb-2 font-semibold text-sm'> <span className='text-red text-lg'>*</span> Report Details</p>
             <TextField
               multiline
               onChange={(e) => setCaseSummary(e.target.value)}

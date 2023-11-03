@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { MuiTelInput } from 'mui-tel-input'
 import { FormControl, MenuItem, Select, TextField } from '@mui/material'
 import { natioNalities } from '../appointment/Nationalities'
+import { useNavigate } from 'react-router-dom'
 
 const SendQuery = () => {
   const [loader, setLoader] = useState()
@@ -9,7 +10,7 @@ const SendQuery = () => {
   const [inquery, setInquery] = useState('')
   const [doctorName, setDoctorName] = useState('')
   const [treatmentInterest, setTreatmentInterest] = useState('')
-  const [bumRungradOffice, setBumrungradOffice] = useState('')
+  // const [bumRungradOffice, setBumrungradOffice] = useState('')
   const [question, setQuestion] = useState('')
   const [hospitalNumber, setHospitalNumber] = useState('')
   const [firstName, setFirstName] = useState('')
@@ -20,13 +21,14 @@ const SendQuery = () => {
   const [gender, setGender] = useState('')
   const [citizenship, setCitizenship] = useState('')
   const [country, setCountry] = useState('')
+  
   //phoneNumberSelect
-
   const handleChange = (newValue) => {
     setPhoneNumber(newValue)
   }
-  //  querySubMit
+  const navigate = useNavigate();
 
+  //  Query Submit
   const handaleQuerySubmit = (event) => {
     console.log(1)
     setLoader(true)
@@ -37,7 +39,7 @@ const SendQuery = () => {
       inquery,
       doctorName,
       treatmentInterest,
-      bumRungradOffice,
+      // bumRungradOffice,
       question,
       hospitalNumber,
       firstName,
@@ -54,7 +56,7 @@ const SendQuery = () => {
     formData.append('inquery', inquery)
     formData.append('doctorName', doctorName)
     formData.append('treatmentInterest', treatmentInterest)
-    formData.append('bumRungradOffice', bumRungradOffice)
+    // formData.append('bumRungradOffice', bumRungradOffice)
     formData.append('question', question)
     formData.append('hospitalNumber', hospitalNumber)
     formData.append('firstName', firstName)
@@ -75,6 +77,8 @@ const SendQuery = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
+          navigate("/");
+          alert("Querey sent successfully. Our support team will contact you soon.")
         }
       })
       .catch((error) => console.error(error))
@@ -106,6 +110,7 @@ const SendQuery = () => {
                   <TextField
                     onChange={(e) => setInquery(e.target.value)}
                     fullWidth
+                    required
                   />
                 </div>
                 <div className=''>
@@ -115,6 +120,7 @@ const SendQuery = () => {
                   <TextField
                     onChange={(e) => setDoctorName(e.target.value)}
                     fullWidth
+                    required
                   />
                 </div>
                 <div className=''>
@@ -128,7 +134,7 @@ const SendQuery = () => {
                 </div>
               </div>
 
-              <div className='mt-4'>
+              {/* <div className='mt-4'>
                 <p className='mb-2.5 font-semibold text-sm'>
                   Country of Bumrungrad Office*
                 </p>
@@ -136,7 +142,7 @@ const SendQuery = () => {
                   onChange={(e) => setBumrungradOffice(e.target.value)}
                   fullWidth
                 />
-              </div>
+              </div> */}
 
               <div className='mt-4'>
                 <p className='mb-2.5 font-semibold text-sm'>Your Question *</p>
@@ -145,6 +151,7 @@ const SendQuery = () => {
                   fullWidth
                   multiline
                   rows={2}
+                  required
                 />
               </div>
               <div className='grid md:grid-cols-2 gap-2.5'>
@@ -163,6 +170,7 @@ const SendQuery = () => {
                   <TextField
                     onChange={(e) => setFirstName(e.target.value)}
                     fullWidth
+                    required
                   />
                 </div>
                 <div className='mt-4'>
@@ -170,6 +178,7 @@ const SendQuery = () => {
                   <TextField
                     onChange={(e) => setLastName(e.target.value)}
                     fullWidth
+                    required
                   />
                 </div>
                 <div className='mt-4'>
@@ -177,7 +186,8 @@ const SendQuery = () => {
                   <TextField
                     onChange={(e) => setEmail(e.target.value)}
                     fullWidth
-                    placeholder='Example : example123@gmail.com'
+                    placeholder='Ex : example123@gmail.com'
+                    required
                   />
                 </div>
                 <div className='mt-4'>

@@ -34,7 +34,8 @@ const AirPickup = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
-         
+          window.location.reload();
+          alert("Airport request sent! Our support team will contact you soon.")
         }
       })
       .catch((error) => console.error(error))
@@ -60,7 +61,7 @@ const AirPickup = () => {
             />
           </div>
           <div className='mt-2'>
-            <p className='mb-2 font-semibold text-sm'>Air Ticket File</p>
+            <p className='mb-2 font-semibold text-sm'>Air Ticket Copy</p>
             <TextField
               type='file'
               onChange={(e) => setAirTicketFile(e.target.files[0])}

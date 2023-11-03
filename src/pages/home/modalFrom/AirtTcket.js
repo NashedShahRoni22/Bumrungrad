@@ -45,6 +45,8 @@ const AirtTcket = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
+          window.location.reload();
+          alert("Air Ticket request sent! Our support team will contact you soon.")
         }
       })
       .catch((error) => console.error(error))

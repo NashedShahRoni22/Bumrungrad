@@ -279,7 +279,7 @@ export default function Appointment() {
           console.log(data)
           setLoader(false)
           PreviewsetOpen(false)
-          window.alert('Please Check Patient Email!')
+          window.alert('Please check patient email!')
           navigate('/')
         }
       })
