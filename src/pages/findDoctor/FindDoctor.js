@@ -482,12 +482,12 @@ export default function FindDoctor() {
                   >
                     <img
                       src={d.cover_photo}
-                      alt="Doctor Image"
+                      alt="DoctorImage"
                       className="h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl-xl rounded-tr-xl"
                     />
                     <div className="p-2.5">
-                      <p className="md:text-xl font-semibold">{d?.name}</p>
-                      <p className="">{d?.specialty}</p>
+                      <p className="md:text-xl text-blue font-semibold">{d?.name}</p>
+                      <p className="mt-2 text-lg">{d?.specialty}</p>
                     </div>
                     <button className="group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl-xl rounded-br-xl">
                       <span className="capitalize">View Profile</span>

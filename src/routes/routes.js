@@ -23,6 +23,7 @@ import ParentPackages from "../pages/packages/ParentPackages";
 import ChildPackage from "../pages/packages/ChildPackage";
 import ChildPackageDetails from "../pages/packages/ChildPackageDetails";
 import PrivateRoute from "../private/PrivateRoute";
+import User from "../pages/user/User";
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +83,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Appointment />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my_profile",
+        element: (
+          <PrivateRoute>
+            <User />
           </PrivateRoute>
         ),
       },
