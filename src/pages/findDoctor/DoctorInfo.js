@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../shared/Loader/Loader'
 import { Divider } from '@mui/material'
 import Table from '@mui/material/Table'
@@ -12,9 +12,16 @@ import Paper from '@mui/material/Paper'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
 
 export default function DoctorInfo() {
+  const navigate = useNavigate()
   const [loader, setLoader] = useState(false)
   const { id } = useParams()
   const [doctor, setDoctor] = useState({})
+
+  const goAppointMent = (doctor) => {
+    localStorage.setItem('doctor_name', JSON.stringify(doctor?.name))
+    localStorage.setItem('Doctor_specialty', JSON.stringify(doctor?.specialty))
+    navigate('/appointment')
+  }
   // console.log(doctor);
   useEffect(() => {
     setLoader(true)
@@ -45,7 +52,10 @@ export default function DoctorInfo() {
                   alt=''
                   className='h-[250px] md:h-[400px] lg:h-[450px] w-full md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl'
                 />
-                <button className='bg-blue text-white py-2.5 w-full rounded-bl-xl rounded-br-xl'>
+                <button
+                  onClick={() => goAppointMent(doctor)}
+                  className='bg-blue text-white py-2.5 w-full rounded-bl-xl rounded-br-xl'
+                >
                   <EventAvailableIcon />
                   <span className='capitalize ml-2.5'>Appointment</span>
                 </button>
