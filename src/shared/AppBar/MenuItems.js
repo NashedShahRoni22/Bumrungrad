@@ -59,27 +59,24 @@ export const MenuItems = [
   },
   {
     header: 'Contact',
-    childs: [
-      {
-        name: 'Locate Us',
-        link: '/locate_us',
-      },
-      {
-        name: 'Hospital Information',
-        link: '/',
-      },
-      {
-        name: 'Direction & Taxi',
-        link: '/',
-      },
-      {
-        name: 'Ambulance',
-        link: '/',
-      },
-      {
-        name: 'Medical Record Request',
-        link: '/',
-      },
-    ],
+    link: '/locate_us',
+    // childs: [
+    //   {
+    //     name: 'Locate Us',
+    //     link: '/locate_us',
+    //   },
+    //   {
+    //     name: 'Hospital Information',
+    //     link: '/',
+    //   },
+    //   {
+    //     name: 'Direction & Taxi',
+    //     link: '/',
+    //   },
+    //   {
+    //     name: 'Ambulance',
+    //     link: '/',
+    //   },
+    // ],
   },
 ]

@@ -135,12 +135,10 @@ export default function AppBar() {
         {/* link and button  */}
         <div className="flex gap-4">
           <div className="relative group">
-            {/* <Link className='lg:px-4 lg:py-2 rounded-md lg:bg-blue flex items-center gap-2 duration-300 ease-linear'> */}
             <PersonIcon
               sx={{ fontSize: "28px" }}
               className="text-blue cursor-pointer"
             />{" "}
-            {/* <span className='hidden lg:block text-white'>Account</span> */}
             {/* </Link> */}
             <div className="hidden group-hover:block duration-300 ease-linear bg-white absolute z-50 min-w-[120px] md:min-w-[150px] rounded-xl shadow-xl">
               <div className="flex flex-col p-2 rounded-xl gap-2 text-sm">
@@ -154,7 +152,7 @@ export default function AppBar() {
                         sx={{ fontSize: "24px" }}
                         className="text-blue cursor-pointer"
                       />{" "}
-                      <span>My Profile</span>
+                      <span>Profile</span>
                     </Link>
                     <button
                       onClick={handleSingnOut}
@@ -175,14 +173,12 @@ export default function AppBar() {
             </div>
           </div>
           <div className="flex gap-4 items-center">
-            {/* <WhatsAppIcon
-              sx={{ fontSize: "28px" }}
-              className="cursor-pointer text-blue"
-            /> */}
-            <EmailIcon
-              sx={{ fontSize: "28px" }}
-              className="cursor-pointer text-blue"
-            />
+            <a href="mailto:nashedshah@gmail.com">
+              <EmailIcon
+                sx={{ fontSize: "28px" }}
+                className="cursor-pointer text-blue"
+              />
+            </a>
             {/* Navbar Button  */}
             <button className="md:hidden z-50" onClick={() => setOpen(!open)}>
               {open ? (

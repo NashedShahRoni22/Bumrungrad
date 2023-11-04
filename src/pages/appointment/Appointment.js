@@ -1012,14 +1012,14 @@ export default function Appointment() {
                 <div className='md:p-4 flex flex-col gap-5 lg:container lg:mx-auto'>
                   <div className='flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between'>
                     <img src={logo} className='w-[200px]' alt='' />
-                    <div className='text-center font-semibold text-blue'>
+                    <div className='text-center md:font-semibold text-blue'>
                       <p>Bumrungrad International Hospital</p>
                       <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
                     </div>
                   </div>
                   <div className='h-0.5 w-full bg-blue'></div>
                   <div className='shadow rounded-xl p-5 text-black'>
-                    <p className='mb-2.5 text-xl font-semibold text-blue'>
+                    <p className='mb-2.5 md:text-xl font-semibold text-blue'>
                       Appointment For:
                     </p>
                     <Divider />
@@ -1046,7 +1046,7 @@ export default function Appointment() {
                     </ul>
                   </div>
                   <div className='shadow rounded-xl p-5 text-black'>
-                    <p className='mb-2.5 text-xl font-semibold text-blue'>
+                    <p className='mb-2.5 md:text-xl font-semibold text-blue'>
                       Appointment Schedule:
                     </p>
                     <Divider />
@@ -1085,7 +1085,7 @@ export default function Appointment() {
                   </div>
                   {activeYourSelf === false && (
                     <div className='shadow rounded-xl p-5 text-black'>
-                      <p className='mb-2.5 text-xl font-semibold text-blue'>
+                      <p className='mb-2.5 md:text-xl font-semibold text-blue'>
                         Requestor Information:
                       </p>
                       <Divider />
@@ -1111,7 +1111,7 @@ export default function Appointment() {
                     </div>
                   )}
                   <div className='shadow rounded-xl p-5 text-black'>
-                    <p className='mb-2.5 text-xl font-semibold text-blue'>
+                    <p className='mb-2.5 md:text-xl font-semibold text-blue'>
                       Pataient Information
                     </p>
                     <Divider />
@@ -1143,7 +1143,7 @@ export default function Appointment() {
                     </ul>
                   </div>
                   <div className='shadow rounded-xl p-5 text-black'>
-                    <p className='mb-2.5 text-xl font-semibold text-blue'>
+                    <p className='mb-2.5 md:text-xl font-semibold text-blue'>
                       Attached Documents
                     </p>
                     <Divider />
