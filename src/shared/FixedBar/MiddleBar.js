@@ -73,14 +73,14 @@ export default function MiddleBar() {
               to="/check_up"
             >
               {" "}
-              <HealthAndSafetyIcon /> Health Screening Appointment.
+              <HealthAndSafetyIcon /> Health Screening
             </Link>
             <Link
               className="px-4 py-2 rounded shadow hover:shadow-xl duration-300 ease-linear text-white bg-blue"
               to="/appointment"
             >
               {" "}
-              <VaccinesIcon /> Doctor Appointment.
+              <VaccinesIcon /> Doctor Appointment
             </Link>
           </DialogContent>
           <DialogActions>

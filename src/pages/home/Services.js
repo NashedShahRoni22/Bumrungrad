@@ -2,7 +2,7 @@ import airimg from '../../assets/service_logo/air_ambulance.png'
 import airpickup from '../../assets/service_logo/air_pickup.png'
 import airticket from '../../assets/service_logo/air_ticket.png'
 import appointment from '../../assets/service_logo/appointment.png'
-import hotelReservation from '../../assets/service_logo/hotel_reservation.png'
+import hotelReservation from '../../assets/service_logo/visa_processing.png'
 import orderMedicine from '../../assets/service_logo/order_medicine.png'
 import teleMedicine from '../../assets/service_logo/telemedicine.png'
 import medicalRecords from '../../assets/service_logo/medical_records.png'
@@ -24,7 +24,7 @@ const services = [
   },
   {
     id: 6,
-    name: 'Hotel Accommodation',
+    name: 'Visa Processing',
     img: hotelReservation,
     form: <VisaProcessing />,
     height: 'md:w-[400px]',

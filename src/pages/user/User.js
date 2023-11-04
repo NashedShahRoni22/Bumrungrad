@@ -1,41 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Loader from "../../shared/Loader/Loader";
 
 export default function User() {
+  const [loading, setLoading] = useState(true); // State to track loading
+  const [error, setError] = useState(null);
   const userdetails = JSON.parse(localStorage.getItem("User_Details"));
   const accessToken = localStorage.getItem("Access_Token");
   const [appointments, setAppointments] = useState([]);
   console.log(appointments);
 
-  // Set up the headers with the access token
-  const headers = {
-    Authorization: `Bearer ${accessToken}`,
-    "Content-Type": "application/json", // You can adjust this content type based on your API requirements
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const headers = {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        };
 
-  // Make the GET request
-  fetch(
-    `https://api.bumrungraddiscover.com/api/personal/appointment/${userdetails?.id}`,
-    {
-      method: "GET",
-      headers: headers,
-    }
-  )
-    .then((response) => {
-      if (response.ok) {
-        return response.json(); // Parse the response body as JSON
-      } else {
-        throw new Error("Failed to fetch data");
+        const response = await fetch(
+          `https://api.bumrungraddiscover.com/api/personal/appointment/${userdetails?.id}`,
+          {
+            method: "GET",
+            headers: headers,
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          setAppointments(data?.data);
+        } else {
+          throw new Error("Failed to fetch data");
+        }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
       }
-    })
-    .then((data) => {
-      // Handle the data here, e.g., set it in your state
-      // console.log("Fetched data:", data);
-      setAppointments(data?.data);
-    })
-    .catch((error) => {
-      // Handle errors here
-      console.error("Error:", error);
-    });
+    };
+
+    fetchData();
+  }, [accessToken, userdetails?.id]); // The empty dependency array ensures this effect runs once
+
+  if (loading) {
+    // You can render a loading indicator here
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    // You can handle and render the error here
+    return <div>Error: {error.message}</div>;
+  }
   return (
     <section className="mx-5 md:container md:mx-auto py-10">
       <div className="shadow p-5 rounded relative">
@@ -79,12 +98,24 @@ export default function User() {
           Total Appointment Taken {appointments?.length}
         </h5>
         <div>
-          {appointments?.map((a,i) => (
+          {appointments?.map((a, i) => (
             <div key={i}>
               <div className="shadow p-2.5 mt-2">
-                <p>{i+1}</p>
-                <p>{a?.doctor && a?.doctor}</p>
-                <p>{a?.specialty && a?.specialty}</p>
+                {a?.doctor && <p className="font-semibold text-blue">{a?.doctor} </p>}
+                {a?.specialty && <p> {a?.specialty} </p>}
+                <hr className="my-2.5" />
+                <div className="grid md:grid-cols-2">
+                  <div>
+                    <p>{a?.selectedDate && a?.selectedDate}</p>
+                    <p>{a?.shift && a?.shift}</p>
+                    {a?.firstSiftTime && <p> {a?.firstSiftTime}</p>}
+                  </div>
+                  <div>
+                    <p>{a?.selectedDate2 && a?.selectedDate2}</p>
+                    <p>{a?.shift2 && a?.shift2}</p>
+                    {a?.SecondSiftTime && <p> {a?.SecondSiftTime}</p>}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

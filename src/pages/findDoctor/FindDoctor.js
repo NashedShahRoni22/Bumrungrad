@@ -477,19 +477,19 @@ export default function FindDoctor() {
                 {doctors?.map((d, i) => (
                   <Link
                     to={`/doctor_details/${d.id}`}
-                    className="shadow rounded-xl hover:shadow-xl duration-300 ease-linear flex flex-col justify-between"
+                    className="shadow hover:shadow-xl duration-300 ease-linear flex flex-col justify-between"
                     key={i}
                   >
                     <img
                       src={d.cover_photo}
                       alt="DoctorImage"
-                      className="h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl-xl rounded-tr-xl"
+                      className="h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl rounded-tr"
                     />
                     <div className="p-2.5">
                       <p className="md:text-xl text-blue font-semibold">{d?.name}</p>
                       <p className="mt-2 text-lg">{d?.specialty}</p>
                     </div>
-                    <button className="group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl-xl rounded-br-xl">
+                    <button className="group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl rounded-br">
                       <span className="capitalize">View Profile</span>
                       <span className="group-hover:hidden">
                         <ArrowForwardIcon />

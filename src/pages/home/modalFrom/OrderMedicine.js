@@ -199,7 +199,7 @@ const OrderMedicine = () => {
           Or, If you want to send medicine image{' '}
         </p>
         <a
-          href='http://wa.me/+8801847284863'
+          href='http://wa.me/+8801847284860'
           target='_blank'
           rel='noopener noreferrer'
           className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
