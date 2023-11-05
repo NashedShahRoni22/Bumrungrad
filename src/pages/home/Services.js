@@ -62,7 +62,7 @@ const services = [
     name: 'Air Ticket',
     img: airticket,
     form: <AirtTcket />,
-    height: 'md:w-[750px]',
+    height: 'h-[470px] overflow-auto md:w-[750px]',
   },
   {
     id: 8,
