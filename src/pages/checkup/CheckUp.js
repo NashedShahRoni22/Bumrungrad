@@ -80,7 +80,7 @@ export default function CheckUp() {
   return (
     <div className='px-5 py-3  md:container md:mx-auto'>
       <h1 className='text-center capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue mt-8'>
-        Health Check-up Appointment
+        Health Screening Appointment
       </h1>
       <div className='mx-auto my-10  lg:w-1/2'>
         <div className='flex justify-center mx-10 items-center'>

@@ -196,17 +196,17 @@ const OrderMedicine = () => {
       )}
       <div className='mt-6'>
         <p className='text-blue font-semibold'>
-          Or, If You Want to Send Medicine Image*{' '}
+          Or, If you want to send medicine image{' '}
         </p>
         <a
-          href='http://wa.me/+8801324418100'
+          href='http://wa.me/+8801847284860'
           target='_blank'
           rel='noopener noreferrer'
           className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
         >
           <img src={whatsapp} alt='line_logo' className='h-[40px]' />
           <span className='text-blue font-semibold'>
-            Send Image in Whatsapp
+            Send image in Whatsapp
           </span>
         </a>
       </div>
