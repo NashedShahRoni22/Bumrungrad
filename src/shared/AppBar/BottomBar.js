@@ -3,20 +3,29 @@ import { Link } from "react-router-dom";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 
 const serives = [
-  "Book Appointment",
-  "Send Inquiry",
-  "Find a Doctor",
-  "Conditions and Treatments",
-  "Clinics and Centers",
+  {
+    name: "Book Appointment",
+    link: "/appointment",
+  },
+  {
+    name: "Health Screening",
+    link: "/check_up",
+  },
+  {
+    name: "Find a Doctor",
+    link: "/find",
+  },
+  {
+    name: "Clinic & Centers",
+    link: "/clinic_centers",
+  },
 ];
-const siteInfos = [
-  "About Bumrungrad",
-  "Bumrungrad application",
-  "Food & Beverage",
-  "Shopping",
+const corporates = [
+  { name: "About Bumrungrad", link: "/about_bumrungrad" },
+  { name: "Send Inquiry", link: "/send_query" },
+  { name: "Contact", link: "/locate_us" }, 
 ];
-const corporates = ["Management Team", "Gallery", "Send Inquiry", "Direction"];
-const blognews = ["Bumrungrad Health Blog", "News"];
+const blognews = ["Health Blogs", "News"];
 
 export default function BottomBar() {
   return (
@@ -28,17 +37,7 @@ export default function BottomBar() {
             <ul className="text-[16px] flex flex-col gap-2 mt-2 ml-5 list-disc">
               {serives.map((s, i) => (
                 <li key={i}>
-                  <Link>{s}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold">Site Information</p>
-            <ul className="text-[16px] flex flex-col gap-2 mt-2 ml-5 list-disc">
-              {siteInfos.map((s, i) => (
-                <li key={i}>
-                  <Link>{s}</Link>
+                  <Link to={s.link}>{s.name}</Link>
                 </li>
               ))}
             </ul>
@@ -58,7 +57,7 @@ export default function BottomBar() {
             <ul className="text-[16px] flex flex-col gap-2 mt-2 ml-5 list-disc">
               {corporates.map((s, i) => (
                 <li key={i}>
-                  <Link>{s}</Link>
+                  <Link to={s.link}>{s.name}</Link>
                 </li>
               ))}
             </ul>

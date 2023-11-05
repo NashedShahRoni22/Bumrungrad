@@ -101,8 +101,25 @@ export default function User() {
           {appointments?.map((a, i) => (
             <div key={i}>
               <div className="shadow p-2.5 mt-2">
-                {a?.doctor && <p className="font-semibold text-blue">{a?.doctor} </p>}
-                {a?.specialty && <p> {a?.specialty} </p>}
+                <div className="flex justify-between">
+                  <div>
+                    {a?.doctor && (
+                      <p className="font-semibold text-blue">{a?.doctor} </p>
+                    )}
+                    {a?.specialty && <p> {a?.specialty} </p>}
+                  </div>
+                  <div>
+                    {a?.status == 0 ? (
+                      <p className="px-2 py-1 bg-blue text-white rounded">
+                        Pending
+                      </p>
+                    ) : (
+                      <p className="px-2 py-1 bg-red text-white rounded">
+                        Processing
+                      </p>
+                    )}
+                  </div>
+                </div>
                 <hr className="my-2.5" />
                 <div className="grid md:grid-cols-2">
                   <div>

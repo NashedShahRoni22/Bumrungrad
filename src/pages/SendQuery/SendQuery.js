@@ -125,7 +125,7 @@ const SendQuery = () => {
                 </div>
                 <div className=''>
                   <p className='mb-2.5 font-semibold text-sm'>
-                    Condition or Treatment of Interest
+                    Condition or Treatment of Interest*
                   </p>
                   <TextField
                     onChange={(e) => setTreatmentInterest(e.target.value)}
@@ -157,7 +157,7 @@ const SendQuery = () => {
               <div className='grid md:grid-cols-2 gap-2.5'>
                 <div className='mt-4'>
                   <p className='mb-2.5 font-semibold text-sm'>
-                    Hospital Number
+                    Hospital Number*
                   </p>
                   <TextField
                     onChange={(e) => setHospitalNumber(e.target.value)}
@@ -192,7 +192,7 @@ const SendQuery = () => {
                 </div>
                 <div className='mt-4'>
                   <p className='mb-2.5 font-semibold text-sm'>
-                    Primary Phone Number
+                    Enter WhatsApp Number*
                   </p>
                   <MuiTelInput
                     value={phoneNumber}
@@ -215,7 +215,7 @@ const SendQuery = () => {
                 <div>
                   <FormControl fullWidth>
                     <p className='mb-2.5 font-semibold text-sm'>
-                      Select Gender(Required)
+                      Select Gender*
                     </p>
                     <Select
                       labelId='demo-simple-select-label'
@@ -233,7 +233,7 @@ const SendQuery = () => {
                 <div>
                   <FormControl fullWidth>
                     <p className='mb-2.5 font-semibold text-sm'>
-                      Select Citizenship(Required)
+                      Select Citizenship*
                     </p>
                     <Select
                       labelId='demo-simple-select-label'

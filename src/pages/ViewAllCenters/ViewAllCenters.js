@@ -13,7 +13,7 @@ export default function ViewAllCenters() {
     fetch("https://api.bumrungraddiscover.com/api/get/centers")
       .then((res) => res.json())
       .then((data) => {
-        setSlides(data?.response?.data?.slice(0, 8));
+        setSlides(data?.response?.data);
         setLoader(false);
       });
   }, []);
