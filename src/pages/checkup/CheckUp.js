@@ -3,6 +3,8 @@ import { TextField, FormControl, MenuItem, Select } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 export default function CheckUp() {
+  const userDetails = JSON.parse(localStorage.getItem('User_Details'))
+  console.log(userDetails)
   const navigate = useNavigate()
   const [loader, setLoader] = useState(false)
 
@@ -20,12 +22,22 @@ export default function CheckUp() {
   const [appoinMentTime, SetAppoinMentTime] = useState('')
   const [medicalConcern, SetMedicalConcern] = useState('')
   const [HnNumber, SetHnNumber] = useState('')
-  const [patientName, SetPatientName] = useState('')
-  const [gender, setGender] = useState('')
-  const [dob, setDOB] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [nationality, setNationality] = useState('')
+  const [patientName, SetPatientName] = useState(
+    userDetails?.firstName ? `${userDetails?.firstName} ${userDetails?.lastName}`: ''
+  )
+  const [gender, setGender] = useState(
+    userDetails?.gender ? userDetails?.gender : ''
+  )
+  const [dob, setDOB] = useState(userDetails?.dob ? userDetails?.dob : '')
+  const [email, setEmail] = useState(
+    userDetails?.email ? userDetails?.email : ''
+  )
+  const [phone, setPhone] = useState(
+    userDetails?.phone ? userDetails?.phone : ''
+  )
+  const [nationality, setNationality] = useState(
+    userDetails?.citizenship ? userDetails?.citizenship : ''
+  )
 
   //get packages
   useEffect(() => {
@@ -327,7 +339,7 @@ export default function CheckUp() {
             <div className='mt-2.5 font-semibold'>
               <p className='mb-2.5'>Phone*</p>
               <TextField
-                type='number'
+                type='text'
                 placeholder='Enter Phone Number'
                 required
                 fullWidth

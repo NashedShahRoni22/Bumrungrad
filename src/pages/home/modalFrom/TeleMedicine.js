@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Divider, TextField } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 const TeleMedicine = () => {
   //loader
   const [loader, setLoader] = useState()
+  const navigate = useNavigate()
 
   const [fullName, setFullName] = useState('')
   const [hnNum, setHnNum] = useState('')
@@ -68,20 +70,27 @@ const TeleMedicine = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
-          window.location.reload();
-          alert("Tele Medicine request sent! Our support team will contact you soon.")
+          alert(
+            'Tele Medicine request sent! Our support team will contact you soon.'
+          )
+          form.reset()
+          navigate('/')
         }
       })
       .catch((error) => console.error(error))
-
-    form.reset()
   }
 
   return (
-    <div>
-      <form onSubmit={handaleAddteleMedicine}>
+    <section className='md:container lg:w-1/2 md:mx-auto md:my-20 shadow-xl rounded-xl'>
+      <h1 className='text-xl md:text-2xl lg:text-3xl font-semibold text-blue my-5 text-center'>
+        Tele Medicine
+      </h1>
+      <form
+        onSubmit={handaleAddteleMedicine}
+        className='px-5 md:px-10 lg:px-16 pb-24'
+      >
         <h1 className='font-semibold mb-2.5 text-blue'>*Patient Details</h1>
-        <Divider/>
+        <Divider />
         <div className='mt-2.5'>
           <p className='mb-2 font-semibold text-sm'>Enter Full Name</p>
           <TextField
@@ -151,7 +160,7 @@ const TeleMedicine = () => {
         <h1 className='uppercase font-semibold text-blue mt-5 mb-2.5 md:mt-10'>
           *appointment details
         </h1>
-        <Divider/>
+        <Divider />
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm'>
             Preferred Appoinment Date
@@ -169,7 +178,6 @@ const TeleMedicine = () => {
             placeholder='Doctor Name'
             onChange={(e) => setPreferredDoctor(e.target.value)}
             fullWidth
-
           />
         </div>
         <div className='mt-3'>
@@ -232,16 +240,21 @@ const TeleMedicine = () => {
             fullWidth
           />
         </div>
-        <div className='my-4 h-[10px]'>
-          <button
-            type='submit'
-            className='bg-blue text-white px-3 py-1 rounded float-left'
-          >
-            {loader ? 'Loading...' : 'Submit'}
-          </button>
-        </div>
+        <button
+          type='submit'
+          className='bg-blue mt-6 text-white px-6 py-2 md:px-12 md:py-4 rounded flex items-center gap-1'
+        >
+          Submit
+          {loader && (
+            <div className='flex gap-0.5'>
+              <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+              <div className='h-2 w-2 rounded-full bg-white shadow animate-bounce'></div>
+              <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+            </div>
+          )}
+        </button>
       </form>
-    </div>
+    </section>
   )
 }
 

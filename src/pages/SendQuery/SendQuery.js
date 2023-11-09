@@ -21,12 +21,12 @@ const SendQuery = () => {
   const [gender, setGender] = useState('')
   const [citizenship, setCitizenship] = useState('')
   const [country, setCountry] = useState('')
-  
+
   //phoneNumberSelect
   const handleChange = (newValue) => {
     setPhoneNumber(newValue)
   }
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   //  Query Submit
   const handaleQuerySubmit = (event) => {
@@ -77,13 +77,14 @@ const SendQuery = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
-          navigate("/");
-          alert("Querey sent successfully. Our support team will contact you soon.")
+          navigate('/')
+          alert(
+            'Querey sent successfully. Our support team will contact you soon.'
+          )
+          form.reset()
         }
       })
       .catch((error) => console.error(error))
-
-    form.reset()
   }
 
   const [countries, setCountries] = useState([])
@@ -94,7 +95,7 @@ const SendQuery = () => {
   }, [])
 
   return (
-    <section className='mx-5 md:container md:mx-auto'>
+    <section className='md:container md:mx-auto'>
       <h1 className='text-xl md:text-2xl lg:text-3xl font-semibold text-blue my-5 text-center'>
         Left Us Your Query !
       </h1>
@@ -273,15 +274,21 @@ const SendQuery = () => {
                   </TextField>
                 </div>
               </div>
-              <hr className='text-blue border-[1.5px] mt-8' />
               <div className='flex justify-center m-5'>
                 <button
                   type='submit'
-                  className='bg-blue text-white px-14 py-3 rounded'
-                  on
+                  className='bg-blue text-white px-6 py-2 md:px-12 md:py-4 rounded flex items-center gap-1'
+                  
                 >
                   {' '}
-                  {loader ? 'Loading...' : 'SEND INQUIRY'}
+                  Send Query
+                  {loader && (
+                    <div className='flex gap-0.5'>
+                      <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+                      <div className='h-2 w-2 rounded-full bg-white shadow animate-bounce'></div>
+                      <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+                    </div>
+                  )}
                 </button>
               </div>
             </form>

@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { MuiTelInput } from 'mui-tel-input'
 import whatsapp from '../../../assets/whatsapp.png'
+import { useNavigate } from 'react-router-dom'
 
 const OrderMedicine = () => {
   const [prescriptionState, setPrescriptionState] = useState(1)
@@ -25,6 +26,7 @@ const OrderMedicine = () => {
   const [quantity, setQuantity] = useState('')
   const [medicArr, setMedicArr] = useState([])
   const [prescriptionImg, setprescriptionImg] = useState('')
+  const navigate = useNavigate()
 
   //console.log(name, number, address)
   //add Medicine
@@ -66,18 +68,21 @@ const OrderMedicine = () => {
       .then((data) => {
         if (data.status === 200) {
           console.log(data)
-          window.location.reload()
           alert(
             'Medicine Order Placed! Our support team will contact you soon.'
           )
+          navigate('/')
           setLoader(false)
         }
       })
       .catch((error) => console.error(error))
   }
   return (
-    <div className='py-5'>
-      <div className='flex flex-col gap-4'>
+    <div className='mt-5 mb-10 py-5 px-5 md:px-10 md:container md:mx-auto lg:w-1/2 shadow-xl rounded-xl'>
+      <h1 className='text-center capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+        Order Medicine
+      </h1>
+      <div className='flex flex-col gap-4 mt-5'>
         <TextField
           label='Your Name'
           fullWidth
@@ -210,9 +215,9 @@ const OrderMedicine = () => {
           </span>
         </a>
       </div>
-      <div className='mt-4'>
+      <div className='mt-4 pb-20'>
         <button
-          className={`border border-blue px-3 py-1 rounded float-left mt-3 ${
+          className={`border border-blue px-6 py-2 md:px-12 md:py-4 rounded float-left mt-3 flex items-center gap-2 ${
             medicArr.length === 0 && prescriptionImg === ''
               ? 'bg-white text-black'
               : 'bg-blue text-white'
@@ -220,7 +225,14 @@ const OrderMedicine = () => {
           onClick={orderMedicine}
           disabled={medicArr.length === 0 && prescriptionImg === ''}
         >
-          {loader ? 'Loading...' : 'Submit'}
+          Submit
+          {loader && (
+            <div className='flex gap-0.5'>
+              <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+              <div className='h-2 w-2 rounded-full bg-white shadow animate-bounce'></div>
+              <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+            </div>
+          )}
         </button>
       </div>
     </div>
