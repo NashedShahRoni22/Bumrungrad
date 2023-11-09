@@ -5,11 +5,9 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import VaccinesIcon from "@mui/icons-material/Vaccines";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
-import DialogTitle from "@mui/material/DialogTitle";
 
 export default function MiddleBar() {
   const [open, setOpen] = React.useState(false);

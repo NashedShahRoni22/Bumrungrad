@@ -244,7 +244,7 @@ export default function Register() {
         </section>
         <div className='flex justify-center'>
           <button
-            className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+            className={`flex justify-center items-center gap-2 mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
               firstname === '' ||
               lastName === '' ||
               citizenship === '' ||
@@ -266,7 +266,11 @@ export default function Register() {
             }
             onClick={handaleRegister}
           >
-            {loader ? 'Loading' : ' Register'}
+            Register
+            {loader && <div className="flex gap-1">
+              <div className="h-2 w-2 shadow bg-white rounded-full"></div>
+              <div className="h-2 w-2 shadow bg-white rounded-full animate-bounce"></div>
+            </div>}
           </button>
         </div>
         <p className='mt-4 text-center'>
