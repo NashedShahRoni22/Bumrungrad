@@ -2,21 +2,33 @@ import React, { useState } from 'react'
 import { Divider, TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 const TeleMedicine = () => {
+  const userDetails = JSON.parse(localStorage.getItem('User_Details'))
+
   //loader
   const [loader, setLoader] = useState()
   const navigate = useNavigate()
 
-  const [fullName, setFullName] = useState('')
+  const [fullName, setFullName] = useState(
+    userDetails?.firstName
+      ? `${userDetails?.firstName} ${userDetails?.lastName}`
+      : ''
+  )
   const [hnNum, setHnNum] = useState('')
-  const [birthDate, setBirthDate] = useState('')
+  const [birthDate, setBirthDate] = useState(
+    userDetails?.dob ? userDetails?.dob : ''
+  )
   const [passportId, setPassportId] = useState('')
   const [nationality, setNationality] = useState('')
-  const [residence, setResidence] = useState('')
+  const [residence, setResidence] = useState(
+    userDetails?.citizenship ? userDetails?.citizenship : ''
+  )
   const [preferredDate, setPreferredDate] = useState('')
   const [preferredDoctor, setPreferredDoctor] = useState('')
   const [purposeAppoinment, setPurposeAppoinment] = useState('')
   const [investigationDocument, setInvestigationDocument] = useState('')
-  const [contactDetails, setContactDetails] = useState('')
+  const [contactDetails, setContactDetails] = useState(
+    userDetails?.phone ? userDetails?.phone : ''
+  )
   const [paymentType, setPaymentType] = useState('')
   const [epaymentlink, setEpaymentlink] = useState('')
   const [interpreter, setInterpreter] = useState('')
@@ -95,6 +107,7 @@ const TeleMedicine = () => {
           <p className='mb-2 font-semibold text-sm'>Enter Full Name</p>
           <TextField
             type='text'
+            value={fullName}
             placeholder='Same As In Passport'
             onChange={(e) => setFullName(e.target.value)}
             fullWidth
@@ -113,6 +126,7 @@ const TeleMedicine = () => {
           <p className='mb-2 font-semibold text-sm'>Date of Birth</p>
           <TextField
             type='date'
+            value={birthDate}
             onChange={(e) => setBirthDate(e.target.value)}
             fullWidth
             required
@@ -144,6 +158,7 @@ const TeleMedicine = () => {
             onChange={(e) => setResidence(e.target.value)}
             fullWidth
             required
+            value={residence}
           />
         </div>
         <div className='mt-3'>
@@ -155,6 +170,7 @@ const TeleMedicine = () => {
             onChange={(e) => setContactDetails(e.target.value)}
             fullWidth
             required
+            value={contactDetails}
           />
         </div>
         <h1 className='uppercase font-semibold text-blue mt-5 mb-2.5 md:mt-10'>

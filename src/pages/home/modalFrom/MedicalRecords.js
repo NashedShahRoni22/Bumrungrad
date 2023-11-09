@@ -3,11 +3,16 @@ import { TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 const MedicalRecords = () => {
+  const userDetails = JSON.parse(localStorage.getItem('User_Details'))
   //loader
   const [loader, setLoader] = useState()
 
   const [passport, setPassport] = useState('')
-  const [name, setName] = useState('')
+  const [name, setName] = useState(
+    userDetails?.firstName
+      ? `${userDetails?.firstName} ${userDetails?.lastName}`
+      : ''
+  )
   const [hnNum, setHnNum] = useState('')
   const [caseSummary, setCaseSummary] = useState('')
   const navigate = useNavigate()
@@ -64,7 +69,7 @@ const MedicalRecords = () => {
               {' '}
               <span className='text-red text-lg'>*</span>Enter Your Name
             </p>
-            <TextField onChange={(e) => setName(e.target.value)} fullWidth />
+            <TextField onChange={(e) => setName(e.target.value)} fullWidth value={name}/>
           </div>
           <div className='mt-2'>
             <p className='mt-2 font-semibold text-sm'>
