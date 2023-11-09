@@ -95,6 +95,12 @@ const ChildPackageDetails = () => {
                   className='w-full max-h-[50vh]'
                   alt=''
                 />
+                <button
+                  onClick={() => handleClickOpen(childDetailsPackage)}
+                  className='px-4 my-4 py-2 bg-blue w-fit text-white btn-shadow font-semibold'
+                >
+                  Book Package
+                </button>
               </div>
               <div className='lg:w-1/2'>
                 <h5 className='text-[24px] md:text-[28px] font-semibold text-blue'>
@@ -106,12 +112,7 @@ const ChildPackageDetails = () => {
                     <span className='text-blue'>Price:</span>{' '}
                     {childDetailsPackage?.price} THB
                   </h5>
-                  <button
-                    onClick={() => handleClickOpen(childDetailsPackage)}
-                    className='px-4 py-2 bg-blue w-fit text-white'
-                  >
-                    Book Package
-                  </button>
+
                   <ul className='text-[18px] md:text-[24px] list-disc'>
                     <p className='text-blue font-semibold'>Shift:</p>
                     <li className='ml-5'>{childDetailsPackage?.shift1}</li>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TextField, FormControl, MenuItem, Select } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
@@ -10,8 +10,12 @@ export default function CheckUp() {
   const [stepper2, setStepper2] = useState(false)
 
   //data of Field...
+  const [packages, setPackages] = useState([])
+  const [selectDepartment, setSelectDepartment] = useState([])
+  const [doctors, setDoctors] = useState([])
   const [healtePackage, SetHealtePackage] = useState('')
   const [prefferdDoctor, SetprefferdDoctor] = useState('')
+  const [specialty, setspeacility] = useState('')
   const [appoinMentDate, SetAppoinMentDate] = useState('')
   const [appoinMentTime, SetAppoinMentTime] = useState('')
   const [medicalConcern, SetMedicalConcern] = useState('')
@@ -22,6 +26,57 @@ export default function CheckUp() {
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [nationality, setNationality] = useState('')
+
+  //get packages
+  useEffect(() => {
+    fetch('https://api.bumrungraddiscover.com/api/get/sub/package')
+      .then((res) => res.json())
+      .then((data) => setPackages(data?.data))
+  }, [])
+
+  //get speacilities
+  useEffect(() => {
+    fetch('https://api.bumrungraddiscover.com/api/get/specialty')
+      .then((res) => res.json())
+      .then((data) => setSelectDepartment(data?.response?.data))
+  }, [])
+  const handleChange = (event) => {
+    setspeacility(event.target.value)
+  }
+  const handleChangeDoctor = (event) => {
+    SetprefferdDoctor(event.target.value)
+  }
+  const handleChangePackage = (event) => {
+    SetHealtePackage(event.target.value)
+  }
+
+  // get doctors name
+  useEffect(() => {
+    // setLoader(true);
+    // Create a function to fetch data based on the URL
+    const fetchData = () => {
+      // Create a query string based on your query states
+      const queryParams = `specialty=${specialty}`
+      // Create the base URL
+      const baseUrl = 'https://api.bumrungraddiscover.com/api/search/doctor'
+      // Create the final URL by appending the query string if it's not empty
+      const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl
+      // Fetch data from the API
+      fetch(finalUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === 200) {
+            setDoctors(data.data)
+          } else {
+            setDoctors([])
+            console.log(data)
+          }
+        })
+        .catch((error) => console.error(error))
+    }
+    // Call the fetchData function whenever any state changes
+    fetchData()
+  }, [specialty])
 
   const handleClick = () => {
     setStepper1(false)
@@ -35,6 +90,7 @@ export default function CheckUp() {
     setLoader(true)
     const cheakAppointment = {
       healtePackage,
+      //speacility,
       prefferdDoctor,
       appoinMentDate,
       appoinMentTime,
@@ -50,6 +106,7 @@ export default function CheckUp() {
     console.log(cheakAppointment)
     const formData = new FormData()
     formData.append('healtePackage', healtePackage)
+    //formData.append('specialty', speacility)
     formData.append('prefferdDoctor', prefferdDoctor)
     formData.append('appoinMentDate', appoinMentDate)
     formData.append('appoinMentTime', appoinMentTime)
@@ -108,23 +165,55 @@ export default function CheckUp() {
           <div className='mt-10'>
             <div>
               <p className='mb-2.5 font-semibold'>Preferred Health Packages*</p>
-              <TextField
-                type='text'
-                placeholder='Enter Package Name'
-                defaultValue={healtePackage}
-                fullWidth
-                onChange={(e) => SetHealtePackage(e.target.value)}
-              />
+              <FormControl fullWidth>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={healtePackage}
+                  onChange={handleChangePackage}
+                >
+                  {packages?.map((s, i) => (
+                    <MenuItem key={i} value={s?.title}>
+                      {s?.title}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </div>
             <div className='mt-2.5 font-semibold'>
-              <p className='mb-2.5'>Preferred Doctor*</p>
-              <TextField
-                type='text'
-                placeholder='Enter Doctor Name'
-                fullWidth
-                defaultValue={prefferdDoctor}
-                onChange={(e) => SetprefferdDoctor(e.target.value)}
-              />
+              <p className='mb-2.5 font-semibold'> Select Speciality</p>
+              <FormControl fullWidth>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={specialty}
+                  onChange={handleChange}
+                >
+                  {selectDepartment?.map((s, i) => (
+                    <MenuItem key={i} value={s?.name}>
+                      {s?.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </div>
+
+            <div className='mt-2.5 font-semibold'>
+              <p className='mb-2.5'>Preferred Doctor</p>
+              <FormControl fullWidth>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={prefferdDoctor}
+                  onChange={handleChangeDoctor}
+                >
+                  {doctors?.map((s, i) => (
+                    <MenuItem key={i} value={s?.name}>
+                      {s?.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </div>
             <div className='mt-2.5 font-semibold'>
               <p className='mb-2.5'>Preferred Appointment Date*</p>
@@ -147,7 +236,7 @@ export default function CheckUp() {
               />
             </div>
             <div className='mt-2.5 font-semibold'>
-              <p className='mb-2.5'>State Your Medical Concern or Request*</p>
+              <p className='mb-2.5'>State Your Medical Concern or Request</p>
               <TextField
                 type='text'
                 placeholder='Enter Request'
@@ -157,7 +246,7 @@ export default function CheckUp() {
               />
             </div>
             <div className='mt-2.5 font-semibold'>
-              <p className='mb-2.5'>Hospital Number (if available)*</p>
+              <p className='mb-2.5'>Hospital Number (if available)</p>
               <TextField
                 type='text'
                 placeholder='Enter HN Number'
