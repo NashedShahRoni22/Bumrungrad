@@ -11,16 +11,25 @@ import whatsapp from '../../../assets/whatsapp.png'
 import { useNavigate } from 'react-router-dom'
 
 const OrderMedicine = () => {
+  const userDetails = JSON.parse(localStorage.getItem('User_Details'))
   const [prescriptionState, setPrescriptionState] = useState(1)
   //loader
   const [loader, setLoader] = useState()
 
-  const [name, setName] = useState('')
-  const [number, setNumber] = useState('')
+  const [name, setName] = useState(
+    userDetails?.firstName
+      ? `${userDetails?.firstName} ${userDetails?.lastName}`
+      : ''
+  )
+  const [number, setNumber] = useState(
+    userDetails?.phone ? userDetails?.phone : ''
+  )
   const handleChange = (newValue) => {
     setNumber(newValue)
   }
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(
+    userDetails?.email ? userDetails?.email : ''
+  )
   const [address, setAddress] = useState('')
   const [medicine, setMedicin] = useState('')
   const [quantity, setQuantity] = useState('')
@@ -84,8 +93,9 @@ const OrderMedicine = () => {
       </h1>
       <div className='flex flex-col gap-4 mt-5'>
         <TextField
-          label='Your Name'
+          placeholder='Your Name'
           fullWidth
+          value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
@@ -99,8 +109,9 @@ const OrderMedicine = () => {
         />
         <p className='text-blue text-sm'>*Please Add Your Whatsapp Number</p>
         <TextField
-          label='Your Email'
+          placeholder='Your Email'
           type='email'
+          value={email}
           fullWidth
           onChange={(e) => setEmail(e.target.value)}
           required
