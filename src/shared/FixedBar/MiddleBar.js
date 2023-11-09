@@ -64,36 +64,32 @@ export default function MiddleBar() {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title" className="!font-semibold">
-            {"Choose Type"}
-          </DialogTitle>
           <DialogContent className="flex flex-col gap-2">
+            <h5 className="font-semibold text-center">Choose Type</h5>
             <Link
-              className="px-4 py-2 rounded shadow hover:shadow-xl duration-300 ease-linear text-white bg-blue"
+              className="px-4 py-2 rounded shadow hover:shadow-xl duration-300 ease-linear text-blue border border-blue"
               to="/check_up"
             >
               {" "}
               <HealthAndSafetyIcon /> Health Screening
             </Link>
             <Link
-              className="px-4 py-2 rounded shadow hover:shadow-xl duration-300 ease-linear text-white bg-blue"
+              className="px-4 py-2 rounded shadow hover:shadow-xl duration-300 ease-linear text-blue border border-blue"
               to="/appointment"
             >
               {" "}
               <VaccinesIcon /> Doctor Appointment
             </Link>
+            <Button
+              size="small"
+              variant="contained"
+              color="error"
+              onClick={handleClose}
+              autoFocus
+            >
+              Close
+            </Button>
           </DialogContent>
-          <DialogActions>
-              <Button
-                size="small"
-                variant="contained"
-                color="error"
-                onClick={handleClose}
-                autoFocus
-              >
-                Close
-              </Button>
-          </DialogActions>
         </Dialog>
       </React.Fragment>
     </section>

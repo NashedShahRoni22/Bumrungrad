@@ -23,12 +23,6 @@ import urology from "../../../src/assets/Bumrungrad Clinic Images/Urology Center
 export default function ClinicCenters() {
   const clinicImages = [
     {
-      id: "8",
-      img: spine,
-      name: "Bumrungrad Spine Institute",
-      desc: "Bumrungrad Spine Institute is prepared to provide a comprehensive range of treatment and care for spine-related matters, with the experience of treating more than 12,000 spine patients in 12 years.",
-    },
-    {
       id: "4",
       img: neuro,
       name: "Neuroscience Center",
@@ -63,6 +57,12 @@ export default function ClinicCenters() {
       img: urology,
       name: "Urology Center",
       desc: "The urinary system acts as the body's drainage system. It removes urine, which is excess waste and water, from the body. In addition to being highly important in the elimination of waste and maintaining the balance of body fluids, the urinary system is also responsible for regulating blood pressure, blood volume, and blood pH levels. A dysfunction in the urinary system will severely affect a person’s health and quality of life.",
+    },
+    {
+      id: "8",
+      img: spine,
+      name: "Bumrungrad Spine Institute",
+      desc: "Bumrungrad Spine Institute is prepared to provide a comprehensive range of treatment and care for spine-related matters, with the experience of treating more than 12,000 spine patients in 12 years.",
     },
   ];
   return (

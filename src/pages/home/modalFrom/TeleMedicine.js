@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextField } from '@mui/material'
+import { Divider, TextField } from '@mui/material'
 const TeleMedicine = () => {
   //loader
   const [loader, setLoader] = useState()
@@ -80,8 +80,9 @@ const TeleMedicine = () => {
   return (
     <div>
       <form onSubmit={handaleAddteleMedicine}>
-        <h1 className='uppercase text-center text-xl mb-4'>patient details</h1>
-        <div>
+        <h1 className='font-semibold mb-2.5 text-blue'>*Patient Details</h1>
+        <Divider/>
+        <div className='mt-2.5'>
           <p className='mb-2 font-semibold text-sm'>Enter Full Name</p>
           <TextField
             type='text'
@@ -147,9 +148,10 @@ const TeleMedicine = () => {
             required
           />
         </div>
-        <h1 className='uppercase text-center text-xl mt-5 mb-5 md:mt-10'>
-          appointment details (telemedicine)
+        <h1 className='uppercase font-semibold text-blue mt-5 mb-2.5 md:mt-10'>
+          *appointment details
         </h1>
+        <Divider/>
         <div className='mt-3'>
           <p className='mb-2 font-semibold text-sm'>
             Preferred Appoinment Date
