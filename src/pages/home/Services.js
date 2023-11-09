@@ -9,12 +9,9 @@ import medicalRecords from '../../assets/service_logo/medical_records.png'
 import { Link } from 'react-router-dom'
 import { Divider } from '@mui/material'
 import AirAmbulanceForm from './modalFrom/AirAmbulanceForm'
-import OrderMedicine from './modalFrom/OrderMedicine'
+
 import AirtTcket from './modalFrom/AirtTcket'
 import AirPickup from './modalFrom/AirPickup'
-import VisaProcessing from './modalFrom/VisaProcessing'
-import TeleMedicine from './modalFrom/TeleMedicine'
-import MedicalRecords from './modalFrom/MedicalRecords'
 
 const services = [
   {
@@ -23,32 +20,25 @@ const services = [
     pageTo: '/appointment',
   },
   {
-    id: 6,
     name: 'Visa Processing',
     img: hotelReservation,
-    form: <VisaProcessing />,
-    height: 'md:w-[400px]',
+    pageTo: '/visaprocessing',
   },
   {
     id: 3,
     name: 'Order Medicine',
     img: orderMedicine,
-    form: <OrderMedicine />,
-    height: 'h-[470px] overflow-auto md:w-[750px]',
+    pageTo: '/orderMedicine',
   },
   {
-    id: 4,
     name: 'Medical Records',
-    form: <MedicalRecords />,
     img: medicalRecords,
-    height: 'md:w-[750px]',
+    pageTo: '/medicalRecord',
   },
   {
-    id: 5,
     name: 'Tele Medicine',
-    form: <TeleMedicine />,
     img: teleMedicine,
-    height: 'h-[600px] overflow-auto md:w-[750px]',
+    pageTo: '/telemedicine',
   },
   {
     id: 2,

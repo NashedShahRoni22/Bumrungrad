@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { TextField } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const MedicalRecords = () => {
   //loader
@@ -9,6 +10,7 @@ const MedicalRecords = () => {
   const [name, setName] = useState('')
   const [hnNum, setHnNum] = useState('')
   const [caseSummary, setCaseSummary] = useState('')
+  const navigate = useNavigate()
 
   const addPatient = (event) => {
     setLoader(true)
@@ -37,20 +39,24 @@ const MedicalRecords = () => {
       .then((data) => {
         if (data.status === 200) {
           console.log(data)
-          window.location.reload();
-          alert("Medical record request sent! Our support team will contact you soon.")
+          navigate('/')
+          alert(
+            'Medical record request sent! Our support team will contact you soon.'
+          )
+          form.reset()
           setLoader(false)
         }
       })
       .catch((error) => console.error(error))
-
-    form.reset()
   }
   return (
-    <div>
+    <div className='md:my-10 md:container md:mx-auto lg:w-1/2 shadow-xl rounded-xl py-10 md:py-12 md:px-10 lg:px-16'>
+      <h1 className='text-center capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+        Medical Records
+      </h1>
       <form
         onSubmit={addPatient}
-        className='mt-3 mb-2 md:w-full max-w-screen-lg sm:w-96 py-5'
+        className='mt-3 mb-2 md:w-full max-w-screen-lg pb-8 px-5'
       >
         <div className='mb-2 flex flex-col'>
           <div>
@@ -79,7 +85,7 @@ const MedicalRecords = () => {
             </p>
             <TextField onChange={(e) => setHnNum(e.target.value)} fullWidth />
           </div>
-          <div >
+          <div>
             <p className='mt-2 font-semibold text-sm'>
               {' '}
               <span className='text-red text-lg'>*</span> Report Details
@@ -94,9 +100,16 @@ const MedicalRecords = () => {
         </div>
         <button
           type='submit'
-          className='bg-blue text-white px-3 py-1 rounded float-left mt-3'
+          className='bg-blue mt-6 text-white px-6 py-2 md:px-12 md:py-4 rounded flex items-center gap-1'
         >
-          {loader ? 'Loading...' : 'Submit'}
+          Submit
+          {loader && (
+            <div className='flex gap-0.5'>
+              <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+              <div className='h-2 w-2 rounded-full bg-white shadow animate-bounce'></div>
+              <div className='h-2 w-2 rounded-full bg-white shadow'></div>
+            </div>
+          )}
         </button>
       </form>
     </div>
