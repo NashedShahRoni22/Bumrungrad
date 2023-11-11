@@ -23,7 +23,9 @@ export default function CheckUp() {
   const [medicalConcern, SetMedicalConcern] = useState('')
   const [HnNumber, SetHnNumber] = useState('')
   const [patientName, SetPatientName] = useState(
-    userDetails?.firstName ? `${userDetails?.firstName} ${userDetails?.lastName}`: ''
+    userDetails?.firstName
+      ? `${userDetails?.firstName} ${userDetails?.lastName}`
+      : ''
   )
   const [gender, setGender] = useState(
     userDetails?.gender ? userDetails?.gender : ''
@@ -100,25 +102,25 @@ export default function CheckUp() {
   }
   const handaleDataSubmit = () => {
     setLoader(true)
-    const cheakAppointment = {
-      healtePackage,
-      //speacility,
-      prefferdDoctor,
-      appoinMentDate,
-      appoinMentTime,
-      medicalConcern,
-      HnNumber,
-      patientName,
-      gender,
-      dob,
-      email,
-      phone,
-      nationality,
-    }
-    console.log(cheakAppointment)
+    // const cheakAppointment = {
+    //   healtePackage,
+    //   specialty,
+    //   prefferdDoctor,
+    //   appoinMentDate,
+    //   appoinMentTime,
+    //   medicalConcern,
+    //   HnNumber,
+    //   patientName,
+    //   gender,
+    //   dob,
+    //   email,
+    //   phone,
+    //   nationality,
+    // }
+    //console.log(cheakAppointment)
     const formData = new FormData()
     formData.append('healtePackage', healtePackage)
-    //formData.append('specialty', speacility)
+    formData.append('specialty', specialty)
     formData.append('prefferdDoctor', prefferdDoctor)
     formData.append('appoinMentDate', appoinMentDate)
     formData.append('appoinMentTime', appoinMentTime)
@@ -136,6 +138,7 @@ export default function CheckUp() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
