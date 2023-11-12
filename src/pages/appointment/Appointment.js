@@ -283,7 +283,7 @@ export default function Appointment() {
           console.log(data);
           setLoader(false);
           PreviewsetOpen(false);
-          window.alert("Please check patient email!");
+          window.alert("Please your email or spam box!");
           navigate("/");
           localStorage.removeItem("doctor_name");
           localStorage.removeItem("Doctor_specialty");

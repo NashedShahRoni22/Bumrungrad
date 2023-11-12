@@ -105,7 +105,7 @@ const VisaProcessing = () => {
         if (data.status === 200) {
           console.log(data)
           setLoader(false)
-          window.alert('Please check patient email!')
+          window.alert('Please your email or spam box!')
           navigate('/')
         }
       })
@@ -126,7 +126,7 @@ const VisaProcessing = () => {
           Where are you from?
         </p>
         <Divider />
-        <FormControl fullWidth>
+        <FormControl fullWidth className='md:!w-1/2'>
           <p className='my-2.5'>Select Country(Required)</p>
           <Select
             labelId='demo-simple-select-label'
@@ -317,7 +317,7 @@ const VisaProcessing = () => {
                 />
               </div>
               <div>
-                <p className='my-2.5'>Attendance Passport Copy 2(Required)</p>
+                <p className='my-2.5'>Attendance Passport Copy 2(If any)</p>
                 <TextField
                   type='file'
                   fullWidth
@@ -325,7 +325,7 @@ const VisaProcessing = () => {
                 />
               </div>
               <div>
-                <p className='my-2.5'>Attendance Passport Copy 3(Required)</p>
+                <p className='my-2.5'>Attendance Passport Copy 3(If any)</p>
                 <TextField
                   type='file'
                   fullWidth
