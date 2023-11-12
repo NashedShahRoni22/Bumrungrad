@@ -37,7 +37,7 @@ const BookingModal = () => {
           <button
             onClick={handleClose}
             size='small'
-            className='bg-black text-white px-3 py-1 mb-2 rounded float-right'
+            className='bg-black text-white px-2 py-1 mb-2 rounded float-right'
           >
             Close
           </button>

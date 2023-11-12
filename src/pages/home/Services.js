@@ -68,7 +68,7 @@ export default function Services(props) {
   const getData = props.getData
 
   return (
-    <div className='p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto'>
+    <div className='p-5 md:p-10 my-3 md:my-10 md:container md:mx-auto'>
       <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
         Our Services
       </h1>

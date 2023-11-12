@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
-import slider1 from "../../assets/bumrungrad_slider_images/new (1).png";
-import slider2 from "../../assets/bumrungrad_slider_images/new (2).png";
-import slider3 from "../../assets/bumrungrad_slider_images/new (3).png";
+import slider1 from "../../assets/bumrungrad_slider_images/Slider 01.png";
+import slider2 from '../../assets/bumrungrad_slider_images/Slider 02.png'
+import slider3 from '../../assets/bumrungrad_slider_images/Slider 03.png'
+import slider4 from '../../assets/bumrungrad_slider_images/Slider 04.png'
+import slider5 from '../../assets/bumrungrad_slider_images/Slider 05.png'
+import slider6 from '../../assets/bumrungrad_slider_images/Slider 06.png'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -23,6 +26,15 @@ export default function WhyUs() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   const sliderImgs = [
+    {
+      src: slider6,
+    },
+    {
+      src: slider5,
+    },
+    {
+      src: slider4,
+    },
     {
       src: slider3,
     },
@@ -51,11 +63,11 @@ export default function WhyUs() {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper my-5 max-h-[80vh]"
+        className="mySwiper my-5 max-h-[85vh]"
       >
         {sliderImgs.map((s,i) => (
           <SwiperSlide key={i}>
-            <img src={s.src} alt="" />
+            <img src={s.src} alt="" className="object-cover"/>
           </SwiperSlide>
         ))}
 
