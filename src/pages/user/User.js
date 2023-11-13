@@ -5,7 +5,6 @@ export default function User() {
   const [loading, setLoading] = useState(true) // State to track loading
   const [error, setError] = useState(null)
   const userdetails = JSON.parse(localStorage.getItem('User_Details'))
-  console.log(userdetails)
   const accessToken = localStorage.getItem('Access_Token')
   const [appointments, setAppointments] = useState([])
   console.log(appointments)
@@ -57,8 +56,8 @@ export default function User() {
     return <div>Error: {error.message}</div>
   }
   return (
-    <section className='mx-5 md:container md:mx-auto py-10'>
-      <div className='shadow p-5 rounded relative'>
+    <section className='mx-5 md:container md:mx-auto py-10  md:flex md:gap-8 lg:gap-16'>
+      <div className='shadow p-5 rounded relative md:w-1/2'>
         <h5 className='font-semibold text-lg text-blue'>My Profile</h5>
         <hr className='my-2.5' />
         <p className='flex gap-2'>
@@ -94,15 +93,15 @@ export default function User() {
           {userdetails?.phone}{' '}
         </p>
       </div>
-      <div className='mt-5'>
+      <div className='mt-5 md:w-1/2'>
         <h5 className='font-semibold text-lg text-blue'>
           Total Appointment Taken {appointments?.length}
         </h5>
         <div>
           {appointments?.map((a, i) => (
             <div key={i}>
-              <div className='shadow p-2.5 mt-2'>
-                <div className='flex justify-between'>
+              <div className='shadow p-5 mt-2'>
+                <div className='md:flex justify-between'>
                   <div>
                     {a?.doctor && (
                       <p className='font-semibold text-blue'>{a?.doctor} </p>
@@ -110,13 +109,19 @@ export default function User() {
                     {a?.specialty && <p> {a?.specialty} </p>}
                   </div>
                   <div>
-                    {a?.status == 0 ? (
-                      <p className='px-2 py-1 bg-blue text-white rounded'>
+                    {a?.status === '0' && (
+                      <p className='mt-3 md:mt-0 w-fit px-2 py-1 bg-blue text-white rounded'>
                         Pending
                       </p>
-                    ) : (
-                      <p className='px-2 py-1 bg-red text-white rounded'>
+                    )}
+                    {a?.status === '1' && (
+                      <p className='mt-3 md:mt-0 w-fit px-2 py-1 border text-white rounded'>
                         Processing
+                      </p>
+                    )}
+                    {a?.status === '2' && (
+                      <p className='mt-3 md:mt-0 w-fit px-2 py-1 bg-green text-white rounded'>
+                        Done
                       </p>
                     )}
                   </div>
