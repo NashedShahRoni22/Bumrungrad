@@ -10,10 +10,10 @@ import ClinicCenters from './ClinicCenters'
 import News from './News'
 import Blogs from './Blogs'
 
-import HomeContact from './HomeContact'
-//import ParentPackages from "../packages/ParentPackages";
 import HomePackages from './HomePackages'
 import Disclaimer1 from './Disclaimer1'
+
+import HomeContact from './HomeContact'
 
 export default function Home() {
   return (
