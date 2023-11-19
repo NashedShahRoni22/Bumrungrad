@@ -28,6 +28,10 @@ import TeleMedicine from '../pages/home/modalFrom/TeleMedicine'
 import MedicalRecords from '../pages/home/modalFrom/MedicalRecords'
 import OrderMedicine from '../pages/home/modalFrom/OrderMedicine'
 import VisaProcessing from '../pages/home/modalFrom/VisaProcessing'
+import NewsAll from '../pages/home/NewsAll'
+import OneNews from '../pages/home/OneNews'
+import AllBlogs from '../pages/home/AllBlogs'
+import OneBlog from '../pages/home/OneBlog'
 
 export const router = createBrowserRouter([
   {
@@ -161,6 +165,22 @@ export const router = createBrowserRouter([
       {
         path: '/packages',
         element: <ParentPackages />,
+      },
+      {
+        path: '/allNews',
+        element: <NewsAll />,
+      },
+      {
+        path: '/one-News/:id',
+        element: <OneNews />,
+      },
+      {
+        path: '/allblog',
+        element: <AllBlogs />,
+      },
+      {
+        path: '/one-Blog/:id',
+        element: <OneBlog />,
       },
       {
         path: '/package_details/:id',

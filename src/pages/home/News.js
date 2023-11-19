@@ -1,43 +1,69 @@
-import React from "react";
-import image from "../../assets/news/image.jpg";
-import image1 from "../../assets/news/image (1).jpg";
-import image2 from "../../assets/news/image (2).jpg";
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Loader from '../../shared/Loader/Loader'
 
 export default function News() {
-  const data = [
-    {
-      img: image,
-      title: "The Bumrungrad Health Villa Retreat in Bang Krachao",
-      desc: "Located 45 minutes from the center of Bangkok, the integrative holistic rehabilitation health villa is surrounded by nature in the peaceful and beautiful green lung of Bang Krachao.",
-    },
-    {
-      img: image1,
-      title: "Let our obstetrician team take care of you and your baby!",
-      desc: "Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices. Baby delivery packages at exclusive prices",
-    },
-    {
-      img: image2,
-      title: "The Bumrungrad Health Villa Retreat in Bang Krachao",
-      desc: "Located 45 minutes from the center of Bangkok, the integrative holistic rehabilitation health villa is surrounded by nature in the peaceful and beautiful green lung of Bang Krachao.",
-    },
-  ];
+  const [newsData, setNewsData] = useState()
+  const [loader, setLoader] = useState()
+
+  useEffect(() => {
+    setLoader(true)
+    fetch('https://api.bumrungraddiscover.com/api/get/news')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200) {
+          setNewsData(data?.data)
+          setLoader(false)
+        } else {
+          console.log(data)
+          setLoader(false)
+        }
+      })
+  }, [])
   return (
-    <div className="p-5 md:p-10 md:container md:mx-auto">
-      <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
-        Bumrungrad News
-      </h1>
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 my-10">
-        {data.map((d,i) => (
-          <div key={i} className="shadow rounded hover:shadow-xl duration-300 ease-linear">
-            <img src={d.img} alt="" className="" />
-            <div className="p-4">
-              <h5 className="font-semibold text-blue text-lg">{d.title}</h5>
-              <h5 className="my-3 text-justify">{d.desc.slice(0,160)} ...</h5>
-              <button className="border border-blue bg-blue hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear">Read More</button>
-            </div>
-          </div>
-        ))}
+    <div className='p-5 md:p-10 md:container md:mx-auto'>
+      <div className='flex justify-between items-center'>
+        <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+          Bumrungrad News
+        </h1>
+        <Link
+          to={'/allNews'}
+          className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
+        >
+          View All
+        </Link>
       </div>
+      {loader ? (
+        <Loader />
+      ) : (
+        <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3 my-10'>
+          {newsData?.slice(0, 3).map((d, i) => (
+            <div
+              key={i}
+              className='shadow rounded hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
+            >
+              <img src={d.newsImage} alt='' className='' />
+              <div className='p-4'>
+                {' '}
+                <h5 className='font-semibold text-blue text-lg'>
+                  {d.newsTitle}
+                </h5>
+                <p className='my-3 text-justify'>
+                  {d.newsDescription?.slice(0, 160)} ...
+                </p>
+              </div>
+              <div className='p-4'>
+                {' '}
+                <Link to={`/one-News/${d?.id}`}>
+                  <button className='border border-blue bg-blue hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear'>
+                    Read More
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-  );
+  )
 }
