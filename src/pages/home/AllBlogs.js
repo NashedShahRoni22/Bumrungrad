@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Divider } from '@mui/material'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import Loader from '../../shared/Loader/Loader'
+import { Link } from 'react-router-dom'
 
-export default function Blogs() {
-  const [blogData, setBlogData] = useState()
+const AllBlogs = () => {
+  const [allBlogData, setAllBlogData] = useState()
   const [loader, setLoader] = useState()
 
   useEffect(() => {
@@ -12,7 +14,7 @@ export default function Blogs() {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
-          setBlogData(data?.data)
+          setAllBlogData(data?.data)
           setLoader(false)
         } else {
           console.log(data)
@@ -22,22 +24,19 @@ export default function Blogs() {
   }, [])
   return (
     <div className='p-5 md:p-10 md:container md:mx-auto'>
-      <div className='flex justify-between items-center'>
+      <div className=''>
         <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
           Bumrungrad Health Blogs
         </h1>
-        <Link
-          to={'/allblog'}
-          className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
-        >
-          View All
-        </Link>
+        <div className='my-5'>
+          <Divider />
+        </div>
       </div>
       {loader ? (
         <Loader />
       ) : (
         <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3 my-10'>
-          {blogData?.slice(0, 3).map((d, i) => (
+          {allBlogData?.map((d, i) => (
             <div
               key={i}
               className='shadow rounded hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
@@ -53,7 +52,6 @@ export default function Blogs() {
                 </p>
               </div>
               <div className='p-4'>
-                {' '}
                 <Link to={`/one-Blog/${d?.id}`}>
                   <button className='border border-blue bg-blue hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear'>
                     Read More
@@ -67,3 +65,5 @@ export default function Blogs() {
     </div>
   )
 }
+
+export default AllBlogs
