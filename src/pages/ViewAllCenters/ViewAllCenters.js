@@ -41,7 +41,7 @@ export default function ViewAllCenters() {
                 <img
                   className="min-h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
                   src={sc?.cover_photo}
-                  alt=""
+                  alt="Bumrungrad Hospital"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70"></div>

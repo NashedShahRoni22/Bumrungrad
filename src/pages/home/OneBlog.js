@@ -25,7 +25,7 @@ const OneBlog = () => {
           <div className='lg:w-1/2'>
             <img
               src={oneBlog?.blogImage}
-              alt=''
+              alt='Bumrungrad Hospita'
               className='lg:h-[40vh]'
               srcset=''
             />
