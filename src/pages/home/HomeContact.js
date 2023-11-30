@@ -31,7 +31,7 @@ export default function HomeContact() {
   return (
     <section className='md:p-10 my-5 md:container md:mx-auto flex flex-col-reverse justify-center items-center lg:flex-row lg:justify-between lg:items-center gap-16'>
       <div className='lg:w-1/2'>
-        <img src={img} alt='' />
+        <img src={img} alt='Bumrungrad Hospital' />
       </div>
       <form
         ref={form}

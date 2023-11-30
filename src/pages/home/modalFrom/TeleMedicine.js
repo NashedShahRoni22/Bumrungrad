@@ -101,7 +101,7 @@ const TeleMedicine = () => {
         onSubmit={handaleAddteleMedicine}
         className='px-5 md:px-10 lg:px-16 pb-24'
       >
-        <h1 className='font-semibold mb-2.5 text-blue'>*Patient Details</h1>
+        <h2 className='font-semibold mb-2.5 text-blue'>*Patient Details</h2>
         <Divider />
         <div className='mt-2.5'>
           <p className='mb-2 font-semibold text-sm'>Enter Full Name</p>

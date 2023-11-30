@@ -32,7 +32,7 @@ export default function ParentPackages() {
         <div className='my-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4'>
           {packages.map((p, i) => (
             <div key={i} className='flex flex-col justify-between gap-2 shadow'>
-              <img src={p?.cover_photo} alt='' />
+              <img src={p?.cover_photo} alt='Bumrungrad Hospital' />
               <div className='p-2.5'>
                 <p className='font-semibold text-blue md:text-xl'>{p?.title}</p>
                 <p>{p?.description.slice(0, 200)}</p>

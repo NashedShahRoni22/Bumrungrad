@@ -49,7 +49,7 @@ export default function DoctorInfo() {
               <div className='flex flex-col justify-center'>
                 <img
                   src={doctor?.cover_photo}
-                  alt=''
+                  alt='Bumrungrad Hospital'
                   className='h-[250px] md:h-[400px] lg:h-[450px] w-full md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl'
                 />
                 <button

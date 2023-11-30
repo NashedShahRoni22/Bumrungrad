@@ -11,7 +11,7 @@ import { DayPicker } from "react-day-picker";
 import { countries } from "./Countries";
 import { MuiTelInput } from "mui-tel-input";
 import Divider from "@mui/material/Divider";
-import logo from "../../assets/nav_logo.png";
+import logo from "../../assets/Bumrungrad  Hospital_nav_logo.png";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import { useNavigate } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React from 'react'
-import buildingimg from '../../../assets/about_bumrungrad/Layout-Bumrungrad-Directory_Online_EN_Artboard-1.jpg'
+import buildingimg from '../../../assets/about_bumrungrad/Bumrungrad-Directory_Online_EN_Artboard-1.jpg'
 import clinicimg from '../../../assets/about_bumrungrad/Bumrungrad_Clinic.jpg'
 import resourceimg from '../../../assets/about_bumrungrad/Bumrungrad_Human-Resources.jpg'
 import roomimg from '../../../assets/about_bumrungrad/Bumrungrad_room.jpg'
@@ -17,12 +17,12 @@ const FactSheet = () => {
         </h1>
       </div>
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           Bumrungrad Fact Sheet
-        </h1>
+        </h2>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>Mission</h1>
+          <p className='text-[16px] py-3 text-blue font-medium'>Mission</p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -32,7 +32,7 @@ const FactSheet = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>Ownership</h1>
+          <p className='text-[16px] py-3 text-blue font-medium'>Ownership</p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -43,9 +43,9 @@ const FactSheet = () => {
 
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Main Hospital Facility (opened 1997)
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -62,15 +62,15 @@ const FactSheet = () => {
           </li>
         </ol>
         <div className='mt-4'>
-          <img src={buildingimg} alt='' srcset='' />
+          <img src={buildingimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
       <div className='mx-5 my-10'>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Outpatient Clinic Facility (opened 2008)
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -112,13 +112,13 @@ const FactSheet = () => {
           </li>
         </ol>
         <div className='mt-4'>
-          <img src={clinicimg} alt='' srcset='' />
+          <img src={clinicimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Human Resources
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -132,13 +132,13 @@ const FactSheet = () => {
           <li className='list-disc mt-2'>Over 900 nurses</li>
         </ol>
         <div className='mt-4'>
-          <img src={resourceimg} alt='' srcset='' />
+          <img src={resourceimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Inpatient Capacities
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -165,9 +165,9 @@ const FactSheet = () => {
         </ol>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Outpatient Facilities
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -184,13 +184,13 @@ const FactSheet = () => {
           <li className='list-disc mt-2'>Outpatient Surgery Center</li>
         </ol>
         <div className='mt-4'>
-          <img src={roomimg} alt='' srcset='' />
+          <img src={roomimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Outpatient Clinics, Centers and Programs
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -251,13 +251,13 @@ const FactSheet = () => {
           <li className='list-disc mt-2'>Women's Center</li>
         </ol>
         <div className='mt-4'>
-          <img src={bumrunCenterimg} alt='' srcset='' />
+          <img src={bumrunCenterimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Special Facilities and Services
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -304,9 +304,9 @@ const FactSheet = () => {
         </ol>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             International Referral Offices
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -315,13 +315,13 @@ const FactSheet = () => {
           Pakistan, Qatar, Russia, Sudan, UAE, Vietnam and Virtual{' '}
         </p>
         <div className='mt-4'>
-          <img src={techimg} alt='' srcset='' />
+          <img src={techimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Special International Services
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -343,9 +343,9 @@ const FactSheet = () => {
         </ol>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Quality, Accreditations, Certifications and Recognitions
-          </h1>
+          </p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -430,13 +430,13 @@ const FactSheet = () => {
           </li>
         </ol>
         <div className='mt-4'>
-          <img src={internimg} alt='' srcset='' />
+          <img src={internimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Social Responsibility
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -453,7 +453,7 @@ const FactSheet = () => {
           2014, 2015, 2016, and 2017.
         </p>
         <div className='mt-4'>
-          <img src={responimg} alt='' srcset='' />
+          <img src={responimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
     </section>

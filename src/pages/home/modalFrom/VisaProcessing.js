@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import personImg from '../../../assets/Abdus Samad.jpg'
+import personImg from '../../../assets/Bumrungrad  Hospital_Abdus Samad.jpg'
 import PersonIcon from '@mui/icons-material/Person'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { FormControl, MenuItem, Select, TextField } from '@mui/material'
@@ -147,7 +147,7 @@ const VisaProcessing = () => {
           <div className='mb-2'>
             <img
               src={personImg}
-              alt=''
+              alt='Bumrungrad Hospital'
               className='w-[100px] h-[100px] rounded-full mx-auto my-0'
               srcset=''
             />

@@ -12,13 +12,13 @@ import { Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 
 //import clinic images
-import spine from "../../../src/assets/Bumrungrad Clinic Images/Spine Institute.png";
-import neuro from "../../../src/assets/Bumrungrad Clinic Images/Neuroscience Center.png";
-import heart from "../../../src/assets/Bumrungrad Clinic Images/Heart Institute.png";
-import digestive from "../../../src/assets/Bumrungrad Clinic Images/GI Digestive Center.png";
-import horizon from "../../../src/assets/Bumrungrad Clinic Images/Horizon Regional Cancer Center.png";
-import colorectal from "../../../src/assets/Bumrungrad Clinic Images/Colorectal Surgery Center.png";
-import urology from "../../../src/assets/Bumrungrad Clinic Images/Urology Center.png";
+import spine from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Spine Institute.png";
+import neuro from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Neuroscience Center.png";
+import heart from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Heart Institute.png";
+import digestive from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_GI Digestive Center.png";
+import horizon from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Horizon Regional Cancer Center.png";
+import colorectal from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Colorectal Surgery Center.png";
+import urology from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Urology Center.png";
 
 export default function ClinicCenters() {
   const clinicImages = [
@@ -66,24 +66,24 @@ export default function ClinicCenters() {
     },
   ];
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto rounded-xl shadow-xl">
-      <div className="flex justify-between items-center">
-        <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
+    <div className='p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto rounded-xl shadow-xl'>
+      <div className='flex justify-between items-center'>
+        <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
           Clinic & Centers
-        </h1>
+        </h2>
         <Link
-          to={"/clinic_centers"}
-          className="rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear"
+          to={'/clinic_centers'}
+          className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
         >
           View All
         </Link>
       </div>
-      <div className="my-5">
+      <div className='my-5'>
         <Divider />
       </div>
       <div>
         <Swiper
-          effect={"coverflow"}
+          effect={'coverflow'}
           centeredSlides={true}
           breakpoints={{
             // Small screens (up to 640px)
@@ -108,40 +108,41 @@ export default function ClinicCenters() {
           }}
           pagination={{
             clickable: true,
-            el: ".custom-pagination",
+            el: '.custom-pagination',
           }}
           modules={[EffectCoverflow, Pagination]}
-          className="mySwiper"
+          className='mySwiper'
         >
           {clinicImages?.map((sc, i) => (
             <SwiperSlide key={i}>
-              <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+              <div className='group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30'>
                 <div>
                   <img
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                    className='h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125'
                     src={sc?.img}
-                    alt=""
+                    alt='Bumrungrad Hospital
+'
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70"></div>
-                <div className="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0">
-                  <h1 className="mb-1 md:mb-3 font-dmserif md:text-xl font-bold text-white">
+                <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70'></div>
+                <div className='absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0'>
+                  <h1 className='mb-1 md:mb-3 font-dmserif md:text-xl font-bold text-white'>
                     {sc?.name}
                   </h1>
-                  <p className="text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <span className="md:hidden">
+                  <p className='text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                    <span className='md:hidden'>
                       {sc?.desc.slice(0, 60)} ...
                     </span>
-                    <span className="hidden md:block lg:hidden">
+                    <span className='hidden md:block lg:hidden'>
                       {sc?.desc.slice(0, 100)} ...
                     </span>
-                    <span className="hidden lg:block">
+                    <span className='hidden lg:block'>
                       {sc?.desc.slice(0, 200)} ...
                     </span>
                   </p>
                   <Link
                     to={`/clinic_centers/${sc?.id}`}
-                    className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold"
+                    className=' mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold'
                   >
                     See More
                   </Link>
@@ -150,8 +151,8 @@ export default function ClinicCenters() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="custom-pagination mt-5 flex gap-2 justify-center"></div>
+        <div className='custom-pagination mt-5 flex gap-2 justify-center'></div>
       </div>
     </div>
-  );
+  )
 }

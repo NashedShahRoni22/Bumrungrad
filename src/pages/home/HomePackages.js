@@ -24,9 +24,9 @@ export default function HomePackages() {
   return (
     <section className='p-5 md:p-10 my-5 md:container md:mx-auto'>
       <div className='flex justify-between items-center'>
-        <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+        <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
           our packages
-        </h1>
+        </h2>
         <Link
           to={'/packages'}
           className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'

@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { MuiTelInput } from 'mui-tel-input'
-import whatsapp from '../../../assets/whatsapp.png'
+import whatsapp from '../../../assets/Bumrungrad  Hospital_whatsapp.png'
 import { useNavigate } from 'react-router-dom'
 
 const OrderMedicine = () => {

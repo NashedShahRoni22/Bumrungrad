@@ -15,7 +15,7 @@ code {
 }
 
 #finddoctor{
-  background: url("../src/assets/find_doctor.jpg") rgba(0, 0, 0, 0.7);
+  background: url("../src/assets/Bumrungrad\ \ Hospital_find_doctor.jpg") rgba(0, 0, 0, 0.7);
   background-size: cover;
   background-position: center;
   height: 60vh;
@@ -41,7 +41,7 @@ code {
 }
 
 .doctor-bg{
-  background: url("./assets//Single_Doc\ \(1\).png");
+  background: url("./assets//Bumrungrad\ \ Hospital_Single_Doc\ \(1\).png");
   background-position: center;
   background-size: cover;
 }

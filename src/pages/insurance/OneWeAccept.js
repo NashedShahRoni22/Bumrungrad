@@ -39,7 +39,7 @@ const OneWeAccept = (props) => {
               className='bg-blue p-3'
               onClick={() => handleOpen(i)}
             >
-              <h1 className='text-white text-sm'>{question}</h1>
+              <p className='text-white text-sm'>{question}</p>
             </AccordionHeader>
           </div>
 
@@ -55,7 +55,7 @@ const OneWeAccept = (props) => {
                   <div className=''>
                     <img
                       src={data?.img}
-                      alt=''
+                      alt='Bumrungrad Hospital'
                       className='h-[120px]'
                       srcset=''
                     />
