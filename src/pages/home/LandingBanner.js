@@ -1,5 +1,5 @@
 import React from "react";
-import BannerImage from "../../assets/Hero-Section-Images.png";
+import BannerImage from '../../assets/Bumrungrad hospital-Hero.png'
 import { Typewriter } from "react-simple-typewriter";
 
 export default function LandingBanner() {
@@ -23,7 +23,7 @@ export default function LandingBanner() {
           </h1>
         </div>
         <div className="md:w-1/2">
-          <img src={BannerImage} alt="BannerImage" />
+          <img src={BannerImage} alt="Bumrungrad Hospital" />
         </div>
       </div>
     </section>

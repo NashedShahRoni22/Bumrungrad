@@ -1,13 +1,13 @@
 import React from 'react'
-import packageimg from '../../assets/insurance/Packages-Promotion1.png'
-import weacceptimg from '../../assets/insurance/We-Accept-Active2.png'
-import goodvibesimg from '../../assets/insurance/Good-Vibes-2023.png'
-import virtualBookImg from '../../assets/insurance/virtualBook.png'
-import fairpromotionImg from '../../assets/insurance/fairpromotion.jpg'
-import aiamyanmerImg from '../../assets/insurance/aiaMyanmer.jpg'
-import fluvaccineImg from '../../assets/insurance/fluvaccine.jpg'
-import ayudhayaImg from '../../assets/insurance/MicrosoftTeams-image-(63).jpg'
-import axaImg from '../../assets/insurance/Aw-BH-AXA-05-260623.jpg'
+import packageimg from '../../assets/insurance/Bumrungrad  Hospital_Packages-Promotion1.png'
+import weacceptimg from '../../assets/insurance/Bumrungrad  Hospital_We-Accept-Active2.png'
+import goodvibesimg from '../../assets/insurance/Bumrungrad  Hospital_Good-Vibes-2023.png'
+import virtualBookImg from '../../assets/insurance/Bumrungrad  Hospital_virtualBook.png'
+import fairpromotionImg from '../../assets/insurance/Bumrungrad  Hospital_fairpromotion.jpg'
+import aiamyanmerImg from '../../assets/insurance/Bumrungrad  Hospital_aiaMyanmer.jpg'
+import fluvaccineImg from '../../assets/insurance/Bumrungrad  Hospital_fluvaccine.jpg'
+import ayudhayaImg from '../../assets/insurance/Bumrungrad  Hospital_MicrosoftTeams-image-(63).jpg'
+import axaImg from '../../assets/insurance/Bumrungrad  Hospital_Aw-BH-AXA-05-260623.jpg'
 
 import OnePromotion from './OnePromotion'
 const PackagePromotion = () => {
@@ -44,7 +44,7 @@ const PackagePromotion = () => {
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] insurance-packagePromotion relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
-          Insurance Packages and Promotion 2023
+          Insurance Packages and Promotion 2024
         </h1>
       </div>
       <div className='mx-10 my-10'>
@@ -54,9 +54,9 @@ const PackagePromotion = () => {
       </div>
       <div className=' my-10 bg-cream'>
         <div className='flex justify-center flex-wrap p-10'>
-          <img src={packageimg} alt='' srcset='' />
-          <img src={weacceptimg} alt='' srcset='' />
-          <img src={goodvibesimg} alt='' srcset='' />
+          <img src={packageimg} alt='Bumrungrad Hospital' srcset='' />
+          <img src={weacceptimg} alt='Bumrungrad Hospital' srcset='' />
+          <img src={goodvibesimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
     </section>

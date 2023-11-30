@@ -37,7 +37,7 @@ const ChildPackage = () => {
                     key={i}
                     className='flex flex-col justify-between gap-2 shadow'
                   >
-                    <img src={cp?.cover_photo} alt='' />
+                    <img src={cp?.cover_photo} alt='Bumrungrad Hospital' />
                     <div className='p-2.5'>
                       <p className='font-semibold text-blue md:text-xl'>
                         {cp?.title}

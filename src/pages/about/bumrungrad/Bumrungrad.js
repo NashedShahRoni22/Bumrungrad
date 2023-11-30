@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../App.css'
  import careimg from '../../../assets/about_bumrungrad/Bumrungrad_AboutUS.jpg'
-import awardimg from '../../../assets/about_bumrungrad/Bumrungrad_Award.jpg'
+import awardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Bumrungrad_Award.jpg'
 import specialtiesimg from '../../../assets/about_bumrungrad/Bumrungrad_specialties-2022.jpg'
 import inovationsimg from '../../../assets/about_bumrungrad/Bumrungrad_inovation.jpg'
 import careingimg from '../../../assets/about_bumrungrad/Bumrungrad_Caring.jpg'
@@ -17,9 +17,9 @@ const Bumrungrad = () => {
 
       {/* new content here */}
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           World-class Care
-        </h1>
+        </h2>
         <p className='text-justify mt-5'>
           Founded in 1980, Bumrungrad International Hospital has been a global
           pioneer in providing world-class healthcare services and international
@@ -36,7 +36,7 @@ const Bumrungrad = () => {
       <div className='mx-5 my-20'>
         <div>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>Milestones</h1>
+          <p className='text-[16px] py-3 text-blue font-medium'>Milestones</p>
           <hr />
         </div>
         <div className='mt-4'>
@@ -61,7 +61,7 @@ const Bumrungrad = () => {
             </li>
           </ol>
           <div className='ml-4 mt-4'>
-            <img src={careimg} alt='' srcset='' />
+            <img src={careimg} alt='Bumrungrad Hospital' srcset='' />
           </div>
         </div>
       </div>
@@ -69,9 +69,9 @@ const Bumrungrad = () => {
       <div className='mx-5 my-20'>
         <div>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Collaboration of Expertise
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-4'>
@@ -91,16 +91,16 @@ const Bumrungrad = () => {
             patients across more than 70 medical subspecialties.
           </p>
           <div className='ml-4 mt-4'>
-            <img src={awardimg} alt='' srcset='' />
+            <img src={awardimg} alt='Bumrungrad Hospital' srcset='' />
           </div>
         </div>
       </div>
       <div className='mx-5 my-20'>
         <div>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Quality, Safety with Measurable Results
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-4'>
@@ -120,16 +120,16 @@ const Bumrungrad = () => {
             region and world.
           </p>
           <div className='ml-4 mt-4'>
-            <img src={specialtiesimg} alt='' srcset='' />
+            <img src={specialtiesimg} alt='Bumrungrad Hospital' srcset='' />
           </div>
         </div>
       </div>
       <div className='mx-5 my-20'>
         <div>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Innovation and Technology
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-4'>
@@ -158,16 +158,16 @@ const Bumrungrad = () => {
             patients.
           </p>
           <div className='ml-4 mt-4'>
-            <img src={inovationsimg} alt='' srcset='' />
+            <img src={inovationsimg} alt='Bumrungrad Hospital' srcset='' />
           </div>
         </div>
       </div>
       <div className='mx-5 my-20'>
         <div>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Compassionate Caring
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-4'>
@@ -197,7 +197,7 @@ const Bumrungrad = () => {
             people.”
           </p>
           <div className='ml-4 mt-4'>
-            <img src={careingimg} alt='' srcset='' />
+            <img src={careingimg} alt='Bumrungrad Hospital' srcset='' />
           </div>
         </div>
       </div>

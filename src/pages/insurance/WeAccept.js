@@ -1,8 +1,8 @@
 import React from 'react'
-import packageimg from '../../assets/insurance/Packages-Promotion1.png'
-import weacceptimg from '../../assets/insurance/We-Accept-Active2.png'
-import goodvibesimg from '../../assets/insurance/Good-Vibes-2023.png'
-import img1 from '../../assets/insurance/Allianz-Ayudhya1.jpg'
+import packageimg from '../../assets/insurance/Bumrungrad  Hospital_Packages-Promotion1.png'
+import weacceptimg from '../../assets/insurance/Bumrungrad  Hospital_We-Accept-Active2.png'
+import goodvibesimg from '../../assets/insurance/Bumrungrad  Hospital_Good-Vibes-2023.png'
+import img1 from '../../assets/insurance/Bumrungrad  Hospital_Allianz-Ayudhya1.jpg'
 
 import OneWeAccept from './OneWeAccept'
 const WeAccept = () => {
@@ -58,9 +58,9 @@ const WeAccept = () => {
       </div>
       <div className=' my-10 bg-cream'>
         <div className='flex justify-center flex-wrap p-10'>
-          <img src={packageimg} alt='' srcset='' />
-          <img src={weacceptimg} alt='' srcset='' />
-          <img src={goodvibesimg} alt='' srcset='' />
+          <img src={packageimg} alt='Bumrungrad Hospital' srcset='' />
+          <img src={weacceptimg} alt='Bumrungrad Hospital' srcset='' />
+          <img src={goodvibesimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
     </section>

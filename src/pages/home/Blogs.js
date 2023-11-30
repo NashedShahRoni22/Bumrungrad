@@ -23,9 +23,9 @@ export default function Blogs() {
   return (
     <div className='p-5 md:p-10 md:container md:mx-auto'>
       <div className='flex justify-between items-center'>
-        <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+        <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
           Bumrungrad Health Blogs
-        </h1>
+        </h2>
         <Link
           to={'/allblog'}
           className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
@@ -42,7 +42,12 @@ export default function Blogs() {
               key={i}
               className='shadow rounded hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
             >
-              <img src={d.blogImage} alt='' className='' />
+              <img
+                src={d.blogImage}
+                alt='Bumrungrad Hospital
+'
+                className=''
+              />
               <div className='p-4'>
                 {' '}
                 <h5 className='font-semibold text-blue text-lg'>

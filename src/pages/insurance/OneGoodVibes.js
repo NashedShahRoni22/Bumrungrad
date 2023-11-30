@@ -39,7 +39,7 @@ const OneGoodVibes = (props) => {
               className='bg-blue p-3'
               onClick={() => handleOpen(i)}
             >
-              <h1 className='text-white text-sm'>{question}</h1>
+              <p className='text-white text-sm'>{question}</p>
             </AccordionHeader>
           </div>
 
@@ -58,7 +58,7 @@ const OneGoodVibes = (props) => {
                     <div className='mt-5 mb-5'>
                       <img
                         src={data?.img}
-                        alt=''
+                        alt='Bumrungrad Hospital'
                         className={data?.imgclass}
                         srcset=''
                       />

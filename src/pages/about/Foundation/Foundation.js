@@ -1,5 +1,5 @@
 import React from 'react'
-import qrimage from '../../../assets/about_bumrungrad/QR_bumrungrad_foundation-(3).png'
+import qrimage from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_QR_bumrungrad_foundation-(3).png'
 const Foundation = () => {
   return (
     <section className='mx-5 md:container md:mx-auto'>
@@ -10,9 +10,9 @@ const Foundation = () => {
         </h1>
       </div>
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           The Bumrungrad Hospital Foundation
-        </h1>
+        </h2>
         <p className='text-justify mt-3'>
           The Bumrungrad Hospital Foundation is a registered non-profit
           foundation, established in May of 1990 by the founders of Bumrungrad
@@ -25,9 +25,9 @@ const Foundation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The Bumrungrad Hospital Foundation Director
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='flex justify-evenly'>
@@ -46,18 +46,18 @@ const Foundation = () => {
             <p className='text-small mt-2'> Director and Secretary</p>
           </div>
         </div>
-        <h1 className='text-blue mt-12 text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue mt-12 text-xl md:text-2xl font-semibold'>
           About the Bumrungrad Hospital Foundation Program
-        </h1>
+        </h2>
         <div className='my-6'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The{' '}
             <span className='text-purple-700 font-semibold'>Rak Jai Thai</span>{' '}
             (Healing Hearts) program, one of the foundation’s main programs,
             provides surgeries at no cost to underprivileged children with
             congenital heart diseas
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
@@ -106,9 +106,9 @@ const Foundation = () => {
         </p>
         <div className='my-6'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Bumrungrad Mobile Clinic Services in Bangkok
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
@@ -129,9 +129,9 @@ const Foundation = () => {
         </p>
         <div className='my-6'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Project to Support Mukdahan Villagers
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
@@ -154,9 +154,9 @@ const Foundation = () => {
         </p>
         <div className='my-6'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Sponsoring Medical Treatments
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
@@ -167,9 +167,9 @@ const Foundation = () => {
         </p>
         <div className='my-6'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Educating the Public About Health
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
@@ -183,18 +183,18 @@ const Foundation = () => {
         </p>
         <div className='my-6'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Foundation Funding
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
           Funding is provided by donations from patients, organizations,
           companies, and individuals.
         </p>
-        <h1 className='text-[16px] py-3 text-blue font-medium'>
+        <p className='text-[16px] py-3 text-blue font-medium'>
           How to Make a Donation
-        </h1>
+        </p>
         <ol className='pl-10'>
           <li className='list-decimal mt-2'>
             Make an e-donation; simply scan this QR code and transfer your
@@ -202,7 +202,12 @@ const Foundation = () => {
           </li>
 
           <div className='mt-10'>
-            <img src={qrimage} alt='' className='w-[25%] mx-auto' srcset='' />
+            <img
+              src={qrimage}
+              alt='Bumrungrad Hospital'
+              className='w-[25%] mx-auto'
+              srcset=''
+            />
           </div>
 
           <li className='list-decimal mt-2'>
@@ -218,9 +223,9 @@ const Foundation = () => {
             account number 197-0-11115-7, Bangkok Bank, Nana Nua Branch
           </li>
         </ol>
-        <h1 className='text-[16px] py-3 text-blue font-semibold'>
+        <p className='text-[16px] py-3 text-blue font-semibold'>
           Donations are Tax-Deductible
-        </h1>
+        </p>
         <p className='text-justify'>
           The Bumrungrad Hospital Foundation is a charitable foundation;
           Registration no. 524 by the Ministry of Finance; Ministerial
@@ -228,9 +233,9 @@ const Foundation = () => {
           Identification no. 4030002447; License no. T. 119/2533; Established
           May 1990.
         </p>
-        <h1 className='text-[16px] py-6 text-blue font-semibold'>
+        <p className='text-[16px] py-6 text-blue font-semibold'>
           Contacting the Bumrungrad Hospital Foundation
-        </h1>
+        </p>
         <ol className='pl-10'>
           <li className='list-disc mt-2'>
             To make a donation or to request a receipt for your donation, please
@@ -241,7 +246,7 @@ const Foundation = () => {
             call: Ms. Chulaluck 084 751 2483 / Email chulaluck@bumrungrad.com
           </li>
         </ol>
-        <h1 className='text-[16px] py-6 text-blue font-semibold'>Address</h1>
+        <p className='text-[16px] py-6 text-blue font-semibold'>Address</p>
         <p>Bumrungrad Hospital Foundation</p>
         <p>33 Sukhumvit Soi 3 (Nana Nua)</p>
         <p>Klong Toei Nua, Wattana, Bangkok 10110</p>

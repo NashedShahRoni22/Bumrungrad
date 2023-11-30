@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MenuItems } from "./MenuItems";
-import logo from "../../assets/nav_logo.png";
+import logo from "../../assets/Bumrungrad  Hospital_nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";

@@ -1,11 +1,11 @@
-import airimg from '../../assets/service_logo/air_ambulance.png'
-import airpickup from '../../assets/service_logo/air_pickup.png'
-import airticket from '../../assets/service_logo/air_ticket.png'
-import appointment from '../../assets/service_logo/appointment.png'
-import hotelReservation from '../../assets/service_logo/visa_processing.png'
-import orderMedicine from '../../assets/service_logo/order_medicine.png'
-import teleMedicine from '../../assets/service_logo/telemedicine.png'
-import medicalRecords from '../../assets/service_logo/medical_records.png'
+import airimg from '../../assets/service_logo/Bumrungrad  Hospital-air_ambulance.png'
+import airpickup from '../../assets/service_logo/Bumrungrad  Hospital-air_pickup.png'
+import airticket from '../../assets/service_logo/Bumrungrad  Hospital-air_ticket.png'
+import appointment from '../../assets/service_logo/Bumrungrad  Hospital-appointment.png'
+import hotelReservation from '../../assets/service_logo/Bumrungrad  Hospital_visa_processing.png'
+import orderMedicine from '../../assets/service_logo/Bumrungrad  Hospital_order_medicine.png'
+import teleMedicine from '../../assets/service_logo/Bumrungrad  Hospital_telemedicine.png'
+import medicalRecords from '../../assets/service_logo/Bumrungrad  Hospital_medical_records.png'
 import { Link } from 'react-router-dom'
 import { Divider } from '@mui/material'
 import AirAmbulanceForm from './modalFrom/AirAmbulanceForm'
@@ -69,9 +69,9 @@ export default function Services(props) {
 
   return (
     <div className='p-5 md:p-10 my-3 md:my-10 md:container md:mx-auto'>
-      <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+      <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
         Our Services
-      </h1>
+      </h2>
       <div className='my-5'>
         <Divider />
       </div>
@@ -88,7 +88,11 @@ export default function Services(props) {
               key={i}
               className='cursor-pointer flex flex-col lg:flex-row gap-4 items-center shadow-class hover:translate-y-5 duration-300 ease-linear p-4 rounded-xl'
             >
-              <img src={s.img} alt={s.name} className='h-[100px] w-[100px]' />
+              <img
+                src={s.img}
+                alt='Bumrungrad Hospital'
+                className='h-[100px] w-[100px]'
+              />
               <h5 className='text-center font-semibold text-blue'>{s.name}</h5>
             </Link>
           </div>

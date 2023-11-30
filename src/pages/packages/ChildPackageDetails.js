@@ -93,7 +93,7 @@ const ChildPackageDetails = () => {
                 <img
                   src={childDetailsPackage?.cover_photo}
                   className='w-full max-h-[50vh]'
-                  alt=''
+                  alt='Bumrungrad Hospital'
                 />
                 <button
                   onClick={() => handleClickOpen(childDetailsPackage)}

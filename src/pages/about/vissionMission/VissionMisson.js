@@ -12,12 +12,12 @@ const VissionMisson = () => {
       </div>
       {/* new content here */}
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           Our Vision/Mission and Values
-        </h1>
+        </h2>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>VISION</h1>
+          <p className='text-[16px] py-3 text-blue font-medium'>VISION</p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -26,7 +26,7 @@ const VissionMisson = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>MISSION</h1>
+          <p className='text-[16px] py-3 text-blue font-medium'>MISSION</p>
           <hr />
         </div>
         <p className='text-justify'>Deliver excellence in clinical services</p>
@@ -38,9 +38,7 @@ const VissionMisson = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
-            CORE VALUES
-          </h1>
+          <p className='text-[16px] py-3 text-blue font-medium'>CORE VALUES</p>
           <hr />
         </div>
         <ol className='pl-6'>
@@ -51,9 +49,9 @@ const VissionMisson = () => {
         </ol>
       </div>
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold my-8'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold my-8'>
           Patient and Staff Safety Statement
-        </h1>
+        </h2>
         <p className='text-justify mt-4'>
           Everyone at Bumrungrad Hospital PCL has responsibility for the safety
           of our patients and staff. The Hospital Governing Board has the
@@ -76,13 +74,13 @@ const VissionMisson = () => {
           </li>
         </ol>
         <div className='ml-4 mt-4'>
-          <img src={missionVissionimg} alt='' srcset='' />
+          <img src={missionVissionimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           Quality Statement
-        </h1>
+        </h2>
         <p className='text-justify mt-4'>
           Bumrungrad Hospital PCL is committed to providing “World Class”
           services by using the Malcolm Baldrige National Quality and Magnet
@@ -93,18 +91,18 @@ const VissionMisson = () => {
           Accreditation (A-HA) and The College of American Pathologists (CAP)
           for Safety & Quality towards patient care excellence.
         </p>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold mt-10'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold mt-10'>
           Environmental Statement
-        </h1>
+        </h2>
         <p className='text-justify mt-4'>
           Bumrungrad International is committed to protecting the global
           environment and to conserving energy and natural resources. We support
           efforts to maintain and promote the health and safety of the community
           and we participate in activities supporting these principles.
         </p>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold mt-10'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold mt-10'>
           Environmental Statement Guiding Principles
-        </h1>
+        </h2>
         <ol className='pl-6 mt-6'>
           <li className='list-decimal mt-1'>
             The Hospital will establish environmental, health, and safety
@@ -135,7 +133,7 @@ const VissionMisson = () => {
           </li>
         </ol>
         <div className='ml-4 mt-8'>
-          <img src={environmentimg} alt='' srcset='' />
+          <img src={environmentimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
     </section>

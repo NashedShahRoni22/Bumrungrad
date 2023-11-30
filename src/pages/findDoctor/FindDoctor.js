@@ -133,30 +133,30 @@ export default function FindDoctor() {
   }, [name, speacility, subSpeacility, lang, day, time, gender]);
 
   return (
-    <section className="min-h-screen">
+    <section className='min-h-screen'>
       {/* search field  */}
-      <div id="finddoctor" className="flex items-center">
-        <div className="container mx-5 md:mx-auto p-10 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
-          <h1 className="text-xl md:text-3xl font-semibold text-blue text-center">
+      <div id='finddoctor' className='flex items-center'>
+        <div className='container mx-5 md:mx-auto p-10 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3'>
+          <h1 className='text-xl md:text-3xl font-semibold text-blue text-center'>
             Find A Doctor
           </h1>
-          <div className="flex flex-col gap-4 mt-5 md:mt-10">
+          <div className='flex flex-col gap-4 mt-5 md:mt-10'>
             <TextField
-              id="outlined-basic"
-              label="Enter Doctor Name"
-              variant="outlined"
+              id='outlined-basic'
+              label='Enter Doctor Name'
+              variant='outlined'
               fullWidth
               onChange={(e) => setName(e.target.value)}
             />
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">
+              <InputLabel id='demo-simple-select-label'>
                 Select Speacility
               </InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
                 value={speacility}
-                label="Select Speacility"
+                label='Select Speacility'
                 onChange={(e) => setSpeacility(e.target.value)}
               >
                 {specialties?.map((s, i) => (
@@ -168,14 +168,14 @@ export default function FindDoctor() {
             </FormControl>
 
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">
+              <InputLabel id='demo-simple-select-label'>
                 Select Sub Speacility
               </InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
                 value={subSpeacility}
-                label="Select Sub Speacility"
+                label='Select Sub Speacility'
                 onChange={(e) => setSubSpeacility(e.target.value)}
                 disabled={subSpecialties?.length === 0}
               >
@@ -188,14 +188,14 @@ export default function FindDoctor() {
             </FormControl>
             <button
               onClick={() => setAdvanceBox(!advanceBox)}
-              className="bg-blue rounded px-4 py-3 text-white hidden md:flex justify-between"
+              className='bg-blue rounded px-4 py-3 text-white hidden md:flex justify-between'
             >
               Advance Search
               {advanceBox ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
             </button>
             <button
               onClick={handleClickOpen}
-              className="md:hidden bg-blue rounded px-4 py-3 text-white flex justify-between"
+              className='md:hidden bg-blue rounded px-4 py-3 text-white flex justify-between'
             >
               More Serach
               {open ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
@@ -208,27 +208,27 @@ export default function FindDoctor() {
         open={open}
         onClose={handleClose}
         fullWidth={true}
-        maxWidth={"lg"}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        className="md:hidden"
+        maxWidth={'lg'}
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
+        className='md:hidden'
       >
         <DialogTitle
-          id="alert-dialog-title"
-          className="text-center text-blue !font-semibold"
+          id='alert-dialog-title'
+          className='text-center text-blue !font-semibold'
         >
-          {"Your Preferences"}
+          {'Your Preferences'}
         </DialogTitle>
         <DialogContent>
-          <form className="py-1.5">
-            <div className="grid gap-4 md:grid-cols-2">
+          <form className='py-1.5'>
+            <div className='grid gap-4 md:grid-cols-2'>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Language</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={lang}
-                  label="Language"
+                  label='Language'
                   onChange={(e) => setLang(e.target.value)}
                 >
                   {languages.map((l, i) => (
@@ -239,12 +239,12 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Day</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Day</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={day}
-                  label="Day"
+                  label='Day'
                   onChange={(e) => setDay(e.target.value)}
                 >
                   {weekdays.map((w, i) => (
@@ -255,12 +255,12 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Time</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Time</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={time}
-                  label="Time"
+                  label='Time'
                   onChange={(e) => setTime(e.target.value)}
                 >
                   {times.map((t, i) => (
@@ -271,12 +271,12 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Gender</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={gender}
-                  label="Gender"
+                  label='Gender'
                   onChange={(e) => setGender(e.target.value)}
                 >
                   {genders.map((g, i) => (
@@ -289,11 +289,11 @@ export default function FindDoctor() {
             </div>
           </form>
         </DialogContent>
-        <DialogActions className="!flex !justify-center mb-5">
+        <DialogActions className='!flex !justify-center mb-5'>
           <Button
             onClick={handleClose}
-            variant="contained"
-            className="!bg-blue !shadow-none"
+            variant='contained'
+            className='!bg-blue !shadow-none'
           >
             Close
           </Button>
@@ -302,21 +302,21 @@ export default function FindDoctor() {
       {/* Tab View Search Fields */}
       {advanceBox && (
         <>
-          <form className="hidden md:block relative mt-5 mb-10 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-xl shadow-md shadow-blue">
+          <form className='hidden md:block relative mt-5 mb-10 lg:w-1/2 mx-5 md:container md:mx-auto pt-16 px-10 pb-10 bg-white/90 rounded-xl shadow-md shadow-blue'>
             <button
               onClick={() => setAdvanceBox(!advanceBox)}
-              className="absolute top-2 right-2 bg-red text-white rounded"
+              className='absolute top-2 right-2 bg-red text-white rounded'
             >
               <CloseIcon />
             </button>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className='grid gap-4 md:grid-cols-2'>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Language</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={lang}
-                  label="Language"
+                  label='Language'
                   onChange={(e) => setLang(e.target.value)}
                 >
                   {languages.map((l, i) => (
@@ -327,12 +327,12 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Day</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Day</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={day}
-                  label="Day"
+                  label='Day'
                   onChange={(e) => setDay(e.target.value)}
                 >
                   {weekdays.map((w, i) => (
@@ -343,12 +343,12 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Time</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Time</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={time}
-                  label="Time"
+                  label='Time'
                   onChange={(e) => setTime(e.target.value)}
                 >
                   {times.map((t, i) => (
@@ -359,12 +359,12 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <InputLabel id='demo-simple-select-label'>Gender</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
                   value={gender}
-                  label="Gender"
+                  label='Gender'
                   onChange={(e) => setGender(e.target.value)}
                 >
                   {genders.map((g, i) => (
@@ -375,7 +375,7 @@ export default function FindDoctor() {
                 </Select>
               </FormControl>
             </div>
-            <button className="px-4 py-2 bg-blue border border-blue hover:bg-white hover:text-blue duration-300 ease-linear mt-4 rounded flex items-center gap-5 text-white">
+            <button className='px-4 py-2 bg-blue border border-blue hover:bg-white hover:text-blue duration-300 ease-linear mt-4 rounded flex items-center gap-5 text-white'>
               Clear Filters
               <CachedIcon />
             </button>
@@ -390,71 +390,71 @@ export default function FindDoctor() {
       query?.day ||
       query?.schedule ||
       query?.gender ? (
-        <div className="mx-5 mb-5 mt-10 md:container md:mx-auto md:flex gap-2">
-          <p className="text-lg md:text-xl font-semibold">Filters:</p>
-          <div className="flex flex-wrap gap-1">
+        <div className='mx-5 mb-5 mt-10 md:container md:mx-auto md:flex gap-2'>
+          <p className='text-lg md:text-xl font-semibold'>Filters:</p>
+          <div className='flex flex-wrap gap-1'>
             {name && (
               <button
-                onClick={() => setName("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setName('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {name} <CloseIcon />{" "}
+                {name} <CloseIcon />{' '}
               </button>
             )}
             {query?.specialty && (
               <button
-                onClick={() => setSpeacility("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setSpeacility('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.specialty} <CloseIcon />{" "}
+                {query?.specialty} <CloseIcon />{' '}
               </button>
             )}
             {query?.sub_specialty && (
               <button
-                onClick={() => setSubSpeacility("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setSubSpeacility('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.sub_specialty} <CloseIcon />{" "}
+                {query?.sub_specialty} <CloseIcon />{' '}
               </button>
             )}
             {query?.lang && (
               <button
-                onClick={() => setLang("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setLang('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.lang} <CloseIcon />{" "}
+                {query?.lang} <CloseIcon />{' '}
               </button>
             )}
             {query?.day && (
               <button
-                onClick={() => setDay("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setDay('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.day} <CloseIcon />{" "}
+                {query?.day} <CloseIcon />{' '}
               </button>
             )}
             {query?.shift && (
               <button
-                onClick={() => setTime("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setTime('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.shift} <CloseIcon />{" "}
+                {query?.shift} <CloseIcon />{' '}
               </button>
             )}
             {query?.schedule && (
               <button
-                onClick={() => setDay("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setDay('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.schedule} <CloseIcon />{" "}
+                {query?.schedule} <CloseIcon />{' '}
               </button>
             )}
             {query?.gender && (
               <button
-                onClick={() => setGender("")}
-                className="capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl"
+                onClick={() => setGender('')}
+                className='capitalize border-blue hover:bg-blue hover:text-white duration-300 ease-linear shadow flex items-center gap-1 px-2 py-1 border rounded lg:text-xl'
               >
-                {query?.gender} <CloseIcon />{" "}
+                {query?.gender} <CloseIcon />{' '}
               </button>
             )}
           </div>
@@ -465,36 +465,38 @@ export default function FindDoctor() {
       {loader ? (
         <Loader />
       ) : (
-        <div className="mx-5 md:container md:mx-auto mt-5">
+        <div className='mx-5 md:container md:mx-auto mt-5'>
           {doctors?.length > 0 ? (
             <div>
-              <p className="text-xl md:text-2xl font-semibold">
-                Found <span className="text-blue">{doctors?.length}</span>{" "}
+              <p className='text-xl md:text-2xl font-semibold'>
+                Found <span className='text-blue'>{doctors?.length}</span>{' '}
                 Doctor
               </p>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-5">
+              <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-5'>
                 {doctors?.map((d, i) => (
                   <Link
                     to={`/doctor_details/${d.id}`}
-                    className="shadow hover:shadow-xl duration-300 ease-linear flex flex-col justify-between"
+                    className='shadow hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
                     key={i}
                   >
                     <img
                       src={d.cover_photo}
-                      alt="DoctorImage"
-                      className="h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl rounded-tr"
+                      alt='Bumrungrad Hospital'
+                      className='h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl rounded-tr'
                     />
-                    <div className="p-2.5">
-                      <p className="md:text-xl text-blue font-semibold">{d?.name}</p>
-                      <p className="mt-2 text-lg">{d?.specialty}</p>
+                    <div className='p-2.5'>
+                      <p className='md:text-xl text-blue font-semibold'>
+                        {d?.name}
+                      </p>
+                      <p className='mt-2 text-lg'>{d?.specialty}</p>
                     </div>
-                    <button className="group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl rounded-br">
-                      <span className="capitalize">View Profile</span>
-                      <span className="group-hover:hidden">
+                    <button className='group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl rounded-br'>
+                      <span className='capitalize'>View Profile</span>
+                      <span className='group-hover:hidden'>
                         <ArrowForwardIcon />
                       </span>
-                      <span className="hidden group-hover:block">
+                      <span className='hidden group-hover:block'>
                         <CallMadeIcon />
                       </span>
                     </button>
@@ -503,9 +505,9 @@ export default function FindDoctor() {
               </div>
             </div>
           ) : (
-            <div className="min-h-[40vh] shadow-xl rounded p-5 mb-2.5">
+            <div className='min-h-[40vh] shadow-xl rounded p-5 mb-2.5'>
               <Lottie style={style} animationData={notFoundAnim} loop={true} />
-              <p className="text-xl font-semibold text-blue text-center">
+              <p className='text-xl font-semibold text-blue text-center'>
                 No Doctor Found
               </p>
             </div>
@@ -513,5 +515,5 @@ export default function FindDoctor() {
         </div>
       )}
     </section>
-  );
+  )
 }

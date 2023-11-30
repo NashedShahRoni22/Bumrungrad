@@ -1,25 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import networkimg from '../../../assets/about_bumrungrad/Layout-Newsweek_Social-Media_EN.jpg'
-import awardimg from '../../../assets/about_bumrungrad/Bumrungrad_Award.jpg'
-import sbestspeaciligedimg from '../../../assets/about_bumrungrad/worlds-best-specialized-hospitals-2021.jpg'
-import marketingAwardimg from '../../../assets/about_bumrungrad/Marketing-Excellence-Awards-2022.jpg'
-import thaiAwardimg from '../../../assets/about_bumrungrad/Thailand-MIKE-Award-2021-SILVER.png'
-import influencerAwardimg from '../../../assets/about_bumrungrad/Thailand-Influencer-Awards-2021-by-Tellscore-(2).png'
-import YoutubeAwardimg from '../../../assets/about_bumrungrad/YouTube-Works-Award-2021_1.png'
-import YoutubeWorkAwardimg from '../../../assets/about_bumrungrad/YouTube-Works-Award-2021_2.png'
-import Award2img from '../../../assets/about_bumrungrad/Award-2.jpg'
-import digitalAward2img from '../../../assets/about_bumrungrad/Thailand-Digital-Transformation-Awards-2021-(1).png'
-import zocialimg from '../../../assets/about_bumrungrad/ZocialBH2021-(2).png'
-import Award1imga from '../../../assets/about_bumrungrad/Award-1.jpg'
-import annotation1imga from '../../../assets/about_bumrungrad/Annotation-2022-03-01-110437.jpg'
-import annotation21imga from '../../../assets/about_bumrungrad/Annotation-2022-03-01-104946.jpg'
-import globalbandimga from '../../../assets/about_bumrungrad/Global-Brand-Awards-2022.jpg'
-import awardglobalbandimga from '../../../assets/about_bumrungrad/Award-global-economics-jpg.png'
+import networkimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Layout-Newsweek_Social-Media_EN.jpg'
+import awardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Bumrungrad_Award.jpg'
+import sbestspeaciligedimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_worlds-best-specialized-hospitals-2021.jpg'
+import marketingAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Marketing-Excellence-Awards-2022.jpg'
+import thaiAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-MIKE-Award-2021-SILVER.png'
+import influencerAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Influencer-Awards-2021-by-Tellscore-(2).png'
+import YoutubeAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_YouTube-Works-Award-2021_1.png'
+import YoutubeWorkAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_YouTube-Works-Award-2021_2.png'
+import Award2img from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Award-2.jpg'
+import digitalAward2img from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Digital-Transformation-Awards-2021-(1).png'
+import zocialimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_ZocialBH2021-(2).png'
+import Award1imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Award-2.jpg'
+import annotation1imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Annotation-2022-03-01-110437.jpg'
+import annotation21imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Annotation-2022-03-01-104946.jpg'
+import globalbandimga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Global-Brand-Awards-2022.jpg'
+import awardglobalbandimga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Award-global-economics-jpg.png'
 import globalbusinessaward1imga from '../../../assets/about_bumrungrad/global-business-awards-capture.jpg'
-import globalbusinessaward2imga from '../../../assets/about_bumrungrad/global-business-awards.png'
-import microwSoftaward2imga from '../../../assets/about_bumrungrad/MicrosoftTeams-image-(21).jpg'
-import thaiCorporateimga from '../../../assets/about_bumrungrad/Thailand-Corporate-Excellence-Awards-2019.png'
+import globalbusinessaward2imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_global-business-awards.png'
+import microwSoftaward2imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_MicrosoftTeams-image-(21).jpg'
+import thaiCorporateimga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Corporate-Excellence-Awards-2019.png'
 
 const Accreditation = () => {
   return (
@@ -31,9 +31,9 @@ const Accreditation = () => {
         </h1>
       </div>
       <div className='mx-5 my-10'>
-        <h1 className='text-blue text-xl md:text-2xl font-semibold'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           Bumrungrad Recognitions for Quality and Safety
-        </h1>
+        </h2>
         <p className='text-justify mt-3'>
           At Bumrungrad International Hospital, we strive to improve the health
           of our community and beyond by providing world-class clinical care,
@@ -44,9 +44,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Newsweek Ranks Bumrungrad the Best Thai Hospital 3 Years in a Row
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -69,21 +69,26 @@ const Accreditation = () => {
           used in the process.
         </p>
         <div className='mt-10'>
-          <img src={networkimg} alt='' className='w-[70%] mx-auto' srcset='' />
+          <img
+            src={networkimg}
+            alt='Bumrungrad Hospital'
+            className='w-[70%] mx-auto'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Joint Commission International (JCI)
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
-          <img src={awardimg} alt='' srcset='' />
+          <img src={awardimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
-        <h1 className='text-[16px] py-8 text-blue font-semibold'>
+        <p className='text-[16px] py-8 text-blue font-semibold'>
           International Standard of Excellence
-        </h1>
+        </p>
         <p className='text-justify mt-3'>
           Bumrungrad is the first hospital in Asia to be accredited by the Joint
           Commission International (JCI), the world leader in healthcare
@@ -97,9 +102,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Global Healthcare Accreditation (GHA)
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-3'>
@@ -108,14 +113,14 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Hospital Accreditation (A-HA)
-          </h1>
+          </p>
           <hr />
         </div>
-        <h1 className='text-[16px] py-2 text-blue font-semibold'>
+        <p className='text-[16px] py-2 text-blue font-semibold'>
           International Standard of Quality
-        </h1>
+        </p>
         <p className='text-justify mt-3'>
           Bumrungrad is the first hospital in Thailand to obtain the Advanced
           Hospital Accreditation (A-HA) from the Healthcare Accreditation
@@ -130,15 +135,15 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             World's Best Smart Hospitals 2021
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={sbestspeaciligedimg}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[70%] mx-auto'
             srcset=''
           />
@@ -152,17 +157,17 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Bumrungrad International Hospital received two major awards at the
             “Marketing Excellence Awards 2022” in Thailand, for outstanding
             performance and excellence in the marketing field of Thailand
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={marketingAwardimg}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[400px] h-[500px] mx-auto'
             srcset=''
           />
@@ -188,15 +193,15 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand MIKE Award 2021: SILVER
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={thaiAwardimg}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[150px] h-[250px] mx-auto'
             srcset=''
           />
@@ -209,9 +214,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Kentico Experience: Site of the Year 2020
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -223,15 +228,15 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Influencer Awards 2021 by Tellscore
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={influencerAwardimg}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[350px] h-[450px] mx-auto'
             srcset=''
           />
@@ -244,9 +249,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             YouTube Works Award 2021,Small Budget, Big Result
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -261,18 +266,18 @@ const Accreditation = () => {
               to='https://www.youtube.com/watch?v=cQpyqxejjqY'
               target='_blank'
             >
-              <img src={YoutubeAwardimg} alt='' />
+              <img src={YoutubeAwardimg} alt='Bumrungrad Hospital' />
             </Link>
           </div>
           <div>
-            <img src={YoutubeWorkAwardimg} alt='' />
+            <img src={YoutubeWorkAwardimg} alt='Bumrungrad Hospital' />
           </div>
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             OTB: Only the best International Film Awards 2022
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -286,23 +291,23 @@ const Accreditation = () => {
         <div className='mt-10'>
           <img
             src={Award2img}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[650px] h-[450px] mx-auto'
             srcset=''
           />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Digital Transformation Awards by categories Best Customer
             Experience Award, 2021-2022 for the 2nd consecutive year
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={digitalAward2img}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[650px] h-[450px] mx-auto'
             srcset=''
           />
@@ -323,9 +328,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Bumrungrad International Hospital CEO of the year 2021
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -336,9 +341,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Best Employer Brand Awards 2021
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -346,10 +351,10 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Zocial Awards 2019-2022 :Best Brand Performance on Social
             Media for 4th consecutive year
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -363,17 +368,17 @@ const Accreditation = () => {
         <div className='mt-10'>
           <img
             src={zocialimg}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[650px] h-[450px] mx-auto'
             srcset=''
           />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Best of tweets 2021: Best Campaign for Driving Positive Change in
             Society
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -390,17 +395,17 @@ const Accreditation = () => {
         <div className='mt-10'>
           <img
             src={Award1imga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[650px] h-[450px] mx-auto'
             srcset=''
           />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             BANGKOK POST READERS’ CHOICE AWARDS 2021 WINNERS: MOST TRUSTED
             HOSPITAL BRAND
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -413,17 +418,25 @@ const Accreditation = () => {
         </p>
         <div className='flex mt-10 justify-evenly items-center'>
           <div>
-            <img src={annotation21imga} className='w-[400px]' alt='' />
+            <img
+              src={annotation21imga}
+              className='w-[400px]'
+              alt='Bumrungrad Hospital'
+            />
           </div>
           <div className='ml-4'>
-            <img src={annotation1imga} className='w-[600px]' alt='' />
+            <img
+              src={annotation1imga}
+              className='w-[600px]'
+              alt='Bumrungrad Hospital'
+            />
           </div>
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             GBA: Global Brand Awards 2022
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -441,16 +454,16 @@ const Accreditation = () => {
         <div className='mt-10'>
           <img
             src={globalbandimga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[350px] h-[500px] mx-auto'
             srcset=''
           />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The Global Economics Awards 2022: Winner
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -462,16 +475,16 @@ const Accreditation = () => {
         <div className='mt-10'>
           <img
             src={awardglobalbandimga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[550px] h-[200px] mx-auto'
             srcset=''
           />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The Global Business Magazine Awards 2022
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -485,29 +498,29 @@ const Accreditation = () => {
         <div className='mt-10'>
           <img
             src={globalbusinessaward2imga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[350px] h-[400px] mx-auto'
             srcset=''
           />
           <img
             src={globalbusinessaward1imga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[550px] h-[200px] mx-auto'
             srcset=''
           />
         </div>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Global Health and Travel – 2019 APAC Healthcare and Medical Tourism
             Awards
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={microwSoftaward2imga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[650px] h-[400px] mx-auto'
             srcset=''
           />
@@ -546,15 +559,15 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Corporate Excellence Awards 2019
-          </h1>
+          </p>
           <hr />
         </div>
         <div className='mt-10'>
           <img
             src={thaiCorporateimga}
-            alt=''
+            alt='Bumrungrad Hospital'
             className='w-[400px] h-[300px] mx-auto'
             srcset=''
           />
@@ -567,9 +580,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Brandage Online For 2nd Consecutive Year
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5'>
@@ -577,10 +590,10 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Central Sterile Supply Department (CSSD) Centre of Excellence
             Program
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -597,9 +610,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The College of American Pathologists (CAP)
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -616,10 +629,10 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The Strategic Initiative for Developing Capacity in Ethical Review
             (SIDCER)
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -639,9 +652,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Westgard Sigma Verification of Performance
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -658,9 +671,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The AMCHAM ACE Awards
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -677,9 +690,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Corporate Social Responsibility (CSR) Club Thailand
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -695,9 +708,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The DAISY Award
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -713,9 +726,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand’s Best Employer
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -730,9 +743,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Tourism Awards
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>
@@ -747,9 +760,9 @@ const Accreditation = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <h1 className='text-[16px] py-3 text-blue font-medium'>
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Quality Class (TQC) Award
-          </h1>
+          </p>
           <hr />
         </div>
         <p className='text-justify mt-5 text-blue font-semibold'>

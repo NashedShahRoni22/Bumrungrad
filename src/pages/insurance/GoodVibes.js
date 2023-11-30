@@ -1,9 +1,9 @@
 import React from 'react'
-import packageimg from '../../assets/insurance/Packages-Promotion1.png'
-import weacceptimg from '../../assets/insurance/We-Accept-Active2.png'
-import goodvibesimg from '../../assets/insurance/Good-Vibes-2023.png'
-import virtualBookImg from '../../assets/insurance/virtualBook.png'
-import AmbulanceImg from '../../assets/insurance/Amb-EN1200.jpg'
+import packageimg from '../../assets/insurance/Bumrungrad  Hospital_Packages-Promotion1.png'
+import weacceptimg from '../../assets/insurance/Bumrungrad  Hospital_We-Accept-Active2.png'
+import goodvibesimg from '../../assets/insurance/Bumrungrad  Hospital_Good-Vibes-2023.png'
+import virtualBookImg from '../../assets/insurance/Bumrungrad  Hospital_virtualBook.png'
+import AmbulanceImg from '../../assets/insurance/Bumrungrad  Hospital_Amb-EN1200.jpg'
 import OneGoodVibes from './OneGoodVibes'
 
 const GoodVibes = () => {
@@ -253,7 +253,7 @@ const GoodVibes = () => {
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] insurance-goodvibes relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
-          Insurance Good Vibes 2023
+          Insurance Good Vibes 2024
         </h1>
       </div>
       <div className='mx-10 my-10'>
@@ -263,9 +263,9 @@ const GoodVibes = () => {
       </div>
       <div className=' my-10 bg-cream'>
         <div className='flex justify-center flex-wrap p-10'>
-          <img src={packageimg} alt='' srcset='' />
-          <img src={weacceptimg} alt='' srcset='' />
-          <img src={goodvibesimg} alt='' srcset='' />
+          <img src={packageimg} alt='Bumrungrad Hospital' srcset='' />
+          <img src={weacceptimg} alt='Bumrungrad Hospital' srcset='' />
+          <img src={goodvibesimg} alt='Bumrungrad Hospital' srcset='' />
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
 import React from "react";
 // import line from "../../assets/line.png";
-import whatsapp from "../../assets/whatsapp.png";
+import whatsapp from "../../assets/Bumrungrad  Hospital_whatsapp.png";
 // import viber from "../../assets/viber.png";
-import telegram from "../../assets/telegram.png";
+import telegram from "../../assets/Bumrungrad  Hospital_telegram.png";
 
 import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
@@ -29,62 +29,90 @@ export default function SideBar() {
   return (
     <div>
       <a
-        href={`https://t.me/${encodeURIComponent("+8801847284860")}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={`https://t.me/${encodeURIComponent('+8801847284860')}`}
+        target='_blank'
+        rel='noopener noreferrer'
       >
-        <img src={telegram} alt="line_logo" className="h-[40px] mt-1" />
+        <img
+          src={telegram}
+          alt='Bumrungrad Hospital'
+          className='h-[40px] mt-1'
+        />
       </a>
-      <button
-        onClick={handleOpen}
-      >
-        <img src={whatsapp} alt="line_logo" className="h-[40px] mt-1" />
+      <button onClick={handleOpen}>
+        <img
+          src={whatsapp}
+          alt='Bumrungrad Hospital'
+          className='h-[40px] mt-1'
+        />
       </button>
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-labelledby='modal-modal-title'
+        aria-describedby='modal-modal-description'
       >
         <Box sx={style}>
           <a
-            href="http://wa.me/+8801324418100"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear"
+            href='http://wa.me/+8801324418100'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img src={whatsapp} alt="line_logo" className="h-[40px]" />
-            <span className="text-blue font-semibold">Appointment Booking</span>
+            <img
+              src={whatsapp}
+              alt='Bumrungrad Hospital'
+              className='h-[40px]'
+            />
+            <span className='text-blue font-semibold'>Appointment Booking</span>
           </a>
           <a
-            href="http://wa.me/+8801847284860"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear"
+            href='http://wa.me/+8801847284860'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img src={whatsapp} alt="line_logo" className="h-[40px]" />
-            <span className="text-blue font-semibold">Medical Procedure Booking</span>
+            <img
+              src={whatsapp}
+              alt='Bumrungrad Hospital'
+              className='h-[40px]'
+            />
+            <span className='text-blue font-semibold'>
+              Medical Procedure Booking
+            </span>
           </a>
           <a
-            href="http://wa.me/+8801847284863"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear"
+            href='http://wa.me/+8801847284863'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img src={whatsapp} alt="line_logo" className="h-[40px]" />
-            <span className="text-blue font-semibold">Medical Package Booking</span>
+            <img
+              src={whatsapp}
+              alt='Bumrungrad Hospital'
+              className='h-[40px]'
+            />
+            <span className='text-blue font-semibold'>
+              Medical Package Booking
+            </span>
           </a>
           <a
-            href="http://wa.me/+8801847284864"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear"
+            href='http://wa.me/+8801847284864'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img src={whatsapp} alt="line_logo" className="h-[40px]" />
-            <span className="text-blue font-semibold">Talk with Visa Adviser</span>
+            <img
+              src={whatsapp}
+              alt='Bumrungrad Hospital'
+              className='h-[40px]'
+            />
+            <span className='text-blue font-semibold'>
+              Talk with Visa Adviser
+            </span>
           </a>
         </Box>
       </Modal>
     </div>
-  );
+  )
 }
