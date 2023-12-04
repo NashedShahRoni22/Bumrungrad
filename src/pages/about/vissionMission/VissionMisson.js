@@ -13,7 +13,7 @@ const VissionMisson = () => {
       {/* new content here */}
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          Our Vision/Mission and Values
+          Our Vision, Mission and Values
         </h2>
         <div className='my-10'>
           <hr />
@@ -21,32 +21,48 @@ const VissionMisson = () => {
           <hr />
         </div>
         <p className='text-justify'>
-          Bumrungrad International Hospital aims to be the most trusted
-          healthcare and wellness destination
+          Our main goal at Bumrungrad International Hospital is to be the
+          leading source of confidence for health and wellness. Our dedication
+          is based on our unwavering quest for perfection as we work to become
+          the premier location for all-encompassing health and wellness
+          services. Our goal is to reshape expectations by creating an
+          environment where patients can receive top-notch medical care along
+          with life-changing experiences that lead to long-term wellbeing. Our
+          vision at Bumrungrad is connected with an unshakable commitment to
+          gaining the trust of those we serve and making sure that each person’s
+          health experience is met with unmatched assurance and confidence.
         </p>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>MISSION</p>
           <hr />
         </div>
-        <p className='text-justify'>Deliver excellence in clinical services</p>
         <p className='text-justify'>
-          Transform hospital operation with innovation and advanced technologies
+          Aim for unmatched quality in clinical services, pushing the boundaries
+          of patient care. Utilise cutting-edge ideas and cutting-edge
+          technologies to transform hospital operations and ensure effectiveness
+          and efficiency. Build a solid foundation that supports expansion and
+          guarantees the hospital’s long-term viability.
         </p>
-        <p className='text-justify'>
-          Build a strong foundation for growth and sustainability
-        </p>
+
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>CORE VALUES</p>
           <hr />
         </div>
-        <ol className='pl-6'>
-          <li className='list-disc mt-2'>Inclusion </li>
-          <li className='list-disc mt-2'>Agility</li>
-          <li className='list-disc mt-2'>Innovation</li>
-          <li className='list-disc mt-2'>Caring</li>
-        </ol>
+        <li className='list-decimal'>
+          These four pillars—diversity, adaptability, creativity, and
+          compassion—capsulate our core values. We promote diversity by
+          embracing inclusivity and a wide range of viewpoints. Our nimble
+          approach is characterised by agility, as we navigate problems with
+          elegance and adaptability. We advance through innovation, which sparks
+          interest and pushes limits. Our culture is interlaced with caring,
+          fostering a climate in which understanding and assistance are valued.
+          These fundamental principles remain constant as we commemorate our
+          trip, forming our character and motivating all of our actions. They
+          work together as the beating core of our company, leading us towards a
+          time when cooperation and purpose are combined.
+        </li>
       </div>
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold my-8'>
@@ -63,12 +79,10 @@ const VissionMisson = () => {
           and competitiveness.
         </p>
         <p className='mt-4'>We believe that :</p>
-        <ol className='pl-6 mt-2'>
-          <li className='list-decimal mt-1'>
-            Safety shall never be compromised
-          </li>
-          <li className='list-decimal mt-1'>All errors are preventable.</li>
-          <li className='list-decimal mt-1'>
+        <ol className='pl-6 mt-2 list-decimal'>
+          <li className=' mt-1'>Safety shall never be compromised</li>
+          <li className=' mt-1'>All errors are preventable.</li>
+          <li className=' mt-1'>
             Nothing is more important to Bumrungrad than the safety of our
             patients and our staff.
           </li>
@@ -111,13 +125,13 @@ const VissionMisson = () => {
             trained in these policies.
           </li>
           <li className='list-decimal mt-1'>
-            Every staff member and contractor on the Hospital's premises is
-            expected to follow the Hospital's environmental policies and report
+            Every staff member and contractor on the Hospital’s premises is
+            expected to follow the Hospital’s environmental policies and report
             any environmental, health or safety concerns to management to take
             appropriate actions.
           </li>
           <li className='list-decimal mt-1'>
-            We will minimize the environmental impact of the hospital's
+            We will minimize the environmental impact of the hospital’s
             operations on the neighboring communities due to such potential
             hazards as infectious waste water management, etc.
           </li>
@@ -127,7 +141,7 @@ const VissionMisson = () => {
             materials.
           </li>
           <li className='list-decimal mt-1'>
-            We will conduct stringent audits and reviews of the Hospital's
+            We will conduct stringent audits and reviews of the Hospital’s
             compliance with our environment policies and strive to continuously
             improve the environment.
           </li>

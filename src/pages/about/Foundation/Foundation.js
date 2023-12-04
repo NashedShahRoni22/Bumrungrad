@@ -35,15 +35,15 @@ const Foundation = () => {
             <p className='text-small mt-2'>Mr. Chai Sophonpanich</p>
             <p className='text-small mt-2'>Mr. Chanvit Tanphiphat</p>
             <p className='text-small mt-2'>Mrs. Linda Lisahapanya</p>
-            <p className='text-small mt-2'>Ms. Oraphan Buamuang</p>
+            <p className='text-small mt-2'>Ms. Oraphan Buamuang </p>
             <p className='text-small mt-2'>Mrs. Artirat Charukitpipat</p>
           </div>
           <div className='w-1/2'>
             <p className='text-small mt-2'> Chairman of the Board</p>
             <p className='text-small mt-2'>Vice Chairman of the Board</p>
             <p className='text-small mt-2'> Vice Chairman of the Board</p>
-            <p className='text-small mt-2'> Director and Treasurer</p>
-            <p className='text-small mt-2'> Director and Secretary</p>
+            <p className='text-small mt-2'>Director and Treasurer</p>
+            <p className='text-small mt-2'>Director and Secretary</p>
           </div>
         </div>
         <h2 className='text-blue mt-12 text-xl md:text-2xl font-semibold'>
@@ -56,7 +56,7 @@ const Foundation = () => {
             <span className='text-purple-700 font-semibold'>Rak Jai Thai</span>{' '}
             (Healing Hearts) program, one of the foundation’s main programs,
             provides surgeries at no cost to underprivileged children with
-            congenital heart diseas
+            congenital heart disease.
           </p>
           <hr />
         </div>
@@ -102,7 +102,7 @@ const Foundation = () => {
           other hospital fees. The program also takes care of travel expenses,
           food expenses, and accommodation for parents or guardians. This
           ensures that families with financial hardships can bring their loved
-          ones to Bumrungrad for treatment
+          ones to Bumrungrad for treatment.
         </p>
         <div className='my-6'>
           <hr />
@@ -163,7 +163,7 @@ const Foundation = () => {
           The foundation sponsors treatments for underprivileged patients who
           require surgical procedures but cannot cover the costs (depending on
           specific projects that are carried out by the foundation during the
-          year).
+          year)
         </p>
         <div className='my-6'>
           <hr />
@@ -220,7 +220,7 @@ const Foundation = () => {
           </li>
           <li className='list-decimal mt-2'>
             Transfer your donation: account: “Bumrungrad Hospital Foundation,”
-            account number 197-0-11115-7, Bangkok Bank, Nana Nua Branch
+            account number 197-0-11115-7, Bangkok Bank, Nana Nua Branch.
           </li>
         </ol>
         <p className='text-[16px] py-3 text-blue font-semibold'>
@@ -236,12 +236,12 @@ const Foundation = () => {
         <p className='text-[16px] py-6 text-blue font-semibold'>
           Contacting the Bumrungrad Hospital Foundation
         </p>
-        <ol className='pl-10'>
-          <li className='list-disc mt-2'>
+        <ol className='pl-10 list-decimal'>
+          <li className=' mt-2'>
             To make a donation or to request a receipt for your donation, please
-            call: Ms. Orathai - 02 011 5006 or Ms. Porranee - 02 2011 5049
+            call: Ms. Orathai – 02 011 5006 or Ms. Porranee – 02 2011 5049
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             To the inquire about how to support foundation projects, please
             call: Ms. Chulaluck 084 751 2483 / Email chulaluck@bumrungrad.com
           </li>
