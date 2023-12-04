@@ -32,7 +32,7 @@ const Accreditation = () => {
       </div>
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          Bumrungrad Recognitions for Quality and Safety
+          Bumrungrad Recognitions for Quality Awards and Safety
         </h2>
         <p className='text-justify mt-3'>
           At Bumrungrad International Hospital, we strive to improve the health
@@ -50,23 +50,24 @@ const Accreditation = () => {
           <hr />
         </div>
         <p className='text-justify'>
-          On March 1, 2023 - Newsweek announced their “World's Best Hospitals
-          2023” via www.newsweek.com. Bumrungrad International Hospital was
-          ranked the number one hospital in Thailand (World's Best Hospitals
-          2023 – Thailand), with a score of 93.00%, among the 30 Thai hospitals
-          listed on their best hospitals in Thailand list. This is the third
-          year in a row that Bumrungrad has been ranked the number one Thai
-          hospital. In addition, Bumrungrad was the only Thai hospital among
-          their top 250 hospitals in the world — coming in at 182nd. The global
-          board of renowned experts determined the rankings based on four key
-          criteria: 1) Recommendations from medical experts (doctors, hospital
-          managers, and more than 80,000 healthcare professionals from 2,300
-          hospitals in 28 countries; 2) Results from patient experience surveys;
-          3) Hospital quality metrics: quality of care for specific treatments,
-          hygiene measures and patient safety, and ratio of patients to
-          doctors/nurses; and 4) Patient Reported Outcome Measures (PROMs)
-          implementation survey. This was the first time that PROMs have been
-          used in the process.
+          Newsweek Ranks Bumrungrad the Best Thai Hospital 3 Years in a Row: On
+          March 1, 2023 – Newsweek announced their “World’s Best Hospitals 2023”
+          via www.newsweek.com. Bumrungrad International Hospital was ranked the
+          number one hospital in Thailand (World’s Best Hospitals 2023 –
+          Thailand), with a score of 93.00%, among the 30 Thai hospitals listed
+          on their best hospitals in Thailand list. This is the third year in a
+          row that Bumrungrad has been ranked the number one Thai hospital. In
+          addition, Bumrungrad was the only Thai hospital among their top 250
+          hospitals in the world — coming in at 182nd. The global board of
+          renowned experts determined the rankings based on four key criteria:
+          1) Recommendations from medical experts (doctors, hospital managers,
+          and more than 80,000 healthcare professionals from 2,300 hospitals in
+          28 countries; 2) Results from patient experience surveys; 3) Hospital
+          quality metrics: quality of care for specific treatments, hygiene
+          measures and patient safety, and ratio of patients to doctors/nurses;
+          and 4) Patient Reported Outcome Measures (PROMs) implementation
+          survey. This was the first time that PROMs have been used in the
+          process
         </p>
         <div className='mt-10'>
           <img
@@ -131,12 +132,12 @@ const Accreditation = () => {
           outside the industry, inspecting how each hospital operates and holds
           up to the international standards of quality set forth by the United
           States and Canada. Bumrungrad is honored to be recognized by the
-          Healthcare Accreditation Institute.
+          Healthcare Accreditation Institute
         </p>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            World's Best Smart Hospitals 2021
+            World’s Best Smart Hospitals 2021
           </p>
           <hr />
         </div>
@@ -150,7 +151,7 @@ const Accreditation = () => {
         </div>
         <p className='text-justify mt-5'>
           2021: Bumrungrad International Hospital has been awarded on Newsweek’s
-          list of World's Best Smart Hospitals 2021, the #1 hospital in all of
+          list of World’s Best Smart Hospitals 2021, the #1 hospital in all of
           Thailand, and one of the world’s top 250 hospitals. From integrating
           new technologies and digital to ensure that every patient will
           receives good quality health care.
@@ -182,14 +183,14 @@ const Accreditation = () => {
           </li>
           <li className='list-decimal mt-2'>
             Excellence in Marketing to a Specific Audience – Bumrungrad Pride
-            Clinic - Finalist
+            Clinic – Finalist
           </li>
         </ol>
         <p className='text-justify mt-5'>
           Recipients were selected by a panel of judges that consisted of
           qualified marketing professionals and industry leaders from across the
           ASEAN region. This award has previously been held in Malaysia,
-          Singapore, Hong Kong and the Philippines.
+          Singapore, Hong Kong and the Philippines
         </p>
         <div className='my-10'>
           <hr />
@@ -223,7 +224,7 @@ const Accreditation = () => {
           VitalLife Scientific Wellness Center, a subsidiary of Bumrungrad
           International Hospital, has been recognized as a industry awards
           finalist in the Healthcare category at Kentico Xperience Site of the
-          Year 2020. It's one of the world's most popular content management
+          Year 2020. It’s one of the world’s most popular content management
           systems.
         </p>
         <div className='my-10'>
@@ -244,8 +245,7 @@ const Accreditation = () => {
         <p className='text-justify mt-5'>
           Bumrungrad International Hospital has been received Best Health Care &
           Aesthetic Center Influencer Campaign, based on our performance on
-          social media by categories Health Care & Aesthetic Centers. The only
-          one hospital to achieve this awards of this year.
+          social media by
         </p>
         <div className='my-10'>
           <hr />
@@ -315,7 +315,7 @@ const Accreditation = () => {
         <p className='text-justify mt-5'>
           Bumrungrad International Hospital has been received Thailand Digital
           Transformation Awards by categories Best Customer Experience Award
-          2022 with the project "Pentagon Search: Finding Everything", which was
+          2022 with the project “Pentagon Search: Finding Everything”, which was
           the second consecutive year of this award.
         </p>
         <p className='text-justify mt-5'>
@@ -347,7 +347,7 @@ const Accreditation = () => {
           <hr />
         </div>
         <p className='text-justify mt-5'>
-          “Thailand Best Employer Brand” and “Excellence in Training”
+          “Thailand Best Employer Brand” and “Excellence in Training”.
         </p>
         <div className='my-10'>
           <hr />
@@ -513,7 +513,7 @@ const Accreditation = () => {
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
             Global Health and Travel – 2019 APAC Healthcare and Medical Tourism
-            Awards
+            Awards:
           </p>
           <hr />
         </div>
@@ -525,31 +525,31 @@ const Accreditation = () => {
             srcset=''
           />
         </div>
-        <ol className='mt-6 ml-8'>
-          <li className='list-disc mt-2'>
+        <ol className='mt-6 ml-8 list-decimal'>
+          <li className=' mt-2'>
             2019 Medical Tourism Hospital of the Year in Asia Pacific
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Integrated Healthcare Clinic of the Year in Asia Pacific
             (Vitallife Wellness Center)
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Smart Facility of the Year in Asia Pacific
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Value Based Hospital of the Year in Asia Pacific
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Orthopaedic Service Provider of the Year in Asia Pacific
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Women’s Health and Wellness Service Provider of the Year in
             Asia Pacific
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Transplant Service Provider of the Year in Asia Pacific
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             2019 Bariatric Service Provider of the Year in Asia Pacific
           </li>
         </ol>
@@ -586,7 +586,7 @@ const Accreditation = () => {
           <hr />
         </div>
         <p className='text-justify mt-5'>
-          Brandage Online - “Thailand’s Most Social Power Brand 2018-2019”
+          Brandage Online – “Thailand’s Most Social Power Brand 2018-2019”
         </p>
         <div className='my-10'>
           <hr />
@@ -626,6 +626,27 @@ const Accreditation = () => {
           accredited by The College of American Pathologists (CAP) in 2016. This
           accreditation acknowledges the accuracy and consistent quality of our
           diagnoses and test results.
+        </p>
+        <p className='text-justify mt-5 text-blue font-semibold'>
+          Excellence in Health Tourism
+        </p>
+        <p className='text-justify mt-2'>
+          Bumrungrad is the first private hospital to receive the Award of
+          Outstanding Performance in Medically-Oriented Establishment by the
+          Thailand Tourism Award in 2008. The designation comes from The Tourism
+          Authority of Thailand, honoring Bumrungrad’s efforts in pioneering
+          excellent medical care for tourists.
+        </p>
+        <p className='text-justify mt-5 text-blue font-semibold'>
+          Organizational Excellence
+        </p>
+        <p className='text-justify mt-2'>
+          Thailand Quality Class (TQC) Award is based on the famous Malcolm
+          Baldrige Award in the United States. Founded in 2002, TQC audits an
+          organization’s strategic, management and operational processes.
+          Bumrungrad is the first private hospital to qualify for TQC, and the
+          Deputy Prime Minister Korbsak Sabhavasu presented the award to Mr.
+          Mack Banner, Bumrungrad International’s CEO, in 2008
         </p>
         <div className='my-10'>
           <hr />

@@ -23,7 +23,7 @@ const OneNews = () => {
           <div className='lg:w-1/2'>
             <img
               src={oneNews?.newsImage}
-              alt=''
+              alt='Bumrungrad Hospita'
               className='lg:h-[40vh]'
               srcset=''
             />

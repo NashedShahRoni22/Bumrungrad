@@ -28,23 +28,29 @@ export default function WhyUs() {
   const sliderImgs = [
     {
       src: slider6,
+      alt: 'Bumrungrad Hospital',
     },
     {
       src: slider5,
+      alt: 'Bumrungrad Hospital',
     },
     {
       src: slider4,
+      alt: 'Bumrungrad Hospital',
     },
     {
       src: slider3,
+      alt: 'Bumrungrad Hospital',
     },
     {
       src: slider2,
+      alt: 'Bumrungrad Hospital',
     },
     {
       src: slider1,
+      alt: 'Bumrungrad Hospital',
     },
-  ];
+  ]
   return (
     <div className='p-5 md:p-10 md:container md:mx-auto'>
       <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
@@ -69,7 +75,7 @@ export default function WhyUs() {
           <SwiperSlide key={i}>
             <img
               src={s.src}
-              alt='Bumrungrad Hospital'
+              alt={s.alt}
               className='object-cover'
             />
           </SwiperSlide>

@@ -18,27 +18,32 @@ const services = [
     name: 'Book Appointment',
     img: appointment,
     pageTo: '/appointment',
+    alt: 'Bumrungrad Hospital',
   },
   {
     name: 'Visa Processing',
     img: hotelReservation,
     pageTo: '/visaprocessing',
+    alt: 'Bumrungrad Hospital',
   },
   {
     id: 3,
     name: 'Order Medicine',
     img: orderMedicine,
     pageTo: '/orderMedicine',
+    alt: 'Bumrungrad Hospital',
   },
   {
     name: 'Medical Records',
     img: medicalRecords,
     pageTo: '/medicalRecord',
+    alt: 'Bumrungrad Hospital',
   },
   {
     name: 'Tele Medicine',
     img: teleMedicine,
     pageTo: '/telemedicine',
+    alt: 'Bumrungrad Hospital',
   },
   {
     id: 2,
@@ -46,6 +51,7 @@ const services = [
     img: airimg,
     form: <AirAmbulanceForm />,
     height: 'md:w-[750px]',
+    alt: 'Bumrungrad Hospital',
   },
   {
     id: 7,
@@ -53,6 +59,7 @@ const services = [
     img: airticket,
     form: <AirtTcket />,
     height: 'h-[470px] overflow-auto md:w-[750px]',
+    alt: 'Bumrungrad Hospital',
   },
   {
     id: 8,
@@ -60,6 +67,7 @@ const services = [
     img: airpickup,
     form: <AirPickup />,
     height: 'md:w-[750px]',
+    alt: 'Bumrungrad Hospital',
   },
 ]
 
@@ -90,7 +98,7 @@ export default function Services(props) {
             >
               <img
                 src={s.img}
-                alt='Bumrungrad Hospital'
+                alt={s.alt}
                 className='h-[100px] w-[100px]'
               />
               <h5 className='text-center font-semibold text-blue'>{s.name}</h5>

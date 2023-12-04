@@ -43,7 +43,7 @@ export default function HomePackages() {
               key={i}
               className='flex flex-col justify-between gap-2 shadow hover:shadow-xl duration-300 ease-linear'
             >
-              <img src={p?.cover_photo} alt='' />
+              <img src={p?.cover_photo} alt='Bumrungrad Hospita' />
               <div className='p-2.5'>
                 <p className='font-semibold text-blue md:text-xl'>{p?.title}</p>
                 <p>{p?.description.slice(0, 160)}</p>

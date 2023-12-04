@@ -1,9 +1,8 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import img from '../../assets/contact.svg'
+import img from '../../assets/Bumrungrad hospital.svg'
 import { TextField } from '@mui/material'
 import HealingIcon from '@mui/icons-material/Healing'
-
 export default function HomeContact() {
   const form = useRef()
   const sendEmail = (e) => {

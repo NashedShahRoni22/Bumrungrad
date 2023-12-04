@@ -28,7 +28,7 @@ const FactSheet = () => {
         <p className='text-justify'>
           Bumrungrad aspires to deliver innovative clinical and service
           experiences, accomplish operational excellence and establish
-          transdisciplinary care teams with quality and humanized care.
+          transdisciplinary care teams with quality and humanized care
         </p>
         <div className='my-10'>
           <hr />
@@ -44,22 +44,18 @@ const FactSheet = () => {
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Main Hospital Facility (opened 1997)
+            Main Hospital Facility & services (opened 1997)
           </p>
           <hr />
         </div>
-        <ol className='pl-6'>
-          <li className='list-disc mt-2'>
-            One of the largest private hospitals in Southeast Asia{' '}
+        <ol className='pl-6 list-decimal'>
+          <li className=' mt-2'>
+            One of the largest private hospitals in Southeast Asia
           </li>
-          <li className='list-disc mt-2'>
-            12 stories with underground parking
-          </li>
-          <li className='list-disc mt-2'>70,262 square meters</li>
-          <li className='list-disc mt-2'>Fully licensed medical heliport</li>
-          <li className='list-disc mt-2'>
-            Hospital-wide Wi-Fi network coverage
-          </li>
+          <li className=' mt-2'>12 stories with underground parking</li>
+          <li className=' mt-2'>70,262 square meters</li>
+          <li className=' mt-2'>Fully licensed medical heliport</li>
+          <li className=' mt-2'>Hospital-wide Wi-Fi network coverage</li>
         </ol>
         <div className='mt-4'>
           <img src={buildingimg} alt='Bumrungrad Hospital' srcset='' />
@@ -69,7 +65,7 @@ const FactSheet = () => {
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Outpatient Clinic Facility (opened 2008)
+            Outpatient Clinic Facility & Services (opened 2008)
           </p>
           <hr />
         </div>
@@ -99,17 +95,19 @@ const FactSheet = () => {
             extension services, first-time registration services, Starbucks, and
             a bookstore
           </li>
-          <li className='list-disc mt-2'>Patient Volumes & Revenues</li>
-          <li className='list-[square] ml-9 mt-2'>
-            Over 1.1 million patients treated per year (OPD and IPD)
-          </li>
-          <li className='list-[square] ml-9 mt-2'>
-            Over 520,000 are international patients, from over 190 different
-            countries
-          </li>
-          <li className='list-[square] ml-9 mt-2'>
-            Over USD 546 million annual turnover in 2018
-          </li>
+          <li className='list-disc mt-2'>Patient Volumes & Revenues -</li>
+          <ol className='list-decimal'>
+            <li className=' ml-9 mt-2'>
+              Over 1.1 million patients treated per year (OPD and IPD)
+            </li>
+            <li className=' ml-9 mt-2'>
+              Over 520,000 are international patients, from over 190 different
+              countries
+            </li>
+            <li className=' ml-9 mt-2'>
+              Over USD 546 million annual turnover in 2018
+            </li>
+          </ol>
         </ol>
         <div className='mt-4'>
           <img src={clinicimg} alt='Bumrungrad Hospital' srcset='' />
@@ -121,15 +119,15 @@ const FactSheet = () => {
           </p>
           <hr />
         </div>
-        <ol className='pl-6'>
-          <li className='list-disc mt-2'>International management team</li>
-          <li className='list-disc mt-2'>Over 4,800 employees</li>
-          <li className='list-disc mt-2'>
+        <ol className='pl-6 list-decimal'>
+          <li className=' mt-2'>International management team</li>
+          <li className=' mt-2'>Over 4,800 employees</li>
+          <li className=' mt-2'>
             Over 1,200 physicians and dentists, many with international
             training/certification
           </li>
-          <li className='list-disc mt-2'>Fully licensed medical heliport</li>
-          <li className='list-disc mt-2'>Over 900 nurses</li>
+          <li className=' mt-2'>Fully licensed medical heliport</li>
+          <li className=' mt-2'>Over 900 nurses</li>
         </ol>
         <div className='mt-4'>
           <img src={resourceimg} alt='Bumrungrad Hospital' srcset='' />
@@ -141,24 +139,21 @@ const FactSheet = () => {
           </p>
           <hr />
         </div>
-        <ol className='pl-6'>
-          <li className='list-disc mt-2'>580 Inpatient Beds include :</li>
-          <li className='list-[square] ml-9 mt-2'>
-            Medical/Surgical/OB/Pediatrics
-          </li>
-          <li className='list-[square] ml-9 mt-2'>
-            Adult Intensive Care (ICU)
-          </li>
-          <li className='list-[square] ml-9 mt-2'>Cardiac Care (CCU)</li>
-          <li className='list-[square] ml-9 mt-2'>Pediatric Intensive Care</li>
-          <li className='list-[square] ml-9 mt-2'>
-            Level IV Neonatal Intensive Care
-          </li>
-          <li className='list-disc mt-2'>
+        <ol className='pl-6 list-decimal'>
+          <li className=' mt-2'>580 Inpatient Beds include :</li>
+          <ol className='list-decimal'>
+            <li className=' ml-9 mt-2'>Medical/Surgical/OB/Pediatrics</li>
+            <li className=' ml-9 mt-2'>Adult Intensive Care (ICU)</li>
+            <li className=' ml-9 mt-2'>Cardiac Care (CCU)</li>
+            <li className=' ml-9 mt-2'>Pediatric Intensive Care</li>
+            <li className=' ml-9 mt-2'>Level IV Neonatal Intensive Care</li>
+          </ol>
+
+          <li className=' mt-2'>
             Single Deluxe Rooms, Premier Atrium Deluxe, Premier Royal Suites, 2
             Bedded, and 4 Bedded
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Wi-Fi Connection: a wide selection of television channels as well as
             the hospital’s information and services
           </li>
@@ -248,7 +243,7 @@ const FactSheet = () => {
           <li className='list-disc mt-2'>
             VitalLife Scientific Wellness Center
           </li>
-          <li className='list-disc mt-2'>Women's Center</li>
+          <li className='list-disc mt-2'>Women’s Center</li>
         </ol>
         <div className='mt-4'>
           <img src={bumrunCenterimg} alt='Bumrungrad Hospital' srcset='' />
@@ -312,7 +307,7 @@ const FactSheet = () => {
         <p className='text-justify'>
           Australia, Bahrain, Bangladesh, Cambodia, Chad, China, Ethiopia, Hong
           Kong, Indonesia, Kenya, Kuwait, Laos, Mongolia, Myanmar, Nepal, Oman,
-          Pakistan, Qatar, Russia, Sudan, UAE, Vietnam and Virtual{' '}
+          Pakistan, Qatar, Russia, Sudan, UAE, Vietnam and Virtual.
         </p>
         <div className='mt-4'>
           <img src={techimg} alt='Bumrungrad Hospital' srcset='' />
@@ -324,22 +319,18 @@ const FactSheet = () => {
           </p>
           <hr />
         </div>
-        <ol className='pl-6'>
-          <li className='list-disc mt-2'>Over 150 interpreters,</li>
-          <li className='list-disc mt-2'>
-            International/airport concierge service,
-          </li>
-          <li className='list-disc mt-2'>Embassy assistance,</li>
-          <li className='list-disc mt-2'>VIP airport transfers</li>
-          <li className='list-disc mt-2'>E-mail contact center,</li>
-          <li className='list-disc mt-2'>
+        <ol className='pl-6 list-decimal'>
+          <li className=' mt-2'>Over 150 interpreters,</li>
+          <li className=' mt-2'>International/airport concierge service,</li>
+          <li className=' mt-2'>Embassy assistance,</li>
+          <li className=' mt-2'>VIP airport transfers</li>
+          <li className=' mt-2'>E-mail contact center,</li>
+          <li className=' mt-2'>
             International insurance coordination and international medical
             coordinators,
           </li>
-          <li className='list-disc mt-2'>Visa extension counter,</li>
-          <li className='list-disc mt-2'>
-            Muslim prayer room with 300 person capacity
-          </li>
+          <li className=' mt-2'>Visa extension counter,</li>
+          <li className=' mt-2'>Muslim prayer room with 300 person capacity</li>
         </ol>
         <div className='my-10'>
           <hr />
@@ -348,85 +339,81 @@ const FactSheet = () => {
           </p>
           <hr />
         </div>
-        <ol className='pl-6'>
-          <li className='list-disc mt-2'>
+        <ol className='pl-6 list-decimal'>
+          <li className=' mt-2'>
             The first private hospital awarded Thailand Hospital Accreditation
             (1999)
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Asia’s first hospital accredited by the US-based Joint Commission
             International (JCI) in 2002.
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Reaccredited by the JCI in 2005, 2008, 2011, 2014, and 2017 2020
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Thailand’s Model Organization on Labor Relations Management Award by
             the Ministry of Labor
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             First hospital in Thailand to receive accreditation from the College
             of American Pathologists (CAP) – Gold standard of operational
             excellence, for its clinical laboratory
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             First hospital in Asia to receive Pathway to Excellence® by American
             Nurse Credentialing Center (ANCC) – the positive practice
             environment for nurses by valuing nurses’ contributions as patient
             care partners
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Center of Excellence Award, by CSSD – Award for the best sterilizing
             process for instrument and medical device
           </li>
-          <li className='list-disc mt-2'>
-            Global Health and Travel Magazine Awards:
-          </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>Global Health and Travel Magazine Awards:</li>
+          <li className=' mt-2'>
             Medical Tourism Hospital of the Year in Asia Pacific 2017 and 2018,
           </li>
-          <li className='list-disc mt-2'>
-            Hospital of the Year Thailand 2018,
-          </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>Hospital of the Year Thailand 2018,</li>
+          <li className=' mt-2'>
             Smart Hospital of the Year in Asia Pacific 2018,
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Transplant Service Provider of the Year in Asia Pacific 2018,
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Orthopaedic Service Provider of the Year in Asia 2018,
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             ENT Service Provider of the Year in Asia Pacific 2018,
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Cosmetic Surgery Provider of the Year in Asia Pacific 2018,
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Cardiology Service Provider of the Year in Asia Pacific 2018
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             First hospital in the world outside the United States to achieve
             Global Healthcare Accreditation (GHA) with Excellence 2017 ,
             Reaccredited in 2021
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Hospital of the Year – Thailand awarded by Healthcare Asia 2018
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             Most Trusted Hospital – Thailand awarded by Thai business Excellence
             Awards 2018
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             First in Asia – Center of Excellence for Managing Infection Risk
             (MIR) Standard, by DNV-GL – The management of infection risk during
             the delivery of outpatient diagnostic, surgical, therapeutic and
             rehabilitation care and inpatient medical, surgical, maternity care
           </li>
-          <li className='list-disc mt-2'>
+          <li className=' mt-2'>
             First hospital in the world to achieve Certification of Conformance
-            with GHA COVID-19 Guidelines for Medical Travel Programs
+            with GHA COVID-19 Guidelines for Medical Travel Program
           </li>
         </ol>
         <div className='mt-4'>

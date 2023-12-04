@@ -220,7 +220,7 @@ const OrderMedicine = () => {
           rel='noopener noreferrer'
           className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
         >
-          <img src={whatsapp} alt='line_logo' className='h-[40px]' />
+          <img src={whatsapp} alt='Bumrungrad Hospita' className='h-[40px]' />
           <span className='text-blue font-semibold'>
             Send image in Whatsapp
           </span>
