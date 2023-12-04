@@ -52,7 +52,7 @@ export default function AppBar() {
     <nav className='bg-cream sticky top-0 z-20'>
       <section className='px-5 py-3 relative md:container md:mx-auto flex items-center justify-between'>
         <Link to={'/'}>
-          <img src={logo} alt='nav_logo' className='w-[200px]' />
+          <img src={logo} alt='Bumrungrad Hospital' className='w-[200px]' />
         </Link>
         {/* Mobile View  */}
         <div className='min-w-full fixed top-16 left-0 md:hidden z-30'>

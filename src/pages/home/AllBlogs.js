@@ -41,7 +41,7 @@ const AllBlogs = () => {
               key={i}
               className='shadow rounded hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
             >
-              <img src={d.blogImage} alt='' className='' />
+              <img src={d.blogImage} alt='Bumrungrad Hospita' className='' />
               <div className='p-4'>
                 {' '}
                 <h5 className='font-semibold text-blue text-lg'>

@@ -162,7 +162,7 @@ const VisaProcessing = () => {
               href='http://wa.me/+8801847284867'
               target='_blank'
               rel='noopener noreferrer'
-              alt='whatsApp'
+              alt='Bumrungrad Hospital'
             >
               <div className='flex items-center justify-center gap-2 mt-2'>
                 <WhatsAppIcon className='text-green' />
