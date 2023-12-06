@@ -7,9 +7,27 @@ import bumrunCenterimg from '../../../assets/about_bumrungrad/Bumrungrad_Center.
 import techimg from '../../../assets/about_bumrungrad/Bumrungrad_Technology.jpg'
 import internimg from '../../../assets/about_bumrungrad/Bumrungrad_inter.jpg'
 import responimg from '../../../assets/about_bumrungrad/Bumrungrad_Social-Responsibility.jpg'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const FactSheet = () => {
   return (
     <section className='mx-5 md:container md:mx-auto'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Bumrungrad Hospital: Fact Sheet & Services | Your Health Journey
+          </title>
+          <meta
+            name='description'
+            content="Explore Bumrungrad Hospital's Fact Sheet & Services—your gateway to exceptional care. Begin your health journey with our comprehensive offerings."
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/about_factsheet'
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>

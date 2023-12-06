@@ -37,9 +37,9 @@ export default function HomeContact() {
         className='w-full flex flex-col gap-4 shadow-xl p-10 rounded lg:w-1/2 duration-300 ease-linear'
       >
         <HealingIcon className='!text-5xl text-blue' />
-        <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
+        <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
           Say hello!
-        </h1>
+        </h2>
         <TextField
           label='Enter Name'
           name='user_name'

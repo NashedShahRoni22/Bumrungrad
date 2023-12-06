@@ -15,9 +15,26 @@ import Disclaimer1 from './Disclaimer1'
 
 import HomeContact from './HomeContact'
 
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+
 export default function Home() {
   return (
     <section>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Bumrungrad Hospital | Premier Healthcare | Schedule Your Appointment
+          </title>
+          <meta
+            name='description'
+            content='Discover premier healthcare at Bumrungrad Hospital. Expert care and personalized services You can just book your appointment for a healthier tomorrow'
+          />
+          <link rel='canonical' href='https://bumrungraddiscover.com/' />
+        </Helmet>
+      </HelmetProvider>
+
       <LandingBanner />
       <Disclaimer1 />
       <BookingModal />

@@ -1,9 +1,27 @@
 import React from 'react'
 import missionVissionimg from '../../../assets/about_bumrungrad/Bumrungrad_MissionVission.jpg'
 import environmentimg from '../../../assets/about_bumrungrad/Bumrungrad_Environmental-(1).jpg'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const VissionMisson = () => {
   return (
     <section className='mx-5 md:container md:mx-auto'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Bumrungrad Hospital: Unveiling Our Mission and Core Values
+          </title>
+          <meta
+            name='description'
+            content="Discover Bumrungrad Hospital's mission and values, guiding a commitment to excellence in patient care. Your well-being is our top priority."
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/about_vissionMisson'
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] vissionMission-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>

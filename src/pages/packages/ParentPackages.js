@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
 import Loader from '../../shared/Loader/Loader'
 import { Link } from 'react-router-dom'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 export default function ParentPackages() {
   const [loader, setLoader] = useState(false)
@@ -23,6 +24,24 @@ export default function ParentPackages() {
   }, [])
   return (
     <section className='mx-5 md:container md:mx-auto py-10'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Bumrungrad Hospital: Explore Comprehensive Healthcare Packages
+          </title>
+          <meta
+            name='description'
+            content="Explore Bumrungrad Hospital's comprehensive healthcare packages for personalized wellness. Your path to optimal health begins here. #HealthcarePackages
+"
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/packages'
+          />
+        </Helmet>
+      </HelmetProvider>
       <h2 className='text-xl font-semibold md:text-2xl lg:text-3xl capitalize text-blue'>
         our packages
       </h2>

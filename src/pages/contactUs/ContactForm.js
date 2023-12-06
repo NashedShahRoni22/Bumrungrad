@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser'
 import contactAnim from '../../assets/anim/contact.json'
 import Lottie from 'lottie-react'
 import { TextField } from '@mui/material'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 export default function ContactForm() {
   const style = {
@@ -33,6 +34,25 @@ export default function ContactForm() {
 
   return (
     <div>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Contact Bumrungrad Hospital for Expert Care and Assistance!
+          </title>
+          <meta
+            name='description'
+            content='Connect with Bumrungrad Hospital for expert care and assistance. Reach out today to experience world-class healthcare and personalized support.
+
+'
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/locate_us'
+          />
+        </Helmet>
+      </HelmetProvider>
       <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
         Contact Us
       </h1>

@@ -20,10 +20,27 @@ import globalbusinessaward1imga from '../../../assets/about_bumrungrad/global-bu
 import globalbusinessaward2imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_global-business-awards.png'
 import microwSoftaward2imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_MicrosoftTeams-image-(21).jpg'
 import thaiCorporateimga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Corporate-Excellence-Awards-2019.png'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 const Accreditation = () => {
   return (
     <section className='mx-5 md:container md:mx-auto'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>Bumrungrad Hospital: Explore The Accreditation & Awards</title>
+          <meta
+            name='description'
+            content="Discover Bumrungrad's Accolades. Elevate your health journey with excellence at our hospital. Explore now! #BumrungradHospital
+"
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/about_accreditation'
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
