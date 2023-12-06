@@ -5,9 +5,27 @@ import awardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Bumr
 import specialtiesimg from '../../../assets/about_bumrungrad/Bumrungrad_specialties-2022.jpg'
 import inovationsimg from '../../../assets/about_bumrungrad/Bumrungrad_inovation.jpg'
 import careingimg from '../../../assets/about_bumrungrad/Bumrungrad_Caring.jpg'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const Bumrungrad = () => {
   return (
     <section className='mx-5 md:container md:mx-auto'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Learn About Bumrungrad Hospital: Excellence in Healthcare
+          </title>
+          <meta
+            name='description'
+            content="Explore Bumrungrad Hospital's excellence in healthcare. Discover ctting-edge services and compassionate care for your well-being"
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/about_bumrungrad'
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>

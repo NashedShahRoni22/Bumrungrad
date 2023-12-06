@@ -133,9 +133,9 @@ export default function ClinicCenters() {
                 </div>
                 <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70'></div>
                 <div className='absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0'>
-                  <h1 className='mb-1 md:mb-3 font-dmserif md:text-xl font-bold text-white'>
+                  <h2 className='mb-1 md:mb-3 font-dmserif md:text-xl font-bold text-white'>
                     {sc?.name}
-                  </h1>
+                  </h2>
                   <p className='text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
                     <span className='md:hidden'>
                       {sc?.desc.slice(0, 60)} ...

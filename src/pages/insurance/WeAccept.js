@@ -5,6 +5,7 @@ import goodvibesimg from '../../assets/insurance/Bumrungrad  Hospital_Good-Vibes
 import img1 from '../../assets/insurance/Bumrungrad  Hospital_Allianz-Ayudhya1.jpg'
 
 import OneWeAccept from './OneWeAccept'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const WeAccept = () => {
   const questionsAns = [
     {
@@ -44,6 +45,23 @@ const WeAccept = () => {
   ]
   return (
     <section className='mx-5 md:container md:mx-auto'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>
+            Bumrungrad Hospital: Accepted Insurance | Your Healthcare Path
+          </title>
+          <meta
+            name='description'
+            content='Bumrungrad Hospital welcomes you to a world of care. Explore our accepted insurance plans for a seamless healthcare journey.'
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/insurance_weaccept'
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] insurance-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>

@@ -1,8 +1,24 @@
 import React from 'react'
 import qrimage from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_QR_bumrungrad_foundation-(3).png'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const Foundation = () => {
   return (
     <section className='mx-5 md:container md:mx-auto'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>Bumrungrad Foundation: Support Health, Donate Now!</title>
+          <meta
+            name='description'
+            content="Support Bumrungrad Hospital's mission with a donation. Empower health initiatives and transform lives. Join us, and make a difference. Donate now!"
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/about_foundation'
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
