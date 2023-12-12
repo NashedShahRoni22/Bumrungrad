@@ -112,12 +112,14 @@ const ChildPackageDetails = () => {
                     <span className='text-blue'>Price:</span>{' '}
                     {childDetailsPackage?.price} THB
                   </h5>
+                  {childDetailsPackage?.shift1 && (
+                    <ul className='text-[18px] md:text-[24px] list-disc'>
+                      <p className='text-blue font-semibold'>Shift:</p>
+                      <li className='ml-5'>{childDetailsPackage?.shift1}</li>
+                      <li className='ml-5'>{childDetailsPackage?.shift1}</li>
+                    </ul>
+                  )}
 
-                  <ul className='text-[18px] md:text-[24px] list-disc'>
-                    <p className='text-blue font-semibold'>Shift:</p>
-                    <li className='ml-5'>{childDetailsPackage?.shift1}</li>
-                    <li className='ml-5'>{childDetailsPackage?.shift1}</li>
-                  </ul>
                   <h5 className='text-[18px] md:text-[24px]'>
                     <span className='text-blue font-semibold'>
                       Location: <br />{' '}
