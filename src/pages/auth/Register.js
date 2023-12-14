@@ -76,7 +76,7 @@ export default function Register() {
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 200) {
-            console.log(data);
+            console.log(data)
             SetError('')
             setLoader(false)
             window.alert('Your Registration is Successfull')
@@ -89,15 +89,15 @@ export default function Register() {
   }
 
   return (
-    <div className='md:p-10 my-5 md:my-10 md:container mx-5 md:mx-auto'>
-      <section className='p-5 shadow'>
+    <section className='md:p-10 my-5 md:my-10 md:container mx-5 md:mx-auto'>
+      <div className='p-5 md:p-10 shadow-lg shadow-blue rounded-xl'>
         {/* first-card */}
         <section className=''>
-          <h5 className='mb-4 text-xl md:text-3xl text-semibold my-5 font-semibold text-blue'>
-            Welcome
+          <h5 className='mb-4 text-xl md:text-3xl text-semibold font-semibold text-blue'>
+            Register for premium health care services!
           </h5>
           <Divider />
-          <div className='grid md:grid-cols-2 gap-4 mt-5'>
+          <div className='grid md:grid-cols-2 gap-4 mt-5 md:mt-10'>
             <div>
               <p className='mb-2.5'>Enter First Name</p>
               <TextField
@@ -150,7 +150,7 @@ export default function Register() {
               <TextField
                 fullWidth
                 placeholder='Required'
-                type="email"
+                type='email'
                 onChange={(e) => setPataientEmail(e.target.value)}
               />
             </div>
@@ -267,10 +267,12 @@ export default function Register() {
             onClick={handaleRegister}
           >
             Register
-            {loader && <div className="flex gap-1">
-              <div className="h-2 w-2 shadow bg-white rounded-full"></div>
-              <div className="h-2 w-2 shadow bg-white rounded-full animate-bounce"></div>
-            </div>}
+            {loader && (
+              <div className='flex gap-1'>
+                <div className='h-2 w-2 shadow bg-white rounded-full'></div>
+                <div className='h-2 w-2 shadow bg-white rounded-full animate-bounce'></div>
+              </div>
+            )}
           </button>
         </div>
         <p className='mt-4 text-center'>
@@ -279,7 +281,7 @@ export default function Register() {
             Please Login
           </Link>{' '}
         </p>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

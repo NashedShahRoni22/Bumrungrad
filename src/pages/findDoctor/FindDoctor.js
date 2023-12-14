@@ -1,51 +1,50 @@
-import React, { useEffect, useState } from "react";
-import { TextField } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import CachedIcon from "@mui/icons-material/Cached";
-import CloseIcon from "@mui/icons-material/Close";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Loader from "../../shared/Loader/Loader";
-import CallMadeIcon from "@mui/icons-material/CallMade";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import notFoundAnim from "../../assets/anim/notfound.json";
-import Lottie from "lottie-react";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { TextField } from '@mui/material'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+import CachedIcon from '@mui/icons-material/Cached'
+import CloseIcon from '@mui/icons-material/Close'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import Loader from '../../shared/Loader/Loader'
+
+import notFoundAnim from '../../assets/anim/notfound.json'
+import Lottie from 'lottie-react'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
+import DialogTitle from '@mui/material/DialogTitle'
+import { Link } from 'react-router-dom'
 
 export default function FindDoctor() {
-  const [advanceBox, setAdvanceBox] = useState(false);
-  const [loader, setLoader] = useState(false);
+  const [advanceBox, setAdvanceBox] = useState(false)
+  const [loader, setLoader] = useState(false)
 
   //filter modal states
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleClickOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
-  const [name, setName] = React.useState("");
-  const [speacility, setSpeacility] = React.useState("");
-  const [subSpeacility, setSubSpeacility] = React.useState("");
-  const [lang, setLang] = React.useState("");
-  const [day, setDay] = React.useState("");
-  const [time, setTime] = React.useState("");
-  const [gender, setGender] = React.useState("");
+  const [name, setName] = React.useState('')
+  const [speacility, setSpeacility] = React.useState('')
+  const [subSpeacility, setSubSpeacility] = React.useState('')
+  const [lang, setLang] = React.useState('')
+  const [day, setDay] = React.useState('')
+  const [time, setTime] = React.useState('')
+  const [gender, setGender] = React.useState('')
 
-  const [doctors, setDoctors] = useState([]);
-  console.log(doctors);
-  const [query, setQuery] = useState({});
+  const [doctors, setDoctors] = useState([])
+  console.log(doctors)
+  const [query, setQuery] = useState({})
   // const postData = {
   //   name,
   //   speacility,
@@ -56,44 +55,44 @@ export default function FindDoctor() {
   //   gender,
   // };
   // console.log(postData);
-  const [specialties, setSpecialities] = useState([]);
-  const [subSpecialties, setSubSpecialities] = useState([]);
+  const [specialties, setSpecialities] = useState([])
+  const [subSpecialties, setSubSpecialities] = useState([])
   const weekdays = [
-    { name: "Saturday" },
-    { name: "Sunday" },
-    { name: "Monday" },
-    { name: "Tuesday" },
-    { name: "Wednesday" },
-    { name: "Thursday" },
-    { name: "Friday" },
-  ];
+    { name: 'Saturday' },
+    { name: 'Sunday' },
+    { name: 'Monday' },
+    { name: 'Tuesday' },
+    { name: 'Wednesday' },
+    { name: 'Thursday' },
+    { name: 'Friday' },
+  ]
   const languages = [
-    { name: "Thai" },
-    { name: "English" },
-    { name: "Arabic" },
-    { name: "Chinese" },
-    { name: "Dutch" },
-    { name: "French" },
-    { name: "German" },
-    { name: "Hindi" },
-    { name: "Japanese" },
-    { name: "Spanish" },
-    { name: "Urdo" },
-  ];
+    { name: 'Thai' },
+    { name: 'English' },
+    { name: 'Arabic' },
+    { name: 'Chinese' },
+    { name: 'Dutch' },
+    { name: 'French' },
+    { name: 'German' },
+    { name: 'Hindi' },
+    { name: 'Japanese' },
+    { name: 'Spanish' },
+    { name: 'Urdo' },
+  ]
 
-  const times = [{ name: "Morning" }, { name: "Evening" }, { name: "Night" }];
-  const genders = [{ name: "Male" }, { name: "Female" }];
+  const times = [{ name: 'Morning' }, { name: 'Evening' }, { name: 'Night' }]
+  const genders = [{ name: 'Male' }, { name: 'Female' }]
 
   const style = {
     height: 300,
-  };
+  }
 
   //get speacilities
   useEffect(() => {
-    fetch("https://api.bumrungraddiscover.com/api/get/specialty")
+    fetch('https://api.bumrungraddiscover.com/api/get/specialty')
       .then((res) => res.json())
-      .then((data) => setSpecialities(data?.response?.data));
-  }, []);
+      .then((data) => setSpecialities(data?.response?.data))
+  }, [])
 
   //get sub speacilities
   useEffect(() => {
@@ -102,35 +101,35 @@ export default function FindDoctor() {
         `https://api.bumrungraddiscover.com/api/get/selected/sub/specialty/${speacility}`
       )
         .then((res) => res.json())
-        .then((data) => setSubSpecialities(data?.response?.data));
+        .then((data) => setSubSpecialities(data?.response?.data))
     }
-  }, [speacility]);
+  }, [speacility])
 
   //get doctors
   useEffect(() => {
-    setLoader(true);
+    setLoader(true)
     // Create a function to fetch data based on the URL
     const fetchData = () => {
       // Create a query string based on your query states
-      const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&shift=${time}&day=${day}`;
+      const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&shift=${time}&day=${day}`
       // Create the base URL
-      const baseUrl = "https://api.bumrungraddiscover.com/api/search/doctor";
+      const baseUrl = 'https://api.bumrungraddiscover.com/api/search/doctor'
       // Create the final URL by appending the query string if it's not empty
-      const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl;
+      const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl
       // Fetch data from the API
       fetch(finalUrl)
         .then((res) => res.json())
         .then((data) => {
-          setDoctors(data.data);
-          setQuery(data.query);
-          setLoader(false);
+          setDoctors(data.data)
+          setQuery(data.query)
+          setLoader(false)
           // console.log(data.query);
         })
-        .catch((error) => console.error(error));
-    };
+        .catch((error) => console.error(error))
+    }
     // Call the fetchData function whenever any state changes
-    fetchData();
-  }, [name, speacility, subSpeacility, lang, day, time, gender]);
+    fetchData()
+  }, [name, speacility, subSpeacility, lang, day, time, gender])
 
   return (
     <section className='min-h-screen'>
@@ -473,34 +472,39 @@ export default function FindDoctor() {
                 Doctor
               </p>
 
-              <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-5'>
+              <div className='grid grid-cols-2 place-items-center  md:grid-cols-3 lg:grid-cols-5 gap-3 my-5'>
                 {doctors?.map((d, i) => (
-                  <Link
-                    to={`/doctor_details/${d.id}`}
-                    className='shadow hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
+                  <div
+                    className='shadow hover:shadow-xl duration-300 ease-linear flex flex-col gap-5 w-full  h-[380px] md:h-[420px] rounded-xl '
                     key={i}
                   >
-                    <img
-                      src={d.cover_photo}
-                      alt='Bumrungrad Hospital'
-                      className='h-[250px] md:h-[350px] lg:h-[400px] w-full rounded-tl rounded-tr'
-                    />
-                    <div className='p-2.5'>
-                      <p className='md:text-xl text-blue font-semibold'>
+                    <div className='relative'>
+                      <img
+                        src={d.cover_photo}
+                        alt='Bumrungrad Hospital'
+                        className='h-[200px] md:h-[250px]  w-full rounded-tl-xl rounded-tr-xl'
+                      />
+                      <div>
+                        <Link
+                          to={`/doctor_details/${d.id}`}
+                          className='flex justify-center'
+                        >
+                          <button className='bg-blue text-sm md:text-base text-white  absolute bottom-0 rounded-tl-xl rounded-tr-xl px-2 md:px-6 py-2'>
+                           
+                              View Profile
+                            
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+
+                    <div className='mb-2.5'>
+                      <p className='text-center md:text-xl text-blue font-bold'>
                         {d?.name}
                       </p>
-                      <p className='mt-2 text-lg'>{d?.specialty}</p>
+                      <p className='text-center mt-1 md:text-lg'>{d?.specialty}</p>
                     </div>
-                    <button className='group bg-blue text-white p-2.5 w-full flex justify-between rounded-bl rounded-br'>
-                      <span className='capitalize'>View Profile</span>
-                      <span className='group-hover:hidden'>
-                        <ArrowForwardIcon />
-                      </span>
-                      <span className='hidden group-hover:block'>
-                        <CallMadeIcon />
-                      </span>
-                    </button>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
