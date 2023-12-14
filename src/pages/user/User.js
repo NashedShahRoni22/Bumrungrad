@@ -57,7 +57,8 @@ export default function User() {
   }
   return (
     <section className='mx-5 md:container md:mx-auto py-10  md:flex md:gap-8 lg:gap-16'>
-      <div className='shadow p-5 rounded relative md:w-1/2'>
+      <div className='shadow p-5 rounded-lg shadow-blue relative md:w-1/2'>
+        <div className='h-16 w-16 bg-blue absolute bottom-5 right-5 rounded-full animate-bounce'></div>
         <h5 className='font-semibold text-lg text-blue'>My Profile</h5>
         <hr className='my-2.5' />
         <p className='flex gap-2'>
@@ -95,12 +96,12 @@ export default function User() {
       </div>
       <div className='mt-5 md:w-1/2'>
         <h5 className='font-semibold text-lg text-blue'>
-          Total Appointment Taken {appointments?.length}
+          Total appointment taken: {appointments?.length}
         </h5>
         <div>
           {appointments?.map((a, i) => (
             <div key={i}>
-              <div className='shadow p-5 mt-2'>
+              <div className='shadow-lg hover:shadow duration-300 ease-linear rounded-xl p-5 mt-2'>
                 <div className='md:flex justify-between'>
                   <div>
                     {a?.doctor && (
@@ -108,7 +109,7 @@ export default function User() {
                     )}
                     {a?.specialty && <p> {a?.specialty} </p>}
                   </div>
-                  <div>
+                  <div className='flex items-center gap-2.5'>
                     {a?.status === '0' && (
                       <p className='mt-3 md:mt-0 w-fit px-2 py-1 bg-blue text-white rounded'>
                         Pending
@@ -124,6 +125,7 @@ export default function User() {
                         Done
                       </p>
                     )}
+                    <div className='h-4 w-4 bg-blue rounded-full animate-pulse'></div>
                   </div>
                 </div>
                 <hr className='my-2.5' />
