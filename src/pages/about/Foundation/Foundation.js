@@ -11,7 +11,8 @@ const Foundation = () => {
           <title>Bumrungrad Foundation: Support Health, Donate Now!</title>
           <meta
             name='description'
-            content="Support Bumrungrad Hospital's mission with a donation. Empower health initiatives and transform lives. Join us, and make a difference. Donate now!"
+            content='Elevate healthcare at Bumrungrad International Hospital. Empower lives through your donation. Join us in making a difference. Donate now!
+'
           />
           <link
             rel='canonical'
@@ -22,27 +23,27 @@ const Foundation = () => {
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
-          Bumrungrad Hospital Foundation
+          BUMRUNGRAD INTERNATIONAL HOSPITAL FOUNDATION
         </h1>
       </div>
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          The Bumrungrad Hospital Foundation
+          The Bumrungrad International Hospital Foundation:
         </h2>
         <p className='text-justify mt-3'>
-          The Bumrungrad Hospital Foundation is a registered non-profit
-          foundation, established in May of 1990 by the founders of Bumrungrad
-          International Hospital. It operates a number of public and charitable
-          programs. Services are provided to help people across the country. The
-          aim is to provide people in underprivileged communities with quality
-          healthcare. The foundation also promotes health education to encourage
-          people to live healthier lives. All donations tax-deductible for both
-          personal and corporate donations.
+          The Bumrungrad International Hospital Foundation is a registered
+          non-profit foundation, established in May of 1990 by the founders of
+          Bumrungrad International Hospital. It operates a number of public and
+          charitable programs. Services are provided to help people across the
+          country. The aim is to provide people in underprivileged communities
+          with quality healthcare. The foundation also promotes health education
+          to encourage people to live healthier lives. All donations
+          tax-deductible for both personal and corporate donations.
         </p>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            The Bumrungrad Hospital Foundation Director
+            The Bumrungrad International Hospital Foundation Director:
           </p>
           <hr />
         </div>
@@ -63,7 +64,7 @@ const Foundation = () => {
           </div>
         </div>
         <h2 className='text-blue mt-12 text-xl md:text-2xl font-semibold'>
-          About the Bumrungrad Hospital Foundation Program
+          About the Bumrungrad International Hospital Foundation Program:
         </h2>
         <div className='my-6'>
           <hr />
@@ -89,9 +90,10 @@ const Foundation = () => {
           on the number of pediatric patients who can undergo surgery each year.
           As a result, there are many children at any given time awaiting
           surgery — with the number increasing with each year. Due to this
-          reason, the Bumrungrad Hospital Foundation together with Bumrungrad
-          International Hospital are doing their parts in social responsibility
-          in helping to provide these children with charitable heart surgeries.
+          reason, the Bumrungrad International Hospital Foundation together with
+          Bumrungrad International Hospital are doing their parts in social
+          responsibility in helping to provide these children with charitable
+          heart surgeries.
         </p>
         <p className='text-justify mt-6'>
           Bumrungrad’s medical teams are proud to offer their experience and
@@ -123,7 +125,7 @@ const Foundation = () => {
         <div className='my-6'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Bumrungrad Mobile Clinic Services in Bangkok
+            Bumrungrad Mobile Clinic Services in Bangkok:
           </p>
           <hr />
         </div>
@@ -146,18 +148,18 @@ const Foundation = () => {
         <div className='my-6'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Project to Support Mukdahan Villagers
+            Project to Support Mukdahan Villagers:
           </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
-          The Bumrungrad Hospital Foundation and Bumrungrad International
-          Hospital have been supporting the villagers of the Nikhom Kham Soi and
-          Khamcha-i Districts of the Mukdahan Province by purchasing their
-          hand-woven wicker baskets to present toiletries in Bumrungrad’s
-          inpatient rooms. This project is a joint effort between Bumrungrad
-          International Hospital, the Bangkok Insurance Foundation, and the
-          Bumrungrad Hospital Foundation.
+          The Bumrungrad International Hospital Foundation and Bumrungrad
+          International Hospital have been supporting the villagers of the
+          Nikhom Kham Soi and Khamcha-i Districts of the Mukdahan Province by
+          purchasing their hand-woven wicker baskets to present toiletries in
+          Bumrungrad’s inpatient rooms. This project is a joint effort between
+          Bumrungrad International Hospital, the Bangkok Insurance Foundation,
+          and the Bumrungrad Hospital Foundation.
         </p>
         <p className='text-justify mt-6'>
           Over a short period, higher-quality wicker products were developed —
@@ -171,7 +173,7 @@ const Foundation = () => {
         <div className='my-6'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Sponsoring Medical Treatments
+            Sponsoring Medical Treatments:
           </p>
           <hr />
         </div>
@@ -179,28 +181,29 @@ const Foundation = () => {
           The foundation sponsors treatments for underprivileged patients who
           require surgical procedures but cannot cover the costs (depending on
           specific projects that are carried out by the foundation during the
-          year)
+          year).
         </p>
         <div className='my-6'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Educating the Public About Health
+            Educating the Public About Health:
           </p>
           <hr />
         </div>
         <p className='text-justify mt-6'>
-          The Bumrungrad Hospital Foundation and Bumrungrad International
-          Hospital is adamant about continuously promoting health education and
-          other vital health-related information as a community service. This
-          includes health promoting activities for students in the communities,
-          health exhibitions, disseminating information about diseases, and
-          informing people about medical advances. This information is spread
-          through Bumrungrad’s channels as well as other public channels.
+          The Bumrungrad International Hospital Foundation and Bumrungrad
+          International Hospital is adamant about continuously promoting health
+          education and other vital health-related information as a community
+          service. This includes health promoting activities for students in the
+          communities, health exhibitions, disseminating information about
+          diseases, and informing people about medical advances. This
+          information is spread through Bumrungrad’s channels as well as other
+          public channels.
         </p>
         <div className='my-6'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Foundation Funding
+            Foundation Funding:
           </p>
           <hr />
         </div>
@@ -220,37 +223,39 @@ const Foundation = () => {
           <div className='mt-10'>
             <img
               src={qrimage}
-              alt='Bumrungrad Hospital'
+              alt='Bumrungrad International Hospital'
               className='w-[25%] mx-auto'
               srcset=''
             />
           </div>
 
           <li className='list-decimal mt-2'>
-            Make a donation at the Lan Nham Jai Shop (Bumrungrad Hospital
-            Foundation Shop) on the M floor of Building B (Clinic) between 9.00
-            and 17.00 (open daily).
+            Make a donation at the Lan Nham Jai Shop (Bumrungrad International
+            Hospital Foundation Shop) on the M floor of Building B (Clinic)
+            between 9.00 and 17.00 (open daily).
           </li>
           <li className='list-decimal mt-2'>
-            Write a check out to “The Bumrungrad Hospital Foundation.”
+            Write a check out to “The Bumrungrad International Hospital
+            Foundation.”
           </li>
           <li className='list-decimal mt-2'>
-            Transfer your donation: account: “Bumrungrad Hospital Foundation,”
-            account number 197-0-11115-7, Bangkok Bank, Nana Nua Branch.
+            Transfer your donation: account: “Bumrungrad International Hospital
+            Foundation,” account number 197-0-11115-7, Bangkok Bank, Nana Nua
+            Branch.
           </li>
         </ol>
         <p className='text-[16px] py-3 text-blue font-semibold'>
-          Donations are Tax-Deductible
+          Donations are Tax-Deductible:
         </p>
         <p className='text-justify'>
-          The Bumrungrad Hospital Foundation is a charitable foundation;
-          Registration no. 524 by the Ministry of Finance; Ministerial
-          Regulation no. 227, issued under Tax Income and Value Added Tax; Tax
-          Identification no. 4030002447; License no. T. 119/2533; Established
-          May 1990.
+          The Bumrungrad International Hospital Foundation is a charitable
+          foundation; Registration no. 524 by the Ministry of Finance;
+          Ministerial Regulation no. 227, issued under Tax Income and Value
+          Added Tax; Tax Identification no. 4030002447; License no. T. 119/2533;
+          Established May 1990.
         </p>
         <p className='text-[16px] py-6 text-blue font-semibold'>
-          Contacting the Bumrungrad Hospital Foundation
+          Contacting the Bumrungrad International Hospital Foundation:
         </p>
         <ol className='pl-10 list-decimal'>
           <li className=' mt-2'>

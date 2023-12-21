@@ -15,6 +15,7 @@ import logo from '../../assets/Bumrungrad  Hospital_nav_logo.png'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export default function Appointment() {
   const userDetails = JSON.parse(localStorage.getItem('User_Details'))
@@ -280,7 +281,7 @@ export default function Appointment() {
           console.log(data)
           setLoader(false)
           PreviewsetOpen(false)
-          window.alert('Please your email or spam box!')
+          window.alert('Please check your email or spam box!')
           navigate('/')
           localStorage.removeItem('doctor_name')
           localStorage.removeItem('Doctor_specialty')
@@ -988,7 +989,11 @@ export default function Appointment() {
               <DialogContent>
                 <div className='md:p-4 flex flex-col gap-5 lg:container lg:mx-auto'>
                   <div className='flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between'>
-                    <img src={logo} className='w-[200px]' alt='' />
+                    <LazyLoadImage
+                      src={logo}
+                      className='w-[200px]'
+                      alt='Bumrungrad International Hospital'
+                    />
                     <div className='text-center md:font-semibold text-blue'>
                       <p>Bumrungrad International Hospital</p>
                       <p>33 Sukhumvit 3, Wattana, Bangkok 10110 Thailand.</p>
@@ -1089,7 +1094,7 @@ export default function Appointment() {
                   )}
                   <div className='shadow rounded-xl p-5 text-black'>
                     <p className='mb-2.5 md:text-xl font-semibold text-blue'>
-                      Pataient Information
+                      Patient Information
                     </p>
                     <Divider />
                     <ul className='mt-2.5'>

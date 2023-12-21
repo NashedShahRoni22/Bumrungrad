@@ -263,9 +263,21 @@ const GoodVibes = () => {
       </div>
       <div className=' my-10 bg-cream'>
         <div className='flex justify-center flex-wrap p-10'>
-          <img src={packageimg} alt='Bumrungrad Hospital' srcset='' />
-          <img src={weacceptimg} alt='Bumrungrad Hospital' srcset='' />
-          <img src={goodvibesimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={packageimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
+          <img
+            src={weacceptimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
+          <img
+            src={goodvibesimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
       </div>
     </section>

@@ -14,7 +14,8 @@ const VissionMisson = () => {
           </title>
           <meta
             name='description'
-            content="Discover Bumrungrad Hospital's mission and values, guiding a commitment to excellence in patient care. Your well-being is our top priority."
+            content="Discover Bumrungrad International Hospital's mission and values, guiding a commitment to excellence in patient care. Your well-being is our top priority.
+"
           />
           <link
             rel='canonical'
@@ -25,17 +26,17 @@ const VissionMisson = () => {
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] vissionMission-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
-          Vision/Mission and Values
+          Vision & Mission
         </h1>
       </div>
       {/* new content here */}
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          Our Vision, Mission and Values
+          Our Vision, Mission and Values:
         </h2>
         <div className='my-10'>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>VISION</p>
+          <p className='text-[16px] py-3 text-blue font-medium'>VISION:</p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -52,7 +53,7 @@ const VissionMisson = () => {
         </p>
         <div className='my-10'>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>MISSION</p>
+          <p className='text-[16px] py-3 text-blue font-medium'>MISSION:</p>
           <hr />
         </div>
         <p className='text-justify'>
@@ -65,7 +66,7 @@ const VissionMisson = () => {
 
         <div className='my-10'>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>CORE VALUES</p>
+          <p className='text-[16px] py-3 text-blue font-medium'>CORE VALUES:</p>
           <hr />
         </div>
         <li className='list-decimal'>
@@ -84,13 +85,13 @@ const VissionMisson = () => {
       </div>
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold my-8'>
-          Patient and Staff Safety Statement
+          Patient and Staff Safety Statement:
         </h2>
         <p className='text-justify mt-4'>
-          Everyone at Bumrungrad Hospital PCL has responsibility for the safety
-          of our patients and staff. The Hospital Governing Board has the
-          overall responsibility of directing the commitment to safety. The
-          Executive and Management teams have the responsibility to oversee,
+          Everyone at Bumrungrad International Hospital PCL has responsibility
+          for the safety of our patients and staff. The Hospital Governing Board
+          has the overall responsibility of directing the commitment to safety.
+          The Executive and Management teams have the responsibility to oversee,
           guide and implement the safety programs at Bumrungrad; however,
           everyone at Bumrungrad is responsible for safety. Safety is a team
           effort that is at the core of our business and central to our success
@@ -106,34 +107,39 @@ const VissionMisson = () => {
           </li>
         </ol>
         <div className='ml-4 mt-4'>
-          <img src={missionVissionimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={missionVissionimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
       </div>
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          Quality Statement
+          Quality Statement:
         </h2>
         <p className='text-justify mt-4'>
-          Bumrungrad Hospital PCL is committed to providing “World Class”
-          services by using the Malcolm Baldrige National Quality and Magnet
-          criteria as the framework for achieving our overall organizational
-          performance objectives. We benchmark and validate our performance
-          through internationally recognized accrediting and certification
-          bodies such as Joint Commission International (JCI), Hospital
-          Accreditation (A-HA) and The College of American Pathologists (CAP)
-          for Safety & Quality towards patient care excellence.
+          Bumrungrad International Hospital PCL is committed to providing “World
+          Class” services by using the Malcolm Baldrige National Quality and
+          Magnet criteria as the framework for achieving our overall
+          organizational performance objectives. We benchmark and validate our
+          performance through internationally recognized accrediting and
+          certification bodies such as Joint Commission International (JCI),
+          Hospital Accreditation (A-HA) and The College of American Pathologists
+          (CAP) for Safety & Quality towards patient care excellence.
         </p>
         <h2 className='text-blue text-xl md:text-2xl font-semibold mt-10'>
-          Environmental Statement
+          Environmental Statement:
         </h2>
         <p className='text-justify mt-4'>
-          Bumrungrad International is committed to protecting the global
-          environment and to conserving energy and natural resources. We support
-          efforts to maintain and promote the health and safety of the community
-          and we participate in activities supporting these principles.
+          Bumrungrad International Hospital is committed to protecting the
+          global environment and to conserving energy and natural resources. We
+          support efforts to maintain and promote the health and safety of the
+          community and we participate in activities supporting these
+          principles.
         </p>
         <h2 className='text-blue text-xl md:text-2xl font-semibold mt-10'>
-          Environmental Statement Guiding Principles
+          Environmental Statement Guiding Principles:
         </h2>
         <ol className='pl-6 mt-6'>
           <li className='list-decimal mt-1'>
@@ -165,7 +171,11 @@ const VissionMisson = () => {
           </li>
         </ol>
         <div className='ml-4 mt-8'>
-          <img src={environmentimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={environmentimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
       </div>
     </section>

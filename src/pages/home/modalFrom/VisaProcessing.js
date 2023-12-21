@@ -7,6 +7,8 @@ import { MuiTelInput } from 'mui-tel-input'
 import Divider from '@mui/material/Divider'
 import { countries } from '../../appointment/Countries'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 const VisaProcessing = () => {
   const userDetails = JSON.parse(localStorage.getItem('User_Details'))
   const [old, setOld] = useState(true)
@@ -145,9 +147,10 @@ const VisaProcessing = () => {
       {country === 'Bangladesh' ? (
         <section className='flex flex-col justify-center items-center py-5 gap-4 shadow-xl rounded-xl'>
           <div className='mb-2'>
-            <img
+            <LazyLoadImage
               src={personImg}
-              alt='Bumrungrad Hospital'
+              alt='Bumrungrad International Hospital'
+              effect='blur'
               className='w-[100px] h-[100px] rounded-full mx-auto my-0'
               srcset=''
             />

@@ -18,7 +18,8 @@ const Bumrungrad = () => {
           </title>
           <meta
             name='description'
-            content="Explore Bumrungrad Hospital's excellence in healthcare. Discover ctting-edge services and compassionate care for your well-being"
+            content="Explore Bumrungrad International Hospital's excellence in healthcare. Discover cutting-edge services and compassionate care for your well-being.
+"
           />
           <link
             rel='canonical'
@@ -29,7 +30,7 @@ const Bumrungrad = () => {
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
-          About Bumrungrad
+          About Bumrungard International Hospital
         </h1>
       </div>
 
@@ -54,7 +55,7 @@ const Bumrungrad = () => {
       <div className='mx-5 my-20'>
         <div>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>Milestones</p>
+          <p className='text-[16px] py-3 text-blue font-medium'>Milestones:</p>
           <hr />
         </div>
         <div className='mt-4'>
@@ -77,7 +78,11 @@ const Bumrungrad = () => {
             </li>
           </ol>
           <div className='ml-4 mt-4'>
-            <img src={careimg} alt='Bumrungrad Hospital' srcset='' />
+            <img
+              src={careimg}
+              alt='Bumrungrad International Hospital'
+              srcset=''
+            />
           </div>
         </div>
       </div>
@@ -86,7 +91,7 @@ const Bumrungrad = () => {
         <div>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Collaboration of Expertise
+            Collaboration of Expertise:​
           </p>
           <hr />
         </div>
@@ -107,7 +112,11 @@ const Bumrungrad = () => {
             patients across more than 70 medical subspecialties.
           </p>
           <div className='ml-4 mt-4'>
-            <img src={awardimg} alt='Bumrungrad Hospital' srcset='' />
+            <img
+              src={awardimg}
+              alt='Bumrungrad International Hospital'
+              srcset=''
+            />
           </div>
         </div>
       </div>
@@ -115,7 +124,7 @@ const Bumrungrad = () => {
         <div>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Quality, Safety with Measurable Results
+            Quality, Safety with Measurable Results:​
           </p>
           <hr />
         </div>
@@ -136,7 +145,11 @@ const Bumrungrad = () => {
             region and world.
           </p>
           <div className='ml-4 mt-4'>
-            <img src={specialtiesimg} alt='Bumrungrad Hospital' srcset='' />
+            <img
+              src={specialtiesimg}
+              alt='Bumrungrad International Hospital'
+              srcset=''
+            />
           </div>
         </div>
       </div>
@@ -144,7 +157,7 @@ const Bumrungrad = () => {
         <div>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Innovation and Technology
+            Innovation and Technology:​
           </p>
           <hr />
         </div>
@@ -174,7 +187,11 @@ const Bumrungrad = () => {
             patients.
           </p>
           <div className='ml-4 mt-4'>
-            <img src={inovationsimg} alt='Bumrungrad Hospital' srcset='' />
+            <img
+              src={inovationsimg}
+              alt='Bumrungrad International Hospital'
+              srcset=''
+            />
           </div>
         </div>
       </div>
@@ -182,7 +199,7 @@ const Bumrungrad = () => {
         <div>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Compassionate Caring
+            Compassionate Caring:​
           </p>
           <hr />
         </div>
@@ -213,7 +230,11 @@ const Bumrungrad = () => {
             why the Thai name Bumrungrad means “care for the people.”
           </p>
           <div className='ml-4 mt-4'>
-            <img src={careingimg} alt='Bumrungrad Hospital' srcset='' />
+            <img
+              src={careingimg}
+              alt='Bumrungrad International Hospital'
+              srcset=''
+            />
           </div>
         </div>
       </div>

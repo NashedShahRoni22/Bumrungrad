@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser'
 import img from '../../assets/Bumrungrad hospital.svg'
 import { TextField } from '@mui/material'
 import HealingIcon from '@mui/icons-material/Healing'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 export default function HomeContact() {
   const form = useRef()
   const sendEmail = (e) => {
@@ -29,7 +31,11 @@ export default function HomeContact() {
   return (
     <section className='md:p-10 my-5 md:container md:mx-auto flex flex-col-reverse justify-center items-center lg:flex-row lg:justify-between lg:items-center gap-16'>
       <div className='lg:w-1/2'>
-        <img src={img} alt='Bumrungrad Hospital' />
+        <LazyLoadImage
+          src={img}
+          effect='blur'
+          alt='Bumrungrad International Hospital'
+        />
       </div>
       <form
         ref={form}

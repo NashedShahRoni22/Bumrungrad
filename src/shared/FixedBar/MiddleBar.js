@@ -10,6 +10,8 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 
 import apoointDoctor from '../../assets/appointment doctor.jpg'
 import healthScrenning from '../../assets/health Screnning.jpg'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function MiddleBar() {
   const [open, setOpen] = React.useState(false)
@@ -83,10 +85,11 @@ export default function MiddleBar() {
                     </h2>
                   </div>
 
-                  <img
+                  <LazyLoadImage
                     src={healthScrenning}
-                    alt='Bumrungrad Hospital'
+                    alt='Bumrungrad International Hospital'
                     srcset=''
+                    effect='blur'
                     className='rounded-lg'
                   />
                 </Link>
@@ -99,9 +102,10 @@ export default function MiddleBar() {
                       Doctor Schedule
                     </h2>
                   </div>
-                  <img
+                  <LazyLoadImage
                     src={apoointDoctor}
-                    alt='Bumrungrad Hospital'
+                    effect='blur'
+                    alt='Bumrungrad International Hospital'
                     srcset=''
                     className='rounded-lg'
                   />

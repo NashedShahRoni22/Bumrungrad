@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../../shared/Loader/Loader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function SingleCenter() {
   const { id } = useParams();
@@ -22,10 +24,11 @@ export default function SingleCenter() {
       ) : (
         <div className='flex flex-col items-center md:flex-row md:items-start gap-5 md:gap-10'>
           <div>
-            <img
+            <LazyLoadImage
               src={center?.cover_photo}
+              effect='blur'
               className='h-[250px] md:h-[400px]'
-              alt="Bumrungrad Hospital"
+              alt='Bumrungrad International Hospital'
             />
           </div>
           <div className='md:flex-1 flex flex-col gap-5'>

@@ -3,6 +3,8 @@ import Loader from '../../shared/Loader/Loader'
 import { useEffect } from 'react'
 import { Divider } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const NewsAll = () => {
   const [allnewsData, setAllNewsData] = useState()
@@ -41,7 +43,12 @@ const NewsAll = () => {
               key={i}
               className='shadow rounded hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
             >
-              <img src={d.newsImage} alt='Bumrungrad Hospita' className='' />
+              <LazyLoadImage
+                src={d.newsImage}
+                alt='Bumrungrad International Hospital'
+                effect='blur'
+                className=''
+              />
               <div className='p-4'>
                 {' '}
                 <h5 className='font-semibold text-blue text-lg'>

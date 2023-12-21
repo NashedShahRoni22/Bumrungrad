@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
 import Loader from '../../shared/Loader/Loader'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 export default function ViewAllCenters() {
   const [loader, setLoader] = useState(false)
   const [slides, setSlides] = useState([])
@@ -27,7 +28,8 @@ export default function ViewAllCenters() {
           <title>Bumrungrad Hospital: Premier Care Clinics & Centers</title>
           <meta
             name='description'
-            content="Discover premier care at Bumrungrad Hospital's top clinics & centers. Tailored healthcare for your well-being. Experience excellence today."
+            content="Discover premier care at Bumrungrad International Hospital's top clinics & centers. Tailored healthcare for your well-being. Experience excellence today.
+"
           />
           <link
             rel='canonical'
@@ -54,10 +56,11 @@ export default function ViewAllCenters() {
               className='group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30'
             >
               <div>
-                <img
+                <LazyLoadImage
                   className='min-h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125'
                   src={sc?.cover_photo}
-                  alt='Bumrungrad Hospital'
+                  effect='blur'
+                  alt='Bumrungrad International Hospital'
                 />
               </div>
               <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70'></div>
