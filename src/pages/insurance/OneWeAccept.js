@@ -55,7 +55,7 @@ const OneWeAccept = (props) => {
                   <div className=''>
                     <img
                       src={data?.img}
-                      alt='Bumrungrad Hospital'
+                      alt='Bumrungrad International Hospital'
                       className='h-[120px]'
                       srcset=''
                     />

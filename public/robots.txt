@@ -3,5 +3,5 @@ Allow: /
 Disallow: /resources/
 Disallow: /widgets/
 
-Sitemap:
-https://www.yoursite.com/sitemap.xml
+Sitemap: https://bumrungraddiscover.com/sitemap_index.xml
+

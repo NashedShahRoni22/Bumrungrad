@@ -12,38 +12,40 @@ import AirAmbulanceForm from './modalFrom/AirAmbulanceForm'
 
 import AirtTcket from './modalFrom/AirtTcket'
 import AirPickup from './modalFrom/AirPickup'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const services = [
   {
     name: 'Book Appointment',
     img: appointment,
     pageTo: '/appointment',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     name: 'Visa Processing',
     img: hotelReservation,
     pageTo: '/visaprocessing',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     id: 3,
     name: 'Order Medicine',
     img: orderMedicine,
     pageTo: '/orderMedicine',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     name: 'Medical Records',
     img: medicalRecords,
     pageTo: '/medicalRecord',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     name: 'Tele Medicine',
     img: teleMedicine,
     pageTo: '/telemedicine',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     id: 2,
@@ -51,7 +53,7 @@ const services = [
     img: airimg,
     form: <AirAmbulanceForm />,
     height: 'md:w-[750px]',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     id: 7,
@@ -59,7 +61,7 @@ const services = [
     img: airticket,
     form: <AirtTcket />,
     height: 'h-[470px] overflow-auto md:w-[750px]',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
   {
     id: 8,
@@ -67,7 +69,7 @@ const services = [
     img: airpickup,
     form: <AirPickup />,
     height: 'md:w-[750px]',
-    alt: 'Bumrungrad Hospital',
+    alt: 'Bumrungrad International Hospital',
   },
 ]
 
@@ -96,9 +98,10 @@ export default function Services(props) {
               key={i}
               className='cursor-pointer flex flex-col lg:flex-row gap-4 items-center shadow-class hover:translate-y-5 duration-300 ease-linear p-4 rounded-xl'
             >
-              <img
+              <LazyLoadImage
                 src={s.img}
                 alt={s.alt}
+                effect='blur'
                 className='h-[100px] w-[100px]'
               />
               <h5 className='text-center font-semibold text-blue'>{s.name}</h5>

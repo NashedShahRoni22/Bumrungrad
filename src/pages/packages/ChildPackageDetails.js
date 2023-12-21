@@ -6,6 +6,8 @@ import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const ChildPackageDetails = () => {
   const [loader, setLoader] = useState()
@@ -90,10 +92,11 @@ const ChildPackageDetails = () => {
           <div>
             <div className='flex flex-col gap-5 lg:flex-row'>
               <div className='lg:w-1/2'>
-                <img
+                <LazyLoadImage
                   src={childDetailsPackage?.cover_photo}
+                  effect='blur'
                   className='w-full max-h-[50vh]'
-                  alt='Bumrungrad Hospital'
+                  alt='Bumrungrad International Hospital'
                 />
                 <button
                   onClick={() => handleClickOpen(childDetailsPackage)}

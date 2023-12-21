@@ -1,6 +1,8 @@
 import React from "react";
 import ContactCardImg from "../../assets/Bumrungrad  Hospital_contact_card.png";
 import ContactForm from "./ContactForm";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function ContactUs() {
   const ContactCards = [
@@ -58,9 +60,10 @@ export default function ContactUs() {
             className='group flex flex-col md:flex-row shadow-xl rounded-xl items-center justify-between gap-8 md:gap-0'
           >
             <div className='p-5 h-full w-full md:w-1/2 relative flex flex-col items-center gap-4'>
-              <img
+              <LazyLoadImage
                 src={ContactCardImg}
-                alt='Bumrungrad Hospital'
+                alt='Bumrungrad International Hospital'
+                effect='blur'
                 className='h-[150px] w-[150px]'
               />
               <div className='flex flex-col'>

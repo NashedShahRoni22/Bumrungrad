@@ -18,6 +18,8 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function FindDoctor() {
   const [advanceBox, setAdvanceBox] = useState(false)
@@ -472,17 +474,18 @@ export default function FindDoctor() {
                 Doctor
               </p>
 
-              <div className='grid grid-cols-2 place-items-center  md:grid-cols-3 lg:grid-cols-5 gap-3 my-5'>
+              <div className='grid grid-cols-2 place-items-center  md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5 my-5'>
                 {doctors?.map((d, i) => (
                   <div
-                    className='shadow hover:shadow-xl duration-300 ease-linear flex flex-col gap-5 w-full  h-[380px] md:h-[420px] rounded-xl '
+                    className='shadow hover:shadow-xl duration-300 ease-linear flex flex-col gap-5 w-full  h-[380px] md:h-[520px] rounded-xl '
                     key={i}
                   >
                     <div className='relative'>
-                      <img
+                      <LazyLoadImage
                         src={d.cover_photo}
-                        alt='Bumrungrad Hospital'
-                        className='h-[200px] md:h-[250px]  w-full rounded-tl-xl rounded-tr-xl'
+                        alt='Bumrungrad International Hospital'
+                        effect='blur'
+                        className='h-[200px] md:h-[350px]  w-full rounded-tl-xl rounded-tr-xl'
                       />
                       <div>
                         <Link
@@ -490,19 +493,19 @@ export default function FindDoctor() {
                           className='flex justify-center'
                         >
                           <button className='bg-blue text-sm md:text-base text-white  absolute bottom-0 rounded-tl-xl rounded-tr-xl px-2 md:px-6 py-2'>
-                           
-                              View Profile
-                            
+                            View Profile
                           </button>
                         </Link>
                       </div>
                     </div>
 
-                    <div className='mb-2.5'>
+                    <div className='mb-2.5 '>
                       <p className='text-center md:text-xl text-blue font-bold'>
                         {d?.name}
                       </p>
-                      <p className='text-center mt-1 md:text-lg'>{d?.specialty}</p>
+                      <p className='text-center mt-1 md:text-lg '>
+                        {d?.specialty}
+                      </p>
                     </div>
                   </div>
                 ))}

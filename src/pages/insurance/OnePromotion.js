@@ -48,7 +48,7 @@ const OnePromotion = (props) => {
               <Link to={url} target={target}>
                 <img
                   src={img}
-                  alt='Bumrungrad Hospital'
+                  alt='Bumrungrad International Hospital'
                   className='w-[80%] h-[50%] mx-auto'
                   srcset=''
                 />

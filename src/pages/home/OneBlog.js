@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../../shared/Loader/Loader'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const OneBlog = () => {
   const { id } = useParams()
@@ -23,9 +25,10 @@ const OneBlog = () => {
       ) : (
         <div className='flex flex-col gap-8 lg:flex-row'>
           <div className='lg:w-1/2'>
-            <img
+            <LazyLoadImage
               src={oneBlog?.blogImage}
-              alt='Bumrungrad Hospita'
+              alt='Bumrungrad International Hospital'
+              effect='blur'
               className='lg:h-[40vh]'
               srcset=''
             />

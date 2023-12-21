@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../../shared/Loader/Loader'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+
 const ChildPackage = () => {
   const [loader, setLoader] = useState()
   const { id } = useParams()
@@ -37,7 +40,11 @@ const ChildPackage = () => {
                     key={i}
                     className='flex flex-col justify-between gap-2 shadow'
                   >
-                    <img src={cp?.cover_photo} alt='Bumrungrad Hospital' />
+                    <LazyLoadImage
+                      src={cp?.cover_photo}
+                      alt='Bumrungrad International Hospital'
+                      effect='blur'
+                    />
                     <div className='p-2.5'>
                       <p className='font-semibold text-blue md:text-xl'>
                         {cp?.title}

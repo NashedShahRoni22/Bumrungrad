@@ -43,7 +43,8 @@ export default function ContactForm() {
           </title>
           <meta
             name='description'
-            content='Connect with Bumrungrad Hospital for expert care and assistance. Reach out today to experience world-class healthcare and personalized support.
+            content='Discover exceptional care and personalized support at Bumrungrad International Hospital. Connect today for world-class healthcare and expert assistance.
+
 
 '
           />

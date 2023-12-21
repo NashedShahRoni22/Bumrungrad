@@ -8,6 +8,8 @@ import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
 // import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function SideBar() {
   const [open, setOpen] = React.useState(false);
@@ -33,16 +35,18 @@ export default function SideBar() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <img
+        <LazyLoadImage
           src={telegram}
-          alt='Bumrungrad Hospital'
+          alt='Bumrungrad International Hospital'
+          effect='blur'
           className='h-[40px] mt-1'
         />
       </a>
       <button onClick={handleOpen}>
-        <img
+        <LazyLoadImage
           src={whatsapp}
-          alt='Bumrungrad Hospital'
+          effect='blur'
+          alt='Bumrungrad International Hospital'
           className='h-[40px] mt-1'
         />
       </button>
@@ -59,9 +63,10 @@ export default function SideBar() {
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img
+            <LazyLoadImage
               src={whatsapp}
-              alt='Bumrungrad Hospital'
+              effect='blur'
+              alt='Bumrungrad International Hospital'
               className='h-[40px]'
             />
             <span className='text-blue font-semibold'>Appointment Booking</span>
@@ -72,9 +77,10 @@ export default function SideBar() {
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img
+            <LazyLoadImage
               src={whatsapp}
-              alt='Bumrungrad Hospital'
+              effect='blur'
+              alt='Bumrungrad International Hospital'
               className='h-[40px]'
             />
             <span className='text-blue font-semibold'>
@@ -87,9 +93,10 @@ export default function SideBar() {
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img
+            <LazyLoadImage
               src={whatsapp}
-              alt='Bumrungrad Hospital'
+              effect='blur'
+              alt='Bumrungrad International Hospital'
               className='h-[40px]'
             />
             <span className='text-blue font-semibold'>
@@ -102,9 +109,10 @@ export default function SideBar() {
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
           >
-            <img
+            <LazyLoadImage
               src={whatsapp}
-              alt='Bumrungrad Hospital'
+              effect='blur'
+              alt='Bumrungrad International Hospital'
               className='h-[40px]'
             />
             <span className='text-blue font-semibold'>

@@ -20,7 +20,8 @@ const FactSheet = () => {
           </title>
           <meta
             name='description'
-            content="Explore Bumrungrad Hospital's Fact Sheet & Services—your gateway to exceptional care. Begin your health journey with our comprehensive offerings."
+            content="Discover Bumrungrad International Hospital's Services & Facts for exceptional care. Start your health journey with our comprehensive offerings.
+"
           />
           <link
             rel='canonical'
@@ -31,38 +32,39 @@ const FactSheet = () => {
       <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
         <div className='absolute top-0 h-full w-full bg-black/60'></div>
         <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
-          Bumrungrad Fact Sheet
+          Factsheet
         </h1>
       </div>
       <div className='mx-5 my-10'>
         <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          Bumrungrad Fact Sheet
+          Bumrungrad Fact Sheet:
         </h2>
         <div className='my-10'>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>Mission</p>
+          <p className='text-[16px] py-3 text-blue font-medium'>Mission:</p>
           <hr />
         </div>
         <p className='text-justify'>
-          Bumrungrad aspires to deliver innovative clinical and service
-          experiences, accomplish operational excellence and establish
-          transdisciplinary care teams with quality and humanized care
+          Bumrungrad International Hospital aspires to deliver innovative
+          clinical and service experiences, accomplish operational excellence
+          and establish transdisciplinary care teams with quality and humanized
+          care
         </p>
         <div className='my-10'>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>Ownership</p>
+          <p className='text-[16px] py-3 text-blue font-medium'>Ownership:</p>
           <hr />
         </div>
         <p className='text-justify'>
-          Bumrungrad Hospital is a public company traded on the Stock Exchange
-          of Thailand and managed by a multi-national team of experienced
-          medical professionals and hospital administrators.
+          Bumrungrad International Hospital is a public company traded on the
+          Stock Exchange of Thailand and managed by a multi-national team of
+          experienced medical professionals and hospital administrators..
         </p>
 
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Main Hospital Facility & services (opened 1997)
+            Main Hospital Facility & services (opened 1997):
           </p>
           <hr />
         </div>
@@ -76,14 +78,18 @@ const FactSheet = () => {
           <li className=' mt-2'>Hospital-wide Wi-Fi network coverage</li>
         </ol>
         <div className='mt-4'>
-          <img src={buildingimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={buildingimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
       </div>
       <div className='mx-5 my-10'>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Outpatient Clinic Facility & Services (opened 2008)
+            Outpatient Clinic Facility & Services (opened 2008):
           </p>
           <hr />
         </div>
@@ -113,7 +119,7 @@ const FactSheet = () => {
             extension services, first-time registration services, Starbucks, and
             a bookstore
           </li>
-          <li className='list-disc mt-2'>Patient Volumes & Revenues -</li>
+          <li className='list-disc mt-2'>Patient Volumes & Revenues –</li>
           <ol className='list-decimal'>
             <li className=' ml-9 mt-2'>
               Over 1.1 million patients treated per year (OPD and IPD)
@@ -128,12 +134,16 @@ const FactSheet = () => {
           </ol>
         </ol>
         <div className='mt-4'>
-          <img src={clinicimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={clinicimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Human Resources
+            Human Resources:
           </p>
           <hr />
         </div>
@@ -148,12 +158,16 @@ const FactSheet = () => {
           <li className=' mt-2'>Over 900 nurses</li>
         </ol>
         <div className='mt-4'>
-          <img src={resourceimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={resourceimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Inpatient Capacities
+            Inpatient Capacities:
           </p>
           <hr />
         </div>
@@ -179,7 +193,7 @@ const FactSheet = () => {
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Outpatient Facilities
+            Outpatient Facilities:
           </p>
           <hr />
         </div>
@@ -197,12 +211,16 @@ const FactSheet = () => {
           <li className='list-disc mt-2'>Outpatient Surgery Center</li>
         </ol>
         <div className='mt-4'>
-          <img src={roomimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={roomimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Outpatient Clinics, Centers and Programs
+            Outpatient Clinics, Centers and Programs:
           </p>
           <hr />
         </div>
@@ -264,12 +282,16 @@ const FactSheet = () => {
           <li className='list-disc mt-2'>Women’s Center</li>
         </ol>
         <div className='mt-4'>
-          <img src={bumrunCenterimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={bumrunCenterimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Special Facilities and Services
+            Special Facilities and Services:
           </p>
           <hr />
         </div>
@@ -318,7 +340,7 @@ const FactSheet = () => {
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            International Referral Offices
+            International Referral Offices:
           </p>
           <hr />
         </div>
@@ -328,12 +350,16 @@ const FactSheet = () => {
           Pakistan, Qatar, Russia, Sudan, UAE, Vietnam and Virtual.
         </p>
         <div className='mt-4'>
-          <img src={techimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={techimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Special International Services
+            Special International Services:
           </p>
           <hr />
         </div>
@@ -353,7 +379,7 @@ const FactSheet = () => {
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Quality, Accreditations, Certifications and Recognitions
+            Quality, Accreditations, Certifications and Recognitions:
           </p>
           <hr />
         </div>
@@ -435,30 +461,38 @@ const FactSheet = () => {
           </li>
         </ol>
         <div className='mt-4'>
-          <img src={internimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={internimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
         <div className='my-10'>
           <hr />
           <p className='text-[16px] py-3 text-blue font-medium'>
-            Social Responsibility
+            Social Responsibility:
           </p>
           <hr />
         </div>
         <p className='text-justify'>
-          The Bumrungrad Hospital Foundation was established in 1990 and is
-          dedicated to providing healthcare to underprivileged Thai residents.
-          The Foundation has provided over 100,000 Thais with free services
-          ranging from check-up programs to life-saving surgery for children
-          with defective hearts; as well as providing no-cost treatments to
-          those in need of knee surgery through the “Knee Replacement Surgery
-          Program.” For five consecutive years, the AMCHAM has honored
-          Bumrungrad International for their commitment to social welfare,
-          awarding Bumrungrad International with the AMCHAM “Corporate Social
-          Responsibility Excellence Recognition – Gold Level” Award in 2013,
-          2014, 2015, 2016, and 2017.
+          The Bumrungrad International Hospital Foundation was established in
+          1990 and is dedicated to providing healthcare to underprivileged Thai
+          residents. The Foundation has provided over 100,000 Thais with free
+          services ranging from check-up programs to life-saving surgery for
+          children with defective hearts; as well as providing no-cost
+          treatments to those in need of knee surgery through the “Knee
+          Replacement Surgery Program.” For five consecutive years, the AMCHAM
+          has honored Bumrungrad International for their commitment to social
+          welfare, awarding Bumrungrad International with the AMCHAM “Corporate
+          Social Responsibility Excellence Recognition – Gold Level” Award in
+          2013, 2014, 2015, 2016, and 2017.
         </p>
         <div className='mt-4'>
-          <img src={responimg} alt='Bumrungrad Hospital' srcset='' />
+          <img
+            src={responimg}
+            alt='Bumrungrad International Hospital'
+            srcset=''
+          />
         </div>
       </div>
     </section>

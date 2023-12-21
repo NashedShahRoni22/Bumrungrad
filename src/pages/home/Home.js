@@ -25,11 +25,12 @@ export default function Home() {
         <Helmet>
           <meta charSet='utf-8' />
           <title>
-            Bumrungrad Hospital | Premier Healthcare | Schedule Your Appointment
+            Bumrungrad International Hospital: Premier Care | Book Now
           </title>
           <meta
             name='description'
-            content='Discover premier healthcare at Bumrungrad Hospital. Expert care and personalized services You can just book your appointment for a healthier tomorrow'
+            content='Discover premier healthcare at Bumrungrad International Hospital. Expert care, personalized services. Book your appointment for a healthier tomorrow.
+'
           />
           <link rel='canonical' href='https://bumrungraddiscover.com/' />
         </Helmet>

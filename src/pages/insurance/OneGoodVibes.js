@@ -58,7 +58,7 @@ const OneGoodVibes = (props) => {
                     <div className='mt-5 mb-5'>
                       <img
                         src={data?.img}
-                        alt='Bumrungrad Hospital'
+                        alt='Bumrungrad International Hospital'
                         className={data?.imgclass}
                         srcset=''
                       />

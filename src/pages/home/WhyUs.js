@@ -17,6 +17,8 @@ import "./WhyUs.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function WhyUs() {
   const progressCircle = useRef(null);
@@ -28,27 +30,27 @@ export default function WhyUs() {
   const sliderImgs = [
     {
       src: slider6,
-      alt: 'Bumrungrad Hospital',
+      alt: 'Bumrungrad International Hospital',
     },
     {
       src: slider5,
-      alt: 'Bumrungrad Hospital',
+      alt: 'Bumrungrad International Hospital',
     },
     {
       src: slider4,
-      alt: 'Bumrungrad Hospital',
+      alt: 'Bumrungrad International Hospital',
     },
     {
       src: slider3,
-      alt: 'Bumrungrad Hospital',
+      alt: 'Bumrungrad International Hospital',
     },
     {
       src: slider2,
-      alt: 'Bumrungrad Hospital',
+      alt: 'Bumrungrad International Hospital',
     },
     {
       src: slider1,
-      alt: 'Bumrungrad Hospital',
+      alt: 'Bumrungrad International Hospital',
     },
   ]
   return (
@@ -73,9 +75,10 @@ export default function WhyUs() {
       >
         {sliderImgs.map((s, i) => (
           <SwiperSlide key={i}>
-            <img
+            <LazyLoadImage
               src={s.src}
               alt={s.alt}
+              effect='blur'
               className='object-cover'
             />
           </SwiperSlide>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from '../../shared/Loader/Loader'
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 export default function News() {
   const [newsData, setNewsData] = useState()
   const [loader, setLoader] = useState()
@@ -42,7 +43,12 @@ export default function News() {
               key={i}
               className='shadow rounded hover:shadow-xl duration-300 ease-linear flex flex-col justify-between'
             >
-              <img src={d.newsImage} alt='Bumrungrad Hospital' className='' />
+              <LazyLoadImage
+                src={d.newsImage}
+                alt='Bumrungrad International Hospital'
+                effect='blur'
+                className=''
+              />
               <div className='p-4'>
                 {' '}
                 <h5 className='font-semibold text-blue text-lg'>

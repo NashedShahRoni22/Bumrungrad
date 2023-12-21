@@ -10,6 +10,8 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function DoctorInfo() {
   const navigate = useNavigate()
@@ -47,10 +49,11 @@ export default function DoctorInfo() {
           <div className='doctor-bg'>
             <div className='md:flex p-5 md:p-10 md:container md:mx-auto'>
               <div className='flex flex-col justify-center'>
-                <img
+                <LazyLoadImage
                   src={doctor?.cover_photo}
-                  alt='Bumrungrad Hospital'
-                  className='h-[250px] md:h-[400px] lg:h-[450px] w-full md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl'
+                  alt='Bumrungrad International Hospital'
+                  effect='blur'
+                  className='h-[370px] md:h-[400px] lg:h-[450px] w-full md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl'
                 />
                 <button
                   onClick={() => goAppointMent(doctor)}
@@ -131,7 +134,7 @@ export default function DoctorInfo() {
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.certificates?.map((dc, i) => (
                       <li key={i} className='text-xl'>
-                        {dc?.certificate}
+                        {dc?.certificate.split('-')}
                       </li>
                     ))}
                   </ul>
@@ -145,7 +148,7 @@ export default function DoctorInfo() {
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.interests?.map((dc, i) => (
                       <li key={i} className='text-xl'>
-                        {dc?.Interest}
+                        {dc?.Interest.split('-')}
                       </li>
                     ))}
                   </ul>

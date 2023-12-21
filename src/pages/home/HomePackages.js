@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
 import Loader from '../../shared/Loader/Loader'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function HomePackages() {
   const [loader, setLoader] = useState(false)
@@ -43,7 +45,11 @@ export default function HomePackages() {
               key={i}
               className='flex flex-col justify-between gap-2 shadow hover:shadow-xl duration-300 ease-linear'
             >
-              <img src={p?.cover_photo} alt='Bumrungrad Hospita' />
+              <LazyLoadImage
+                src={p?.cover_photo}
+                alt='Bumrungrad International Hospital'
+                effect='blur'
+              />
               <div className='p-2.5'>
                 <p className='font-semibold text-blue md:text-xl'>{p?.title}</p>
                 <p>{p?.description.slice(0, 160)}</p>
