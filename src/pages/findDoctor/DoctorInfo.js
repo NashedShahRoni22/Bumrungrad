@@ -10,8 +10,6 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function DoctorInfo() {
   const navigate = useNavigate()
@@ -49,10 +47,9 @@ export default function DoctorInfo() {
           <div className='doctor-bg'>
             <div className='md:flex p-5 md:p-10 md:container md:mx-auto'>
               <div className='flex flex-col justify-center'>
-                <LazyLoadImage
+                <img
                   src={doctor?.cover_photo}
                   alt='Bumrungrad International Hospital'
-                  effect='blur'
                   className='h-[370px] md:h-[400px] lg:h-[450px] w-full md:w-[300px] lg:w-[350px] rounded-tl-xl rounded-tr-xl'
                 />
                 <button
@@ -73,7 +70,7 @@ export default function DoctorInfo() {
                     Expertise
                   </p>
                   <Divider className='!my-2.5' />
-                  <p className='text-lg'>{doctor?.specialty}</p>
+                  <p className='text-xl'>{doctor?.specialty}</p>
                 </div>
                 {doctor?.sub_specialty?.length > 0 && (
                   <div>
@@ -83,7 +80,7 @@ export default function DoctorInfo() {
                     <Divider className='!my-2.5' />
                     <ul className=''>
                       {doctor?.sub_specialty?.map((ss, i) => (
-                        <li key={i} className='text-lg'>
+                        <li key={i} className='text-xl'>
                           {ss}
                         </li>
                       ))}
@@ -97,7 +94,7 @@ export default function DoctorInfo() {
                   <Divider className='!my-2.5' />
                   <ul className=''>
                     {doctor?.lang?.map((ss, i) => (
-                      <li key={i} className='text-lg'>
+                      <li key={i} className='text-xl'>
                         {ss}
                       </li>
                     ))}
@@ -117,14 +114,16 @@ export default function DoctorInfo() {
                 {doctor?.schools?.length > 0 && (
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.schools?.map((ms, i) => (
-                      <li key={i} className='text-xl'>
+                      <li key={i} className='text-xl list-disc'>
                         {ms?.school}
                       </li>
                     ))}
                   </ul>
                 )}
 
-                {doctor?.school && <p className='text-xl'>{doctor?.school}</p>}
+                {doctor?.school && (
+                  <li className='text-xl list-disc'>{doctor?.school}</li>
+                )}
               </div>
               {doctor?.certificates?.length !== 0 && (
                 <div className=''>
@@ -133,7 +132,7 @@ export default function DoctorInfo() {
                   </p>
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.certificates?.map((dc, i) => (
-                      <li key={i} className='text-xl'>
+                      <li key={i} className='text-xl list-disc'>
                         {dc?.certificate.split('-')}
                       </li>
                     ))}
@@ -147,7 +146,7 @@ export default function DoctorInfo() {
                   </p>
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.interests?.map((dc, i) => (
-                      <li key={i} className='text-xl'>
+                      <li key={i} className='text-xl list-disc'>
                         {dc?.Interest.split('-')}
                       </li>
                     ))}
@@ -161,7 +160,7 @@ export default function DoctorInfo() {
                   </p>
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.experiences?.map((dc, i) => (
-                      <li key={i} className='text-xl'>
+                      <li key={i} className='text-xl list-disc'>
                         {dc?.experience}
                       </li>
                     ))}
@@ -175,7 +174,7 @@ export default function DoctorInfo() {
                   </p>
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.researches?.map((dc, i) => (
-                      <li key={i} className='text-xl'>
+                      <li key={i} className='text-xl list-disc'>
                         {dc?.research}
                       </li>
                     ))}
@@ -189,7 +188,7 @@ export default function DoctorInfo() {
                   </p>
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.article?.map((dc, i) => (
-                      <li key={i} className='text-xl'>
+                      <li key={i} className='text-xl list-disc'>
                         {dc?.article}
                       </li>
                     ))}

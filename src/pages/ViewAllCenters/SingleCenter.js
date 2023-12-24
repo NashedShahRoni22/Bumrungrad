@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Loader from "../../shared/Loader/Loader";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import Loader from '../../shared/Loader/Loader'
 
 export default function SingleCenter() {
-  const { id } = useParams();
-  const [loader, setLoader] = useState(false);
-  const [center, setCenter] = useState({});
+  const { id } = useParams()
+  const [loader, setLoader] = useState(false)
+  const [center, setCenter] = useState({})
   useEffect(() => {
-    setLoader(true);
+    setLoader(true)
     fetch(`https://api.bumrungraddiscover.com/api/get/centers/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setCenter(data?.response?.data);
-        setLoader(false);
-      });
-  }, [id]);
+        setCenter(data?.response?.data)
+        setLoader(false)
+      })
+  }, [id])
   return (
     <div className='p-5 my-5 md:container md:mx-auto'>
       {loader ? (
@@ -24,9 +22,8 @@ export default function SingleCenter() {
       ) : (
         <div className='flex flex-col items-center md:flex-row md:items-start gap-5 md:gap-10'>
           <div>
-            <LazyLoadImage
+            <img
               src={center?.cover_photo}
-              effect='blur'
               className='h-[250px] md:h-[400px]'
               alt='Bumrungrad International Hospital'
             />

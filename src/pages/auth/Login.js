@@ -2,12 +2,20 @@ import { Divider, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import loginimg from '../../assets/login image.png'
+import { AiFillEye } from 'react-icons/ai'
+
 export default function Login() {
   const navigate = useNavigate()
   const [loader, setLoader] = useState()
   //const [error, SetError] = useState('')
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const [isVisible, setIsVisible] = useState(false)
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible)
+  }
+  const inputType = isVisible ? 'text' : 'password'
 
   const handaleLogin = () => {
     setLoader(true)
@@ -45,7 +53,7 @@ export default function Login() {
       <div className='hidden md:block md:w-1/2'>
         <img src={loginimg} alt='' srcset='' />
       </div>
-      <div className='p-5 md:p-10 md:w-1/2 my-5 md:my-10 mx-5 md:container md:mx-auto shadow-lg shadow-blue rounded-xl relative'>
+      <div className='p-5 md:p-10 md:w-1/2 my-5 md:my-10 mx-5 md:container md:mx-auto shadow shadow-blue rounded-xl relative'>
         <h5 className='text-xl md:text-3xl font-semibold text-blue mb-4'>
           Hello Dear!
         </h5>
@@ -59,18 +67,21 @@ export default function Login() {
             type='email'
           />
         </div>
-        <div className='mt-5'>
+        <div className='mt-5 flex relative'>
           <TextField
             fullWidth
             label='Enter Password'
             placeholder='Required'
             onChange={(e) => setPassword(e.target.value)}
-            type='password'
+            type={inputType}
           />
+          <button onClick={toggleVisibility}>
+            <AiFillEye className='text-3xl text-blue !absolute right-4 top-[13px]' />
+          </button>
         </div>
         <div className='mt-5'>
           <button
-            className={`flex justify-center items-center gap-2 min-w-[200px] mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
+            className={`flex justify-center items-center gap-2 w-full lg:w-[200px] mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
               email === '' || password === ''
                 ? 'bg-white text-blue'
                 : 'text-white'
