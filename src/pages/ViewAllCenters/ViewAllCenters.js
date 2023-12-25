@@ -21,14 +21,14 @@ export default function ViewAllCenters() {
   const numberOfpage = Math.ceil(slides.length / itemsPerPage)
   const pageIndex = Array.from({ length: numberOfpage }, (_, idx) => idx + 1)
 
-  const showpageNumber = pageIndex.filter((number) => {
+  const showpageNumber = pageIndex?.filter((number) => {
     if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
       return number
     } else {
       return null
     }
   })
-  console.log(showpageNumber)
+  //console.log(showpageNumber)
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
@@ -118,13 +118,13 @@ export default function ViewAllCenters() {
                 </h2>
                 <p className='text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
                   <span className='md:hidden'>
-                    {sc?.description.slice(0, 60)} ...
+                    {sc?.description?.slice(0, 60)} ...
                   </span>
                   <span className='hidden md:block lg:hidden'>
-                    {sc?.description.slice(0, 100)} ...
+                    {sc?.description?.slice(0, 100)} ...
                   </span>
                   <span className='hidden lg:block'>
-                    {sc?.description.slice(0, 200)} ...
+                    {sc?.description?.slice(0, 200)} ...
                   </span>
                 </p>
                 <Link
