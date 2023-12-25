@@ -1,25 +1,25 @@
-import React from "react";
+import React from 'react'
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react'
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "./ClinicCenters.css";
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
+import './ClinicCenters.css'
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper/modules";
-import { Divider } from "@mui/material";
-import { Link } from "react-router-dom";
+import { EffectCoverflow, Pagination } from 'swiper/modules'
+import { Divider } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 //import clinic images
-import spine from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Spine Institute.png";
-import neuro from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Neuroscience Center.png";
-import heart from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Heart Institute.png";
-import digestive from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_GI Digestive Center.png";
-import horizon from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Horizon Regional Cancer Center.png";
-import colorectal from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Colorectal Surgery Center.png";
-import urology from "../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Urology Center.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import spine from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Spine Institute.png'
+import neuro from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Neuroscience Center.png'
+import heart from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Heart Institute.png'
+import digestive from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_GI Digestive Center.png'
+import horizon from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Horizon Regional Cancer Center.png'
+import colorectal from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Colorectal Surgery Center.png'
+import urology from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Urology Center.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function ClinicCenters() {
@@ -130,7 +130,6 @@ export default function ClinicCenters() {
                     className='h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125'
                     src={sc?.img}
                     alt={sc?.alt}
-                    effect='blur'
                   />
                 </div>
                 <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70'></div>

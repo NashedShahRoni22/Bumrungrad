@@ -35,7 +35,7 @@ export default function SideBar() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <LazyLoadImage
+        <img
           src={telegram}
           alt='Bumrungrad International Hospital'
           effect='blur'
@@ -43,7 +43,7 @@ export default function SideBar() {
         />
       </a>
       <button onClick={handleOpen}>
-        <LazyLoadImage
+        <img
           src={whatsapp}
           effect='blur'
           alt='Bumrungrad International Hospital'

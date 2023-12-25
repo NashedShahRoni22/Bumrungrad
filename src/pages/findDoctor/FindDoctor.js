@@ -18,8 +18,6 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import { Link } from 'react-router-dom'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export default function FindDoctor() {
   const [advanceBox, setAdvanceBox] = useState(false)
@@ -80,6 +78,11 @@ export default function FindDoctor() {
     { name: 'Japanese' },
     { name: 'Spanish' },
     { name: 'Urdo' },
+    { name: 'Mandarin' },
+    { name: 'Punjab' },
+    { name: 'Hokkin' },
+    { name: 'Hainan' },
+    { name: 'Cantonese' },
   ]
 
   const times = [{ name: 'Morning' }, { name: 'Evening' }, { name: 'Night' }]
@@ -132,6 +135,54 @@ export default function FindDoctor() {
     // Call the fetchData function whenever any state changes
     fetchData()
   }, [name, speacility, subSpeacility, lang, day, time, gender])
+
+  // ........Pagination Start....//
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const pageNumberLimit = 5
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5)
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
+
+  const itemsPerPage = 15
+  const numberOfpage = Math.ceil(doctors.length / itemsPerPage)
+  const pageIndex = Array.from({ length: numberOfpage }, (_, idx) => idx + 1)
+
+  const showpageNumber = pageIndex.filter((number) => {
+    if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
+      return number
+    } else {
+      return null
+    }
+  })
+  console.log(showpageNumber)
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
+
+  const handlePageChangePrev = () => {
+    setCurrentPage(currentPage - 1)
+    if ((currentPage - 1) % pageNumberLimit === 0) {
+      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
+      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit)
+    }
+  }
+
+  const handlePageChangeNext = () => {
+    setCurrentPage(currentPage + 1)
+    if (currentPage + 1 > maxPageNumberLimit) {
+      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
+      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit)
+    }
+  }
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const curentDoctors = doctors.slice(indexOfFirstItem, indexOfLastItem)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [currentPage])
+
+  // ........Pagination End....//
 
   return (
     <section className='min-h-screen'>
@@ -466,7 +517,7 @@ export default function FindDoctor() {
       {loader ? (
         <Loader />
       ) : (
-        <div className='mx-5 md:container md:mx-auto mt-5'>
+        <div className='p-5 my-5 md:container md:mx-auto'>
           {doctors?.length > 0 ? (
             <div>
               <p className='text-xl md:text-2xl font-semibold'>
@@ -475,16 +526,16 @@ export default function FindDoctor() {
               </p>
 
               <div className='grid grid-cols-2 place-items-center  md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5 my-5'>
-                {doctors?.map((d, i) => (
+                {curentDoctors?.map((d, i) => (
                   <div
                     className='shadow hover:shadow-xl duration-300 ease-linear flex flex-col gap-5 w-full  h-[380px] md:h-[520px] rounded-xl '
                     key={i}
                   >
                     <div className='relative'>
-                      <LazyLoadImage
+                      <img
                         src={d.cover_photo}
                         alt='Bumrungrad International Hospital'
-                        effect='blur'
+                        loading='lazy'
                         className='h-[200px] md:h-[350px]  w-full rounded-tl-xl rounded-tr-xl'
                       />
                       <div>
@@ -521,6 +572,85 @@ export default function FindDoctor() {
           )}
         </div>
       )}
+
+      <div className='flex justify-center items-center gap-2 md:gap-4 mt-8 '>
+        <button
+          onClick={handlePageChangePrev}
+          disabled={currentPage === 1}
+          class='flex items-center  gap-1 md:gap-2 md:px-6 md:py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+          type='button'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            aria-hidden='true'
+            class='w-4 h-4'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'
+            ></path>
+          </svg>
+          Prev
+        </button>
+        {minPageNumberLimit >= 1 && (
+          <button
+            onClick={handlePageChangePrev}
+            disabled={currentPage === 1}
+            className=' px-3 py-2  rounded'
+          >
+            ....
+          </button>
+        )}
+        {showpageNumber.map((index) => (
+          <button
+            key={index}
+            onClick={() => handlePageChange(index)}
+            class={`px-2 py-2 md:h-10 md:max-h-[40px] md:w-10 md:max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase  shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none${
+              currentPage === index ? ' bg-black text-white' : ''
+            }`}
+            type='button'
+          >
+            {index}
+          </button>
+        ))}
+        {pageIndex.length > maxPageNumberLimit && (
+          <button
+            onClick={handlePageChangeNext}
+            disabled={currentPage === pageIndex.length}
+            className=' px-3 py-2  rounded'
+          >
+            ....
+          </button>
+        )}
+        <button
+          onClick={handlePageChangeNext}
+          disabled={currentPage === pageIndex.length}
+          class='flex items-center gap-1 md:gap-2 md:px-6 md:py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+          type='button'
+        >
+          Next
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            aria-hidden='true'
+            class='w-4 h-4'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+            ></path>
+          </svg>
+        </button>
+      </div>
     </section>
   )
 }

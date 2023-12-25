@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 import { countries } from '../appointment/Countries'
 import { MuiTelInput } from 'mui-tel-input'
 import { Link, useNavigate } from 'react-router-dom'
+import { AiFillEye } from 'react-icons/ai'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -28,6 +29,18 @@ export default function Register() {
   const [country, setCountry] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [confirmPassword, setConfirmPassword] = React.useState('')
+  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible1, setIsVisible1] = useState(false)
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible)
+  }
+  const inputType = isVisible ? 'text' : 'password'
+
+  const toggleVisibility1 = () => {
+    setIsVisible1(!isVisible1)
+  }
+  const inputType1 = isVisible1 ? 'text' : 'password'
 
   const handlePhone = (newPhone) => {
     setPhone(newPhone)
@@ -90,7 +103,7 @@ export default function Register() {
 
   return (
     <section className='md:p-10 my-5 md:my-10 md:container mx-5 md:mx-auto'>
-      <div className='p-5 md:p-10 shadow-lg shadow-blue rounded-xl'>
+      <div className='p-5 md:p-10 shadow shadow-blue rounded-xl'>
         {/* first-card */}
         <section className=''>
           <h5 className='mb-4 text-xl md:text-3xl text-semibold font-semibold text-blue'>
@@ -221,23 +234,33 @@ export default function Register() {
         <section className='md:grid md:grid-cols-2 gap-4'>
           <div>
             <p className='mb-2.5'>Enter Password</p>
-            <TextField
-              type='password'
-              fullWidth
-              placeholder='Required'
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className=' flex relative'>
+              <TextField
+                type={inputType}
+                fullWidth
+                placeholder='Required'
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button onClick={toggleVisibility}>
+                <AiFillEye className='text-3xl text-blue !absolute right-4 top-[13px]' />
+              </button>
+            </div>
+          </div>
+          <div>
+            <p className='mt-3 md:mt-0 mb-2.5'>Confirm Password</p>
+            <div className='mt-3 md:mt-0  flex relative'>
+              <TextField
+                type={inputType1}
+                fullWidth
+                placeholder='Required'
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button onClick={toggleVisibility1}>
+                <AiFillEye className='text-3xl text-blue !absolute right-4 top-[13px]' />
+              </button>
+            </div>
           </div>
 
-          <div className='mt-4 md:mt-0'>
-            <p className='mb-2.5'>Confirm Password</p>
-            <TextField
-              type='password'
-              fullWidth
-              placeholder='Required'
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
           <div className='mt-2'>
             <p className='text-red font-semibold'>{error}</p>
           </div>

@@ -78,7 +78,7 @@ export default function WhyUs() {
             <LazyLoadImage
               src={s.src}
               alt={s.alt}
-              effect='blur'
+              effect="blur"
               className='object-cover'
             />
           </SwiperSlide>
