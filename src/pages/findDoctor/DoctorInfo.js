@@ -142,7 +142,7 @@ export default function DoctorInfo() {
               {doctor?.interests?.length !== 0 && (
                 <div className=''>
                   <p className='text-xl md:text-2xl text-blue font-semibold'>
-                    Article:
+                    Interests:
                   </p>
                   <ul className='mt-2.5 md:mt-5'>
                     {doctor?.interests?.map((dc, i) => (
