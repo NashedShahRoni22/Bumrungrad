@@ -167,7 +167,7 @@ export default function DoctorInfo() {
                   </ul>
                 </div>
               )}
-              {doctor?.experiences?.length !== 0 && (
+              {doctor?.fellowships?.length !== 0 && (
                 <div className=''>
                   <p className='text-xl md:text-2xl text-blue font-semibold'>
                     Fellowships:
