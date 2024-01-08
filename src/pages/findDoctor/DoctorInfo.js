@@ -167,6 +167,20 @@ export default function DoctorInfo() {
                   </ul>
                 </div>
               )}
+              {doctor?.experiences?.length !== 0 && (
+                <div className=''>
+                  <p className='text-xl md:text-2xl text-blue font-semibold'>
+                    Fellowships:
+                  </p>
+                  <ul className='mt-2.5 md:mt-5'>
+                    {doctor?.fellowships?.map((dc, i) => (
+                      <li key={i} className='text-xl list-disc'>
+                        {dc?.fellowship}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {doctor?.researches?.length !== 0 && (
                 <div className=''>
                   <p className='text-xl md:text-2xl text-blue font-semibold'>

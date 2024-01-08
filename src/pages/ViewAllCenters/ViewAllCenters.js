@@ -1,15 +1,49 @@
 import { Divider } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import TextField from '@mui/material/TextField'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
+import { IoSearchOutline } from 'react-icons/io5'
 import Loader from '../../shared/Loader/Loader'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
+import Lottie from 'lottie-react'
+import notFoundAnim from '../../assets/anim/notfound.json'
 export default function ViewAllCenters() {
   const [loader, setLoader] = useState(false)
   const [slides, setSlides] = useState([])
+  const [inputValue, setInputValue] = useState('')
 
+  useEffect(() => {
+    setLoader(true)
+    let url = 'https://api.bumrungraddiscover.com/api/get/centers'
+
+    if (inputValue !== '') {
+      url = `https://api.bumrungraddiscover.com/api/search/center/
+
+${inputValue}`
+    }
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (data?.response) {
+          setSlides(data?.response?.data)
+          setLoader(false)
+        } else if (data?.status === 200) {
+          setSlides(data?.data)
+          setLoader(false)
+        } else if (data?.status === 404) {
+          setSlides([])
+          setLoader(false)
+        } else {
+          console.log(data)
+          setLoader(false)
+        }
+      })
+  }, [inputValue])
+  console.log(inputValue)
   //.......pagination Start...//
 
   const [currentPage, setCurrentPage] = useState(1)
@@ -18,7 +52,7 @@ export default function ViewAllCenters() {
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
 
   const itemsPerPage = 10
-  const numberOfpage = Math.ceil(slides.length / itemsPerPage)
+  const numberOfpage = Math.ceil(slides?.length / itemsPerPage)
   const pageIndex = Array.from({ length: numberOfpage }, (_, idx) => idx + 1)
 
   const showpageNumber = pageIndex?.filter((number) => {
@@ -50,7 +84,7 @@ export default function ViewAllCenters() {
   }
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
-  const curentSlide = slides.slice(indexOfFirstItem, indexOfLastItem)
+  const curentSlide = slides?.slice(indexOfFirstItem, indexOfLastItem)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -58,15 +92,9 @@ export default function ViewAllCenters() {
 
   // ........Pagination End....//
 
-  useEffect(() => {
-    setLoader(true)
-    fetch('https://api.bumrungraddiscover.com/api/get/centers')
-      .then((res) => res.json())
-      .then((data) => {
-        setSlides(data?.response?.data)
-        setLoader(false)
-      })
-  }, [])
+  const style = {
+    height: 300,
+  }
   return (
     <div className='p-5 my-5 md:container md:mx-auto'>
       <HelmetProvider>
@@ -93,53 +121,76 @@ export default function ViewAllCenters() {
       <div className='my-5'>
         <Divider />
       </div>
+      <div className='my-8 flex md:justify-center'>
+        <div className='w-full md:w-1/2 lg:w-1/3 relative'>
+          <TextField
+            id='outlined-basic'
+            fullWidth
+            placeholder='Search Clinic & Centers'
+            variant='outlined'
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <IoSearchOutline className='text-3xl text-ash !absolute right-4 top-[13px]' />
+        </div>
+      </div>
       {loader ? (
         <Loader />
       ) : (
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5'>
-          {/* cards  */}
-          {curentSlide?.map((sc, i) => (
-            <div
-              key={i}
-              className='group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30'
-            >
-              <div>
-                <LazyLoadImage
-                  className='min-h-full w-full object-cover'
-                  src={sc?.cover_photo}
-                  effect='blur'
-                  alt='Bumrungrad International Hospital'
-                />
-              </div>
-              <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70'></div>
-              <div className='absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0'>
-                <h2 className='mb-1 md:mb-3 font-dmserif md:text-xl font-bold text-white'>
-                  {sc?.name}
-                </h2>
-                <p className='text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-                  <span className='md:hidden'>
-                    {sc?.description?.slice(0, 60)} ...
-                  </span>
-                  <span className='hidden md:block lg:hidden'>
-                    {sc?.description?.slice(0, 100)} ...
-                  </span>
-                  <span className='hidden lg:block'>
-                    {sc?.description?.slice(0, 200)} ...
-                  </span>
-                </p>
-                <Link
-                  to={`/clinic_centers/${sc?.id}`}
-                  className=' mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold'
+        <div>
+          {curentSlide?.length > 0 ? (
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5'>
+              {/* cards  */}
+              {curentSlide?.map((sc, i) => (
+                <div
+                  key={i}
+                  className='group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30'
                 >
-                  See More
-                </Link>
-                <Link className='mt-1 hidden text-white px-1 py-1 rounded-full bg-blue'>
-                  <ArrowOutwardIcon />
-                </Link>
-              </div>
+                  <div>
+                    <LazyLoadImage
+                      className='min-h-full w-full object-cover'
+                      src={sc?.cover_photo}
+                      effect='blur'
+                      alt='Bumrungrad International Hospital'
+                    />
+                  </div>
+                  <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent from-black/70 via-black/60 to-black/70'></div>
+                  <div className='absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center p-5 text-center transition-all duration-500 group-hover:translate-y-0'>
+                    <h2 className='mb-1 md:mb-3 font-dmserif md:text-xl font-bold text-white'>
+                      {sc?.name}
+                    </h2>
+                    <p className='text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                      <span className='md:hidden'>
+                        {sc?.description?.slice(0, 60)} ...
+                      </span>
+                      <span className='hidden md:block lg:hidden'>
+                        {sc?.description?.slice(0, 100)} ...
+                      </span>
+                      <span className='hidden lg:block'>
+                        {sc?.description?.slice(0, 200)} ...
+                      </span>
+                    </p>
+                    <Link
+                      to={`/clinic_centers/${sc?.id}`}
+                      className=' mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold'
+                    >
+                      See More
+                    </Link>
+                    <Link className='mt-1 hidden text-white px-1 py-1 rounded-full bg-blue'>
+                      <ArrowOutwardIcon />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+              <div className='custom-pagination mt-5 flex gap-2 justify-center'></div>
             </div>
-          ))}
-          <div className='custom-pagination mt-5 flex gap-2 justify-center'></div>
+          ) : (
+            <div className='min-h-[40vh] shadow-xl rounded p-5 mb-2.5'>
+              <Lottie style={style} animationData={notFoundAnim} loop={true} />
+              <p className='text-xl font-semibold text-blue text-center'>
+                No Package Found
+              </p>
+            </div>
+          )}
         </div>
       )}
 
