@@ -1,4 +1,3 @@
-import { Divider } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
@@ -117,9 +116,6 @@ ${inputValue}`
         <h1 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
           Clinic & Centers
         </h1>
-      </div>
-      <div className='my-5'>
-        <Divider />
       </div>
       <div className='my-8 flex md:justify-center'>
         <div className='w-full md:w-1/2 lg:w-1/3 relative'>
