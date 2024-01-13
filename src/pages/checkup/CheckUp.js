@@ -273,12 +273,12 @@ export default function CheckUp() {
             <div>
               <div className='flex justify-center'>
                 <button
-                  className={`mt-5 px-4 py-2 rounded font-semibold bg-blue border border-blue ${
-                    appoinMentDate === '' || appoinMentTime === ''
+                  className={`mt-5 px-4 py-2 rounded font-semibold bg-transparent border border-blue ${
+                    appoinMentDate === '' || appoinMentTime === '' || healtePackage === ''
                       ? 'bg-cream text-blue'
                       : 'bg-blue text-white '
                   }`}
-                  disabled={appoinMentDate === '' || appoinMentTime === ''}
+                  disabled={appoinMentDate === '' || appoinMentTime === '' || healtePackage === ''}
                   onClick={handleClick}
                 >
                   Next
@@ -374,9 +374,7 @@ export default function CheckUp() {
 
                 <button
                   onClick={handaleDataSubmit}
-                  className={`mt-5 px-4 py-2 ml-10 bg-blue border border-blue text-white rounded  hover:bg-white hover:text-blue font-semibold duration-300 ease-linear ${
-                    medicalConcern === '' ||
-                    HnNumber === '' ||
+                  className={`mt-5 px-4 py-2 ml-10 bg-transparent border border-blue text-white rounded  hover:bg-white hover:text-blue font-semibold duration-300 ease-linear ${
                     patientName === '' ||
                     gender === '' ||
                     email === '' ||
@@ -386,8 +384,6 @@ export default function CheckUp() {
                       : 'bg-blue text-white '
                   }`}
                   disabled={
-                    medicalConcern === '' ||
-                    HnNumber === '' ||
                     patientName === '' ||
                     gender === '' ||
                     email === '' ||
