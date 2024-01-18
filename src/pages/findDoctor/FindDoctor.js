@@ -542,6 +542,7 @@ export default function FindDoctor() {
                         <Link
                           to={`/doctor_details/${d.id}`}
                           className='flex justify-center'
+                          target='_blank'
                         >
                           <button className='bg-blue text-sm md:text-base text-white  absolute bottom-0 rounded-tl-xl rounded-tr-xl px-2 md:px-6 py-2'>
                             View Profile
