@@ -14,7 +14,7 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable'
 export default function DoctorInfo() {
   const navigate = useNavigate()
   const [loader, setLoader] = useState(false)
-  const { id } = useParams()
+  const { id, slug } = useParams()
   const [doctor, setDoctor] = useState({})
 
   const goAppointMent = (doctor) => {
@@ -25,7 +25,7 @@ export default function DoctorInfo() {
   // console.log(doctor);
   useEffect(() => {
     setLoader(true)
-    fetch(`https://api.bumrungraddiscover.com/api/search/doctor/${id}`)
+    fetch(`https://api.bumrungraddiscover.com/api/search/doctor/${slug}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.response.status === 200) {
@@ -37,7 +37,7 @@ export default function DoctorInfo() {
           setLoader(false)
         }
       })
-  }, [id])
+  }, [id, slug])
   return (
     <>
       {loader ? (

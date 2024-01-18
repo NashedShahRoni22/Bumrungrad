@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
         element: <Foundation />,
       },
       {
-        path: '/doctor_details/:id',
+        path: '/doctor_details/:slug/:id',
         element: <DoctorInfo />,
       },
       {
