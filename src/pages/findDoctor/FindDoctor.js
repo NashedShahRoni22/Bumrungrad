@@ -110,6 +110,28 @@ export default function FindDoctor() {
     }
   }, [speacility])
 
+  //Find Doctors
+
+  //  const searchDoctors = () => {
+  //      setLoader(true)
+  //       const queryParams = `name=${name}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&shift=${time}&day=${day}`
+  //     // Create the base URL
+  //     const baseUrl = 'https://api.bumrungraddiscover.com/api/search/doctor'
+  //     // Create the final URL by appending the query string if it's not empty
+  //     const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl
+  //     // Fetch data from the API
+  //     fetch(finalUrl)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setDoctors(data.data)
+  //         setQuery(data.query)
+  //         setLoader(false)
+  //         // console.log(data.query);
+  //       })
+  //       .catch((error) => console.error(error))
+    
+  //  }
+
   //get doctors
   useEffect(() => {
     setLoader(true)
@@ -136,7 +158,7 @@ export default function FindDoctor() {
     fetchData()
   }, [name, speacility, subSpeacility, lang, day, time, gender])
 
-  // ........Pagination Start....//
+  //........Pagination Start....//
 
   const [currentPage, setCurrentPage] = useState(1)
   const pageNumberLimit = 5
@@ -239,12 +261,19 @@ export default function FindDoctor() {
               </Select>
             </FormControl>
             <button
+              // onClick={() => searchDoctors()}
+              className='bg-blue rounded px-4 py-3 text-white'
+            >
+              Search Doctors
+            </button>
+            <button
               onClick={() => setAdvanceBox(!advanceBox)}
               className='bg-blue rounded px-4 py-3 text-white hidden md:flex justify-between'
             >
               Advance Search
               {advanceBox ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
             </button>
+
             <button
               onClick={handleClickOpen}
               className='md:hidden bg-blue rounded px-4 py-3 text-white flex justify-between'
