@@ -23,7 +23,7 @@ import { IoSearchOutline } from "react-icons/io5";
 export default function FindDoctor() {
   const [advanceBox, setAdvanceBox] = useState(false);
   const [loader, setLoader] = useState(false);
-  const [showData, setshowData] = useState(15);
+  const [showData, setShowData] = useState(15);
   const [speacility, setSpeacility] = React.useState("");
   const [subSpeacility, setSubSpeacility] = React.useState("");
   const [lang, setLang] = React.useState("");
@@ -89,13 +89,12 @@ export default function FindDoctor() {
     height: 300,
   };
 
-  
   //Show data add and data less
   const handaleAddData = () => {
-    setshowData((prev) => prev + 15);
+    setShowData((prev) => prev + 15);
   };
   const handalelessData = (num) => {
-    setshowData((prev) => Math.max(prev - 15, 15));
+    setShowData((prev) => Math.max(prev - 15, 15));
   };
   //get speacilities
   useEffect(() => {
@@ -153,7 +152,7 @@ export default function FindDoctor() {
     <section className="min-h-screen">
       {/* search field  */}
       <div id="finddoctor" className="flex items-center">
-        <div className="container mx-5 md:mx-auto p-6 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
+        <div className="container mx-5 md:mx-auto p-6 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3 mt-5">
           <h1 className="text-xl md:text-3xl font-semibold text-blue text-center">
             Find A Doctor
           </h1>
@@ -419,7 +418,7 @@ export default function FindDoctor() {
       query?.day ||
       query?.schedule ||
       query?.gender ? (
-        <div className="mx-5 md:container md:mx-auto p-5">
+        <div className="mx-5 md:container md:mx-auto md:p-5">
           <p className="text-lg md:text-xl font-semibold">Filters:</p>
           <div className="flex flex-wrap gap-1 mt-5">
             {docName && (
@@ -494,7 +493,7 @@ export default function FindDoctor() {
       {loader ? (
         <Loader />
       ) : (
-        <div className="mx-5 p-5 md:container md:mx-auto relative">
+        <div className="mx-5 md:p-5 md:container md:mx-auto relative">
           <button
             onClick={handaleToptoBottom}
             className="p-2 md:p-4 fixed bottom-5 right-5 z-50 bg-blue hover:bg-white border-2 border-blue text-white hover:text-blue rounded-full"
@@ -567,13 +566,15 @@ export default function FindDoctor() {
           </button>
         )}
 
-        <button
-          onClick={handaleAddData}
-          className="border border-blue bg-blue hover:bg-white hover:text-blue rounded-full text-sm md:text-base text-white   px-2 md:px-6 py-2"
-          disabled={showData === doctors?.length}
-        >
-          View More
-        </button>
+        {doctors.length > 0 && (
+          <button
+            onClick={handaleAddData}
+            className="border border-blue bg-blue hover:bg-white hover:text-blue rounded-full text-sm md:text-base text-white   px-2 md:px-6 py-2"
+            disabled={showData === doctors?.length}
+          >
+            View More
+          </button>
+        )}
       </div>
     </section>
   );
