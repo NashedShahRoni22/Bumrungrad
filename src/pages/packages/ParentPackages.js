@@ -13,17 +13,18 @@ import notFoundAnim from '../../assets/anim/notfound.json'
 export default function ParentPackages() {
   const [loader, setLoader] = useState(false)
   const [inputValue, setInputValue] = useState('')
+  const [searchValue, setSearchValue] = useState("");
+  const handleSearch = () => {
+    setSearchValue(inputValue);
+  };
   const [packages, setPackages] = useState([])
-
-  //.......Package Api call.....//
 
   useEffect(() => {
     setLoader(true)
     let url = 'https://api.bumrungraddiscover.com/api/get/package'
 
-    if (inputValue !== '') {
-      url = `https://api.bumrungraddiscover.com/api/search/package/
-${inputValue}`
+    if (searchValue !== '') {
+      url = `https://api.bumrungraddiscover.com/api/search/package/${searchValue}`
     }
 
     fetch(url)
@@ -42,9 +43,7 @@ ${inputValue}`
           setLoader(false)
         }
       })
-  }, [inputValue])
-
-  // ........Pagination Start....//
+  }, [searchValue])
 
   const [currentPage, setCurrentPage] = useState(1)
   const pageNumberLimit = 5
@@ -132,7 +131,12 @@ ${inputValue}`
             variant='outlined'
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <IoSearchOutline className='text-3xl text-ash !absolute right-4 top-[13px]' />
+          <button
+            onClick={handleSearch}
+            className="text-3xl text-blue !absolute right-4 top-[13px]"
+          >
+            <IoSearchOutline />
+          </button>
         </div>
       </div>
       {loader ? (
@@ -222,7 +226,7 @@ ${inputValue}`
             key={index}
             onClick={() => handlePageChange(index)}
             class={`px-2 py-2 md:h-10 md:max-h-[40px] md:w-10 md:max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase  shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none${
-              currentPage === index ? ' bg-black text-white' : ''
+              currentPage === index ? ' bg-blue text-white' : ''
             }`}
             type='button'
           >

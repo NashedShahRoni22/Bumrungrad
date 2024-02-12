@@ -158,20 +158,21 @@ export default function FindDoctor() {
           </h1>
           <div className="flex flex-col gap-4 mt-5 md:mt-10">
             <div className="flex">
-              <TextField
-                id="outlined-basic"
-                label="Enter Doctor Name"
-                variant="outlined"
-                fullWidth
-                onChange={(e) => setName(e.target.value)}
-              />
-              <Button
-                onClick={addDocName}
-                variant="contained"
-                className="!bg-blue"
-              >
-                <IoSearchOutline className="text-3xl" />
-              </Button>
+              <div className="w-full relative">
+                <TextField
+                  id="outlined-basic"
+                  label="Enter Doctor Name"
+                  variant="outlined"
+                  fullWidth
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <button
+                  onClick={addDocName}
+                  className="text-3xl text-blue !absolute right-4 top-[13px]"
+                >
+                  <IoSearchOutline />
+                </button>
+              </div>
             </div>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">
