@@ -25,7 +25,10 @@ const corporates = [
   { name: "Send Inquiry", link: "/send_query" },
   { name: "Contact", link: "/locate_us" }, 
 ];
-const blognews = ["Health Blogs", "News"];
+const blognews = [
+  { name: 'Blogs', link: '/blogs' },
+  { name: 'News', link: '/news' },
+]
 
 export default function BottomBar() {
   return (
@@ -62,7 +65,7 @@ export default function BottomBar() {
             <ul className='text-[16px] flex flex-col gap-2 mt-2 ml-5 list-disc'>
               {blognews.map((s, i) => (
                 <li key={i}>
-                  <Link>{s}</Link>
+                  <Link to={s.link}>{s.name}</Link>
                 </li>
               ))}
             </ul>

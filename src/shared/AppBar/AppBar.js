@@ -51,7 +51,7 @@ export default function AppBar() {
 
   return (
     <nav className='bg-cream sticky top-0 z-20'>
-      <section className='px-5 py-3 relative md:container md:mx-auto flex items-center justify-between'>
+      <section className='px-3 py-3 relative md:container md:mx-auto flex items-center justify-between'>
         <Link to={'/'}>
           <LazyLoadImage
             src={logo}
@@ -111,7 +111,7 @@ export default function AppBar() {
         </div>
         {/* Desktop View  */}
         <div className='hidden py-3 lg:block'>
-          <ul className='flex justify-center gap-8 text-[16px] text-blue'>
+          <ul className='flex justify-center gap-5 text-[16px] text-blue'>
             {MenuItems.map((mi, i) => (
               <li key={i} className='group relative'>
                 <Link className='font-semibold' to={mi?.link}>

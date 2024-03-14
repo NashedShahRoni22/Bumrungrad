@@ -25,11 +25,11 @@ export default function Home() {
         <Helmet>
           <meta charSet='utf-8' />
           <title>
-            Bumrungrad International Hospital: Premier Care | Book Now
+            Bumrungrad International Hospital-The No.1 Hospital in Thailand
           </title>
           <meta
             name='description'
-            content='Discover premier healthcare at Bumrungrad International Hospital. Expert care, personalized services. Book your appointment for a healthier tomorrow.
+            content='A leading hospital in Thailand, accredited by JCI, has been ranked among the top 10 global medical destinations by Newsweek and recognized as a top 4 pioneer in medical tourism by The Wall Street Journal.
 '
           />
           <link rel='canonical' href='https://bumrungraddiscover.com/' />
