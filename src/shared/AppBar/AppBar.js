@@ -139,7 +139,7 @@ export default function AppBar() {
         </div>
         {/* link and button  */}
         <div className='flex gap-4'>
-          <div className='relative group'>
+          <div className='relative group hidden md:block'>
             <PersonIcon
               sx={{ fontSize: '28px' }}
               className='text-blue cursor-pointer'

@@ -45,7 +45,7 @@ export default function Home() {
       <News />
       <Blogs />
       <HomeContact />
-      <div className='fixed bottom-2 min-w-full z-50'>
+      <div className='fixed bottom-0 md:bottom-2 min-w-full z-50'>
         <MiddleBar />
       </div>
     </section>

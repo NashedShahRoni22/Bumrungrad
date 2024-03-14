@@ -21,16 +21,16 @@ import { Link } from 'react-router-dom'
 import { IoSearchOutline } from 'react-icons/io5'
 
 export default function FindDoctor() {
-  const [advanceBox, setAdvanceBox] = useState(false)
-  const [loader, setLoader] = useState(false)
-  const [showData, setshowData] = useState(15)
-  const [speacility, setSpeacility] = React.useState('')
-  const [subSpeacility, setSubSpeacility] = React.useState('')
-  const [lang, setLang] = React.useState('')
-  const [day, setDay] = React.useState('')
-  const [time, setTime] = React.useState('')
-  const [gender, setGender] = React.useState('')
-  const [doctors, setDoctors] = useState([])
+  const [advanceBox, setAdvanceBox] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const [showData, setshowData] = useState(15);
+  const [speacility, setSpeacility] = React.useState("");
+  const [subSpeacility, setSubSpeacility] = React.useState("");
+  const [lang, setLang] = React.useState("");
+  const [day, setDay] = React.useState("");
+  const [time, setTime] = React.useState("");
+  const [gender, setGender] = React.useState("");
+  const [doctors, setDoctors] = useState([]);
   // console.log(doctors);
   const [query, setQuery] = useState({})
   const [specialties, setSpecialities] = useState([])
@@ -87,15 +87,16 @@ export default function FindDoctor() {
 
   const style = {
     height: 300,
-  }
+  };
 
+  
   //Show data add and data less
   const handaleAddData = () => {
-    setshowData((prev) => prev + 15)
-  }
-  const handalelessData = () => {
-    setshowData((prev) => Math.max(prev - 15, 15))
-  }
+    setshowData((prev) => prev + 15);
+  };
+  const handalelessData = (num) => {
+    setshowData((prev) => Math.max(prev - 15, 15));
+  };
   //get speacilities
   useEffect(() => {
     fetch('https://api.bumrungraddiscover.com/api/get/specialty')
@@ -151,26 +152,26 @@ export default function FindDoctor() {
   return (
     <section className='min-h-screen'>
       {/* search field  */}
-      <div id='finddoctor' className='flex items-center'>
-        <div className='container mx-5 md:mx-auto p-6 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3'>
-          <h1 className='text-xl md:text-3xl font-semibold text-blue text-center'>
+      <div id="finddoctor" className="flex items-center">
+        <div className="container mx-5 md:mx-auto p-6 md:p-12 rounded-xl bg-white shadow-xl md:w-1/2 lg:w-1/3">
+          <h1 className="text-xl md:text-3xl font-semibold text-blue text-center">
             Find A Doctor
           </h1>
-          <div className='flex flex-col gap-4 mt-5 md:mt-10'>
-            <div className='flex'>
+          <div className="flex flex-col gap-4 mt-5 md:mt-10">
+            <div className="flex">
               <TextField
-                id='outlined-basic'
-                label='Enter Doctor Name'
-                variant='outlined'
+                id="outlined-basic"
+                label="Enter Doctor Name"
+                variant="outlined"
                 fullWidth
                 onChange={(e) => setName(e.target.value)}
               />
               <Button
                 onClick={addDocName}
-                variant='contained'
-                className='!bg-blue'
+                variant="contained"
+                className="!bg-blue"
               >
-                <IoSearchOutline className='text-3xl' />
+                <IoSearchOutline className="text-3xl" />
               </Button>
             </div>
             <FormControl fullWidth>
@@ -418,9 +419,9 @@ export default function FindDoctor() {
       query?.day ||
       query?.schedule ||
       query?.gender ? (
-        <div className='mx-5 md:container md:mx-auto p-5'>
-          <p className='text-lg md:text-xl font-semibold'>Filters:</p>
-          <div className='flex flex-wrap gap-1 mt-5'>
+        <div className="mx-5 md:container md:mx-auto p-5">
+          <p className="text-lg md:text-xl font-semibold">Filters:</p>
+          <div className="flex flex-wrap gap-1 mt-5">
             {docName && (
               <button
                 onClick={() => setDocName('')}
@@ -493,7 +494,7 @@ export default function FindDoctor() {
       {loader ? (
         <Loader />
       ) : (
-        <div className='mx-5 p-5 md:container md:mx-auto relative'>
+        <div className="mx-5 p-5 md:container md:mx-auto relative">
           <button
             onClick={handaleToptoBottom}
             className='p-2 md:p-4 fixed bottom-5 right-5 z-50 bg-blue hover:bg-white border-2 border-blue text-white hover:text-blue rounded-full'
@@ -556,7 +557,7 @@ export default function FindDoctor() {
         </div>
       )}
 
-      <div className='flex justify-center items-center gap-2 md:gap-4 mt-8 '>
+      <div className="flex justify-center items-center gap-2 md:gap-4 mt-8 ">
         {showData !== 15 && (
           <button
             onClick={handalelessData}
@@ -568,7 +569,7 @@ export default function FindDoctor() {
 
         <button
           onClick={handaleAddData}
-          className='border border-blue bg-blue hover:bg-white hover:text-blue rounded-full text-sm md:text-base text-white   px-2 md:px-6 py-2'
+          className="border border-blue bg-blue hover:bg-white hover:text-blue rounded-full text-sm md:text-base text-white   px-2 md:px-6 py-2"
           disabled={showData === doctors?.length}
         >
           View More
