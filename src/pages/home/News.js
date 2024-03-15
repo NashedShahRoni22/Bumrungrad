@@ -28,7 +28,7 @@ export default function News() {
           Bumrungrad News
         </h2>
         <Link
-          to={'/allNews'}
+          to={'/news'}
           className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
         >
           View All

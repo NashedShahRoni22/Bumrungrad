@@ -28,7 +28,7 @@ export default function Blogs() {
           Bumrungrad Health Blogs
         </h2>
         <Link
-          to={'/allblog'}
+          to={'/blogs'}
           className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
         >
           View All
