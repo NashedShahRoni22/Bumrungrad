@@ -50,7 +50,7 @@ export default function ContactForm() {
           />
           <link
             rel='canonical'
-            href='https://bumrungraddiscover.com/locate_us'
+            href='https://bumrungraddiscover.com/contact_us'
           />
         </Helmet>
       </HelmetProvider>

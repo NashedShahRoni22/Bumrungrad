@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
         element: <Bumrungrad />,
       },
       {
-        path: '/about_vissionMisson',
+        path: '/about_vision_and_misson',
         element: <VissionMisson />,
       },
       {
@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
         element: <DoctorInfo />,
       },
       {
-        path: '/locate_us',
+        path: '/contact_us',
         element: <ContactUs />,
       },
       {

@@ -1,245 +1,238 @@
-import React from 'react'
-import '../../../App.css'
-import careimg from '../../../assets/about_bumrungrad/Bumrungrad_AboutUS.jpg'
-import awardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Bumrungrad_Award.jpg'
-import specialtiesimg from '../../../assets/about_bumrungrad/Bumrungrad_specialties-2022.jpg'
-import inovationsimg from '../../../assets/about_bumrungrad/Bumrungrad_inovation.jpg'
-import careingimg from '../../../assets/about_bumrungrad/Bumrungrad_Caring.jpg'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import React from "react";
+import "../../../App.css";
+import careimg from "../../../assets/about_bumrungrad/bumrungrad_owned.png";
+import awardimg from "../../../assets/about_bumrungrad/Bumrungrad _Hospital_Bumrungrad_Award.png";
+import specialtiesimg from "../../../assets/about_bumrungrad/bumrungrad_owned (1).png";
+import inovationsimg from "../../../assets/about_bumrungrad/bumrungrad_owned (2).png";
+import careingimg from "../../../assets/about_bumrungrad/bumrungrad_owned (3).png";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 const Bumrungrad = () => {
   return (
-    <section className='mx-5 md:container md:mx-auto'>
+    <section className="mx-5 md:container md:mx-auto">
       <HelmetProvider>
-        {' '}
+        {" "}
         <Helmet>
-          <meta charSet='utf-8' />
+          <meta charSet="utf-8" />
           <title>
             Learn About Bumrungrad Hospital: Excellence in Healthcare
           </title>
           <meta
-            name='description'
+            name="description"
             content="Explore Bumrungrad International Hospital's excellence in healthcare. Discover cutting-edge services and compassionate care for your well-being.
 "
           />
           <link
-            rel='canonical'
-            href='https://bumrungraddiscover.com/about_bumrungrad'
+            rel="canonical"
+            href="https://bumrungraddiscover.com/about_bumrungrad"
           />
         </Helmet>
       </HelmetProvider>
-      <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
-        <div className='absolute top-0 h-full w-full bg-black/60'></div>
-        <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
+      <div className="h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center">
+        <div className="absolute top-0 h-full w-full bg-black/60"></div>
+        <h1 className="uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10">
           About Bumrungard International Hospital
         </h1>
       </div>
 
       {/* new content here */}
-      <div className='mx-5 my-10'>
-        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
-          World-class Healthcare
+      <div className="mx-5 my-10">
+        <h2 className="text-blue text-xl md:text-2xl font-semibold">
+          Excellent Medical Care
         </h2>
-        <p className='text-justify mt-5'>
-          Founded in 1980, Bumrungrad International Hospital has been a global
-          pioneer in providing world-class healthcare services and international
-          patient support for nearly four decades. Located in the heart of
-          Bangkok, Thailand, a cosmopolitan megacity nicknamed “The City of
-          Angels” and renowned for its culture of exceptional hospitality and
-          delicious cuisine. Bumrungrad is an internationally accredited,
-          multi-specialty hospital listed on the Stock Exchange of Thailand
-          since 1989. One of the largest private hospitals in Southeast Asia,
-          Bumrungrad International Hospital cares for over 1.1 million patients
-          from more than 190 countries annually.
+        <p className="text-justify mt-5">
+          Bumrungrad International Hospital has been at the forefront of
+          providing patients from all over the world with excellent medical care
+          and support for nearly 40 years, having been founded in 1980. Located
+          at the heart of Bangkok, Thailand, a thriving city dubbed "The City of
+          Angels" and renowned for its delicious cuisine and warm hospitality.
+          Internationally accredited multispecialty hospital Bumrungrad has been
+          listed on the Thai Stock Exchange since 1989. At Bumrungrad
+          International Hospital, one of the largest private hospitals in
+          Southeast Asia, more than 1.1 million patients from more than 190
+          countries are treated annually.
         </p>
       </div>
-      <div className='mx-5 my-20'>
+      <div className="mx-5 my-20">
         <div>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>Milestones:</p>
+          <p className="text-[16px] py-3 text-blue font-medium">Benchmarks</p>
           <hr />
         </div>
-        <div className='mt-4'>
-          <ol className='pl-6 list-decimal'>
-            <li className=''>Opened 200 bed facility: September 17, 1980</li>
-            <li className=' mt-2'>
-              Listed on the Stock Exchange of Thailand: 1989
+        <div className="mt-4">
+          <ol className="pl-6 list-decimal">
+            <li>The 200-bed facility opened on September 17, 1980.</li>
+            <li>Listed in 1989 on the Thai Stock Exchange</li>
+            <li>
+              Commissioning of the replacement hospital building occurred on
+              January 1, 1997.
             </li>
-            <li className=' mt-2'>
-              Replacement hospital building commissioned: January 1, 1997
+            <li>
+              The Joint Commission celebrated the opening of the Bumrungrad
+              International Clinic Building in May 2008. Accreditation on a
+              global scale: since February 2002
             </li>
-            <li className=' mt-2'>
-              Opening of the Bumrungrad International Clinic Building: May 2008
-            </li>
-            <li className=' mt-2'>
-              Joint Commission International accreditation: Since February 2002
-            </li>
-            <li className=' mt-2'>
-              Global Healthcare Accreditation with Excellence: September 2017
+            <li>
+              September 2017 saw the Global Healthcare Accreditation with
+              Excellence.
             </li>
           </ol>
-          <div className='ml-4 mt-4'>
+
+          <div className="ml-4 mt-4">
             <img
               src={careimg}
-              alt='Bumrungrad International Hospital'
-              srcset=''
+              alt="Bumrungrad International Hospital"
+              srcset=""
             />
           </div>
         </div>
       </div>
 
-      <div className='mx-5 my-20'>
+      <div className="mx-5 my-20">
         <div>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>
-            Collaboration of Expertise:​
+          <p className="text-[16px] py-3 text-blue font-medium">
+            Expertise Cooperation
           </p>
           <hr />
         </div>
-        <div className='mt-4'>
-          <p className='text-justify mt-5'>
-            Bumrungrad International Hospital has set up multidisciplinary teams
-            of experienced medical doctors, nurses, pharmacists, physical
-            therapists, nutritionists, medical technologists and other
-            professional staff to integrate quality treatment, making it a
-            one-stop shop healthcare destination for all types of patients and
-            complex care needs. Bumrungrad International Hospital employs over
-            1,300 medical doctors and over 4,800 support professionals. A
-            majority of the doctors have earned international board
-            certifications from the United States, United Kingdom, Australia,
-            Japan and other advanced economies well known for high medical and
-            quality standards. The seamless collaboration of expertise between
-            our medical teams allows for better treatments and outcomes for
-            patients across more than 70 medical subspecialties.
+        <div className="mt-4">
+          <p className="text-justify mt-5">
+            In order to integrate quality treatment and serve as a one-stop shop
+            for complex care needs, Bumrungrad International Hospital has
+            assembled multidisciplinary teams of skilled medical doctors,
+            nurses, pharmacists, physical therapists, nutritionists, and other
+            professional staff. More than 4,800 support staff members and more
+            than 1,300 physicians work at Bumrungrad International Hospital.
+            International board certificates from the United States, United
+            Kingdom, Australia, Japan, and other advanced economies with strong
+            medical standards are held by the majority of the doctors. Better
+            patient outcomes and therapies are made possible by the excellent
+            collaboration between our medical teams in more than 70 medical
+            subspecialties.
           </p>
-          <div className='ml-4 mt-4'>
+          <div className="ml-4 mt-4">
             <img
               src={awardimg}
-              alt='Bumrungrad International Hospital'
-              srcset=''
+              alt="Bumrungrad International Hospital"
+              srcset=""
             />
           </div>
         </div>
       </div>
-      <div className='mx-5 my-20'>
+      <div className="mx-5 my-20">
         <div>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>
-            Quality, Safety with Measurable Results:​
+          <p className="text-[16px] py-3 text-blue font-medium">
+            Measurable results combined with quality and safety
           </p>
           <hr />
         </div>
-        <div className='mt-4'>
-          <p className='text-justify mt-5'>
-            In 2002, Bumrungrad International Hospital was the first hospital in
-            Asia to be accredited by the US-based Joint Commission International
-            (JCI). The hospital has also been re-accredited five times
-            consecutively. Bumrungrad also became the first hospital in Asia to
-            be DNV GL MIR Certified for Infection Risk, and became the first
-            non-US hospital to earn Global Healthcare Accreditation with
-            Excellence designation from GHA, which signifies the highest
-            international quality and safety standards for overseas patients
-            traveling to Bumrungrad International Hospital for treatment and
-            care. Through our consistent clinical standards and many
-            international accreditations, Bumrungrad has demonstrated some of
-            the highest clinical success rates and lowest infection rates in the
-            region and world.
+        <div className="mt-4">
+          <p className="text-justify mt-5">
+            Accredited by the US-based Joint Commission International (JCI) in
+            2002, Bumrungrad International Hospital became the first hospital in
+            Asia. Additionally, the hospital has received five consecutive
+            accreditations. Also, Bumrungrad became the first hospital outside
+            of the United States to receive the Global Healthcare Accreditation
+            with Excellence designation from GHA, signifying the highest
+            international standards of quality and safety for patients from
+            other countries seeking treatment and care at Bumrungrad
+            International Hospital. Additionally, Bumrungrad became the first
+            hospital in Asia to receive the DNV GL MIR Certified for Infection
+            Risk. Bumrungrad has shown some of the greatest clinical success
+            rates and lowest infection rates in the area and worldwide thanks to
+            our constant clinical standards and numerous international
+            accreditations.
           </p>
-          <div className='ml-4 mt-4'>
+          <div className="ml-4 mt-4">
             <img
               src={specialtiesimg}
-              alt='Bumrungrad International Hospital'
-              srcset=''
+              alt="Bumrungrad International Hospital"
+              srcset=""
             />
           </div>
         </div>
       </div>
-      <div className='mx-5 my-20'>
+      <div className="mx-5 my-20">
         <div>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>
-            Innovation and Technology:​
+          <p className="text-[16px] py-3 text-blue font-medium">
+            Tech and Innovation
           </p>
           <hr />
         </div>
-        <div className='mt-4'>
-          <p className='text-justify mt-5'>
-            Bumrungrad International Hospital is a leader in medical technology
-            and innovative patient healthcare services. Among the most recent
-            advancements, Bumrungrad has expanded the Precision Medicine
-            department which offers personalized cancer treatments and the
-            latest breakthrough therapies mostly from the United States and
-            Europe. Another cutting-edge technology we use is CardioInsight, a
-            completely non-invasive diagnostics technology for diagnosing heart
-            arrhythmias and the only active center in the Asia Pacific. In order
-            to remain a leader in cutting-edge technology, Bumrungrad was the
-            first IBM Watson for Oncology site in the world. IBM Watson, a
-            machine-learning AI, assists physicians by analyzing patient data
-            against thousands of historical cases, hundreds of medical journals
-            and textbooks, the latest clinical trials, and more than 12 million
-            pages of text. This innovation in technology allows doctors and
-            specialists to compare their findings against big data and provide
-            the most accurate treatments possible. What began as a surgical
-            treatment for prostate cancer has now become the Bumrungrad Robotic
-            Surgery Center. It utilizes state-of-the-art technologies for
-            robotic-assisted surgery such as MAKOplasty©, Mazor X and the da
-            Vinci System to allow for more consistency, accuracy and faster
-            recovery times with less invasiveness for joint, spine and cancer
-            patients.
+        <div className="mt-4">
+          <p className="text-justify mt-5">
+            Medical technology and cutting-edge patient healthcare services are
+            areas in which Bumrungrad International Hospital excels. The
+            Precision Medicine department at Bumrungrad has grown, offering the
+            most recent innovative therapies and individualized cancer
+            treatments, primarily from the US and Europe. This is one of the
+            most recent innovations. We further employ CardioInsight, the only
+            operational facility in Asia Pacific, which is a fully non-invasive
+            diagnostic tool for the diagnosis of cardiac arrhythmias. Becoming
+            the first IBM Watson for Oncology facility globally allowed
+            Bumrungrad to maintain its position as a leader in cutting-edge
+            technology. Utilizing thousands of past instances, hundreds of
+            medical articles and textbooks, the most recent clinical studies,
+            and more than 12 million pages of data, IBM Watson, a
+            machine-learning AI, helps doctors by analyzing patient data.
           </p>
-          <div className='ml-4 mt-4'>
+          <div className="ml-4 mt-4">
             <img
               src={inovationsimg}
-              alt='Bumrungrad International Hospital'
-              srcset=''
+              alt="Bumrungrad International Hospital"
+              srcset=""
             />
           </div>
         </div>
       </div>
-      <div className='mx-5 my-20'>
+      <div className="mx-5 my-20">
         <div>
           <hr />
-          <p className='text-[16px] py-3 text-blue font-medium'>
-            Compassionate Caring:​
+          <p className="text-[16px] py-3 text-blue font-medium">
+            Kind Hearted Caregiving
           </p>
           <hr />
         </div>
-        <div className='mt-4'>
-          <p className='text-justify mt-5'>
-            Compassionate caring is one of Bumrungrad International’s principle
-            values. It has been featured by Newsweek, International Herald
-            Tribune, Reader’s Digest, CBS 60 Minutes, The Financial Times and
-            Inside Man on CNN. The reportage covers Bumrungrad’s quality
-            treatment and medical healthcare abroad, placing it high on the list
-            of medical tourism hospital destinations. Nearly all Bumrungrad
-            doctors speak English, and the hospital employs more than 200
-            interpreters to cover the language needs of patients from nearly any
-            country. The patients and their families can receive end-to-end
-            healthcare service from pick-up and drop-off logistics as well as
-            hotel reservations on arrival through our Bumrungrad International
-            Airport Representative Office at Suvarnabhumi Airport. Convenience
-            plays another vital role at Bumrungrad and the hospital’s one-stop
-            medical campus is able to provide diagnostic tests, specialty
-            referrals, and treatment within days, not weeks, so international
-            patients can get the care they need and return home sooner.
-            Bumrungrad International Hospital also practices a one-price-policy
-            for all patients healthcare services, meaning there is no difference
-            in costs for local or international patients of any nationality.
-            Through compassion, comfort, convenience and coordination,
-            Bumrungrad goes the extra mile to ensure that every patient is
-            treated equal and with care, no matter where they are from. That’s
-            why the Thai name Bumrungrad means “care for the people.”
+        <div className="mt-4">
+          <p className="text-justify mt-5">
+            One of the core values of Bumrungrad International is compassionate
+            care. Newsweek, The Financial Times, CBS 60 Minutes, Reader's
+            Digest, International Herald Tribune, and Inside Man on CNN have all
+            featured it. The article highlights Bumrungrad's excellent care and
+            international medical tourism, making it a top choice for medical
+            tourism hospital destinations. For patients from almost any country,
+            Bumrungrad Hospital has more than 200 translators on staff to assist
+            with linguistic issues. Almost all of the hospital's clinicians are
+            fluent in English.Our Bumrungrad International Airport
+            Representative Office at Suvarnabhumi Airport offers patients and
+            their families comprehensive healthcare services, including hotel
+            reservations upon arrival and efficient pick-up and drop-off
+            logistics. Convenience is another important factor at Bumrungrad.
+            Patients from outside can receive the care they require and get back
+            home faster thanks to the hospital's one-stop medical campus, which
+            can offer diagnostic tests, specialized referrals, and treatment in
+            a matter of days rather than weeks.Furthermore, Bumrungrad
+            International Hospital has a one-price policy for all medical
+            services; this means that patients, whether domestic or foreign, pay
+            the same amount for care regardless of their nationality. No matter
+            where they are from, Bumrungrad goes above and beyond to make sure
+            that every patient is treated fairly and with care via compassion,
+            comfort, convenience, and coordination. Bumrungrad means "care for
+            the people" in Thai, for this reason.
           </p>
-          <div className='ml-4 mt-4'>
+          <div className="ml-4 mt-4">
             <img
               src={careingimg}
-              alt='Bumrungrad International Hospital'
-              srcset=''
+              alt="Bumrungrad International Hospital"
+              srcset=""
             />
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Bumrungrad
+export default Bumrungrad;
