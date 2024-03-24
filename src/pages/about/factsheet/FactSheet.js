@@ -1,5 +1,5 @@
 import React from 'react'
-import buildingimg from '../../../assets/about_bumrungrad/Bumrungrad-Directory_Online_EN_Artboard-1.jpg'
+import buildingimg from '../../../assets/about_bumrungrad/FactSheet/Blue And White Clean Medical Center Instagram Post.png'
 import clinicimg from '../../../assets/about_bumrungrad/Bumrungrad_Clinic.jpg'
 import resourceimg from '../../../assets/about_bumrungrad/Bumrungrad_Human-Resources.jpg'
 import roomimg from '../../../assets/about_bumrungrad/Bumrungrad_room.jpg'
