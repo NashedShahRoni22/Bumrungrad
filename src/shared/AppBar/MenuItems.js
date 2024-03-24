@@ -50,7 +50,7 @@ export const MenuItems = [
       },
       {
         name: 'Vision & Mision',
-        link: '/about_vissionMisson',
+        link: '/about_vision_and_misson',
       },
       {
         name: 'Factsheet',
@@ -68,11 +68,11 @@ export const MenuItems = [
   },
   {
     header: 'Contact',
-    link: '/locate_us',
+    link: '/contact_us',
     // childs: [
     //   {
     //     name: 'Locate Us',
-    //     link: '/locate_us',
+    //     link: '/contact_us',
     //   },
     //   {
     //     name: 'Hospital Information',

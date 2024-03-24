@@ -1,12 +1,12 @@
 .bumrungrand-back {
-  background-image: url(/src/assets/about_bumrungrad/bumrungrand_hospital.jpg);
+  background-image: url(/src/assets/about_bumrungrad/bumrungrad_owned_bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   
 }
 .vissionMission-back {
-  background-image: url(/src/assets/about_bumrungrad/Bumrungrad-Vission.webp);
+  background-image: url(/src/assets/about_bumrungrad/Vision&Mission.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -23,7 +23,7 @@ const serives = [
 const corporates = [
   { name: "About Bumrungrad", link: "/about_bumrungrad" },
   { name: "Send Inquiry", link: "/send_query" },
-  { name: "Contact", link: "/locate_us" }, 
+  { name: "Contact", link: "/contact_us" }, 
 ];
 const blognews = [
   { name: 'Blogs', link: '/blogs' },
@@ -84,9 +84,9 @@ export default function BottomBar() {
       </section>
       <section className='pt-5 pb-36 md:pb-20 bg-blue text-white'>
         <div className='md:container md:mx-auto mx-5 flex flex-col md:flex-row items-center justify-center md:justify-between'>
-          <p className='text-center'>
+          <p className='text-center flex gap-2 items-center'>
             <CopyrightIcon />
-            2023 Bumrungrad International Hospital Referral Office
+            2024 Bumrungrad International Hospital Referral Office
           </p>
           <div className='flex gap-4 items-center'>
             <p>Terms & Conditions</p>
