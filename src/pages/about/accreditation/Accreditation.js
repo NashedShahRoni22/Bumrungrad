@@ -1,58 +1,58 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import networkimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Layout-Newsweek_Social-Media_EN.png";
-import awardimg from "../../../assets/about_bumrungrad/Bumrungrad _Hospital_Bumrungrad_Award.png";
-import sbestspeaciligedimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_worlds-best-specialized-hospitals-2021.jpg";
-import marketingAwardimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Marketing-Excellence-Awards-2022.jpg";
-import thaiAwardimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-MIKE-Award-2021-SILVER.png";
-import influencerAwardimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Influencer-Awards-2021-by-Tellscore-(2).png";
-import YoutubeAwardimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_YouTube-Works-Award-2021_1.png";
-import YoutubeWorkAwardimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_YouTube-Works-Award-2021_2.png";
-import Award2img from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Award-2.jpg";
-import digitalAward2img from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Digital-Transformation-Awards-2021-(1).png";
-import zocialimg from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_ZocialBH2021-(2).png";
-import Award1imga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Award-2.jpg";
-import annotation1imga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Annotation-2022-03-01-110437.jpg";
-import annotation21imga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Annotation-2022-03-01-104946.jpg";
-import globalbandimga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Global-Brand-Awards-2022.jpg";
-import awardglobalbandimga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Award-global-economics-jpg.png";
-import globalbusinessaward1imga from "../../../assets/about_bumrungrad/global-business-awards-capture.jpg";
-import globalbusinessaward2imga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_global-business-awards.png";
-import microwSoftaward2imga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_MicrosoftTeams-image-(21).jpg";
-import thaiCorporateimga from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_Thailand-Corporate-Excellence-Awards-2019.png";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import networkimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Layout-Newsweek_Social-Media_EN.png'
+import awardimg from '../../../assets/about_bumrungrad/Bumrungrad _Hospital_Bumrungrad_Award.png'
+import sbestspeaciligedimg from '../../../assets/about_bumrungrad/Accreditation/Modern Fashion & Clothing Online Shop Showroom Facebook Cover (4).png'
+import marketingAwardimg from '../../../assets/about_bumrungrad/Accreditation/Green Work From Home Your Story.png'
+import thaiAwardimg from '../../../assets/about_bumrungrad/Accreditation/Thailand MIKE Award .png'
+import influencerAwardimg from '../../../assets/about_bumrungrad/Accreditation/Green Work From Home Your Story (1).png'
+import YoutubeAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_YouTube-Works-Award-2021_1.png'
+import YoutubeWorkAwardimg from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_YouTube-Works-Award-2021_2.png'
+import Award2img from '../../../assets/about_bumrungrad/Accreditation/Turquoise and Health Icons Medical Trifold Brochure (1).png'
+import digitalAward2img from '../../../assets/about_bumrungrad/Accreditation/Black and Grey Bold Simple Vintage Photo Studio Facebook Event Cover (4).png'
+import zocialimg from '../../../assets/about_bumrungrad/Accreditation/zoocial.png'
+import Award1imga from '../../../assets/about_bumrungrad/Accreditation/Turquoise and Health Icons Medical Trifold Brochure (1).png'
+import annotation1imga from '../../../assets/about_bumrungrad/Bumrungrad  Hospital_Annotation-2022-03-01-110437.jpg'
+import annotation21imga from '../../../assets/about_bumrungrad/Accreditation/readersChoice.png'
+import globalbandimga from '../../../assets/about_bumrungrad/Accreditation/globalAward.png'
+import awardglobalbandimga from '../../../assets/about_bumrungrad/Accreditation/TheEconomics.png'
+import globalbusinessaward1imga from '../../../assets/about_bumrungrad/global-business-awards-capture.jpg'
+import globalbusinessaward2imga from '../../../assets/about_bumrungrad/Accreditation/globalEconomics.png'
+import microwSoftaward2imga from '../../../assets/about_bumrungrad/Accreditation/Pink colorful Kids Award Certificate (1).png'
+import thaiCorporateimga from '../../../assets/about_bumrungrad/Accreditation/Colorful Kids Camp Certificate.png'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 const Accreditation = () => {
   return (
-    <section className="mx-5 md:container md:mx-auto">
+    <section className='mx-5 md:container md:mx-auto'>
       <HelmetProvider>
-        {" "}
+        {' '}
         <Helmet>
-          <meta charSet="utf-8" />
+          <meta charSet='utf-8' />
           <title>Bumrungrad Hospital: Explore The Accreditation & Awards</title>
           <meta
-            name="description"
+            name='description'
             content="Discover Bumrungrad International Hospital's Accolades. Elevate your health journey with excellence at our hospital. Explore now! #BumrungradHospital
 
 "
           />
           <link
-            rel="canonical"
-            href="https://bumrungraddiscover.com/about_accreditation"
+            rel='canonical'
+            href='https://bumrungraddiscover.com/about_accreditation'
           />
         </Helmet>
       </HelmetProvider>
-      <div className="h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center">
-        <div className="absolute top-0 h-full w-full bg-black/60"></div>
-        <h1 className="uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10">
+      <div className='h-[20vh] md:h-[30vh] lg:h-[50vh] bumrungrand-back relative flex justify-center items-center'>
+        <div className='absolute top-0 h-full w-full bg-black/60'></div>
+        <h1 className='uppercase text-xl text-center md:text-2xl lg:text-3xl font-bold text-white z-10'>
           HOSPITAL ACCREDITATION & AWARDS
         </h1>
       </div>
-      <div className="mx-5 my-10">
-        <h2 className="text-blue text-xl md:text-2xl font-semibold">
+      <div className='mx-5 my-10'>
+        <h2 className='text-blue text-xl md:text-2xl font-semibold'>
           Bumrungrad Recognitions for Quality Awards and Safety:
         </h2>
-        <p className="text-justify mt-3">
+        <p className='text-justify mt-3'>
           At Bumrungrad International Hospital, we work to advance clinical
           care, research, and treatments of the highest caliber in order to
           promote the health of our community and beyond. Bumrungrad has
@@ -60,15 +60,15 @@ const Accreditation = () => {
           innovation, and quality in the fields of medicine and healthcare. Here
           are a handful of our most recent accolades:
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Three years running, Newsweek has ranked Bumrungrad as the best Thai
             hospital:
           </p>
           <hr />
         </div>
-        <p className="text-justify">
+        <p className='text-justify'>
           On March 1, 2023 – Newsweek announced their “World’s Best Hospitals
           2023” via www.newsweek.com. Bumrungrad International Hospital was
           ranked the number one hospital in Thailand (World’s Best Hospitals
@@ -86,32 +86,32 @@ const Accreditation = () => {
           Patient Reported Outcome Measures (PROMs) implementation survey. PROMs
           were utilized in the procedure for the first time in this instance.
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={networkimg}
-            alt="Bumrungrad International Hospital"
-            className="w-[70%] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[70%] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Joint Commission International (JCI):
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={awardimg}
-            alt="Bumrungrad International Hospital"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            srcset=''
           />
         </div>
-        <p className="text-[16px] py-8 text-blue font-semibold">
+        <p className='text-[16px] py-8 text-blue font-semibold'>
           International Standard of Excellence:
         </p>
-        <p className="text-justify mt-3">
+        <p className='text-justify mt-3'>
           The leading global provider of healthcare accreditation, Joint
           Commission International (JCI), has accredited Bumrungrad as the first
           hospital in Asia. The accreditation examines all aspects of medical
@@ -122,29 +122,29 @@ const Accreditation = () => {
           first hospital in Asia in 2002. Additionally, the hospital has
           received five consecutive reaccreditations.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Global Healthcare Accreditation (GHA):
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-3">
+        <p className='text-justify mt-3'>
           Since 2017, Bumrungrad International Hospital has been accredited by
           the Global Healthcare Accreditation (GHA) Program, making it the first
           hospital outside of the USA to do so.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Hospital Accreditation (A-HA):
           </p>
           <hr />
         </div>
-        <p className="text-[16px] py-2 text-blue font-semibold">
+        <p className='text-[16px] py-2 text-blue font-semibold'>
           International Standard of Quality:
         </p>
-        <p className="text-justify mt-3">
+        <p className='text-justify mt-3'>
           In 2016, Bumrungrad became the first hospital in Thailand to get the
           Healthcare Accreditation Institute's Advanced Hospital Accreditation
           (A-HA). Additionally, at the 17th annual HA National Forum, Her Royal
@@ -156,31 +156,31 @@ const Accreditation = () => {
           privilege for Bumrungrad to have the Healthcare Accreditation
           Institute recognize it.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             World’s Best Smart Hospitals 2021:
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={sbestspeaciligedimg}
-            alt="Bumrungrad International Hospital"
-            className="w-[70%] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[70%] mx-auto'
+            srcset=''
           />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           2021: Bumrungrad International Hospital has been awarded on Newsweek’s
           list of World’s Best Smart Hospitals 2021, the #1 hospital in all of
           Thailand, and one of the world’s top 250 hospitals. From integrating
           new technologies and digital to ensure that every patient will
           receives good quality health care.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             In recognition of exceptional achievement and distinction in
             Thailand's marketing industry, Bumrungrad International Hospital was
             presented with two significant honors at the "Marketing Excellence
@@ -188,130 +188,130 @@ const Accreditation = () => {
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={marketingAwardimg}
-            alt="Bumrungrad International Hospital"
-            className="w-[400px] h-[500px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[400px] h-[500px] mx-auto'
+            srcset=''
           />
         </div>
-        <ol className="pl-6 ml-4 mt-3">
-          <li className="list-decimal mt-2">
+        <ol className='pl-6 ml-4 mt-3'>
+          <li className='list-decimal mt-2'>
             Superiority in the COVID-19-Related Campaign: Silver: The COVID-19
             Challenge, Providing the Public with a COVID-19 Vaccination Service
           </li>
-          <li className="list-decimal mt-2">
+          <li className='list-decimal mt-2'>
             Marketing Team of the Year : Bronze
           </li>
-          <li className="list-decimal mt-2">
+          <li className='list-decimal mt-2'>
             Bumrungrad Pride Clinic is a finalist for the Excellence in
             Marketing to a Specific Audience award.
           </li>
         </ol>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           A team of judges made up of experienced marketers and business
           executives from throughout the ASEAN area chose the recipients. Prior
           ceremonies for this award have taken place in the Philippines,
           Malaysia, Singapore, and Hong Kong.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand MIKE Award 2021: SILVER
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={thaiAwardimg}
-            alt="Bumrungrad International Hospital"
-            className="w-[150px] h-[250px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[150px] h-[250px] mx-auto'
+            srcset=''
           />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           The only hospital in all of Thailand to be recognized with the
           Thailand MIKE Awards 2021 for unique and knowledgeable assets that
           enable differentiation and integrated healthcare delivery is
           Bumrungrad International Hospital.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Kentico Experience: Site of the Year 2020:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           A Bumrungrad International Hospital subsidiary, VitalLife Scientific
           Wellness Center, has been acknowledged as a nominee for the Healthcare
           category of the Kentico Experience Site of the Year 2020 industry
           awards. It's among the most widely used content management systems in
           the world.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Based on our achievements on social media, Bumrungrad International
             Hospital was awarded the Best Health Care & Aesthetic Center
             Influencer Campaign by
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={influencerAwardimg}
-            alt="Bumrungrad International Hospital"
-            className="w-[350px] h-[450px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[350px] h-[450px] mx-auto'
+            srcset=''
           />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Bumrungrad International Hospital has been received Best Health Care &
           Aesthetic Center Influencer Campaign, based on our performance on
           social media by
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             YouTube Works Award 2021,Small Budget, Big Result:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Based on the true story of a foreign patient who was treated during
           the pandemic at Bumrungrad Hospital in Bangkok, the movie won over
           viewers' hearts and received six times more views for three times less
           money.
         </p>
-        <div className="flex mt-10 justify-between">
+        <div className='flex mt-10 justify-between'>
           <div>
             <Link
-              to="https://www.youtube.com/watch?v=cQpyqxejjqY"
-              target="_blank"
+              to='https://www.youtube.com/watch?v=cQpyqxejjqY'
+              target='_blank'
             >
               <img
                 src={YoutubeAwardimg}
-                alt="Bumrungrad International Hospital"
+                alt='Bumrungrad International Hospital'
               />
             </Link>
           </div>
           <div>
             <img
               src={YoutubeWorkAwardimg}
-              alt="Bumrungrad International Hospital"
+              alt='Bumrungrad International Hospital'
             />
           </div>
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             OTB: Only the best International Film Awards 2022:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           The Pathologist, Movies Based on True Stories. Discover the life story
           of a significant figure who may not be well-known to you from the
           world of cancer treatment. This short film was recognized for
@@ -319,37 +319,37 @@ const Accreditation = () => {
           for independent cinema: OTB is a monthly web prize that honors
           exceptional global creations.
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={Award2img}
-            alt="Bumrungrad International Hospital"
-            className="w-[650px] h-[450px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[650px] h-[450px] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Best Customer Experience Award, Thailand Digital Transformation
             Awards by categories, 2021–2022 for the second year in a row
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={digitalAward2img}
-            alt="Bumrungrad International Hospital"
-            className="w-[650px] h-[450px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[650px] h-[450px] mx-auto'
+            srcset=''
           />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Bumrungrad International Hospital has been received Thailand Digital
           Transformation Awards by categories Best Customer Experience Award
           2022 with the project “Pentagon Search: Finding Everything”, which was
           the second consecutive year of this award.
         </p>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           According to government policy, the award is given to recognize public
           and private organizations that can strategically lead their
           organizations to improve their efficacy and efficiency for both
@@ -357,38 +357,38 @@ const Accreditation = () => {
           advantage over Digital Disruption and prepare them to transition into
           the Digital Economy.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             CEO of Bumrungrad International Hospital for 2021:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Another indication of the hospital's leadership in the cutting-edge
           healthcare sector came when it won the CEO of the Year award from the
           Healthcare Asia Awards 2021, which was presented to Ms. Artirat
           Jarukitpipat.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Best Employer Brand Awards 2021:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           “Thailand Best Employer Brand” and “Excellence in Training”.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Social Awards 2019-2022 :Best Brand Performance on Social
             Media for 4th consecutive year:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           For the fourth year in a row, it has been named a finalist for the
           Thailand Social Awards 2022's "Best Brand Performance on Social Media"
           category within the Hospitals category. The hospital received
@@ -396,23 +396,23 @@ const Accreditation = () => {
           on the assessment standards set by WISESIGHT METRIC, created by
           Wisesight (Thailand).
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={zocialimg}
-            alt="Bumrungrad International Hospital"
-            className="w-[650px] h-[450px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[650px] h-[450px] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Top 2021 Twitter Campaigns: The Most Effective Way to Promote
             Positive Social Change:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Bumrungrad Hospital Winner of Best of Tweets 2021: Best Campaign for
           Driving Positive Change in Society. This award goes to a brand that
           not only saves lives but through their #เราเลือกได้ (We Can Choose)
@@ -424,23 +424,23 @@ const Accreditation = () => {
           discourse aimed at lifting the spirits and providing support to
           individuals afflicted with the illness.
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={Award1imga}
-            alt="Bumrungrad International Hospital"
-            className="w-[650px] h-[450px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[650px] h-[450px] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             WINNERS OF THE 2021 BANGKOK POST READERS' CHOICE AWARDS: MOST
             TRUSTED HOSPITAL BRAND:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Bangkok Post would like to extend its congratulations to the brands
           and organizations that have won accolades that are indicative of their
           popularity and caliber of work. Stay tuned for the list of 12 award
@@ -448,33 +448,33 @@ const Accreditation = () => {
           as voted by Bangkok Post readers. The title of MOST TRUSTED HOSPITAL
           BRAND has been awarded to Bumrungrad International Hospital.
         </p>
-        <div className="flex mt-10 justify-evenly items-center">
+        <div className='flex mt-10 justify-evenly items-center'>
           <div>
             <img
               src={annotation21imga}
-              className="w-[400px]"
-              alt="Bumrungrad International Hospital"
+              className='w-[400px]'
+              alt='Bumrungrad International Hospital'
             />
           </div>
-          <div className="ml-4">
+          <div className='ml-4'>
             <img
               src={annotation1imga}
-              className="w-[600px]"
-              alt="Bumrungrad International Hospital"
+              className='w-[600px]'
+              alt='Bumrungrad International Hospital'
             />
           </div>
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             GBA: Global Brand Awards 2022:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
-          <span className="text-blue font-semibold">
+        <p className='text-justify mt-5'>
+          <span className='text-blue font-semibold'>
             The Global Brand Magazine's GLOBAL BRAND AWARDS
-          </span>{" "}
+          </span>{' '}
           were given to Bumrungrad Hospital. WORLD BRAND AWARDS The Global Brand
           Magazine's GLOBAL BRAND AWARDS were given to Bumrungrad Hospital. The
           Global Brand Awards were created to recognize and award companies from
@@ -485,43 +485,43 @@ const Accreditation = () => {
           Technology. The awards are given to acknowledge key players who strive
           for fineness & provide a platform for recognition.
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={globalbandimga}
-            alt="Bumrungrad International Hospital"
-            className="w-[350px] h-[500px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[350px] h-[500px] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The Global Economics Awards 2022: Winner:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           The Healthcare Award Winners in the category of Most Innovative Use of
           Technology in Healthcare were Bumrungrad International Hospital.
           Global Economics, a prominent financial journal in the UK, organized
           The Global Economics Awards 2022.
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={awardglobalbandimga}
-            alt="Bumrungrad International Hospital"
-            className="w-[550px] h-[200px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[550px] h-[200px] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The Global Business Magazine Awards 2022:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           The Global Business Magazine, a renowned business and finance magazine
           based in Dubai, United Arab Emirates, organized the Global Business
           Magazine Awards to honor excellence, exceptional support, and top
@@ -529,119 +529,119 @@ const Accreditation = () => {
           Hospital of the Year Thailand 2022 and Most Emerging Company in
           Healthcare Thailand 2022.
         </p>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={globalbusinessaward2imga}
-            alt="Bumrungrad International Hospital"
-            className="w-[350px] h-[400px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[350px] h-[400px] mx-auto'
+            srcset=''
           />
           <img
             src={globalbusinessaward1imga}
-            alt="Bumrungrad International Hospital"
-            className="w-[550px] h-[200px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[550px] h-[200px] mx-auto'
+            srcset=''
           />
         </div>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             2019 APAC Healthcare and Medical Tourism Awards - Global Health and
             Travel:
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={microwSoftaward2imga}
-            alt="Bumrungrad International Hospital"
-            className="w-[650px] h-[400px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[650px] h-[400px] mx-auto'
+            srcset=''
           />
         </div>
-        <ol className="mt-6 ml-8 list-decimal">
-          <li className=" mt-2">
+        <ol className='mt-6 ml-8 list-decimal'>
+          <li className=' mt-2'>
             Asia Pacific's Medical Tourism Hospital of the Year 2019
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             2019 Vitallife Wellness Center was named Asia Pacific's Integrated
             Healthcare Clinic of the Year.
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             Asia Pacific's 2019 Smart Facility of the Year
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             Asia Pacific's 2019 Value Based Hospital of the Year
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             Asia Pacific's 2019 Orthopaedic Service Provider of the Year
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             Asia Pacific's 2019 Women’s Health and Wellness Service Provider of
             the Year in
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             Asia Pacific's 2019 Transplant Service Provider of the Year
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             Asia Pacific's 2019 Bariatric Service Provider of the Year
           </li>
-          <li className=" mt-2">
+          <li className=' mt-2'>
             On April 25–26, 2019, the awards ceremony took place at the JW
             Marriot Hotel in Kuala Lumpur.
           </li>
         </ol>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           The awards ceremony was held at the JW Marriot Hotel Kuala Lumpur on
           25-26 April 2019
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Corporate Excellence Awards 2019:
           </p>
           <hr />
         </div>
-        <div className="mt-10">
+        <div className='mt-10'>
           <img
             src={thaiCorporateimga}
-            alt="Bumrungrad International Hospital"
-            className="w-[400px] h-[300px] mx-auto"
-            srcset=""
+            alt='Bumrungrad International Hospital'
+            className='w-[400px] h-[300px] mx-auto'
+            srcset=''
           />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           “Financial Management Excellence,” for achieving over ten billion baht
           in revenue in one year. The awards ceremony was organized by the
           Thailand Management Association (TMA) and the Sasin Graduate Institute
           of Business Administration
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Brandage Online For 2nd Consecutive Year:
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5">
+        <p className='text-justify mt-5'>
           Brandage Online – “Thailand’s Most Social Power Brand 2018-2019”
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             "Thailand's Most Social Power Brand 2018-2019" according to Brandage
             Online
           </p>
           <hr />
         </div>
-        <p className="font-semibold text-blue">
+        <p className='font-semibold text-blue'>
           The program of the Central Sterile Supply Department (CSSD) Center of
           Excellence:
         </p>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Sterilization and Sterility Assurance:
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           A panel of experts overseeing the Central Sterile Supply Department's
           (CSSD) Center of Excellence Program defines healthcare organizations
           as such when they meet high standards for disinfection and
@@ -651,17 +651,17 @@ const Accreditation = () => {
           CSSD, an organization accredited by the Asia Pacific Society for
           Infection Control (APSIC).
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The College of American Pathologists (CAP):
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Excellence in the Practice of Pathology and Laboratory Medicine:
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The College of American Pathologists (CAP) is the premier association
           of board-certified pathologists in the world, supporting and promoting
           excellence in laboratory medicine and pathology practices. The College
@@ -669,20 +669,20 @@ const Accreditation = () => {
           first private hospital in 2016. This accreditation attests to the
           precision and dependability of our tests and diagnoses.
         </p>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Excellence in Health Tourism:
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The Thailand Tourism Award's 2008 Award of Outstanding Performance in
           Medically-Oriented Establishment went to Bumrungrad, the first private
           hospital to earn it. The Tourism Authority of Thailand bestowed this
           accolade on Bumrungrad in recognition of his pioneering work in
           establishing first-rate medical care for visitors.
         </p>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Organizational Excellence:
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The renowned Malcolm Baldrige Award in the United States serves as the
           model for the Thailand Quality Class (TQC) Award. TQC was established
           in 2002 and conducts operational, management, and strategic process
@@ -691,18 +691,18 @@ const Accreditation = () => {
           Sabhavasu in 2008. Bumrungrad is the first private hospital to be
           eligible for TQC.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Developing Capacity in Ethical Review: A Strategic Initiative
             (SIDCER)
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Ethical Review of Health Research
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The network of regional ethical review committees, health researchers,
           and partner organizations that make up the Strategic Initiative for
           Developing Capacity in Ethical Review (SIDCER) keeps an eye on the
@@ -714,17 +714,17 @@ const Accreditation = () => {
           honored the Bumrungrad International Institutional Review Board
           (BI/IRB) in 2016 for its ethical contributions to health research.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Westgard Sigma Verification of Performance
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Outstanding Performance
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The goal of the Westgard Sigma Verification of Performance program is
           to showcase laboratories that have successfully implemented quality
           control, enabling businesses to produce accurate and trustworthy test
@@ -733,17 +733,17 @@ const Accreditation = () => {
           Awards. This accreditation attests to the effectiveness of our lab
           equipment and our exceptionally high test accuracy.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The AMCHAM ACE Awards
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Corporate Social Responsibility Excellence
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The ACE Recognition Award credits AMCHAM corporate members who
           demonstrate a strong understanding of business operation with
           long-term economic and social value. The AMCHAM ACE Awards is one of
@@ -752,17 +752,17 @@ const Accreditation = () => {
           AMCHAM Corporate Social Responsibility Excellence Recognition Award
           with Gold Status in 2013.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Corporate Social Responsibility (CSR) Club Thailand
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Commitment to Community
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           With the goal of "Connect for Sharing," the Thai Listed Companies
           Association, the Securities and Exchange Commission, and the Stock
           Exchange of Thailand collaborated to form the Corporate Social
@@ -770,17 +770,17 @@ const Accreditation = () => {
           of the 50 Good Practices in 2012 by the CSR Club due to its extensive
           set of CSR policies and procedures.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             The DAISY Award
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Recognition for Extraordinary Nurse Care
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The DAISY Award is a recognition program for nurses who give
           exceptional care to all patients and families, and it was established
           by the DAISY Foundation. The DAISY Foundation, situated in the United
@@ -789,51 +789,51 @@ const Accreditation = () => {
           recognized hospitals with such outstanding nurses. To view our
           certified nurses, click this link.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand’s Best Employer
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Managerial Excellence and Employee Engagement
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The Department of Labor Protection, Ministry of Labour, has designated
           Bumrungrad Thailand's Best Employer in the "Large-enterprise without
           Federation of Labor Union" category. Bumrungrad was honored with this
           award in 2009 in recognition of his exceptional managerial skills and
           positive staff interactions.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Tourism Awards
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Excellence in Health Tourism
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The Thailand Tourism Award's 2008 Award of Outstanding Performance in
           Medically-Oriented Establishment went to Bumrungrad, the first private
           hospital to earn it. The Tourism Authority of Thailand bestowed this
           accolade on Bumrungrad in recognition of his pioneering work in
           establishing first-rate medical care for visitors.
         </p>
-        <div className="my-10">
+        <div className='my-10'>
           <hr />
-          <p className="text-[16px] py-3 text-blue font-medium">
+          <p className='text-[16px] py-3 text-blue font-medium'>
             Thailand Quality Class (TQC) Award
           </p>
           <hr />
         </div>
-        <p className="text-justify mt-5 text-blue font-semibold">
+        <p className='text-justify mt-5 text-blue font-semibold'>
           Organizational Excellence
         </p>
-        <p className="text-justify mt-2">
+        <p className='text-justify mt-2'>
           The renowned Malcolm Baldrige Award in the United States serves as the
           model for the Thailand Quality Class (TQC) Award. TQC was established
           in 2002 and conducts operational, management, and strategic process
@@ -844,7 +844,7 @@ const Accreditation = () => {
         </p>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Accreditation;
+export default Accreditation
