@@ -54,7 +54,7 @@ export default function WhyUs() {
     },
   ]
   return (
-    <div className='p-5 md:p-10 md:container md:mx-auto'>
+    <div className='p-5 md:p-10 md:container md:mx-auto hidden md:block'>
       <h2 className='capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
         Our achivements
       </h2>

@@ -2,6 +2,7 @@ import React from "react";
 import missionVissionimg from "../../../assets/about_bumrungrad/PatientandStaffSafetyStatement.jpg";
 import environmentimg from "../../../assets/about_bumrungrad/BumrungradEnvironmental.jpg";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Link } from "react-router-dom";
 const VissionMisson = () => {
   return (
     <section className="mx-5 md:container md:mx-auto">
@@ -41,9 +42,12 @@ const VissionMisson = () => {
         </div>
         <p className="text-justify">
           Our main goal at{" "}
-          <a href="https://bumrungraddiscover.com/">
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
             Bumrungrad International Hospital
-          </a>{" "}
+          </Link>{" "}
           is to be the leading source of confidence for health and wellness. Our
           dedication is based on our unwavering quest for perfection as we work
           to become the premier location for all-encompassing health and
@@ -61,9 +65,12 @@ const VissionMisson = () => {
         </div>
         <p className="text-justify">
           Our mission at{" "}
-          <a href="https://bumrungraddiscover.com/">
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
             Bumrungrad International Hospital
-          </a>{" "}
+          </Link>{" "}
           is multifaceted. Aim for unmatched quality in clinical services,
           pushing the boundaries of patient care. Utilise cutting-edge ideas and
           cutting-edge technologies to transform hospital operations and ensure
@@ -95,14 +102,20 @@ const VissionMisson = () => {
           Patient and Staff Safety Statement:
         </h2>
         <p className="text-justify mt-4">
-          Everyone at Bumrungrad International Hospital PCL has responsibility
-          for the safety of our patients and staff. The Hospital Governing Board
-          has the overall responsibility of directing the commitment to safety.
-          The Executive and Management teams have the responsibility to oversee,
-          guide and implement the safety programs at Bumrungrad; however,
-          everyone at Bumrungrad is responsible for safety. Safety is a team
-          effort that is at the core of our business and central to our success
-          and competitiveness.
+          Everyone at{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          PCL has responsibility for the safety of our patients and staff. The
+          Hospital Governing Board has the overall responsibility of directing
+          the commitment to safety. The Executive and Management teams have the
+          responsibility to oversee, guide and implement the safety programs at
+          Bumrungrad; however, everyone at Bumrungrad is responsible for safety.
+          Safety is a team effort that is at the core of our business and
+          central to our success and competitiveness.
         </p>
         <p className="mt-4">We believe that :</p>
         <ol className="pl-6 mt-2 list-decimal">
@@ -112,7 +125,14 @@ const VissionMisson = () => {
             The security of our patients and employees is our top priority at
             Bumrungrad.
           </li>
-          <li className=" mt-1">Bumrungrad International Hospital</li>
+          <li className=" mt-1">
+            <Link
+              className="font-semibold text-blue underline"
+              to="https://bumrungraddiscover.com/"
+            >
+              Bumrungrad International Hospital
+            </Link>{" "}
+          </li>
         </ol>
         <div className="ml-4 mt-4">
           <img
@@ -127,23 +147,35 @@ const VissionMisson = () => {
           Quality Statement:
         </h2>
         <p className="text-justify mt-4">
-          Bumrungrad International Hospital PCL is committed to providing “World
-          Class” services by using the Malcolm Baldrige National Quality and
-          Magnet criteria as the framework for achieving our overall
-          organizational performance objectives. Through globally renowned
-          accreditation and certifying organizations like Hospital Accreditation
-          (A-HA), Joint Commission International (JCI), and The College of
-          American Pathologists (CAP) for Safety & Quality toward patient care
-          excellence, we measure and confirm our performance.
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          PCL is committed to providing “World Class” services by using the
+          Malcolm Baldrige National Quality and Magnet criteria as the framework
+          for achieving our overall organizational performance objectives.
+          Through globally renowned accreditation and certifying organizations
+          like Hospital Accreditation (A-HA), Joint Commission International
+          (JCI), and The College of American Pathologists (CAP) for Safety &
+          Quality toward patient care excellence, we measure and confirm our
+          performance.
         </p>
         <h2 className="text-blue text-xl md:text-2xl font-semibold mt-10">
           Environmental Statement:
         </h2>
         <p className="text-justify mt-4">
-          Bumrungrad International Hospital is committed to protecting the
-          global environment and conserving energy and natural resources. We
-          engage in activities that uphold these ideals and support initiatives
-          aimed at preserving and advancing the community's health and safety.
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          is committed to protecting the global environment and conserving
+          energy and natural resources. We engage in activities that uphold
+          these ideals and support initiatives aimed at preserving and advancing
+          the community's health and safety.
         </p>
         <h2 className="text-blue text-xl md:text-2xl font-semibold mt-10">
           Environmental Statement Guiding Principles:

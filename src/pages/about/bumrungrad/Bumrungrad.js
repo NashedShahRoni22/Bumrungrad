@@ -6,6 +6,7 @@ import specialtiesimg from "../../../assets/about_bumrungrad/bumrungrad_owned (1
 import inovationsimg from "../../../assets/about_bumrungrad/bumrungrad_owned (2).png";
 import careingimg from "../../../assets/about_bumrungrad/bumrungrad_owned (3).png";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Link } from "react-router-dom";
 const Bumrungrad = () => {
   return (
     <section className="mx-5 md:container md:mx-auto">
@@ -46,10 +47,16 @@ const Bumrungrad = () => {
           at the heart of Bangkok, Thailand, a thriving city dubbed "The City of
           Angels" and renowned for its delicious cuisine and warm hospitality.
           Internationally accredited multispecialty hospital Bumrungrad has been
-          listed on the Thai Stock Exchange since 1989. At Bumrungrad
-          International Hospital, one of the largest private hospitals in
-          Southeast Asia, more than 1.1 million patients from more than 190
-          countries are treated annually.
+          listed on the Thai Stock Exchange since 1989. At{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          , one of the largest private hospitals in Southeast Asia, more than
+          1.1 million patients from more than 190 countries are treated
+          annually.
         </p>
       </div>
       <div className="mx-5 my-20">
@@ -98,12 +105,24 @@ const Bumrungrad = () => {
         <div className="mt-4">
           <p className="text-justify mt-5">
             In order to integrate quality treatment and serve as a one-stop shop
-            for complex care needs, Bumrungrad International Hospital has
-            assembled multidisciplinary teams of skilled medical doctors,
+            for complex care needs,{" "}
+            <Link
+              className="font-semibold text-blue underline"
+              to="https://bumrungraddiscover.com/"
+            >
+              Bumrungrad International Hospital
+            </Link>{" "}
+            has assembled multidisciplinary teams of skilled medical doctors,
             nurses, pharmacists, physical therapists, nutritionists, and other
             professional staff. More than 4,800 support staff members and more
-            than 1,300 physicians work at Bumrungrad International Hospital.
-            International board certificates from the United States, United
+            than 1,300 physicians work at{" "}
+            <Link
+              className="font-semibold text-blue underline"
+              to="https://bumrungraddiscover.com/"
+            >
+              Bumrungrad International Hospital
+            </Link>
+            . International board certificates from the United States, United
             Kingdom, Australia, Japan, and other advanced economies with strong
             medical standards are held by the majority of the doctors. Better
             patient outcomes and therapies are made possible by the excellent
@@ -130,19 +149,25 @@ const Bumrungrad = () => {
         <div className="mt-4">
           <p className="text-justify mt-5">
             Accredited by the US-based Joint Commission International (JCI) in
-            2002, Bumrungrad International Hospital became the first hospital in
-            Asia. Additionally, the hospital has received five consecutive
-            accreditations. Also, Bumrungrad became the first hospital outside
-            of the United States to receive the Global Healthcare Accreditation
-            with Excellence designation from GHA, signifying the highest
-            international standards of quality and safety for patients from
-            other countries seeking treatment and care at Bumrungrad
-            International Hospital. Additionally, Bumrungrad became the first
-            hospital in Asia to receive the DNV GL MIR Certified for Infection
-            Risk. Bumrungrad has shown some of the greatest clinical success
-            rates and lowest infection rates in the area and worldwide thanks to
-            our constant clinical standards and numerous international
-            accreditations.
+            2002,{" "}
+            <Link
+              className="font-semibold text-blue underline"
+              to="https://bumrungraddiscover.com/"
+            >
+              Bumrungrad International Hospital
+            </Link>{" "}
+            became the first hospital in Asia. Additionally, the hospital has
+            received five consecutive accreditations. Also, Bumrungrad became
+            the first hospital outside of the United States to receive the
+            Global Healthcare Accreditation with Excellence designation from
+            GHA, signifying the highest international standards of quality and
+            safety for patients from other countries seeking treatment and care
+            at Bumrungrad International Hospital. Additionally, Bumrungrad
+            became the first hospital in Asia to receive the DNV GL MIR
+            Certified for Infection Risk. Bumrungrad has shown some of the
+            greatest clinical success rates and lowest infection rates in the
+            area and worldwide thanks to our constant clinical standards and
+            numerous international accreditations.
           </p>
           <div className="ml-4 mt-4">
             <img
@@ -164,18 +189,24 @@ const Bumrungrad = () => {
         <div className="mt-4">
           <p className="text-justify mt-5">
             Medical technology and cutting-edge patient healthcare services are
-            areas in which Bumrungrad International Hospital excels. The
-            Precision Medicine department at Bumrungrad has grown, offering the
-            most recent innovative therapies and individualized cancer
-            treatments, primarily from the US and Europe. This is one of the
-            most recent innovations. We further employ CardioInsight, the only
-            operational facility in Asia Pacific, which is a fully non-invasive
-            diagnostic tool for the diagnosis of cardiac arrhythmias. Becoming
-            the first IBM Watson for Oncology facility globally allowed
-            Bumrungrad to maintain its position as a leader in cutting-edge
-            technology. Utilizing thousands of past instances, hundreds of
-            medical articles and textbooks, the most recent clinical studies,
-            and more than 12 million pages of data, IBM Watson, a
+            areas in which{" "}
+            <Link
+              className="font-semibold text-blue underline"
+              to="https://bumrungraddiscover.com/"
+            >
+              Bumrungrad International Hospital
+            </Link>{" "}
+            excels. The Precision Medicine department at Bumrungrad has grown,
+            offering the most recent innovative therapies and individualized
+            cancer treatments, primarily from the US and Europe. This is one of
+            the most recent innovations. We further employ CardioInsight, the
+            only operational facility in Asia Pacific, which is a fully
+            non-invasive diagnostic tool for the diagnosis of cardiac
+            arrhythmias. Becoming the first IBM Watson for Oncology facility
+            globally allowed Bumrungrad to maintain its position as a leader in
+            cutting-edge technology. Utilizing thousands of past instances,
+            hundreds of medical articles and textbooks, the most recent clinical
+            studies, and more than 12 million pages of data, IBM Watson, a
             machine-learning AI, helps doctors by analyzing patient data.
           </p>
           <div className="ml-4 mt-4">
@@ -205,7 +236,7 @@ const Bumrungrad = () => {
             tourism hospital destinations. For patients from almost any country,
             Bumrungrad Hospital has more than 200 translators on staff to assist
             with linguistic issues. Almost all of the hospital's clinicians are
-            fluent in English.Our Bumrungrad International Airport
+            fluent in English.Our <Link to="https://discoverims.com/" className="font-semibold underline text-blue">Bumrungrad International</Link> Airport
             Representative Office at Suvarnabhumi Airport offers patients and
             their families comprehensive healthcare services, including hotel
             reservations upon arrival and efficient pick-up and drop-off

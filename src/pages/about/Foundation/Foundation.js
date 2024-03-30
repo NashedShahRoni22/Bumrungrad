@@ -1,6 +1,7 @@
 import React from "react";
 import qrimage from "../../../assets/about_bumrungrad/Bumrungrad  Hospital_QR_bumrungrad_foundation-(3).png";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Link } from "react-router-dom";
 const Foundation = () => {
   return (
     <section className="mx-5 md:container md:mx-auto">
@@ -31,14 +32,27 @@ const Foundation = () => {
           The Foundation of Bumrungrad International Hospital
         </h2>
         <p className="text-justify mt-3">
-          In May of 1990, the founders of Bumrungrad International Hospital
-          Created the Bumrungrad International Hospital Foundation, a registered
-          non-profit organization. It runs several philanthropic and open
-          initiatives. All over the nation, services are offered to assist
-          individuals. Its goal is to offer high-quality healthcare to residents
-          of impoverished places. Along with encouraging people to live
-          healthier lives, the organization supports health education. Both
-          corporate and individual contributions are fully tax deductible.
+          In May of 1990, the founders of{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          Created the{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          Foundation, a registered non-profit organization. It runs several
+          philanthropic and open initiatives. All over the nation, services are
+          offered to assist individuals. Its goal is to offer high-quality
+          healthcare to residents of impoverished places. Along with encouraging
+          people to live healthier lives, the organization supports health
+          education. Both corporate and individual contributions are fully tax
+          deductible.
         </p>
         <div className="my-10">
           <hr />
@@ -91,9 +105,15 @@ const Foundation = () => {
           remains restricted, despite government aid. Consequently, a
           significant number of children consistently await surgery, with this
           figure increasing annually. In response, the Bumrungrad International
-          Hospital Foundation and Bumrungrad International Hospital are
-          fulfilling their social responsibility by providing the necessary free
-          cardiac procedures for these children.
+          Hospital Foundation and{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          are fulfilling their social responsibility by providing the necessary
+          free cardiac procedures for these children.
         </p>
         <p className="text-justify mt-6">
           These frequently extremely complex heart surgeries are performed by
@@ -151,13 +171,19 @@ const Foundation = () => {
           <hr />
         </div>
         <p className="text-justify mt-6">
-          The Bumrungrad International Hospital Foundation and Bumrungrad
-          International Hospital have been assisting the villagers of Mukdahan
-          Province's Nikhom Kham Soi and Khamcha-i Districts by purchasing
-          hand-woven wicker baskets to display toiletries in Bumrungrad's
-          inpatient areas. This initiative is a collaboration between Bumrungrad
-          International Hospital, Bangkok Insurance Foundation, and Bumrungrad
-          Hospital Foundation.
+          The{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          Foundation and Bumrungrad International Hospital have been assisting
+          the villagers of Mukdahan Province's Nikhom Kham Soi and Khamcha-i
+          Districts by purchasing hand-woven wicker baskets to display
+          toiletries in Bumrungrad's inpatient areas. This initiative is a
+          collaboration between Bumrungrad International Hospital, Bangkok
+          Insurance Foundation, and Bumrungrad Hospital Foundation.
         </p>
         <p className="text-justify mt-6">
           Higher-quality wicker items were developed in a short period of time,
@@ -188,13 +214,20 @@ const Foundation = () => {
           <hr />
         </div>
         <p className="text-justify mt-6">
-          The Bumrungrad International Hospital Foundation and Bumrungrad
-          International Hospital are committed to spreading health education and
-          other important health-related information as a community service.
-          This comprises health-promoting activities for students in the
-          community, health exhibitions, disease information dissemination, and
-          public awareness of medical developments. This material is
-          disseminated via Bumrungrad's channels as well as other public ones.
+          The{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          Foundation and Bumrungrad International Hospital are committed to
+          spreading health education and other important health-related
+          information as a community <Link to="https://bumrungraddiscover.com/our_services" className="font-semibold text-blue underline">service</Link>. This comprises health-promoting
+          activities for students in the community, health exhibitions, disease
+          information dissemination, and public awareness of medical
+          developments. This material is disseminated via Bumrungrad's channels
+          as well as other public ones.
         </p>
         <div className="my-6">
           <hr />
@@ -231,7 +264,13 @@ const Foundation = () => {
             between 9.00 and 17.00 (open daily).
           </li>
           <li className="list-decimal mt-2">
-            Write a check out to “The Bumrungrad International Hospital
+            Write a check out to “The{" "}
+            <Link
+              className="font-semibold text-blue underline"
+              to="https://bumrungraddiscover.com/"
+            >
+              Bumrungrad International Hospital
+            </Link>{" "}
             Foundation.”
           </li>
           <li className="list-decimal mt-2">
@@ -244,14 +283,27 @@ const Foundation = () => {
           Donations are Tax-Deductible:
         </p>
         <p className="text-justify">
-          The Bumrungrad International Hospital Foundation is a charitable
-          foundation; Registration no. 524 by the Ministry of Finance;
-          Ministerial Regulation no. 227, issued under Tax Income and Value
-          Added Tax; Tax Identification no. 4030002447; License no. T. 119/2533;
-          Established May 1990.
+          The{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          Foundation is a charitable foundation; Registration no. 524 by the
+          Ministry of Finance; Ministerial Regulation no. 227, issued under Tax
+          Income and Value Added Tax; Tax Identification no. 4030002447; License
+          no. T. 119/2533; Established May 1990.
         </p>
         <p className="text-[16px] py-6 text-blue font-semibold">
-          How to Contact the Bumrungrad International Hospital Foundation
+          How to Contact the{" "}
+          <Link
+            className="font-semibold text-blue underline"
+            to="https://bumrungraddiscover.com/"
+          >
+            Bumrungrad International Hospital
+          </Link>{" "}
+          Foundation
         </p>
         <ol className="pl-10 list-decimal">
           <li className=" mt-2">
