@@ -153,7 +153,7 @@ export const router = createBrowserRouter([
         element: <ViewAllCenters />,
       },
       {
-        path: '/clinic_centers/:id',
+        path: '/clinic_centers/:slug/:id',
         element: <SingleCenter />,
       },
       {
@@ -189,11 +189,11 @@ export const router = createBrowserRouter([
         element: <OneBlog />,
       },
       {
-        path: '/package_details/:id',
+        path: '/package_details/:slug/:id',
         element: <ChildPackage />,
       },
       {
-        path: '/childPackage_details/:id',
+        path: '/childPackage_details/:slug/:id',
         element: <ChildPackageDetails />,
       },
     ],

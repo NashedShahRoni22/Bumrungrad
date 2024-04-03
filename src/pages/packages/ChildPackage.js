@@ -7,12 +7,12 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const ChildPackage = () => {
   const [loader, setLoader] = useState()
-  const { id } = useParams()
+  const { slug, id } = useParams()
   const [childPackage, setChildPackage] = useState([])
 
   useEffect(() => {
     setLoader(true)
-    fetch(`https://api.bumrungraddiscover.com/api/get/sub/packages/${id}`)
+    fetch(`https://api.bumrungraddiscover.com/api/get/sub/packages/${slug}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
@@ -52,8 +52,9 @@ const ChildPackage = () => {
                       <p>{cp?.description.slice(0, 200)}</p>
                     </div>
                     <Link
-                      to={`/childPackage_details/${cp.id}`}
+                      to={`/childPackage_details/${cp.slug}/${cp.id}`}
                       className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br'
+                      target='_blank'
                     >
                       <RemoveRedEyeIcon />
                       <span className='capitalize'>View Package</span>

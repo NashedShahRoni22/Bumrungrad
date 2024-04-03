@@ -44,7 +44,6 @@ export default function ViewAllCenters() {
         }
       });
   }, [searchValue]);
-  // console.log(inputValue)
   //.......pagination Start...//
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -177,8 +176,9 @@ export default function ViewAllCenters() {
                       </span>
                     </p>
                     <Link
-                      to={`/clinic_centers/${sc?.id}`}
+                      to={`/clinic_centers/${sc?.slug}/${sc?.id}`}
                       className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold"
+                      target='_blank'
                     >
                       See More
                     </Link>

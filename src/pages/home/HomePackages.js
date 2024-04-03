@@ -55,8 +55,9 @@ export default function HomePackages() {
                 <p>{p?.description.slice(0, 160)}</p>
               </div>
               <Link
-                to={`/package_details/${p?.id}`}
+                to={`/package_details/${p?.slug}/${p?.id}`}
                 className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br'
+                target='_blank'
               >
                 <RemoveRedEyeIcon />
                 <span className='capitalize'>See Packages</span>

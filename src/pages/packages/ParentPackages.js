@@ -30,7 +30,6 @@ export default function ParentPackages() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if (data?.status === 200) {
           setPackages(data?.data)
 
@@ -163,8 +162,9 @@ export default function ParentPackages() {
                       <p className='pb-5'>{p?.description.slice(0, 150)}</p>
                     </div>
                     <Link
-                      to={`/package_details/${p.id}`}
+                      to={`/package_details/${p.slug}/${p.id}`}
                       className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br '
+                      target='_blank'
                     >
                       <RemoveRedEyeIcon />
                       <span className='capitalize'>See Packages</span>

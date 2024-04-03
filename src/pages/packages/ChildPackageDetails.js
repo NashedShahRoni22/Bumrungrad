@@ -9,7 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle'
 
 const ChildPackageDetails = () => {
   const [loader, setLoader] = useState()
-  const { id } = useParams()
+  const { slug, id } = useParams()
   const [childDetailsPackage, setChildDetailsPackage] = useState({})
 
   const [packageName, setPackageName] = useState('')
@@ -70,7 +70,7 @@ const ChildPackageDetails = () => {
   //get details data
   useEffect(() => {
     setLoader(true)
-    fetch(`https://api.bumrungraddiscover.com/api/get/sub/package/${id}`)
+    fetch(`https://api.bumrungraddiscover.com/api/get/sub/package/${slug}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
