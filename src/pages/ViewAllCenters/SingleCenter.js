@@ -14,7 +14,7 @@ export default function SingleCenter() {
         setCenter(data?.response?.data)
         setLoader(false)
       })
-  }, [id])
+  }, [id, slug])
   return (
     <div className='p-5 my-5 md:container md:mx-auto'>
       {loader ? (
