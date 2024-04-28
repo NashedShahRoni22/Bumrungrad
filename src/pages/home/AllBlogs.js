@@ -7,6 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 const AllBlogs = () => {
   const [allBlogData, setAllBlogData] = useState()
+  // console.log(allBlogData);
   const [loader, setLoader] = useState()
 
   useEffect(() => {
@@ -54,7 +55,7 @@ const AllBlogs = () => {
                   {d.blogTitle}
                 </h5>
                 <p className='my-3 text-justify'>
-                  {d.blogDescription?.slice(0, 160)} ...
+                  {d.blogSlogan?.slice(0, 160)} ...
                 </p>
               </div>
               <div className='p-4'>

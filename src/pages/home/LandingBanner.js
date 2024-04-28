@@ -1,5 +1,4 @@
 import React from "react";
-import BannerImage from '../../assets/Bumrungrad hospital-Hero.png'
 import { Typewriter } from "react-simple-typewriter";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css'
@@ -26,7 +25,7 @@ export default function LandingBanner() {
         </div>
         <div className='md:w-1/2'>
           <LazyLoadImage
-            src={BannerImage}
+            src="https://i.ibb.co/v1jKX0V/Bumrungrad-hospital-Hero.png"
             effect='blur'
             alt='Bumrungrad International Hospital'
           />

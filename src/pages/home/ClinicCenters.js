@@ -10,15 +10,6 @@ import './ClinicCenters.css'
 import { EffectCoverflow, Pagination } from 'swiper/modules'
 import { Divider } from '@mui/material'
 import { Link } from 'react-router-dom'
-
-//import clinic images
-import spine from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Spine Institute.png'
-import neuro from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Neuroscience Center.png'
-import heart from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Heart Institute.png'
-import digestive from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_GI Digestive Center.png'
-import horizon from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Horizon Regional Cancer Center.png'
-import colorectal from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Colorectal Surgery Center.png'
-import urology from '../../../src/assets/Bumrungrad Clinic Images/Bumrungrad  Hospital_Urology Center.png'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
@@ -26,7 +17,7 @@ export default function ClinicCenters() {
   const clinicImages = [
     {
       id: '4',
-      img: neuro,
+      img: "https://i.ibb.co/HGF3VjQ/Bumrungrad-Hospital-Neuroscience-Center.png",
       name: 'Neuroscience Center',
       slug: 'neuroscience-center',
       desc: 'The brain and nervous system are responsible for our movement, behavior, learning, emotions, heart rate, and body temperature, etc. Therefore, if the nervous system suffers an injury or becomes diseased, it can cause serious, permanent, and even life-threatening problems.',
@@ -34,7 +25,7 @@ export default function ClinicCenters() {
     },
     {
       id: '9',
-      img: heart,
+      img: "https://i.ibb.co/0QYWQN7/Bumrungrad-Hospital-Heart-Institute.png",
       name: 'Heart Institute',
       slug: 'heart-institute',
       desc: 'Thailand’s society is set to become what is referred to as an ‘aging society’ before the end of 2021 due to the increase in its number of elderly people. This brings with it a host of health issues because our bodies deteriorate with age, placing them at greater risk of disease, especially non-communicable diseases (NCDs), such as coronary heart disease, diabetes, and obesity.',
@@ -42,7 +33,7 @@ export default function ClinicCenters() {
     },
     {
       id: '2',
-      img: digestive,
+      img: "https://i.ibb.co/FXZcf3C/Bumrungrad-Hospital-GI-Digestive-Center.png",
       name: 'Diagnostic Center',
       slug: 'diagnostic-center',
       desc: 'Diagnostic Center at Bumrungrad International Hospital features some of the most advanced diagnostic and therapeutic modalities available in the world today.',
@@ -50,7 +41,7 @@ export default function ClinicCenters() {
     },
     {
       id: '10',
-      img: horizon,
+      img: "https://i.ibb.co/gDq36Yw/Bumrungrad-Hospital-Horizon-Regional-Cancer-Center.png",
       name: 'Horizon Regional Cancer Center',
       slug: 'horizon-regional-cancer-center',
       desc: 'The Horizon Regional Cancer Center at Bumrungrad International Hospital in Bangkok, Thailand provides comprehensive cancer care and treatment by a multidisciplinary team of cancer specialists, including preventionm, diagnosis, treatment, assessment of treatment plan and management of possible complications, emotional support, nutritional care, pain management, and close monitoring of possible recurrence.',
@@ -58,7 +49,7 @@ export default function ClinicCenters() {
     },
     {
       id: '11',
-      img: colorectal,
+      img: "https://i.ibb.co/1XwRSpR/Bumrungrad-Hospital-Colorectal-Surgery-Center.png",
       name: 'Colorectal Surgery Center',
       slug: 'colorectal-surgery-center',
       desc: "The Outpatient Surgical Center at Bumrungrad International Hospital in Bangkok, Thailand offers a full range of surgical specialties. In most cases patients can arrange consultations with Thailand's premier surgeons with very little waiting time.",
@@ -66,7 +57,7 @@ export default function ClinicCenters() {
     },
     {
       id: '12',
-      img: urology,
+      img: "https://i.ibb.co/RgMTHMj/Bumrungrad-Hospital-Urology-Center.png",
       name: 'Urology Center',
       slug: 'urology-center',
       desc: "The urinary system acts as the body's drainage system. It removes urine, which is excess waste and water, from the body. In addition to being highly important in the elimination of waste and maintaining the balance of body fluids, the urinary system is also responsible for regulating blood pressure, blood volume, and blood pH levels. A dysfunction in the urinary system will severely affect a person’s health and quality of life.",
@@ -74,7 +65,7 @@ export default function ClinicCenters() {
     },
     {
       id: '8',
-      img: spine,
+      img: "https://i.ibb.co/8dyhLjG/Bumrungrad-Hospital-Spine-Institute.png",
       name: 'Bumrungrad Spine Institute',
       slug: 'bumrungrad-spine-institute',
       desc: 'Bumrungrad Spine Institute is prepared to provide a comprehensive range of treatment and care for spine-related matters, with the experience of treating more than 12,000 spine patients in 12 years.',
