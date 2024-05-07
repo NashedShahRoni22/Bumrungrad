@@ -53,20 +53,19 @@ export default function Blogs() {
               />
               <div className="p-4">
                 {" "}
-                <h5 className="font-semibold text-blue text-lg">
-                  {d.blogTitle}
-                </h5>
+                <div className="flex justify-between">
+                  <h5 className="font-semibold text-blue text-lg">
+                    {d.blogTitle}
+                  </h5>{" "}
+                  <Link to={`/one-Blog/${d?.slug}`}>
+                    <button className="border border-blue bg-blue text-sm hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
                 <p className="my-3 text-justify">
                   {d.blogDescription?.slice(0, 160)} ...
                 </p>
-              </div>
-              <div className="p-4">
-                {" "}
-                <Link to={`/one-Blog/${d?.id}`}>
-                  <button className="border border-blue bg-blue hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear">
-                    Read More
-                  </button>
-                </Link>
               </div>
             </div>
           ))}

@@ -8,7 +8,6 @@ import BookingModal from './BookingModal'
 import ClinicCenters from './ClinicCenters'
 
 import News from './News'
-import Blogs from './Blogs'
 
 import HomePackages from './HomePackages'
 import Disclaimer1 from './Disclaimer1'
@@ -43,7 +42,6 @@ export default function Home() {
       <ClinicCenters />
       <WhyUs />
       <News />
-      <Blogs />
       <HomeContact />
       <div className='fixed bottom-0 md:bottom-2 min-w-full z-50'>
         <MiddleBar />

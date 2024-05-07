@@ -28,7 +28,6 @@ export default function ViewAllCenters() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data?.response) {
           setSlides(data?.response?.data);
           setLoader(false);
@@ -176,7 +175,7 @@ export default function ViewAllCenters() {
                       </span>
                     </p>
                     <Link
-                      to={`/clinic_centers/${sc?.slug}/${sc?.id}`}
+                      to={`/clinic-centers/${sc?.slug}`}
                       className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold"
                       target='_blank'
                     >

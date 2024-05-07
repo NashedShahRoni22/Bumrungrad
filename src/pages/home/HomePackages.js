@@ -55,7 +55,7 @@ export default function HomePackages() {
                 <p>{p?.description.slice(0, 160)}</p>
               </div>
               <Link
-                to={`/package_details/${p?.slug}/${p?.id}`}
+                to={`/package-details/${p?.slug}`}
                 className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br'
                 target='_blank'
               >

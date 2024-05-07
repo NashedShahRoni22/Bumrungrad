@@ -523,7 +523,7 @@ export default function FindDoctor() {
                       />
                       <div>
                         <Link
-                          to={`/doctor_details/${d?.slug}/${d.id}`}
+                          to={`/doctor-details/${d?.slug}`}
                           className='flex justify-center'
                           target='_blank'
                         >

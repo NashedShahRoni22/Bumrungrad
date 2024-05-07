@@ -7,12 +7,12 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const ChildPackage = () => {
   const [loader, setLoader] = useState()
-  const { slug, id } = useParams()
+  const { slug } = useParams()
   const [childPackage, setChildPackage] = useState([])
 
   useEffect(() => {
     setLoader(true)
-    fetch(`https://api.bumrungraddiscover.com/api/get/sub/packages/${slug}/${id}`)
+    fetch(`https://api.bumrungraddiscover.com/api/get/sub/packages/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
@@ -21,7 +21,7 @@ const ChildPackage = () => {
         }
         setLoader(false)
       })
-  }, [id])
+  }, [slug])
   return (
     <section className='mx-5 md:container md:mx-auto py-10'>
       {loader ? (
@@ -52,7 +52,7 @@ const ChildPackage = () => {
                       <p>{cp?.description.slice(0, 200)}</p>
                     </div>
                     <Link
-                      to={`/childPackage_details/${cp.slug}/${cp.id}`}
+                      to={`/sub_package_details/${cp.slug}`}
                       className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br'
                       target='_blank'
                     >

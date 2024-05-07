@@ -162,7 +162,7 @@ export default function ParentPackages() {
                       <p className='pb-5'>{p?.description.slice(0, 150)}</p>
                     </div>
                     <Link
-                      to={`/package_details/${p.slug}/${p.id}`}
+                      to={`/package-details/${p.slug}`}
                       className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br '
                       target='_blank'
                     >
@@ -192,7 +192,7 @@ export default function ParentPackages() {
         <button
           onClick={handlePageChangePrev}
           disabled={currentPage === 1}
-          class='flex items-center  gap-1 md:gap-2 md:px-6 md:py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+          className='flex items-center  gap-1 md:gap-2 md:px-6 md:py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
           type='button'
         >
           <svg
@@ -202,7 +202,7 @@ export default function ParentPackages() {
             stroke-width='2'
             stroke='currentColor'
             aria-hidden='true'
-            class='w-4 h-4'
+            className='w-4 h-4'
           >
             <path
               stroke-linecap='round'
@@ -225,7 +225,7 @@ export default function ParentPackages() {
           <button
             key={index}
             onClick={() => handlePageChange(index)}
-            class={`px-2 py-2 md:h-10 md:max-h-[40px] md:w-10 md:max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase  shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none${
+            className={`px-2 py-2 md:h-10 md:max-h-[40px] md:w-10 md:max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase  shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none${
               currentPage === index ? ' bg-blue text-white' : ''
             }`}
             type='button'
@@ -245,7 +245,7 @@ export default function ParentPackages() {
         <button
           onClick={handlePageChangeNext}
           disabled={currentPage === pageIndex.length}
-          class='flex items-center gap-1 md:gap-2 md:px-6 md:py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+          className='flex items-center gap-1 md:gap-2 md:px-6 md:py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
           type='button'
         >
           Next
@@ -256,7 +256,7 @@ export default function ParentPackages() {
             stroke-width='2'
             stroke='currentColor'
             aria-hidden='true'
-            class='w-4 h-4'
+            className='w-4 h-4'
           >
             <path
               stroke-linecap='round'

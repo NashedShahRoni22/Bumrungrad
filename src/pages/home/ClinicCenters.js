@@ -147,7 +147,7 @@ export default function ClinicCenters() {
                     </span>
                   </p>
                   <Link
-                    to={`/clinic_centers/${sc.slug}/${sc.id}`}
+                    to={`/clinic-centers/${sc.slug}`}
                     className=' mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold'
                     target='_blank'
                   >

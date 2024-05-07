@@ -3,18 +3,18 @@ import { useParams } from 'react-router-dom'
 import Loader from '../../shared/Loader/Loader'
 
 export default function SingleCenter() {
-  const { id, slug } = useParams()
+  const { slug } = useParams()
   const [loader, setLoader] = useState(false)
   const [center, setCenter] = useState({})
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.bumrungraddiscover.com/api/get/centers/${slug}/${id}`)
+    fetch(`https://api.bumrungraddiscover.com/api/get/centers/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setCenter(data?.response?.data)
         setLoader(false)
       })
-  }, [id, slug])
+  }, [slug])
   return (
     <div className='p-5 my-5 md:container md:mx-auto'>
       {loader ? (
