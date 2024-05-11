@@ -49,10 +49,10 @@ const ChildPackage = () => {
                       <p className='font-semibold text-blue md:text-xl'>
                         {cp?.title}
                       </p>
-                      <p>{cp?.description.slice(0, 200)}</p>
+                      <p>{cp?.description?.slice(0, 200)}</p>
                     </div>
                     <Link
-                      to={`/sub_package_details/${cp.slug}`}
+                      to={`/sub_package_details/${cp?.slug}`}
                       className='group bg-blue text-white p-2.5 w-full flex justify-center gap-2 rounded-bl rounded-br'
                       target='_blank'
                     >
