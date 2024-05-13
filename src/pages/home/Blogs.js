@@ -24,7 +24,7 @@ export default function Blogs() {
   }, []);
   return (
     <div className="p-5 md:p-10 md:container md:mx-auto">
-      <div className="flex justify-between items-center">
+      <div>
         <h2 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
           Bumrungrad Health Blogs
         </h2>
@@ -57,11 +57,7 @@ export default function Blogs() {
                   <h5 className="font-semibold text-blue text-lg">
                     {d.blogTitle}
                   </h5>{" "}
-                  <Link to={`/one-Blog/${d?.slug}`}>
-                    <button className="border border-blue bg-blue text-sm hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear">
-                      Read More
-                    </button>
-                  </Link>
+                  <Link to={`/blogs/${d?.slug}`}>Read More</Link>
                 </div>
                 <p className="my-3 text-justify">
                   {d.blogDescription?.slice(0, 160)} ...

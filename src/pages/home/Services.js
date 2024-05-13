@@ -32,13 +32,13 @@ const services = [
     id: 3,
     name: 'Order Medicine',
     img: orderMedicine,
-    pageTo: '/orderMedicine',
+    pageTo: '/order-medicine',
     alt: 'Bumrungrad International Hospital',
   },
   {
     name: 'Medical Records',
     img: medicalRecords,
-    pageTo: '/medicalRecord',
+    pageTo: '/medical-record',
     alt: 'Bumrungrad International Hospital',
   },
   {

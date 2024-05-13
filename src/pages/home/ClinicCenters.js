@@ -79,7 +79,7 @@ export default function ClinicCenters() {
           Clinic & Centers
         </h2>
         <Link
-          to={'/clinic_centers'}
+          to={'/clinic-centers'}
           className='rounded px-2 md:px-4 py-1 md:py-2 border border-blue text-blue hover:bg-blue hover:text-white duration-300 ease-linear'
         >
           View All

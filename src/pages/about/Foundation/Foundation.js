@@ -17,7 +17,7 @@ const Foundation = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about_foundation"
+            href="https://bumrungraddiscover.com/about-foundation"
           />
         </Helmet>
       </HelmetProvider>
@@ -223,7 +223,7 @@ const Foundation = () => {
           </Link>{" "}
           Foundation and Bumrungrad International Hospital are committed to
           spreading health education and other important health-related
-          information as a community <Link to="https://bumrungraddiscover.com/our_services" className="font-semibold text-blue underline">service</Link>. This comprises health-promoting
+          information as a community <Link to="https://bumrungraddiscover.com/our-services" className="font-semibold text-blue underline">service</Link>. This comprises health-promoting
           activities for students in the community, health exhibitions, disease
           information dissemination, and public awareness of medical
           developments. This material is disseminated via Bumrungrad's channels

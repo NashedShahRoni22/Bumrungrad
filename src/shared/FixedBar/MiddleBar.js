@@ -29,7 +29,7 @@ export default function MiddleBar() {
     <section className="md:flex md:justify-center">
       <div className="flex justify-between md:justify-center backdrop-blur-3xl bg-white/30 md:rounded-xl">
         <Link
-          to="/find"
+          to="/doctors"
           className="md:rounded-l-xl flex flex-col md:flex-row  gap-1 md:gap-2 px-4 py-2.5 md:px-8 md:py-5 hover:bg-white hover:md:bg-blue hover:md:text-white items-center duration-300 ease-linear cursor-pointer text-blue"
         >
           <SearchIcon sx={{ fontSize: "22px" }} />
@@ -48,7 +48,7 @@ export default function MiddleBar() {
           </p>
         </button>
         <Link
-          to="/send_query"
+          to="/send-query"
           className="md:rounded-r-xl flex flex-col md:flex-row  gap-1 md:gap-2 px-4 py-2.5 md:px-8 md:py-5 hover:bg-white hover:md:bg-blue hover:md:text-white items-center duration-300 ease-linear cursor-pointer text-blue"
         >
           <HelpOutlineIcon sx={{ fontSize: "22px" }} />
@@ -59,7 +59,7 @@ export default function MiddleBar() {
           </p>
         </Link>
         <Link
-          to="/my_profile"
+          to="/my-profile"
           className="md:hidden flex flex-col md:flex-row  gap-1 md:gap-2 px-4 py-2.5 md:px-8 md:py-5 hover:bg-white items-center duration-300 ease-linear cursor-pointer text-blue md:text-white"
         >
           <PersonIcon sx={{ fontSize: "24px" }} />
@@ -86,7 +86,7 @@ export default function MiddleBar() {
             </div>
             <div className="flex mt-5 gap-2">
               <div className="">
-                <Link to="/check_up" className="relative">
+                <Link to="/check-up" className="relative">
                   <div className="absolute z-10 top-0 h-[100%] w-full bg-black/50 rounded-lg"></div>
                   <div className="absolute bottom-0 z-30 w-full bg-blue rounded-bl-lg rounded-br-lg">
                     <h2 className="text-white md:font-medium text-sm md:text-xl text-center p-1 md:py-3">

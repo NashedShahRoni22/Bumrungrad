@@ -20,7 +20,7 @@ const VissionMisson = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about_vision_and_misson"
+            href="https://bumrungraddiscover.com/about-vision-and-misson"
           />
         </Helmet>
       </HelmetProvider>

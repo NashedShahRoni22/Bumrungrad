@@ -9,21 +9,21 @@ const serives = [
   },
   {
     name: "Health Screening",
-    link: "/check_up",
+    link: "/check-up",
   },
   {
     name: "Find a Doctor",
-    link: "/find",
+    link: "/doctors",
   },
   {
     name: "Clinic & Centers",
-    link: "/clinic_centers",
+    link: "/clinic-centers",
   },
 ];
 const corporates = [
-  { name: "About Bumrungrad", link: "/about_bumrungrad" },
-  { name: "Send Inquiry", link: "/send_query" },
-  { name: "Contact", link: "/contact_us" }, 
+  { name: "About Bumrungrad", link: "/about-bumrungrad" },
+  { name: "Send Inquiry", link: "/send-query" },
+  { name: "Contact", link: "/contact-us" }, 
 ];
 const blognews = [
   { name: 'Blogs', link: '/blogs' },

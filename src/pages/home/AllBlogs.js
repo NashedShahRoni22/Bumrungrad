@@ -23,6 +23,7 @@ const AllBlogs = () => {
         }
       });
   }, []);
+
   return (
     <div className="p-5 md:p-10 md:container md:mx-auto">
       <div className="">
@@ -48,15 +49,27 @@ const AllBlogs = () => {
                 effect="blur"
                 className=""
               />
-              <div className="flex justify-between items-center p-5">
+              <div className="p-5">
                 <h5 className="font-semibold text-blue text-lg">
-                  {d.blogTitle}
+                  {d.blogTitle}.
                 </h5>{" "}
-                <Link to={`/one-Blog/${d?.slug}`}>
-                  <button className="border border-blue bg-blue text-sm hover:bg-white px-2 py-1 rounded hover:text-blue text-white duration-300 ease-linear">
+                <div
+                  id={`blog_desc_${i}`}
+                  className="text-sm lg:text-base"
+                  dangerouslySetInnerHTML={{
+                    __html: `${d?.blogDescription.slice(0, 300)}${
+                      d.blogDescription.length > 300 ? "..." : ""
+                    }`,
+                  }}
+                />
+                {d.blogDescription.length > 300 && (
+                  <Link
+                    to={`/blogs/${d?.slug}`}
+                    className="text-blue font-semibold hover:underline"
+                  >
                     Read More
-                  </button>
-                </Link>
+                  </Link>
+                )}
               </div>
             </div>
           ))}

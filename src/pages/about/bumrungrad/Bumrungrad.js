@@ -24,7 +24,7 @@ const Bumrungrad = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about_bumrungrad"
+            href="https://bumrungraddiscover.com/about-bumrungrad"
           />
         </Helmet>
       </HelmetProvider>

@@ -5,7 +5,7 @@ export const MenuItems = [
   },
   {
     header: 'Our Services',
-    link: '/our_services',
+    link: '/our-services',
   },
   {
     header: 'Blogs',
@@ -17,25 +17,25 @@ export const MenuItems = [
     childs: [
       {
         name: 'We Accept',
-        link: '/insurance_weaccept',
+        link: '/insurance-we-accept',
       },
       {
         name: 'Good Vibes',
-        link: '/insurance_goodVibes',
+        link: '/insurance-goodVibes',
       },
       {
         name: 'Packages & Promotion',
-        link: '/insurance_package_promotion',
+        link: '/insurance-package-promotion',
       },
     ],
   },
   {
     header: 'Clinic & Centers',
-    link: '/clinic_centers',
+    link: '/clinic-centers',
   },
   {
     header: 'Health Screening',
-    link: '/check_up',
+    link: '/check-up',
   },
   {
     header: 'Packages',
@@ -46,29 +46,29 @@ export const MenuItems = [
     childs: [
       {
         name: 'Bumrungrad',
-        link: '/about_bumrungrad',
+        link: '/about-bumrungrad',
       },
       {
         name: 'Vision & Mision',
-        link: '/about_vision_and_misson',
+        link: '/about-vision-and-misson',
       },
       {
         name: 'Factsheet',
-        link: '/about_factsheet',
+        link: '/about-factsheet',
       },
       {
         name: 'Accreditation & Awards',
-        link: '/about_accreditation',
+        link: '/about-accreditation',
       },
       {
         name: 'Bumrungrad & Foundation',
-        link: '/about_foundation',
+        link: '/about-foundation',
       },
     ],
   },
   {
     header: 'Contact',
-    link: '/contact_us',
+    link: '/contact-us',
     // childs: [
     //   {
     //     name: 'Locate Us',

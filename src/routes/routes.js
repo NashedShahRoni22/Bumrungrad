@@ -45,47 +45,47 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/find',
+        path: '/doctors',
         element: <FindDoctor />,
       },
       {
-        path: '/about_bumrungrad',
+        path: '/about-bumrungrad',
         element: <Bumrungrad />,
       },
       {
-        path: '/about_vision_and_misson',
+        path: '/about-vision-and-misson',
         element: <VissionMisson />,
       },
       {
-        path: '/about_factsheet',
+        path: '/about-factsheet',
         element: <FactSheet />,
       },
       {
-        path: '/about_accreditation',
+        path: '/about-accreditation',
         element: <Accreditation />,
       },
       {
-        path: '/about_foundation',
+        path: '/about-foundation',
         element: <Foundation />,
       },
       {
-        path: '/doctor-details/:slug',
+        path: '/doctors/:slug',
         element: <DoctorInfo />,
       },
       {
-        path: '/contact_us',
+        path: '/contact-us',
         element: <ContactUs />,
       },
       {
-        path: '/insurance_weaccept',
+        path: '/insurance-we-accept',
         element: <WeAccept />,
       },
       {
-        path: '/insurance_goodVibes',
+        path: '/insurance-goodVibes',
         element: <GoodVibes />,
       },
       {
-        path: '/insurance_package_promotion',
+        path: '/insurance-package-promotion',
         element: <PackagePromotion />,
       },
       {
@@ -105,7 +105,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/medicalRecord',
+        path: '/medical-record',
         element: (
           <PrivateRoute>
             <MedicalRecords />
@@ -113,7 +113,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/orderMedicine',
+        path: '/order-medicine',
         element: (
           <PrivateRoute>
             <OrderMedicine />
@@ -129,7 +129,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/my_profile',
+        path: '/my-profile',
         element: (
           <PrivateRoute>
             <User />
@@ -137,11 +137,11 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/send_query',
+        path: '/send-query',
         element: <SendQuery />,
       },
       {
-        path: '/check_up',
+        path: '/check-up',
         element: (
           <PrivateRoute>
             <CheckUp />
@@ -149,7 +149,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/clinic_centers',
+        path: '/clinic-centers',
         element: <ViewAllCenters />,
       },
       {
@@ -181,11 +181,11 @@ export const router = createBrowserRouter([
         element: <AllBlogs />,
       },
       {
-        path: '/our_services',
+        path: '/our-services',
         element: <Services />,
       },
       {
-        path: '/one-Blog/:slug',
+        path: '/blogs/:slug',
         element: <OneBlog />,
       },
       {
@@ -193,7 +193,7 @@ export const router = createBrowserRouter([
         element: <ChildPackage />,
       },
       {
-        path: '/sub_package_details/:slug',
+        path: '/sub-package-details/:slug',
         element: <ChildPackageDetails />,
       },
     ],

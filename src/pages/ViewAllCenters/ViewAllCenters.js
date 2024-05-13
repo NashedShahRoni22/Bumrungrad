@@ -112,7 +112,7 @@ export default function ViewAllCenters() {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/clinic_centers"
+            href="https://bumrungraddiscover.com/clinic-centers"
           />
         </Helmet>
       </HelmetProvider>

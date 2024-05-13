@@ -5,66 +5,106 @@ import { useParams } from "react-router-dom";
 import Loader from "../../shared/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { DateRangeOutlined, } from "@mui/icons-material";
-import { FaRegClock } from "react-icons/fa";
+import { BsChevronRight } from "react-icons/bs";
+import { FaArrowUp } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa6";
 
 const OneBlog = () => {
   const { slug } = useParams();
   const [loader, setLoader] = useState(true);
   const [oneBlog, setBlog] = useState({});
-  // Get the created_at value from the oneBlog object
-  const [createdAtValue, setCreatedAtValue] = useState("");
-
-  // Extract the date and time components using string manipulation
-  const date = createdAtValue.slice(0, 10); // Extracts the date part (YYYY-MM-DD)
-  const time = createdAtValue.slice(11, 19); // Extracts the time part (HH:MM:SS)
-
-  console.log("Date:", date); // Output the date
-  console.log("Time:", time); // Output the time
+  const [view, setView] = useState(false);
 
   // get data
   useEffect(() => {
+    setLoader(true);
     fetch(`https://api.bumrungraddiscover.com/api/get/blogs/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data?.data);
-        setCreatedAtValue(data?.data?.created_at);
         setLoader(false);
       });
   }, [slug]);
+
+  const [headings, setHeadings] = useState([]);
+  // Generate table of contents
+  useEffect(() => {
+    const blogDescElement = document.getElementById("blog_desc");
+    if (blogDescElement) {
+      const headingsData = [];
+      const headingElements = blogDescElement.querySelectorAll(
+        "h1, h2, h3, h4, h5, h6"
+      );
+      headingElements.forEach((element) => {
+        const name = element.innerText;
+        const target = name.toLowerCase().replace(/\s+/g, "_");
+        element.id = target; // Set the id attribute of the element
+        headingsData.push({ name, target });
+      });
+      setHeadings(headingsData);
+    }
+  }, [loader]);
+
   return (
-    <div className="p-5 my-5 md:container md:mx-auto">
+    <div className="p-5 my-5 md:container md:mx-auto relative">
       {loader ? (
         <Loader />
       ) : (
-        <div className="lg:flex">
-          <div className="lg:w-1/5">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">
+          <div className="lg:w-[400px] rounded shadow lg:h-fit lg:fixed lg:left-5 lg:bg-white">
+            <div className="flex justify-between items-center p-2.5" onClick={() => setView(!view)}>
+              <p className="font-semibold lg:text-xl">Content Finder</p>
+              {view ? (
+                <FaArrowUp
+                  
+                  className="text-blue h-8 lg:hidden"
+                />
+              ) : (
+                <FaArrowDown
+                  className="text-blue h-8 lg:hidden"
+                />
+              )}
+            </div>
+            {view && (
+              <div className="lg:hidden m-2.5">
+                {headings.map((h) => (
+                  <a
+                    key={h.target}
+                    href={`#${h.target}`}
+                    className="flex justify-between items-center lg:border-b lg:border-blue p-2.5"
+                  >
+                    {h.name} <BsChevronRight />
+                  </a>
+                ))}
+              </div>
+            )}
 
+            <div className="hidden lg:block">
+              {headings.map((h) => (
+                <a
+                  key={h.target}
+                  href={`#${h.target}`}
+                  className="flex justify-between items-center shadow p-2.5"
+                >
+                  {h.name} <BsChevronRight />
+                </a>
+              ))}
+            </div>
           </div>
-          <div className="lg:w-4/5 flex flex-col gap-2.5 md:gap-5">
+          <div className="lg:w-4/6 lg:mx-auto flex flex-col gap-2.5 md:gap-5">
             <LazyLoadImage
               src={oneBlog?.blogImage}
               alt="Bumrungrad International Hospital"
               effect="blur"
               className="w-full lg:h-[50vh]"
             />
-            <div className="flex justify-between">
-              <p className="flex gap-2 items-center">
-                <FaRegClock/>
-                {" "}
-                {time}{" "}
-              </p>
-              <p className="flex gap-2 items-center">
-                {" "}
-                <DateRangeOutlined />
-                {date}{" "}
-              </p>
-            </div>
             <h5 className="font-semibold text-blue text-xl">
               {oneBlog?.blogTitle}
             </h5>
             <p>{oneBlog?.blogSlogan}</p>
             <div
+              id="blog_desc"
+              className="text-sm lg:text-base"
               dangerouslySetInnerHTML={{ __html: oneBlog?.blogDescription }}
             />
           </div>

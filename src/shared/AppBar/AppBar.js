@@ -50,7 +50,7 @@ export default function AppBar() {
   };
 
   return (
-    <nav className='bg-cream sticky top-0 z-20'>
+    <nav className='bg-cream z-50'>
       <section className='px-3 py-3 relative md:container md:mx-auto flex items-center justify-between'>
         <Link to={'/'}>
           <LazyLoadImage
@@ -150,7 +150,7 @@ export default function AppBar() {
                 {accessToken !== null ? (
                   <>
                     <Link
-                      to={'/my_profile'}
+                      to={'/my-profile'}
                       className='hover:text-blue font-semibold p-1 rounded-xl duration-300 ease-linear flex items-center gap-2.5'
                     >
                       <PersonIcon

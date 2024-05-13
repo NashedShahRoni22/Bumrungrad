@@ -38,7 +38,7 @@ const Accreditation = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about_accreditation"
+            href="https://bumrungraddiscover.com/about-accreditation"
           />
         </Helmet>
       </HelmetProvider>
