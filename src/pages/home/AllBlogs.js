@@ -55,7 +55,7 @@ const AllBlogs = () => {
                 </h5>{" "}
                 <div
                   id={`blog_desc_${i}`}
-                  className="text-sm lg:text-base"
+                  className="text-sm lg:text-base mb-5"
                   dangerouslySetInnerHTML={{
                     __html: `${d?.blogDescription.slice(0, 300)}${
                       d.blogDescription.length > 300 ? "..." : ""
@@ -65,7 +65,7 @@ const AllBlogs = () => {
                 {d.blogDescription.length > 300 && (
                   <Link
                     to={`/blogs/${d?.slug}`}
-                    className="text-blue font-semibold hover:underline"
+                    className="px-4 py-2 bg-blue text-white shadow rounded text-sm"
                   >
                     Read More
                   </Link>

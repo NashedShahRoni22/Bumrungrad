@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin
+Disallow: /private
+Disallow: /404
+Allow: /
+Sitemap: https://bumrungraddiscover.com/sitemap.xml
+         https://bumrungraddiscover.com/sitemap.html
+         https://bumrungraddiscover.com/sitemap_index.xml

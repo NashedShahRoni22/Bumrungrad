@@ -50,3 +50,9 @@ code {
 }
  .btn-shadow{
 box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;}
+
+#blog_desc a{
+  color: blue;
+  text-decoration: underline;
+  font-weight: 600;
+}
