@@ -28,6 +28,7 @@ const corporates = [
 const blognews = [
   { name: 'Blogs', link: '/blogs' },
   { name: 'News', link: '/news' },
+  { name: 'Treatments', link: '/treatments' },
 ]
 
 export default function BottomBar() {
@@ -89,8 +90,8 @@ export default function BottomBar() {
             2024 Bumrungrad International Hospital Referral Office
           </p>
           <div className='flex gap-4 items-center'>
-            <p>Terms & Conditions</p>
-            <p>Privacy Policy</p>
+            <Link to="/terms-and-conditions">Terms & Conditions</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
           </div>
         </div>
       </section>

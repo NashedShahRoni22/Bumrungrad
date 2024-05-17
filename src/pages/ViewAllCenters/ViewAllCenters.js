@@ -118,7 +118,7 @@ export default function ViewAllCenters() {
       </HelmetProvider>
       <div className="flex justify-between items-center">
         <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
-          Clinic & Centers
+          Clinic & Centers {slides?.length}
         </h1>
       </div>
       <div className="my-8 flex md:justify-center">
@@ -164,20 +164,29 @@ export default function ViewAllCenters() {
                       {sc?.name}
                     </h2>
                     <p className="text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <span className="md:hidden">
-                        {sc?.description?.slice(0, 60)} ...
-                      </span>
-                      <span className="hidden md:block lg:hidden">
-                        {sc?.description?.slice(0, 100)} ...
-                      </span>
-                      <span className="hidden lg:block">
-                        {sc?.description?.slice(0, 200)} ...
-                      </span>
+                      <span
+                        className="md:hidden"
+                        dangerouslySetInnerHTML={{
+                          __html: sc?.content?.slice(0, 60),
+                        }}
+                      />
+                      <span
+                        className="hidden md:block lg:hidden"
+                        dangerouslySetInnerHTML={{
+                          __html: sc?.content?.slice(0, 100),
+                        }}
+                      />
+                      <span
+                        className="hidden lg:block"
+                        dangerouslySetInnerHTML={{
+                          __html: sc?.content?.slice(0, 200),
+                        }}
+                      />
                     </p>
                     <Link
                       to={`/clinic-centers/${sc?.slug}`}
                       className=" mt-3 bg-white shadow-xl rounded py-1 md:py-2 px-2 md:px-4 font-com text-sm capitalize text-blue font-semibold"
-                      target='_blank'
+                      target="_blank"
                     >
                       See More
                     </Link>

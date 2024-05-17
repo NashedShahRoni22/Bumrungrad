@@ -34,6 +34,9 @@ import AllBlogs from "../pages/home/AllBlogs";
 import OneBlog from "../pages/home/OneBlog";
 import NotFound from "../shared/NotFound/NotFound";
 import Services from "../pages/home/Services";
+import Treatments from "../pages/treatments/Treatments";
+import TermsConditions from "../pages/Extras/TermsConditions";
+import PrivacyPolicy from "../pages/Extras/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +90,18 @@ export const router = createBrowserRouter([
       {
         path: '/insurance-package-promotion',
         element: <PackagePromotion />,
+      },
+      {
+        path: '/treatments',
+        element: <Treatments />,
+      },
+      {
+        path: '/terms-and-conditions',
+        element: <TermsConditions />,
+      },
+      {
+        path: '/privacy-policy',
+        element: <PrivacyPolicy />,
       },
       {
         path: '/appointment',
