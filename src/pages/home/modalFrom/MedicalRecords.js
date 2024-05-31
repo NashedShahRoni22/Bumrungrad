@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const MedicalRecords = () => {
   const userDetails = JSON.parse(localStorage.getItem('User_Details'))
   //loader
@@ -56,6 +56,23 @@ const MedicalRecords = () => {
   }
   return (
     <div className='md:my-10 md:container md:mx-auto lg:w-1/2 shadow-xl rounded-xl py-10 md:py-12 md:px-10 lg:px-16'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>Bumrungrad Hospital: Explore The Accreditation & Awards</title>
+          <meta
+            name='description'
+            content="Discover Bumrungrad International Hospital's Accolades. Elevate your health journey with excellence at our hospital. Explore now! #BumrungradHospital
+
+"
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/medical-record'
+          />
+        </Helmet>
+      </HelmetProvider>
       <h1 className='text-center capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue'>
         Medical Records
       </h1>
@@ -69,7 +86,11 @@ const MedicalRecords = () => {
               {' '}
               <span className='text-red text-lg'>*</span>Enter Your Name
             </p>
-            <TextField onChange={(e) => setName(e.target.value)} fullWidth value={name}/>
+            <TextField
+              onChange={(e) => setName(e.target.value)}
+              fullWidth
+              value={name}
+            />
           </div>
           <div className='mt-2'>
             <p className='mt-2 font-semibold text-sm'>
