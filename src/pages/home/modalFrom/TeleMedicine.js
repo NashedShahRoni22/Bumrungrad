@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Divider, TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 const TeleMedicine = () => {
   const userDetails = JSON.parse(localStorage.getItem('User_Details'))
 
@@ -94,6 +95,23 @@ const TeleMedicine = () => {
 
   return (
     <section className='md:container lg:w-1/2 md:mx-auto md:my-20 shadow-xl rounded-xl'>
+      <HelmetProvider>
+        {' '}
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>Bumrungrad Hospital: Explore The Accreditation & Awards</title>
+          <meta
+            name='description'
+            content="Discover Bumrungrad International Hospital's Accolades. Elevate your health journey with excellence at our hospital. Explore now! #BumrungradHospital
+
+"
+          />
+          <link
+            rel='canonical'
+            href='https://bumrungraddiscover.com/telemedicine'
+          />
+        </Helmet>
+      </HelmetProvider>
       <h1 className='text-xl md:text-2xl lg:text-3xl font-semibold text-blue my-5 text-center'>
         Tele Medicine
       </h1>
