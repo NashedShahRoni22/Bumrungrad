@@ -81,7 +81,7 @@ export default function TermsConditions() {
         or representations about the accuracy or reliability of the information
         provided on our website.
       </p>
-      <h5 className='text-3xl mt-8'>Indemnificationv</h5>
+      <h5 className='text-3xl mt-8'>Indemnification</h5>
       <p className='text-justify mt-4'>
         You agree to indemnify and hold Bumrungrad Discover and its affiliates,
         officers, directors, employees, and agents harmless from any claims,

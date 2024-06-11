@@ -73,7 +73,7 @@ const OneBlog = () => {
         <Loader />
       ) : (
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">
-          <div className="lg:w-[400px] rounded shadow lg:h-fit lg:bg-white">
+          {/* <div className="lg:w-[400px] rounded shadow lg:h-fit lg:bg-white">
             <div
               className="flex justify-between items-center p-2.5"
               onClick={() => setView(!view)}
@@ -110,7 +110,7 @@ const OneBlog = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
           <div className="lg:w-4/6 lg:mx-auto flex flex-col gap-5">
             <LazyLoadImage
               src={oneBlog?.blogImage}

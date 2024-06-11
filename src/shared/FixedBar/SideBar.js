@@ -72,7 +72,7 @@ export default function SideBar() {
             <span className='text-blue font-semibold'>Appointment Booking</span>
           </a>
           <a
-            href='http://wa.me/+8801847284860'
+            href='http://wa.me/+66948382910'
             target='_blank'
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
