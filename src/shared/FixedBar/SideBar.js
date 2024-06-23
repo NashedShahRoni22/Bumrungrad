@@ -58,7 +58,7 @@ export default function SideBar() {
       >
         <Box sx={style}>
           <a
-            href='http://wa.me/+8801324418100'
+            href='http://wa.me/+66948382910'
             target='_blank'
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
@@ -88,7 +88,7 @@ export default function SideBar() {
             </span>
           </a>
           <a
-            href='http://wa.me/+8801847284863'
+            href='http://wa.me/+66948382910'
             target='_blank'
             rel='noopener noreferrer'
             className='rounded-xl flex gap-4 my-2 items-center p-2 hover:shadow-lg duration-300 ease-linear'
