@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
         <li className='list-disc mt-2'>
           <Link
             className='font-semibold text-blue underline'
-            to='https://bumrungraddiscover.com/'
+            to='https://discoverinternationalmedicalservice.com/'
           >
             Bumrungrad International Hospital
           </Link>{' '}
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
           Our affiliates and partners to improve our{' '}
           <Link
             className='font-semibold text-blue underline'
-            to='https://bumrungraddiscover.com/our-services'
+            to='https://discoverinternationalmedicalservice.com/our-services'
           >
             Our Service
           </Link>{' '}
@@ -192,7 +192,7 @@ export default function PrivacyPolicy() {
           To exercise any of these rights, please
           <Link
             className='font-semibold text-blue underline ml-2'
-            to='https://bumrungraddiscover.com/contact-us'
+            to='https://discoverinternationalmedicalservice.com/contact-us'
           >
             Contact
           </Link>{' '}

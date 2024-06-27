@@ -17,7 +17,7 @@ const Foundation = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about-foundation"
+            href="https://discoverinternationalmedicalservice.com/about-foundation"
           />
         </Helmet>
       </HelmetProvider>
@@ -35,14 +35,14 @@ const Foundation = () => {
           In May of 1990, the founders of{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
           Created the{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -108,7 +108,7 @@ const Foundation = () => {
           Hospital Foundation and{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -174,7 +174,7 @@ const Foundation = () => {
           The{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -217,13 +217,13 @@ const Foundation = () => {
           The{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
           Foundation and Bumrungrad International Hospital are committed to
           spreading health education and other important health-related
-          information as a community <Link to="https://bumrungraddiscover.com/our-services" className="font-semibold text-blue underline">service</Link>. This comprises health-promoting
+          information as a community <Link to="https://discoverinternationalmedicalservice.com/our-services" className="font-semibold text-blue underline">service</Link>. This comprises health-promoting
           activities for students in the community, health exhibitions, disease
           information dissemination, and public awareness of medical
           developments. This material is disseminated via Bumrungrad's channels
@@ -267,7 +267,7 @@ const Foundation = () => {
             Write a check out to “The{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}
@@ -286,7 +286,7 @@ const Foundation = () => {
           The{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -299,7 +299,7 @@ const Foundation = () => {
           How to Contact the{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}

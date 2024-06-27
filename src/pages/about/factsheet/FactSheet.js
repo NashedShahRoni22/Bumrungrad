@@ -26,7 +26,7 @@ const FactSheet = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about-factsheet"
+            href="https://discoverinternationalmedicalservice.com/about-factsheet"
           />
         </Helmet>
       </HelmetProvider>
@@ -48,7 +48,7 @@ const FactSheet = () => {
         <p className="text-justify">
           The goals of{" "}
           <Link
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
             className="text-blue font-semibold underline"
           >
             Bumrungrad International Hospital
@@ -101,7 +101,7 @@ const FactSheet = () => {
             Facilities and{" "}
             <Link
               className="text-blue font-semibold underline"
-              to="https://bumrungraddiscover.com/our-services"
+              to="https://discoverinternationalmedicalservice.com/our-services"
             >
               Services
             </Link>{" "}
@@ -384,7 +384,7 @@ const FactSheet = () => {
           <li className=" mt-2">International/airport concierge service,</li>
           <li className=" mt-2">Embassy assistance,</li>
           <li className=" mt-2">VIP airport transfers</li>
-          <li className=" mt-2">E-mail <Link to="https://bumrungraddiscover.com/contact-us" className="text-blue font-semibold underline">contact</Link> center,</li>
+          <li className=" mt-2">E-mail <Link to="https://discoverinternationalmedicalservice.com/contact-us" className="text-blue font-semibold underline">contact</Link> center,</li>
           <li className=" mt-2">
             International insurance coordination and international medical
             coordinators,

@@ -31,7 +31,7 @@ export default function Home() {
             content='A leading hospital in Thailand, accredited by JCI, has been ranked among the top 10 global medical destinations by Newsweek and recognized as a top 4 pioneer in medical tourism by The Wall Street Journal.
 '
           />
-          <link rel='canonical' href='https://bumrungraddiscover.com/' />
+          <link rel='canonical' href='https://discoverinternationalmedicalservice.com/' />
         </Helmet>
       </HelmetProvider>
 

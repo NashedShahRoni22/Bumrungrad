@@ -108,7 +108,7 @@ const TeleMedicine = () => {
           />
           <link
             rel='canonical'
-            href='https://bumrungraddiscover.com/telemedicine'
+            href='https://discoverinternationalmedicalservice.com/telemedicine'
           />
         </Helmet>
       </HelmetProvider>

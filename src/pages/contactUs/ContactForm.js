@@ -50,7 +50,7 @@ export default function ContactForm() {
           />
           <link
             rel='canonical'
-            href='https://bumrungraddiscover.com/contact-us'
+            href='https://discoverinternationalmedicalservice.com/contact-us'
           />
         </Helmet>
       </HelmetProvider>

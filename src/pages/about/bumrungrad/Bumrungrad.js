@@ -24,7 +24,7 @@ const Bumrungrad = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about-bumrungrad"
+            href="https://discoverinternationalmedicalservice.com/about-bumrungrad"
           />
         </Helmet>
       </HelmetProvider>
@@ -50,7 +50,7 @@ const Bumrungrad = () => {
           listed on the Thai Stock Exchange since 1989. At{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -108,7 +108,7 @@ const Bumrungrad = () => {
             for complex care needs,{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}
@@ -118,7 +118,7 @@ const Bumrungrad = () => {
             than 1,300 physicians work at{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>
@@ -152,7 +152,7 @@ const Bumrungrad = () => {
             2002,{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}
@@ -192,7 +192,7 @@ const Bumrungrad = () => {
             areas in which{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}

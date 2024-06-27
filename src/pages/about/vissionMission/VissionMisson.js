@@ -20,7 +20,7 @@ const VissionMisson = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about-vision-and-misson"
+            href="https://discoverinternationalmedicalservice.com/about-vision-and-misson"
           />
         </Helmet>
       </HelmetProvider>
@@ -44,7 +44,7 @@ const VissionMisson = () => {
           Our main goal at{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -67,7 +67,7 @@ const VissionMisson = () => {
           Our mission at{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -105,7 +105,7 @@ const VissionMisson = () => {
           Everyone at{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -128,7 +128,7 @@ const VissionMisson = () => {
           <li className=" mt-1">
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}
@@ -149,7 +149,7 @@ const VissionMisson = () => {
         <p className="text-justify mt-4">
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -168,7 +168,7 @@ const VissionMisson = () => {
         <p className="text-justify mt-4">
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}

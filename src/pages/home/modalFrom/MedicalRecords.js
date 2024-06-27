@@ -69,7 +69,7 @@ const MedicalRecords = () => {
           />
           <link
             rel='canonical'
-            href='https://bumrungraddiscover.com/medical-record'
+            href='https://discoverinternationalmedicalservice.com/medical-record'
           />
         </Helmet>
       </HelmetProvider>

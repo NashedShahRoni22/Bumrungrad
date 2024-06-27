@@ -12,7 +12,7 @@ export default function TermsConditions() {
         engagement with our services. By accessing or utilizing our{' '}
         <Link
           className='font-semibold text-blue underline'
-          to='https://bumrungraddiscover.com/'
+          to='https://discoverinternationalmedicalservice.com/'
         >
           Bumrungrad International Hospital
         </Link>{' '}
@@ -28,7 +28,7 @@ export default function TermsConditions() {
         guidance and assistance in accessing the best healthcare{' '}
         <Link
           className='font-semibold text-blue underline'
-          to='https://bumrungraddiscover.com/our-services'
+          to='https://discoverinternationalmedicalservice.com/our-services'
         >
           Our Service
         </Link>{' '}
@@ -58,7 +58,7 @@ export default function TermsConditions() {
         without prior notice. Contact our representative to know the any
         <Link
           className='font-semibold text-blue underline ml-2'
-          to='https://bumrungraddiscover.com/packages'
+          to='https://discoverinternationalmedicalservice.com/packages'
         >
           Packages
         </Link>{' '}
@@ -102,7 +102,7 @@ export default function TermsConditions() {
         please{' '}
         <Link
           className='font-semibold text-blue underline ml-2'
-          to='https://bumrungraddiscover.com/contact-us'
+          to='https://discoverinternationalmedicalservice.com/contact-us'
         >
           Contact
         </Link>{' '}

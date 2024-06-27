@@ -59,7 +59,7 @@ const WeAccept = () => {
           />
           <link
             rel='canonical'
-            href='https://bumrungraddiscover.com/insurance-we-accept'
+            href='https://discoverinternationalmedicalservice.com/insurance-we-accept'
           />
         </Helmet>
       </HelmetProvider>

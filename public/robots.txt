@@ -3,6 +3,6 @@ Disallow: /admin
 Disallow: /private
 Disallow: /404
 Allow: /
-Sitemap: https://bumrungraddiscover.com/sitemap.xml
-         https://bumrungraddiscover.com/sitemap.html
-         https://bumrungraddiscover.com/sitemap_index.xml
+Sitemap: https://discoverinternationalmedicalservice.com/sitemap.xml
+         https://discoverinternationalmedicalservice.com/sitemap.html
+         https://discoverinternationalmedicalservice.com/sitemap_index.xml

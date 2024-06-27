@@ -38,7 +38,7 @@ const Accreditation = () => {
           />
           <link
             rel="canonical"
-            href="https://bumrungraddiscover.com/about-accreditation"
+            href="https://discoverinternationalmedicalservice.com/about-accreditation"
           />
         </Helmet>
       </HelmetProvider>
@@ -56,7 +56,7 @@ const Accreditation = () => {
           At{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -80,7 +80,7 @@ const Accreditation = () => {
           2023” via www.newsweek.com.{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -134,7 +134,7 @@ const Accreditation = () => {
           International (JCI) approved{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -152,7 +152,7 @@ const Accreditation = () => {
           Since 2017,{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -200,7 +200,7 @@ const Accreditation = () => {
           2021:{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -216,7 +216,7 @@ const Accreditation = () => {
             Thailand's marketing industry,{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}
@@ -273,7 +273,7 @@ const Accreditation = () => {
           enable differentiation and integrated healthcare delivery is
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -289,7 +289,7 @@ const Accreditation = () => {
           A{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -318,7 +318,7 @@ const Accreditation = () => {
         <p className="text-justify mt-5">
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -399,7 +399,7 @@ const Accreditation = () => {
         <p className="text-justify mt-5">
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -422,7 +422,7 @@ const Accreditation = () => {
             CEO of{" "}
             <Link
               className="font-semibold text-blue underline"
-              to="https://bumrungraddiscover.com/"
+              to="https://discoverinternationalmedicalservice.com/"
             >
               Bumrungrad International Hospital
             </Link>{" "}
@@ -515,7 +515,7 @@ const Accreditation = () => {
           BRAND has been awarded to{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}
@@ -578,7 +578,7 @@ const Accreditation = () => {
           Technology in Healthcare were{" "}
           <Link
             className="font-semibold text-blue underline"
-            to="https://bumrungraddiscover.com/"
+            to="https://discoverinternationalmedicalservice.com/"
           >
             Bumrungrad International Hospital
           </Link>{" "}

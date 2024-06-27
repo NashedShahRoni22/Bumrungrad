@@ -113,7 +113,7 @@ export default function ParentPackages() {
           />
           <link
             rel='canonical'
-            href='https://bumrungraddiscover.com/packages'
+            href='https://discoverinternationalmedicalservice.com/packages'
           />
         </Helmet>
       </HelmetProvider>
