@@ -9,6 +9,7 @@ const ChildPackage = () => {
   const [loader, setLoader] = useState();
   const { slug } = useParams();
   const [childPackage, setChildPackage] = useState([]);
+  console.log(childPackage);
 
   useEffect(() => {
     setLoader(true);
@@ -49,13 +50,17 @@ const ChildPackage = () => {
                       <p className="font-semibold text-blue md:text-xl">
                         {cp?.title}
                       </p>
-                      <div
+
+                      <p className="mt-2.5">
+                        <span className="font-semibold">Location:</span> {cp?.location}.
+                      </p>
+                      {/* <div
                         id="blog_desc"
                         className="text-sm lg:text-base mt-2.5"
                         dangerouslySetInnerHTML={{
-                          __html: cp?.content?.slice(0,300)+"...",
+                          __html: cp?.content?.slice(0, 300) + "...",
                         }}
-                      />
+                      /> */}
                     </div>
                     <Link
                       to={`/sub-package-details/${cp?.slug}`}
@@ -70,8 +75,8 @@ const ChildPackage = () => {
               </div>
             </>
           ) : (
-            <p className="min-h-[80vh] flex justify-center items-center text-3xl font-semibold">
-              Data Not Found
+            <p className="min-h-[80vh] flex justify-center items-center text-3xl text-red font-semibold">
+              No Data Found
             </p>
           )}
         </div>

@@ -159,7 +159,7 @@ export default function ParentPackages() {
                       <p className='font-semibold text-blue md:text-xl'>
                         {p?.title}
                       </p>
-                      <p className='pb-5'>{p?.description.slice(0, 150)}</p>
+                      <p className='pb-5 mt-2.5'>{p?.description.slice(0, 160)} ... </p>
                     </div>
                     <Link
                       to={`/package-details/${p.slug}`}

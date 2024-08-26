@@ -41,7 +41,6 @@ const ChildPackageDetails = () => {
       phoneNumber,
       email,
     };
-    console.log(getPackage);
     const formData = new FormData();
     formData.append("packageName", packageName);
     formData.append("packagePrice", packagePrice);
@@ -137,7 +136,6 @@ const ChildPackageDetails = () => {
               {/* <p>{childDetailsPackage?.description}</p> */}
               <div
                 id="blog_desc"
-                className="text-sm lg:text-base"
                 dangerouslySetInnerHTML={{
                   __html: childDetailsPackage?.content,
                 }}
