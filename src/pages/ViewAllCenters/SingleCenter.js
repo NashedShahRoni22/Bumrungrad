@@ -9,7 +9,7 @@ export default function SingleCenter() {
   console.log(center);
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.bumrungraddiscover.com/api/get/centers/${slug}`)
+    fetch(`https://api.discoverinternationalmedicalservice.com/api/get/centers/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setCenter(data?.response?.data);

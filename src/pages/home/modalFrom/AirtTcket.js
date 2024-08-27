@@ -40,7 +40,7 @@ const AirtTcket = () => {
     formData.append("country", country);
     formData.append("destination", destination);
 
-    fetch("https://api.bumrungraddiscover.com/api/add/air/ticket", {
+    fetch("https://api.discoverinternationalmedicalservice.com/api/add/air/ticket", {
       method: "POST",
       body: formData,
     })

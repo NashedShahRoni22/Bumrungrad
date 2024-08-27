@@ -12,7 +12,7 @@ const NewsAll = () => {
 
   useEffect(() => {
     setLoader(true)
-    fetch('https://api.bumrungraddiscover.com/api/get/news')
+    fetch('https://api.discoverinternationalmedicalservice.com/api/get/news')
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

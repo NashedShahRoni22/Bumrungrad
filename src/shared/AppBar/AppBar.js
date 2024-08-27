@@ -178,7 +178,7 @@ export default function AppBar() {
             </div>
           </div>
           <div className='flex gap-4 items-center'>
-            <a href='mailto:support@bumrungraddiscover.com'>
+            <a href='mailto:support@discoverinternationalmedicalservice.com'>
               <EmailIcon
                 sx={{ fontSize: '28px' }}
                 className='cursor-pointer text-blue'

@@ -21,10 +21,10 @@ export default function ParentPackages() {
 
   useEffect(() => {
     setLoader(true)
-    let url = 'https://api.bumrungraddiscover.com/api/get/package'
+    let url = 'https://api.discoverinternationalmedicalservice.com/api/get/package'
 
     if (searchValue !== '') {
-      url = `https://api.bumrungraddiscover.com/api/search/package/${searchValue}`
+      url = `https://api.discoverinternationalmedicalservice.com/api/search/package/${searchValue}`
     }
 
     fetch(url)

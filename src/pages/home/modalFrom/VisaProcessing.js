@@ -98,7 +98,7 @@ const VisaProcessing = () => {
     formData.append('driveLink1', driveLink1)
     formData.append('driveLink2', driveLink2)
 
-    fetch('https://api.bumrungraddiscover.com/api/add/visa/precessing', {
+    fetch('https://api.discoverinternationalmedicalservice.com/api/add/visa/precessing', {
       method: 'POST',
       body: formData,
     })
@@ -145,7 +145,7 @@ const VisaProcessing = () => {
         </FormControl>
       </section>
       {country === 'Bangladesh' ? (
-        <section className='flex flex-col justify-center items-center py-5 gap-4 shadow-xl rounded-xl'>
+        <section className='flex flex-col justify-center items-center py-5 gap-4 shadow-xl rounded-xl md:w-1/2'>
           <div className='mb-2'>
             <LazyLoadImage
               src={personImg}

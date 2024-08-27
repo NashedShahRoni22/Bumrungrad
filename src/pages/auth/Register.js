@@ -82,7 +82,7 @@ export default function Register() {
       formData.append('password', password)
       formData.append('confirmPassword', confirmPassword)
 
-      fetch('https://api.bumrungraddiscover.com/api/register', {
+      fetch('https://api.discoverinternationalmedicalservice.com/api/register', {
         method: 'POST',
         body: formData,
       })

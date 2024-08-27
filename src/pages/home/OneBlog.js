@@ -18,7 +18,7 @@ const OneBlog = () => {
   // get data
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.bumrungraddiscover.com/api/get/blogs/${slug}`)
+    fetch(`https://api.discoverinternationalmedicalservice.com/api/get/blogs/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data?.data);

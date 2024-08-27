@@ -40,7 +40,7 @@ export default function Home() {
       <BookingModal />
       <HomePackages />
       <ClinicCenters />
-      <WhyUs />
+      {/* <WhyUs /> */}
       <News />
       <HomeContact />
       <div className='fixed bottom-0 md:bottom-2 min-w-full z-50'>

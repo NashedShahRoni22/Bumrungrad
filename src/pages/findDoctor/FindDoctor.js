@@ -99,7 +99,7 @@ export default function FindDoctor() {
   };
   //get speacilities
   useEffect(() => {
-    fetch('https://api.bumrungraddiscover.com/api/get/specialty')
+    fetch('https://api.discoverinternationalmedicalservice.com/api/get/specialty')
       .then((res) => res.json())
       .then((data) => setSpecialities(data?.response?.data))
   }, [])
@@ -108,13 +108,13 @@ export default function FindDoctor() {
   useEffect(() => {
     if (speacility) {
       fetch(
-        `https://api.bumrungraddiscover.com/api/get/selected/sub/specialty/${speacility}`
+        `https://api.discoverinternationalmedicalservice.com/api/get/selected/sub/specialty/${speacility}`
       )
         .then((res) => res.json())
         .then((data) => setSubSpecialities(data?.response?.data))
     }
   }, [speacility])
-
+  
   //get doctors
   useEffect(() => {
     setLoader(true)
@@ -123,7 +123,7 @@ export default function FindDoctor() {
       // Create a query string based on your query states
       const queryParams = `name=${docName}&specialty=${speacility}&sub_specialty=${subSpeacility}&lang=${lang}&gender=${gender}&shift=${time}&day=${day}`
       // Create the base URL
-      const baseUrl = 'https://api.bumrungraddiscover.com/api/search/doctor'
+      const baseUrl = 'https://api.discoverinternationalmedicalservice.com/api/search/doctor'
       // Create the final URL by appending the query string if it's not empty
       const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl
       // Fetch data from the API

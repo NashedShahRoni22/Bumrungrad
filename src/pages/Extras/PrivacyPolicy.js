@@ -198,7 +198,7 @@ export default function PrivacyPolicy() {
           </Link>{' '}
           us at{' '}
           <span className='text-blue font-bold'>
-            support@bumrungraddiscover.com
+            support@discoverinternationalmedicalservice.com
           </span>
         </li>
       </ol>
@@ -226,7 +226,7 @@ export default function PrivacyPolicy() {
         {' '}
         <span className='font-extrabold '>Email : </span>
         <span className='text-blue underline'>
-          support@bumrungraddiscover.com
+          support@discoverinternationalmedicalservice.com
         </span>
       </p>
       <p className='text-justify mt-2'>

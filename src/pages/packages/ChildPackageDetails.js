@@ -49,7 +49,7 @@ const ChildPackageDetails = () => {
     formData.append("phone", phoneNumber);
     formData.append("email", email);
 
-    fetch("https://api.bumrungraddiscover.com/api/add/package/booking", {
+    fetch("https://api.discoverinternationalmedicalservice.com/api/add/package/booking", {
       method: "POST",
       body: formData,
     })
@@ -70,7 +70,7 @@ const ChildPackageDetails = () => {
   //get details data
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.bumrungraddiscover.com/api/get/sub/package/${slug}`)
+    fetch(`https://api.discoverinternationalmedicalservice.com/api/get/sub/package/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

@@ -19,7 +19,7 @@ export default function User() {
         }
 
         const response = await fetch(
-          `https://api.bumrungraddiscover.com/api/personal/appointment/${userdetails?.id}`,
+          `https://api.discoverinternationalmedicalservice.com/api/personal/appointment/${userdetails?.id}`,
           {
             method: 'GET',
             headers: headers,

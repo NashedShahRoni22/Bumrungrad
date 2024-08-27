@@ -106,7 +106,7 @@ export default function TermsConditions() {
         >
           Contact
         </Link>{' '}
-        us at <span className='text-blue font-bold'>support@bumrungraddiscover.com</span>
+        us at <span className='text-blue font-bold'>support@discoverinternationalmedicalservice.com</span>
       </p>
     </div>
   )

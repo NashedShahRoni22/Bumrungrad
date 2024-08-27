@@ -28,7 +28,7 @@ const AirAmbulanceForm = () => {
     formData.append('summary', caseSummary)
     formData.append('description', briflyDiscusion)
 
-    fetch('https://api.bumrungraddiscover.com/api/add/air/ambulance', {
+    fetch('https://api.discoverinternationalmedicalservice.com/api/add/air/ambulance', {
       method: 'POST',
       body: formData,
     })

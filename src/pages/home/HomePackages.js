@@ -11,7 +11,7 @@ export default function HomePackages() {
 
   useEffect(() => {
     setLoader(true)
-    fetch('https://api.bumrungraddiscover.com/api/get/package')
+    fetch('https://api.discoverinternationalmedicalservice.com/api/get/package')
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

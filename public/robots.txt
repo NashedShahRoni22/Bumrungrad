@@ -5,4 +5,3 @@ Disallow: /404
 Allow: /
 Sitemap: https://discoverinternationalmedicalservice.com/sitemap.xml
          https://discoverinternationalmedicalservice.com/sitemap.html
-         https://discoverinternationalmedicalservice.com/sitemap_index.xml

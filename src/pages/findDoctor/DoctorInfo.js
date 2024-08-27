@@ -27,7 +27,7 @@ export default function DoctorInfo() {
   // console.log(doctor);
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.bumrungraddiscover.com/api/search/doctor/${slug}`)
+    fetch(`https://api.discoverinternationalmedicalservice.com/api/search/doctor/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.response.status === 200) {

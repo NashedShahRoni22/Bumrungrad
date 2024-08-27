@@ -13,7 +13,7 @@ const ChildPackage = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.bumrungraddiscover.com/api/get/sub/packages/${slug}`)
+    fetch(`https://api.discoverinternationalmedicalservice.com/api/get/sub/packages/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

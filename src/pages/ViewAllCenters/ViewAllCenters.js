@@ -20,10 +20,10 @@ export default function ViewAllCenters() {
 
   useEffect(() => {
     setLoader(true);
-    let url = "https://api.bumrungraddiscover.com/api/get/centers";
+    let url = "https://api.discoverinternationalmedicalservice.com/api/get/centers";
 
     if (searchValue !== "") {
-      url = `https://api.bumrungraddiscover.com/api/search/center/${searchValue}`;
+      url = `https://api.discoverinternationalmedicalservice.com/api/search/center/${searchValue}`;
     }
     fetch(url)
       .then((res) => res.json())
@@ -118,7 +118,7 @@ export default function ViewAllCenters() {
       </HelmetProvider>
       <div className="flex justify-between items-center">
         <h1 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
-          Clinic & Centers {slides?.length}
+          Clinic & Centers: {slides?.length}
         </h1>
       </div>
       <div className="my-8 flex md:justify-center">
