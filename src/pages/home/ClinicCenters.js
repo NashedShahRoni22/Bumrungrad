@@ -73,7 +73,7 @@ export default function ClinicCenters() {
     },
   ];
   return (
-    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto rounded-xl shadow-xl hidden md:block">
+    <div className="p-5 md:p-10 my-5 md:my-10 md:container md:mx-auto rounded-xl shadow-xl">
       <div className="flex justify-between items-center">
         <h2 className="capitalize text-xl md:text-2xl lg:text-3xl font-bold text-blue">
           Clinic & Centers

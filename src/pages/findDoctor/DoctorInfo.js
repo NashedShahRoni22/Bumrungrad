@@ -27,7 +27,9 @@ export default function DoctorInfo() {
   // console.log(doctor);
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.discoverinternationalmedicalservice.com/api/search/doctor/${slug}`)
+    fetch(
+      `https://api.discoverinternationalmedicalservice.com/api/search/doctor/${slug}`
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.response.status === 200) {
@@ -47,22 +49,43 @@ export default function DoctorInfo() {
       ) : (
         <section>
           <HelmetProvider>
-            {" "}
             <Helmet>
               <meta charSet="utf-8" />
               <title>{doctor?.name}</title>
-              <meta name="description" content={doctor?.specialty} />
-              <meta property="og:title" content={doctor?.name} />
-              <meta property="og:description" content={doctor?.specialty} />
-              <meta property="og:image" content={doctor?.cover_photo} />
+              <meta
+                name="description"
+                content={doctor?.specialty || "Doctor's specialty"}
+              />
+              <meta property="og:type" content="website" />
+              <meta
+                property="og:title"
+                content={doctor?.name || "Doctor's name"}
+              />
+              <meta
+                property="og:description"
+                content={doctor?.specialty || "Doctor's specialty"}
+              />
+              <meta
+                property="og:image"
+                content={doctor?.cover_photo || "default-image-url.jpg"}
+              />
               <meta
                 property="og:url"
-                content={`https://discoverinternationalmedicalservice.com/doctors/${slug}`}
+                content={`https://discoverinternationalmedicalservice.com//doctors/${slug}`}
               />
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:title" content={doctor?.name} />
-              <meta name="twitter:description" content={doctor?.specialty} />
-              <meta name="twitter:image" content={doctor?.cover_photo} />
+              <meta
+                name="twitter:title"
+                content={doctor?.name || "Doctor's name"}
+              />
+              <meta
+                name="twitter:description"
+                content={doctor?.specialty || "Doctor's specialty"}
+              />
+              <meta
+                name="twitter:image"
+                content={doctor?.cover_photo || "default-image-url.jpg"}
+              />
             </Helmet>
           </HelmetProvider>
           <div className="doctor-bg">
