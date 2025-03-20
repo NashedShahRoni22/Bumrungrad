@@ -179,7 +179,7 @@ export default function Appointment() {
 
   //get speacilities
   useEffect(() => {
-    fetch('https://api.discoverinternationalmedicalservice.com/api/get/specialty')
+    fetch('http://api.bumrungraddiscover.com/api/get/specialty')
       .then((res) => res.json())
       .then((data) => setSpecialities(data?.response?.data))
   }, [])
@@ -187,7 +187,7 @@ export default function Appointment() {
   useEffect(() => {
     if (specialty) {
       fetch(
-        `https://api.discoverinternationalmedicalservice.com/api/get/selected/sub/specialty/${specialty}`
+        `http://api.bumrungraddiscover.com/api/get/selected/sub/specialty/${specialty}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -208,7 +208,7 @@ export default function Appointment() {
       // Create a query string based on your query states
       const queryParams = `specialty=${specialty}&sub_specialty=${subSpecialty}`
       // Create the base URL
-      const baseUrl = 'https://api.discoverinternationalmedicalservice.com/api/search/doctor'
+      const baseUrl = 'http://api.bumrungraddiscover.com/api/search/doctor'
       // Create the final URL by appending the query string if it's not empty
       const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl
       // Fetch data from the API
@@ -271,7 +271,7 @@ export default function Appointment() {
     formData.append('driveLink1', driveLink1)
     formData.append('driveLink2', driveLink2)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/add/doctor/appointment', {
+    fetch('http://api.bumrungraddiscover.com/api/add/doctor/appointment', {
       method: 'POST',
       body: formData,
     })

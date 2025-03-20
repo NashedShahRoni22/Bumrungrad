@@ -11,7 +11,7 @@ const AllBlogs = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch("https://api.discoverinternationalmedicalservice.com/api/get/blogs")
+    fetch("http://api.bumrungraddiscover.com/api/get/blogs")
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

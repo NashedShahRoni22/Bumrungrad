@@ -5,20 +5,18 @@ import { useParams } from "react-router-dom";
 import Loader from "../../shared/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { FaArrowRight, FaArrowUp } from "react-icons/fa";
-import { FaArrowDown } from "react-icons/fa6";
+import { FaArrowUp } from "react-icons/fa";
 
 const OneBlog = () => {
   const { slug } = useParams();
   const [loader, setLoader] = useState(true);
   const [oneBlog, setBlog] = useState({});
-  const [view, setView] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   // get data
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.discoverinternationalmedicalservice.com/api/get/blogs/${slug}`)
+    fetch(`http://api.bumrungraddiscover.com/api/get/blogs/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data?.data);
@@ -26,7 +24,7 @@ const OneBlog = () => {
       });
   }, [slug]);
 
-  const [headings, setHeadings] = useState([]);
+  // const [headings, setHeadings] = useState([]);
   // Generate table of contents
   useEffect(() => {
     const blogDescElement = document.getElementById("blog_desc");
@@ -41,7 +39,7 @@ const OneBlog = () => {
         element.id = target; // Set the id attribute of the element
         headingsData.push({ name, target });
       });
-      setHeadings(headingsData);
+      // setHeadings(headingsData);
     }
   }, [loader]);
 

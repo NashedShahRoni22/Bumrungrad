@@ -23,7 +23,7 @@ export default function Login() {
     formData.append('email', email)
     formData.append('password', password)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/login', {
+    fetch('http://api.bumrungraddiscover.com/api/login', {
       method: 'POST',
       body: formData,
     })

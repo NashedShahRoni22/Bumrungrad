@@ -98,7 +98,7 @@ const VisaProcessing = () => {
     formData.append('driveLink1', driveLink1)
     formData.append('driveLink2', driveLink2)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/add/visa/precessing', {
+    fetch('http://api.bumrungraddiscover.com/api/add/visa/precessing', {
       method: 'POST',
       body: formData,
     })

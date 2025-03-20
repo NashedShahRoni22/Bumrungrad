@@ -43,14 +43,14 @@ export default function CheckUp() {
 
   //get packages
   useEffect(() => {
-    fetch('https://api.discoverinternationalmedicalservice.com/api/get/sub/package')
+    fetch('http://api.bumrungraddiscover.com/api/get/sub/package')
       .then((res) => res.json())
       .then((data) => setPackages(data?.data))
   }, [])
 
   //get speacilities
   useEffect(() => {
-    fetch('https://api.discoverinternationalmedicalservice.com/api/get/specialty')
+    fetch('http://api.bumrungraddiscover.com/api/get/specialty')
       .then((res) => res.json())
       .then((data) => setSelectDepartment(data?.response?.data))
   }, [])
@@ -72,7 +72,7 @@ export default function CheckUp() {
       // Create a query string based on your query states
       const queryParams = `specialty=${specialty}`
       // Create the base URL
-      const baseUrl = 'https://api.discoverinternationalmedicalservice.com/api/search/doctor'
+      const baseUrl = 'http://api.bumrungraddiscover.com/api/search/doctor'
       // Create the final URL by appending the query string if it's not empty
       const finalUrl = queryParams ? `${baseUrl}?${queryParams}` : baseUrl
       // Fetch data from the API
@@ -132,7 +132,7 @@ export default function CheckUp() {
     formData.append('phone', phone)
     formData.append('nationality', nationality)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/add/health/check_up', {
+    fetch('http://api.bumrungraddiscover.com/api/add/health/check_up', {
       method: 'POST',
       body: formData,
     })

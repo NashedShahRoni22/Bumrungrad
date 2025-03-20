@@ -68,7 +68,7 @@ const SendQuery = () => {
     formData.append('citizenship', citizenship)
     formData.append('country', country)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/add/question', {
+    fetch('http://api.bumrungraddiscover.com/api/add/question', {
       method: 'POST',
       body: formData,
     })

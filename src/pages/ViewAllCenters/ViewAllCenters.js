@@ -20,10 +20,10 @@ export default function ViewAllCenters() {
 
   useEffect(() => {
     setLoader(true);
-    let url = "https://api.discoverinternationalmedicalservice.com/api/get/centers";
+    let url = "http://api.bumrungraddiscover.com/api/get/centers";
 
     if (searchValue !== "") {
-      url = `https://api.discoverinternationalmedicalservice.com/api/search/center/${searchValue}`;
+      url = `http://api.bumrungraddiscover.com/api/search/center/${searchValue}`;
     }
     fetch(url)
       .then((res) => res.json())

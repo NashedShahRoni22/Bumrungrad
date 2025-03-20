@@ -25,7 +25,7 @@ const AirPickup = () => {
     formData.append('air_ticket', airTicketFile)
     formData.append('passenger', passenger)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/add/air/pickup', {
+    fetch('http://api.bumrungraddiscover.com/api/add/air/pickup', {
       method: 'POST',
       body: formData,
     })

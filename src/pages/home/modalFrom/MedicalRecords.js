@@ -36,7 +36,7 @@ const MedicalRecords = () => {
     formData.append('caseSummary', caseSummary)
     formData.append('hnNum', hnNum)
 
-    fetch('https://api.discoverinternationalmedicalservice.com/api/add/medical/report', {
+    fetch('http://api.bumrungraddiscover.com/api/add/medical/report', {
       method: 'POST',
       body: formData,
     })
